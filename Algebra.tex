@@ -1,0 +1,462 @@
+\documentclass[a4paper]{article}
+
+\makeatletter
+\title{Algebra I}\let\Title\@title
+\author{Andrea Gallese}\let\Author\@author
+\date{\today}\let\Date\@date
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{faktor}
+\usepackage{wasysym}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fancyhdr}
+\usepackage{subfig}
+\usepackage{multirow}
+
+\usepackage{lipsum}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{setspace}
+\usepackage{mdframed}
+
+% Formato Teoremi, Dimostrazioni, Definizioni
+\newtheorem{theorem}{Teorema}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Osservazione}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definizione}
+\renewcommand\qedsymbol{$\clubsuit$}
+
+% Frontespizio e piè di pagina
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{\textsf{\Author}}
+\chead{\textbf{\textsf{\Title}}}
+\lhead{\textsf{\today}}
+
+% Per avere le sezioni con le lettere
+\renewcommand{\thesection}{\Alph{section}}
+
+%Comandi specifici
+\newcommand{\Aut}[1]{\mathrm{Aut}\left( #1 \right)}
+\newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
+\newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
+\newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
+
+\newcommand{\fun}[5]{\begin{align*}
+	#1 \colon #2 &\to #3 \\
+	#4 &\mapsto #5
+	\end{align*}}
+
+% indentazione
+\setlength{\parindent}{0pt}
+
+% multicols
+\usepackage{multicol}
+\setlength\columnsep{20pt}
+\setlength{\columnseprule}{0,5pt}
+
+% Per disegnare diagrammi commuatativi
+\usepackage{tikz-cd}
+
+% Serve a decidere il bullet delle liste puntate
+\renewcommand\labelitemi{$ \blacktriangleright $}
+
+\begin{document}
+\begin{center}
+	\vspace*{0,5 cm}
+	{\Huge \textsc{\Title}} \\
+	\vspace{0,5 cm}
+	\textsc{\Author} \hspace{1cm} \textsc{\Date}
+	\thispagestyle{empty}
+	\vspace{0,7 cm}
+\end{center}
+\small
+
+\setcounter{section}{6} % per scegliere la lettera giusta
+\section{Teoria dei Gruppi}
+\subsection{Automorfismi e Azioni}
+\begin{multicols}{2}
+\begin{theorem}
+	Se G è un gruppo, $ \left(\Aut{G}, \circ\right) $ è un gruppo.
+\end{theorem}
+
+\textbf{Esempi}.
+\begin{enumerate}
+	\item $ \Aut{\mathbb{Z}} \cong \{\pm id\} \cong \mathbb{Z}_2 $
+	\item $ \Aut{\mathbb{Z}_n} \cong \mathbb{Z}_n^\times $
+	\item $ \Aut{\mathbb{Q}} \cong \mathbb{Q}^\times $
+	\item $ \Aut{\mathbb{R}} \cong \mathcal{S}(\mathbb{R}) \times \mathbb{Q}^\times $
+\end{enumerate} 
+
+\begin{definition}[Gruppo degli automorfismi interni]
+	Sia $ \Int{G} = \{ \varphi_g \mid g \in G \} $ l'insieme di tutti gli automorfismi interni, i.e. degli automorfismi di coniugio: \[ \varphi_g(x) = gxg^{-1} \quad\forall x \in G \]
+\end{definition}
+\begin{remark}
+	è immediato osservare che $ \Int{G} \lhd \Aut{G} $.
+\end{remark}
+\begin{theorem}
+	\[ \Int{G} \cong \faktor{G}{Z(G)} \]
+\end{theorem}
+\begin{proof}
+	La funzione \fun{\Phi}{G}{G}{g}{\varphi_g} è un omomorfismo con kernel $ Z(G) $. La tesi segue dal Primo Teorema di Omomorfismo.
+\end{proof}
+
+\begin{remark}
+	\[ H \lhd G \;\Leftrightarrow\; \varphi_g\left(H\right) = H \quad \forall \varphi_g \in \Int{G} \]
+\end{remark}
+
+\begin{definition}[Sottogruppo caratteristico]
+	Un sottogruppo $ H < G $ si dice caratteristico se è invariante per tutto $ \Aut{G} $, i.e. $$ \varphi\left(H\right) = H \quad \forall \varphi \in \Aut{G} $$
+\end{definition}
+\begin{remark}
+	Un sottogruppo caratteristico è anche normale, ma non è vero il viceversa: basta considerare $ \langle (0, 1) \rangle \lhd \mathbb{Z}_2 \times \mathbb{Z}_2 $
+\end{remark}
+
+\begin{definition}[Azione]
+	Si dice azione di un gruppo $ G $ su un insieme $ X $ un omomorfismo $ \varphi $ tale che \begin{align*}
+	\varphi \colon G &\to \mathcal{S}\left(X\right) \\
+	g &\mapsto \phi_g(x) = g \cdot x.
+	\end{align*}
+\end{definition}
+
+\textbf{Esempio.} Siano $ G = \{ z \in \mathbb{C} \mid |z| = 1 \} $ e $ X = \mathbb{R}^2 $. E sia $ \phi $ l'azione: \begin{align*}
+\varphi \colon C &\to \mathcal{S}\left(\mathbb{R}^2\right) \\
+z &\mapsto \mathcal{R}(O, \arg z)
+\end{align*}
+
+\begin{remark}
+	Un'azione induce naturalmente una relazione di equivalenza su $ X $: $ x \sim y \Leftrightarrow \exists g \in G \; t.c.\; g \cdot x = y $. Viene quindi spontaneo prendere in considerazione gli elementi della partizione così ottenuta. 
+\end{remark}
+\begin{definition}[Orbita]
+	Si dice orbita di un elemento $ x \in X $ l'insieme di tutti gli elementi che posso essere raggiunti da $ x $ tramite l'azione: \[ \Orb{x} = \{ g \cdot x \mid \forall g \in G \} \]
+\end{definition}
+\begin{remark}
+	Detto $ R $ un insieme di rappresentanti delle varie orbite, per il partizionamento prima considerato: \[ X = \bigcup_{x \in R} \Orb{x} \;\Rightarrow\; |X| = \sum_{x \in R} |\Orb{x}| \]
+\end{remark}
+
+\begin{definition}[Stabilizzatore]
+	Si dice stabilizzatore di un elemento $ x \in X $ l'insieme di tutti gli elementi di $ G $ che agiscono in modo banale su $ x $: \[ \Stab{x} = \{ g \in G \mid g \cdot x = x \} \]
+\end{definition}
+\begin{remark}
+	è immediato osservare che $ \Stab{x} < G $, ma non necessariamente normale.
+\end{remark}
+
+\begin{theorem}
+	\[ |G| = |\Orb{x}||\Stab{x}| \]
+\end{theorem}
+\begin{proof}
+	La funzione $ f $ così definita
+	\begin{align*}
+	f \colon \{ g \Stab{x} \mid g \in G \} &\to \{\Orb{x} \mid x \in X\} \\
+	g\Stab{x} &\mapsto g \cdot x
+	\end{align*}
+	è biunivoca, infatti:
+	\begin{align*}
+		g \cdot x = h \cdot x & \Leftrightarrow \varphi_g(x) = \varphi_h(x) \\
+		& \Leftrightarrow \varphi_h^{-1} \varphi_g (x) = x \\
+		& \Leftrightarrow \varphi_{h^{-1}g} (x) = x \\
+		& \Leftrightarrow h^{-1}g \cdot x = x \\
+		& \Leftrightarrow h^{-1}g \in \Stab{x} \\
+		& \Leftrightarrow g \in h\Stab{x} \\
+		& \Leftrightarrow g\Stab{x} = h\Stab{x} \\
+	\end{align*}
+\end{proof}
+\begin{remark}
+	Dall'osservazione precedente \[ |X| = \sum_{x \in R} \frac{|G|}{|\Stab{x}|} \]
+\end{remark}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item $ [G = C,\; X = \mathbb{R}^2 ] $ e l'azione dell'ultimo esempio. Questa sposta ruota ogni punto attorno all'origine, pertanto le orbite sono circonferenze centrate nell'origine e gli stabilizzatori sono tutti banali, tranne quello dell'origine che coincide con $ G $.
+	\item $ [G = \mathbb{R},\; X = \mathbb{R}^2 ] $ e l'azione che trasforma $ r \in \mathbb{R} $ nella traslazione orizzontale di lunghezza $ r $. Le orbite sono le rette parallele alla traslazione e gli stabilizzatori sono tutti banali.
+	\item $ [G,\; X = G ] $ e l'azione sia la mappa che manda un elemento $ g $ nel coniugio per questo $ \varphi_g(x) = gxg^{-1} $. L'orbita di un elemento contiene tutti i coniugati di questo ed è detta \emph{classe di coniugio} di $ x $ $ (\mathcal{C}_x) $. Lo stabilizzatore di $ x $ contiene tutti e soli gli elementi tali che $ xg = gx $, ovvero il sottogruppo di tutti gli elementi che commutano con $ x $, è detto \emph{centralizzatore} di $ x $ ($ Z_G(x) $).
+	\item $ [G,\; X = \{ H \mid H < G \} ] $ e l'azione di coniugio. Le orbite non sono particolarmente interessanti, mentre lo stabilizzatore di un sottogruppo è detto \emph{Normalizzatore} di $ H $, $ N(H) $ ed è il più grande sottogruppo di $ G $ in cui $ H $ è normale.
+\end{enumerate}
+\begin{remark}
+	$ H \lhd G \;\Leftrightarrow\; N(H) = G $
+\end{remark}
+\end{multicols}
+
+\subsection{Formula delle Classi e Cauchy}
+\begin{multicols}{2}
+
+\begin{theorem}[Formula delle Classi]
+	Per ogni gruppo finito vale
+	\[ |G| = |Z(G)| + \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} \]
+\end{theorem}
+\begin{proof}
+	Riprendiamo la partizione di $ X $ in orbite, ma separando quelle banali da quelle non
+	
+	\[ |X| = \sum_{\substack{x \in R \\ \Orb{x} = \{x\} }} 1 + \sum_{\substack{x \in R \\ \Orb{x} \neq \{x\} }} \frac{|G|}{|\Stab{x}|} \]
+	
+	Osserviamo cosa succede nel caso dell'azione di coniugo da un gruppo in se (l'esempio 3 della lezione precedente). L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x $, $ \forall g \in G $, ovvero nel caso in cui $ x $ commuti con tutti gli elementi di $ G $ (stia nel centro). Dunque la formula di sopra si riscrive come desiderato.
+\end{proof}
+
+\begin{definition}[$ p $-gruppo]
+	Si dice $ p $-gruppo un gruppo finito $ G $ di ordine potenza di un primo $ p $: $ |G| = p^n $.
+\end{definition}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item \textbf{Un $ p $-gruppo $ G $ ha centro non banale.} Tutti i centralizzatori degli elementi di $ R' $ hanno dimensione $ p^k $ per un intero $ 0 \leq k < n $, dunque
+	\[ p \mid \frac{|G|}{|Z_G(x)|} \forall x \in R' \]
+	pertanto, per la formula delle classi,
+	\[ p \mid |G| - \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} = |Z(G)| \]
+	che quindi, contenendo $ e $, deve avere almeno $ p $ elementi.
+	
+	\item \textbf{I gruppi di ordine $ p^2 $ sono abeliani.} Il centro di $ G $ avrà, per quanto appena dimostrato, ordine $ p $ o $ p^2 $. Nel secondo caso abbiamo finito. Nel primo \[  \left|\faktor{G}{Z(G)}\right| = p \] dunque il quoziente è ciclico. Presi due elementi qualunque $ x, y \in G $ possiamo esprimerli come $ x = g^h a $ e $ y = g^k b $, dove $ g $ è il generatore del quoziente e $ a, b \in Z(G) $. Allora, sfruttando la commutatività degli elementi del centro \[ xy = ( a) (g^k b) = g^{h+k} ab = g^{k+h} ba = (g^k b) (g^h a) = yx \]
+	ricaviamo la commutativa per tutti gli elementi del gruppo.
+	
+	\item Una possibile dimostrazione del Teorema di Cauchy:
+\end{enumerate}
+
+\begin{theorem}[di Cauchy]
+	Per ogni fattore primo $ p $ di $ |G| $ esiste un elemento $ g $ di $ G $ di ordine $ p $.
+\end{theorem}
+\begin{proof}[Dimostrazione Classica]
+	Sia $ |G|= pn $, procediamo per induzione su $ n $. \\
+	Se $ n = 1 $, $ G $ è ciclico, quindi ha un generatore di ordine $ p $. \\
+	Supponiamo ora che tutti i gruppi di ordine $ kp  \quad\forall k < m$ abbiamo un elemento di ordine $ p $. Se $ |G|=pm $ ci sono due casi:
+	\begin{enumerate}
+		\item Esiste un sottogruppo proprio $ H $ di ordine multiplo di $ p $, da cui ricadiamo nell'ipotesi induttiva.
+		\item Se nessun sottogruppo di $ G $ ha ordine divisibile per $ p $, allora
+		\[ p \mid \frac{|G|}{|Z_G(x)|} \forall x \in R' \] perché i $ Z_G(x) < G $. Per la formula delle classi
+		\[ p \mid |G| - \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} = |Z(G)| \]
+		ma abbiamo supposto che i sottogruppi propri non abbiamo ordine multiplo di $ p $, dunque il centro deve coincidere con l'intero gruppo, che risulta pertanto commutativo.
+	\end{enumerate}
+\end{proof}
+\begin{proof}[Dimostrazione Magica]
+	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ (p-1) $ l'ultimo è univocamente determinato come il suo unico inverso. Se una $ p $-upla non è composta da un solo elemento ripetuto, allora possiamo ciclare i suoi termini per ottenere altre $ (p-1) $ $ p $-uple in $ X $. Dunque, detto $ n $ il numero di $ g $ tali che $ g^p = 1 $ \[ p \mid |G|^{p-1} - n \;\Rightarrow\; p \mid n \] e poiché $ e^p = e $ ci sono almeno $ p $ elementi di ordine $ p $.
+\end{proof}
+
+\begin{remark}
+	Cosa riusciamo a dire su un possibile teorema inverso a quello di Lagrange?
+\end{remark}
+\begin{enumerate}
+	\item per Gruppi Abeliani?
+	\begin{enumerate}
+		\item elementi di ordine divisore? no, basti guardare $ \mathbb{Z}_2 \times \mathbb{Z}_2 $
+		\item sottogruppi di ordine divisore? sì! esercizio.
+	\end{enumerate}
+	\item per Gruppi non Abeliani?
+	\begin{enumerate}
+		\item a maggior ragione no
+		\item no
+	\end{enumerate}
+\end{enumerate}
+
+\textbf{Esercizio.} Classificare i gruppi $ G $ di ordine $ 6 $.
+
+Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
+\begin{itemize}
+	\item Se $ G $ è abeliano, ord$ (xy) = 6 $, quindi $ G $ è ciclico e pertanto isomorfo a $ \mathbb{Z}_6 $.
+	\item Se non lo è, costruiamo un isomorfismo esplicito...
+\end{itemize}
+
+\begin{theorem}[Caylay]
+	Possiamo immergere ogni gruppo $ G $ in $ \mathcal{S}(G) $.
+\end{theorem}
+\begin{proof}
+	Esibiamo un'azione fedele (ovvero, iniettiva): \fun{\Phi}{G}{\mathcal{S}(G)}{g}{\varphi_g(x) = gx}
+	è ora sufficiente verificare che $ \Phi $ è ben definito ($ \varphi_g $ è una bigezione) e iniettivo.
+\end{proof}
+
+\begin{definition}[Sottogruppo generato]
+	Sia $ S \subset G $ un sottoinsieme su $ G $, chiamiamo il più sottogruppo contenente $ S $  sottogruppo generato da $ S $ ($ \langle S \rangle $). \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
+\end{definition}
+\begin{theorem}[Caratterizzazione dei sottogruppi generati]
+	\[ \langle S \rangle = \{ s_1 \cdots s_k \mid k \in \mathbb{N}, \; s_i \in S \cup S^{-1} \} \]
+\end{theorem}
+\begin{proof}
+	Chiamiamo $ X $ il magico insieme nel RHS. Chiaramente $ S \subseteq X $ e pertanto $ X $, che è facile verificare essere un gruppo, è parte della famiglia sotto intersezione: $ X \subseteq \bigcap \mathcal{F} $. Inoltre se $S \subseteq H < G $ sicuramente in $ H $ compaiono tutte le $ k $-uple di $ X $ e quindi $ X < H $ per ogni sottogruppo di $ \mathcal{F} $. Dunque $ X \subseteq \bigcap\mathcal{F} $.
+\end{proof}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item $ \langle S \rangle $ è abeliano se e solo se tutti gli elementi di $ S $ commutano fra loro.
+	\item $ \langle S \rangle $ è normale se e solo se ogni ogni elemento di $ S $ rimane in $ \langle S \rangle $ per coniugio.
+	\item $ \langle S \rangle $ è caratteristico se e solo se ogni elemento di $ S $ viene mandato in $ \langle S \rangle $ da ogni automorfismo di $ G $.
+	\item $ G' = \langle ghg^{-1}h^{-1} \mid g, h \in G \rangle $ è detto \emph{Gruppo dei Commuatatori o Gruppo Derviato di $ G $}. Questo gruppo gode di alcune proprietà fondamentali
+	
+	\begin{enumerate}
+		\item $ G' = \{ e \} \;\Leftrightarrow\; G $ abeliano.
+		\item $ G' $ è caratteristico e pertanto normale in $ G $.
+		\item \textbf{Dato $ H \lhd G $, il quoziente $ \faktor{G}{H} $ è abeliano se e solo se $ G' < H $.}
+	
+		
+	\end{enumerate}
+
+\begin{proof}
+	La verifica delle proprietà $ (a) $ e $ (b) $ è banale. Rimane l'ultima $ (c) $:
+	\begin{align*}
+	\faktor{G}{H} \;\text{abeliano} & \Leftrightarrow\; xHyH = yHxH &\forall x, y \in G \\
+	& \Leftrightarrow\; xyH = yxH &\forall x, y \in G\\
+	& \Leftrightarrow\; x^{-1}y^{-1}xy \in H &\forall x, y \in G\\
+	& \Leftrightarrow\; g' \in H &\forall g' \in G'
+	\end{align*}
+\end{proof}
+\begin{definition}
+	$ \faktor{G}{G'} $ è detto l'abelianizzato di $ G $, perché è sempre abeliano!
+\end{definition}
+\end{enumerate}
+\end{multicols}
+
+\subsection{Gruppi Diedrali  $ D_n $}
+\begin{multicols}{2}
+\begin{definition}[Gruppo Diedrale]
+	Sia $ D_n $ il gruppo delle isometrie dell'$ n $-agono regolare.
+\end{definition}
+\begin{theorem}[Caratterizzazione di $ D_n $]
+	Si ha \[ D_n = \langle \rho, \sigma \mid \rho ^n = e, \sigma^2 = e, \sigma \rho \sigma = \rho^{-1} \rangle \]
+\end{theorem}
+\begin{proof}
+	Tutti gli elementi sopra definiti possiamo ridurli a un elemento della forma $ \rho^k $ o $ \sigma \rho^k $ per un qualche $ 0 \leq k < n $. Questo perché così sono fatti i generatori e ogni operazione permessa (composizione e inversione) si riducono a questa forma attraverso le leggi a disposizione. Inoltre possiamo immergere $ D_n $ in un sottogruppo di $ \mathbf{O}_2(\mathbb{R}) $ di ordine $ 2n $ attraverso un omomorfismo suriettivo: \begin{align*}
+	\Phi \colon D_n &\to \mathbf{O}_2(\mathbb{R}) \\
+	\sigma &\mapsto \left(\begin{matrix}
+	-1 & 0 \\
+	0 & 1
+	\end{matrix}\right) \\
+	\rho &\mapsto \left(\begin{matrix}
+	\cos\frac{2\pi}{n} & \sin\frac{2\pi}{n} \\
+	-\sin\frac{2\pi}{n} & \cos\frac{2\pi}{n}
+	\end{matrix}\right) 
+	\end{align*}
+	Pertanto ognuno dei rappresentati sopra individua un'effettiva trasformazione distinta.
+\end{proof}
+
+\begin{remark}
+	Conosciamo già un gruppo diedrale: $ D_3 \cong \mathcal{S}_3 $.
+\end{remark}
+\begin{remark}
+	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $. $$ \langle \rho \rangle = C_n \lhd D_n $$
+\end{remark}
+
+\begin{theorem}[Ordine degli elementi di $ D_n $]
+	Sappiamo che
+	\begin{itemize}
+		\item tutte le simmetrie hanno ordine 2.
+		\item ci sono $ \varphi(m) $ rotazioni di ordine $ m $, per ogni $ m \mid n $.
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	La seconda parte è immediata conseguenza della ciclicità del sottogruppo delle rotazioni.
+	L'ordine delle riflessioni possiamo calcolarlo esplicitamente notando che $ \left(\sigma\rho^k\right)\left(\sigma\rho^k\right) = \left(\sigma\rho^k\sigma\right)\rho^k = \rho^{-k}\rho^{k} = e $ grazie alla terza proprietà imposta nella caratterizzazione.
+\end{proof}
+
+\begin{theorem}[Sottogruppi di $ D_n $]
+	I sottogruppi $ H < D_n $ rientrano in una di queste due categorie:
+	\begin{itemize}
+		\item $ H < C_n $: di cui ne abbiamo esattamente uno per ogni ordine divisore di $ n $.
+		\item $ H = (H \cap C_n) \sqcup \tau(H\cap C_n) $: di cui ce ne sono $ d $ di ordine $ \frac{2n}{d} $ per ogni $ d \mid n $.
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	Se $ H < C_n $ il risultato viene da Aritmetica. Se $ H \nless C_n $, $ H $ contiene almeno una rotazione $ \tau = \sigma\rho^i $. Consideriamo l'omomorfismo $ f $ che fa commutare il diagramma
+	\[ \begin{tikzcd}
+	D_n \arrow{r}{\Phi} \arrow[swap]{dr}{f} & \mathbf{O}_2(\mathbb{R}) \arrow{d}{det} \\
+	& \{\pm 1\} \cong \mathbb{Z}_2	\end{tikzcd}
+	\]
+	Notiamo che $ \ker f = C_n \lhd D_n $ e osserviamo cosa succede quando restringiamo l'omomorfismo trovato ad $ H $
+	\[ \begin{tikzcd}
+	H \arrow{r}{f_{|H}} \arrow[swap]{d}{id} & f\left(H\right) \arrow{d}{id} \\
+	D_n \arrow{r}{f} & \mathbb{Z}_2
+	\end{tikzcd}
+	\]
+	Abbiamo così scomposto il nostro sottogruppo come desiderato, poiché conosciamo il ker della trasformazione
+	\[ H = f^{-1}(0) \sqcup f^{-1}(1) = (H \cap C_n) \sqcup \tau (H\cap C_n) \]
+	Poiché $ (H \cap C_n) < C_n $ possiamo vederlo come il sottogruppo generato da una potenza della rotazione elementare \[ H \cap C_n = \langle \rho^d \colon d \mid n \rangle \] Il suo unico laterale sarà allora composto dagli $ d $ elementi della forma  \begin{align*}\tau(H\cap C_n) &=  \{\tau\rho^d, \tau\rho^2d, \dots, \tau\rho^{n-m} \} \\ &= \{\sigma\rho^{d+i}, \sigma\rho^{2d+i}, \dots, \sigma\rho^{n-m +i} \}\end{align*}  che è facile convincersi dipendere solamente dalla classe di $ i \mod m $.
+\end{proof}
+
+\textbf{Esercizi.}
+\begin{enumerate}
+	\item Quali sottogruppi di $ D_n $ sono normali?
+	\item Quali sottogruppi di $ D_n $ sono caratteristici?
+	\item Quali sono i quozienti di $ D_n $?
+	\item $ (\star) $ Chi è $ \Aut{D_n} $?
+\end{enumerate}
+
+\end{multicols}
+
+\subsection{Gruppi di Permutazioni $ \mathcal{S}_n $}
+\begin{multicols}{2}
+\begin{definition}[Gruppi di Permutazioni]
+	Dato un insieme $ X $, chiamiamo
+	\[  \mathcal{S}(X) = \{ f: X \to X \mid f  \text{ è bigettiva}  \}  \]
+	con l'operazione di composizione, il gruppo delle permutazioni di $ X $. Se l'insieme è finito $ |X| = n $, allora
+	\[  \mathcal{S}(X) \cong S(\{ 1 ,2, \dots, n \})  \]
+	lo chiamiamo $ \mathcal{S}_n $.
+\end{definition}
+
+\begin{theorem}
+	Ogni permutazione $ \sigma \in \mathcal{S}_n $ si scrive in modo unico come prodotto di cicli disgiunti.
+\end{theorem}
+\begin{remark}
+	Cicli disgiunti commutano
+\end{remark}
+
+\begin{remark}
+	I cicli sono orbite dell'applicazione di immersione. 
+\end{remark}
+
+\begin{theorem}
+	$ \mathcal{S}_n $ è generato dai suoi cicli.
+\end{theorem}
+
+\textbf{Esercizi.}
+\begin{enumerate}
+	\item Quanti $ k $-cicli ci sono in $ \mathcal{S}_n $?
+	\item Come conto gli elementi con una composizione fissata in un $ \mathcal{S}_n $ dato? Per esempio, come calcolo le permutazioni del tipo $ 3+3+2+2+2 $ in $ \mathcal{S}_{10} $?
+	\item L'ordine di $ \sigma $ è il minimo comune multiplo delle lunghezze dei suoi $ k $-cicli.
+\end{enumerate}
+
+\begin{theorem}
+	$ \mathcal{S}_n $ è generato dalle sue trasposizioni.
+\end{theorem}
+\begin{remark}
+	La decomposizione in trasposizioni non è unica. Ma la parità del numeri di trasposizioni lo è:
+\end{remark}
+\begin{theorem}
+	La parità del numero di trasposizioni della scomposizione di una qualunque permutazione $ \sigma \in \mathcal{S}_n $ non dipende dalla scomposizione.
+\end{theorem}
+\begin{proof}
+	Consideriamo
+	\fun{\text{sgn}}{\mathcal{S}_n}{\mathbb{Z}^\times = \{\pm 1\}}{\sigma}{\prod_{1 \leq i < j \leq n}\frac{\sigma(i)-\sigma(j)}{i-j}}
+	questo è un omomorfismo di gruppi. Infatti:
+	\begin{enumerate}
+		\item Chiaramente $ |\text{sgn}(\sigma)| = 1 $: infatti tutte le differenze che compaiono a denominatore compaiono anche a numeratore, poiché $ \sigma $ è una permutazione, semplicemente con ordine, ed eventualmente segno, differente .
+		\item Si comporta bene con la composizione
+		\begin{align*}
+			\text{sgn}(\sigma \circ \tau) &= \prod_{i < j}\frac{\sigma(\tau(i))-\sigma(\tau(j))}{i-j} \\
+			& = \prod_{i < j}\frac{\sigma(\tau(i))-\sigma(\tau(j))}{\tau(i)-\tau(j)}\cdot \frac{\tau(i)-\tau(j)}{i-j} \\
+			& = \prod_{i < j}\frac{\sigma(\tau(i))-\sigma(\tau(j))}{\tau(i)-\tau(j)}\cdot\prod_{i < j} \frac{\tau(i)-\tau(j)}{i-j}\\
+			& = \text{sgn}(\sigma)\cdot \text{sgn}(\tau)
+		\end{align*}
+	\end{enumerate}
+	inoltre tutte le trasposizioni hanno tutte segno negativo.
+\end{proof}
+\begin{definition}[Gruppo Alterno]
+	Chiamiamo $ A_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
+	\[ \ker(\text{sgn}) = A_n \lhd \mathcal{S}_n \]
+\end{definition}
+
+\begin{theorem}
+	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli.
+\end{theorem}
+\begin{proof}
+	$ \Rightarrow  $. Ci basta dimostrare che dato un ciclo $ \sigma = (a_1 \; \cdots \; a_k) $ e una permutazione tale che $ \tau(a_i) = b_i $. Allora le immagini del ciclo vengono mandati nel loro "successore" \[ \tau\sigma\tau^{-1} (b_i) = \tau\sigma(a_i) = \tau(a_{i+1}) = b_{i+1} \] mentre le non immagini di alcun $ a_i $, con controimmagini invarianti per $ \sigma $, rimangono fisse \[ \tau\sigma\tau^{-1} (x) = \tau\tau^{-1}(x) = x \]
+	pertanto \[\tau\sigma\tau^{-1} = (b_1 \; \cdots \; b_k) \]
+	$ \Leftarrow $. Se vogliamo mandare il ciclo $ (a_1 \; \cdots \; a_k) $ in $ (b_1 \; \cdots \; b_k) $ ci basta coniugare per la stessa permutazione di prima: $ \tau(a_i) = b_i $. Possiamo poi costruire il coniugio moltiplicando tra loro tutte le $ \tau $ relative ai vari cicli.
+\end{proof}
+
+
+
+\end{multicols}
+
+\end{document}
