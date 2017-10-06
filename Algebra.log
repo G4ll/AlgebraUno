@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  4 OCT 2017 17:24
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  6 OCT 2017 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1355,7 +1355,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 330--332
 Here is how much of TeX's memory you used:
  25446 strings out of 494934
  497238 string characters out of 6180556
- 642888 words of memory out of 5000000
+ 643888 words of memory out of 5000000
  28327 multiletter control sequences out of 15000+600000
  15847 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
@@ -1381,7 +1381,7 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/
 texmf-dist/fonts/type1/public/wasy2-ps/wasy9.pfb>
-Output written on Algebra.pdf (4 pages, 240469 bytes).
+Output written on Algebra.pdf (4 pages, 240864 bytes).
 PDF statistics:
  108 PDF objects out of 1000 (max. 8388607)
  79 compressed objects within 1 object stream
