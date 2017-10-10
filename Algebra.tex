@@ -398,12 +398,12 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Ogni permutazione $ \sigma \in \mathcal{S}_n $ si scrive in modo unico come prodotto di cicli disgiunti.
 \end{theorem}
 \begin{remark}
-	Cicli disgiunti commutano
+	Cicli disgiunti commutano.
 \end{remark}
 
-\begin{remark}
-	I cicli sono orbite dell'applicazione di immersione. 
-\end{remark}
+%\begin{remark} Questa cosa non vuol dire niente!
+%	I cicli sono orbite dell'applicazione di immersione. 
+%\end{remark}
 
 \begin{theorem}
 	$ \mathcal{S}_n $ è generato dai suoi cicli.
@@ -430,7 +430,7 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	\fun{\text{sgn}}{\mathcal{S}_n}{\mathbb{Z}^\times = \{\pm 1\}}{\sigma}{\prod_{1 \leq i < j \leq n}\frac{\sigma(i)-\sigma(j)}{i-j}}
 	questo è un omomorfismo di gruppi. Infatti:
 	\begin{enumerate}
-		\item Chiaramente $ |\text{sgn}(\sigma)| = 1 $: infatti tutte le differenze che compaiono a denominatore compaiono anche a numeratore, poiché $ \sigma $ è una permutazione, semplicemente con ordine, ed eventualmente segno, differente .
+		\item è ben definito, ovvero $ |\text{sgn}(\sigma)| = 1 $: tutte le differenze che compaiono a denominatore compaiono anche a numeratore, poiché $ \sigma $ è una permutazione, magari con ordine o segno, differente.
 		\item Si comporta bene con la composizione
 		\begin{align*}
 			\text{sgn}(\sigma \circ \tau) &= \prod_{i < j}\frac{\sigma(\tau(i))-\sigma(\tau(j))}{i-j} \\
@@ -439,7 +439,7 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 			& = \text{sgn}(\sigma)\cdot \text{sgn}(\tau)
 		\end{align*}
 	\end{enumerate}
-	inoltre tutte le trasposizioni hanno tutte segno negativo.
+	Infine, tutte le trasposizioni hanno segno negativo. 
 \end{proof}
 \begin{definition}[Gruppo Alterno]
 	Chiamiamo $ A_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
@@ -459,7 +459,7 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Notiamo che il centralizzatore di $ \sigma $ coincide con lo stabilizzatore dell'azione di coniugio di $ \mathcal{S}_n $ in se. Dunque
 	\[ |Z(\sigma)| = \frac{n!}{|\mathcal{C}(x)|} \]
 \end{remark}
-\textbf{Esercizio.} Trovare $ N(H) $.
+\textbf{Esercizio.} Caratterizzare i normalizzatori dei sottogruppi dei gruppi ciclici.
 
 \end{multicols}
 
