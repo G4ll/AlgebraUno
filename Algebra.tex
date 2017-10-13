@@ -33,6 +33,7 @@
 \newtheorem{definition}[theorem]{Definizione}
 \renewcommand\qedsymbol{$\clubsuit$}
 
+
 % Frontespizio e piè di pagina
 \pagestyle{fancy}
 \fancyhf{}
@@ -459,8 +460,237 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Notiamo che il centralizzatore di $ \sigma $ coincide con lo stabilizzatore dell'azione di coniugio di $ \mathcal{S}_n $ in se. Dunque
 	\[ |Z(\sigma)| = \frac{n!}{|\mathcal{C}(x)|} \]
 \end{remark}
-\textbf{Esercizio.} Caratterizzare i normalizzatori dei sottogruppi dei gruppi ciclici.
+\textbf{Esercizio.} Data una permutazione $ \sigma $ trovare $ N(\langle \sigma \rangle) $
 
 \end{multicols}
+\subsection{Prodotti diretti}
+
+\begin{multicols}{2}
+A un certo punto vorremo arrivare a dimostrare il seguente risultato, che ora enunciamo un po' a caso.
+\begin{theorem}[di Struttura dei gruppi abeliani finitamente generati]
+ Possiamo scrivere ogni gruppo abeliano finitamente generato $G$, in modo unico, come prodotto diretto di gruppi ciclici nel modo seguente
+ \[ G \cong \mathbb{Z}^r \times \mathbb{Z}_{n_1} \times \cdots \times \mathbb{Z}_{n_k} \]
+ dove $n_1, \dots, n_k$ sono interi tali che $n_1 \mid n_2 \mid \dots \mid n_k $. 
+\end{theorem}
+
+\begin{definition}
+	Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo. Ovvero $ H < G $, dove $ |G| = p^mn $ con $ (m, n) = 1 $ e $ |H| = p^m $.
+\end{definition}
+
+\begin{theorem}
+	Sia $ G $ un gruppo e $ H, K \lhd G $ due sottogruppi normali. Se
+	\begin{enumerate}
+		\item $ HK = G $
+		\item $ H \cup K = \{e\} $
+	\end{enumerate}
+allora $ G \cong H \times K $.
+\end{theorem}
+\begin{proof}
+	Mostriamo innanzitutto che $ hkh^{-1}k^{-1} $ appartiene ad entrambi i sottogruppi, infatti:
+	\[ H  \ni h(kh^{-1}k^{-1}) = h(kh^{-1}k^{-1}) = (hkh^{-1})k^{-1} \in K \]
+	dunque, per la seconda ipotesi, $$ hkh^{-1}k^{-1} = e $$ quindi gli elementi di un sottogruppo commutano con quelli dell'altro $ hk = kh $.
+	
+	Consideriamo ora l'isomorfismo \fun{\Phi}{H\times K}{G}{(h,g)}{hg}
+	e verifichiamo che
+	\begin{enumerate}
+		\item è ben definito.
+		\item è un omomorfismo: infatti \[ \Phi(hh', kk') = hh'kk' = hkh'k' = \Phi(h, k)\Phi(h',k') \]
+		\item è suriettivo per la prima ipotesi.
+		\item è iniettivo per la seconda, infatti \[ \ker\Phi = \{ (h, k) \mid hk = e \} = \{ (e, e) \} \]
+	\end{enumerate}
+\end{proof}
+
+\begin{remark}
+	Nel prodotto diretto i fattori commutano.
+\end{remark}
+
+\textbf{Proprietà di $ G = H \times K $.}
+\begin{enumerate}
+	\item $ Z(G) = Z(H) \times Z(K) $.
+	\item $ \Int{G} \cong \Int{H} \times \Int{K} $.
+	\item $ \Aut{H} \times \Aut{K} < \Aut{G} $.
+\end{enumerate}
+\begin{theorem}
+	Si ha $ \Aut{H} \times \Aut{K} < \Aut{H \times K} $ e sono isomorfi se e solo se $ H $ e $ K $ sono caratteristici.
+\end{theorem}
+\begin{proof}
+	Consideriamo l'omomorfismo \fun{\Phi}{\Aut{H} \times \Aut{K}}{\Aut{H \times K}}{(f, g)}{\varphi_{fg}: (h, k) \mapsto \left(f(h), g(k)\right)}
+	e verifichiamo che
+	\begin{itemize}
+		\item è bene definito, ovvero $ \varphi $ è un automorfismo. Immediata conseguenza del fatto che $ f $ e $ g $ sono a loro volta automorfismi.
+		\item è un omomorfismo.  \begin{align*}
+			\Phi(ff',gg') &= \left( f(f'(h)), g(g'(k)) \right)\\& = \varphi_{fg}(\varphi_{f'g'}(h, k)) \\&= \Phi(f, g)\Phi(f',g') 
+		\end{align*}
+		\item è iniettivo.
+		\[ \ker\Phi = \{ (id, id) \} \]
+		altrimenti c'è almeno un elemento di uno dei due gruppi che non va in se stesso.
+		
+		\item è suriettivo se e solo se $ H\times\{e_K\} $ e $ \{e_H\}\times K $ sono caratteristici in $ H \times K $.
+		
+		$ \Rightarrow $. Se $ \Phi $ è suriettivo, allora tutti gli automorfismi di $ H \times K $ sono della forma di cui sopra e pertanto $ \varphi_{fg} $ agisce sugli elementi di $ H $ come $ \varphi_{fg|H} = f \in \Aut{H} $.
+		
+		$ \Leftarrow $. Viceversa, supponiamo $ H $ e $ K $ caratteristici, preso un automorfismo $ \varphi \in \Aut{H \times K}$ consideriamo le sue restrizioni ai due sottogruppi caratteristici.
+		\[ f = \Pi_H \left( \varphi_{|H\times\{e_K\}} \right) \qquad g = \Pi_K \left( \varphi_{|\{e_H\}\times K} \right) \]
+		Notiamo che $ f \in \Aut{H} $.
+		\begin{itemize}
+			\item $ f $ è iniettiva. Se $ f(h) = f(h') $ allora \[\Pi_H \left( \varphi(h, e_K) \right) = \Pi_H \left( \varphi(h', e_K) \right) \]
+			poiché $ H\times\{e_K\} $ è caratteristico \[ \varphi(h, e_K) = (a, e_K) \qquad   \varphi(h', e_K) = (b, e_K) \]
+			ma necessariamente $ a = f(h) $ e $ b = f(h') $, pertanto
+			\[ \varphi(a, e_K) = (f(h), e_K) = (f(h'), e_K) = \varphi(b, e_K) \]
+			e, visto che $ \varphi $ è iniettivo, $ h = h' $.
+			\item $ f $ è suriettiva. Fissiamo un qualunque $ h \in H $. Essendo $ H\times\{e_K\} $ caratteristico, necessariamente la controimmagine di $ (h, e_K) $ è un suo elemento \[ \varphi^{-1}(h, e_K) = (h', e_K) \]
+			dunque \[ f(h') =\Pi_H \left( \varphi(h', e_K) \right) = \Pi_H \left( h, e_K \right) = h \]
+		\end{itemize}
+		Infine osserviamo che $ \Phi(f, g) = \varphi $. Infatti
+		\begin{align*} \varphi_{fg}(h, k) &= \left(f(h), g(k)\right)\\& = \left(\Pi_H \left( \varphi(h, e_K) \right), \Pi_K \left( \varphi(e_H, k) \right)\right) \\& =
+		\left(\Pi_H \left( \varphi(h, k) \right), \Pi_K \left( \varphi(h, k) \right)\right) \\& =
+		 \varphi(h, k) \end{align*}
+		 dove la terza uguaglianza segue da
+		 \begin{align*}
+		 \Pi_H \left( \varphi(h, e_K) \right) &= \Pi_H \left( \varphi(h, e_K) \right)\Pi_H(\varphi(e_H, k)) \\
+		 &= \Pi_H \left( \varphi(h, e_K)\varphi(e_H, k)\right) \\&= \Pi_H \left( \varphi(h, k)\right)
+		 \end{align*}
+	\end{itemize}
+\end{proof}
+
+\textbf{Esercizio.} Trovare $ \Aut{\mathbb{Z}_{20} \times \mathbb{Z}_{2} } $.
+\end{multicols}
+
+\subsection{Classificazione dei Gruppi di ordine 8}
+
+\[ \begin{tikzcd}
+& \text{esistono elementi di ordine 8?} \arrow{r}{\text{sì}} \arrow[swap]{d}{no} & \mathbb{Z}_8 \\
+& \text{tutti gli elementi hanno ordine 2?} \arrow{r}{\text{sì}} \arrow[swap]{d}{no} & \mathbb{Z}_2 \times \mathbb{Z}_2 \times \mathbb{Z}_2 \\
+& \text{esiste } h \notin C_4 \text{ di ordine 4?} \arrow{dr}{\text{no}} \arrow{dl}{\text{sì}} \\
+\text{il coniugio per }h\text{ cos'è?} \arrow{d}{\text{-id}} \arrow{dr}[swap]{\text{id}}  & & \text{il coniugio per }h\text{ cos'è?} \arrow{d}{\text{-id}} \arrow{dl}[swap]{\text{id}}\\
+Q_8 & \mathbb{Z}_2 \times \mathbb{Z}_4 & D_4
+\end{tikzcd}
+\]
+
+\begin{multicols}{2}
+	Prendiamo un gruppo $ G $ di ordine 8.
+\begin{itemize}
+	\item Se esiste un elemento di ordine 8 il gruppo è ciclico e pertanto isomorfo a $ \mathbb{Z}_8 $.
+	\item Se $ G $ ha solo elementi di ordine 2, allora è isomorfo a $ \left(\mathbb{Z}_2\right)^3 $. Mostriamo un risultato appena più generale. 
+\end{itemize}
+\begin{theorem}
+	Se $ |G| $ ha solo elementi di ordine due ed è finito, allora $ G \cong \left(\mathbb{Z}_2\right)^n $.
+\end{theorem}
+\begin{proof}
+	Osserviamo che $ a^2b^2 = e = (ab)^2 = abab $ e, moltiplicando per $ a $ a sinistra e per $ b $ a destra, otteniamo $ ab = ba $ per ogni $ a, b \in G $. Pertanto $ G $ è abeliano. Possiamo ora procedere per induzione sulla dimensione di $ G $. Se $ |G| = 2 $ il risultato è chiaro. Supponiamo ora che sia vero per tutti i gruppi di ordine $ < 2^n $ e supponiamo $ 2^ n \leq |G| < 2^{n+1} $. Quando prendiamo un insieme minimale di $ h < n $ generatori $ \langle g_1, \dots g_h \rangle $ di un sottogruppo di $ H < G $, questo sarà isomorfo a $ \left(\mathbb{Z}_2\right)^h $ per ipotesi induttiva. Prendiamo un elemento $ g \notin H$, abbiamo che $ H $ e $ \langle g \rangle \cong \mathbb{Z}_2 $ sono sottoinsiemi normali e con intersezione banale, pertanto il sottoinsieme \[ \langle g, g_1, \dots g_h \rangle \cong H \times\langle g \rangle \cong \left(\mathbb{Z}_2\right)^h \times \mathbb{Z}_2 \cong \left(\mathbb{Z}_2\right)^{h+1} \]
+	per il teorema (??).
+	Così facendo possiamo continuare ad aggiungere elementi fino a saturare il gruppo e raggiungere la tesi.
+\end{proof}
+Sia ora $ g \in G $ l'elemento di ordine 4 richiesto e $ C_4 = \langle g \rangle $. Sia $ h \notin C_4 $ e consideriamo l'azione di coniugio di $ h $ su $ C_4 $
+\fun{\phi_g}{C_4}{C_4}{x}{hxh^{-1}}
+ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché $ \Aut{\mathbb{Z}_4} \cong \mathbb{Z}_2 $, abbiamo solo due possibilità: $$  \varphi_g =  id^{\pm 1}  $$
+
+\begin{itemize}
+	\item $ \left[\varphi_g =  id, \, \text{ord}(h) =2\right] $. Dunque gli elementi di $ C_4 $ commutano con $ h $, l'intersezione tra $ C_4 $ e $ \langle h \rangle $ è banale e il loro prodotto genera $ G $ per ragioni di cardinalità, pertanto \[ G \cong  \langle h \rangle\times C_4  \cong  \mathbb{Z}_2\times\mathbb{Z}_4 \]
+	\item $ \left[\varphi_g =  id, \, \text{ord}(h) =4\right] $. Possiamo considerare $ h^2 $ e ricondurci al caso precedente.
+	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^-1 $, quindi per la nostra caratterizzazione dei gruppi diedrali \[ G \cong D_4 \]
+	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
+	\[ e = ghgh = ghgh^{-1}hh = hh \neq e \]
+	Dunque abbiamo trovato l'ordine di tutti gli elementi, possiamo costruire un'isomorfismo esplicito con $ Q_8 $.
+\end{itemize}
+\begin{definition}[Quaternioni]
+	Sia $ Q_8 $ l'insieme $ \{ \pm 1, \pm i, \pm j, \pm, k \} $ con l'operazione che soddisfa
+	\[ i^2 = j^2 = k^2 = ijk = -1 \]
+\end{definition}
+\end{multicols}
+
+\subsection{Lemmi vari}
+
+\begin{multicols}{2}
+	
+\begin{theorem}
+	Siano $ G $ un gruppo finito e $ H $ un sottogruppo che ha come ordine il più piccolo primo $ p $ che divide $ G $, allora $ H \lhd G $.
+\end{theorem}
+\begin{proof}
+	Consideriamo l'azione di $ G $ sull'insieme $ X $ dei laterali di $ H $ per moltiplicazione a sinistra \fun{\Phi}{G}{\mathcal{S}_p}{g}{\Pi_g : xH \mapsto gxH}
+	Osserviamo che 
+	\begin{align*}
+		g \in \Stab{xH} &\Leftrightarrow gxH = xH \\
+		&\Leftrightarrow x^{-1}gx \in H \\
+		&\Leftrightarrow g \in xHx^{-1} \\
+	\end{align*}
+	dunque $ \Stab{xH} = xHx^{-1} $ è il sottogruppo coniugato di $ H $ rispetto ad $ x $. Possiamo ora riscrivere il nucleo come
+	\[ \ker\Phi = \bigcap_{x \in G} xHx^{-1} < H \]
+	e osservare che, per il Primo Teorema di Omomorfismo
+	\[ \Phi ' : \faktor{G}{\ker\Phi} \rightarrow \mathcal{S}_p \]
+	è iniettivo e pertanto
+	\[ \left| \faktor{G}{\ker\Phi} \right| \mid |\mathcal{S}_p| = p! \]
+	ma $ p $ era il più piccolo primo a dividere $ |G| $, quindi non potendo $ \ker\Phi $ coincidere con tutto il gruppo, dovrà essere proprio $ H $. Il che conclude la dimostrazione.
+\end{proof}
+
+\begin{remark}
+	Sia $ G $ un gruppo abeliano. Sia \fun{\psi_n}{G}{G}{x}{x^n} preso un qualunque automorfismo $ \varphi \in \Aut{G} $ il seguente diagramma è commutativo
+	\[ \begin{tikzcd}
+	G \arrow{r}{\psi _n} \arrow[swap]{d}{\varphi} & G \arrow{d}{\varphi} \\
+	G \arrow{r}{\psi _n} & G
+	\end{tikzcd}
+	\]
+	quindi $ \ker\psi _n $ e $ \psi _n(G) $ sono caratteristici in $ G $. \\
+	
+\end{remark}
+	
+	\textbf{Esercizi.}
+	\begin{enumerate}
+		\item Trova $ \Aut{\mathbb{Z}\times\mathbb{Z}_n} $.
+		\item Trova $ \Aut{\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_4} $.
+		\item Trova $ \Aut{Q_8 \times D_4} $.
+		\item Sia $ G $ un gruppo abeliano finito. Se $ H \lhd G $ è ciclico e lo è anche il loro quoziente, allora anche $ G $ è ciclico.
+	\end{enumerate}
+\end{multicols}
+
+\subsection{Prodotto Semidiretto}
+\begin{multicols}{2}
+	\begin{definition}[Prodotto semidiretto]
+		Siano $ H, K $ due gruppi e $ \varphi: K \rightarrow \Aut{H} $ un'omomorfismo. Si dice prodotto semidiretto
+		\[ H \rtimes_\varphi K \]
+		l'insieme dato dal prodotto cartesiano, dotato dell'operazione
+		\[ (h, k) \cdot (h', k') = (h \varphi_k(h'), kk') \]
+	\end{definition}
+
+\begin{remark}
+	Il prodotto semidiretto è un gruppo.
+\end{remark}
+\begin{remark}
+	Il prodotto diretto è un prodotto semidiretto in cui $ \varphi $ manda tutti gli elementi di $ K $ nell'identità su $ H $.
+\end{remark}
+\begin{remark}
+	Sia $ \bar{H} = H \times {e_k} $. Si ha $$  \ker\Pi_K =  \bar{H} \lhd H \rtimes_\varphi K  $$ qualunque sia l'omomorfismo $ \varphi$. Infatti $ \bar{H} $ è il nucleo dell'omomorfismo di proiezione su $ K $.
+\end{remark}
+\begin{remark}
+	Inoltre $ \bar{K}$ se e solo se il prodotto è diretto. $$  \bar{K} \lhd H \rtimes_\varphi K  \;\Leftrightarrow\; \rtimes = \times $$
+\end{remark}
+
+\begin{theorem}[Teorema di decomposizione in prodotto semidiretto]
+	Siano $ G $ un gruppo e $ H, K < G $ sottogruppi, con $ H \lhd G $ normale. Se \begin{enumerate}
+		\item $ HK = G $
+		\item $ H \cap G = \{e\} $
+	\end{enumerate}
+allora $ G \cong H \rtimes_\varphi K $ dove $ \varphi $ manda $ k $ nella corrispondente azione di coniugio \fun{\varphi}{K}{\Aut{H}}{k}{\varphi_k : h \mapsto hkh^{-1}}
+\end{theorem}
+\begin{proof}
+	Consideriamo \fun{\Phi}{H \rtimes_\varphi K}{G}{(h, k)}{hk}
+	questo
+	\begin{itemize}
+		\item è un omomorfismo, perché \begin{align*}
+			\Phi((h, k)(h', k')) &= \Phi(h\varphi_k(h'), kk') \\
+			&= \Phi(hkh'k^{-1}, kk') \\
+			&= hkh'k^{-1}kk' \\
+			&= hkh'k'\\
+			&= \Phi(h, k)\,\Phi(h', k')\\
+		\end{align*}
+		\item è iniettivo e suriettivo per le ipotesi, come nella decomposizione in prodotto diretto.
+	\end{itemize}
+dunque $ \Phi $ è un isomorfismo come desiderato.
+\end{proof}
+
+\textbf{Esempi.}
+
+\end{multicols}
+
 
 \end{document}
