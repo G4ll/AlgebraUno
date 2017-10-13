@@ -41,6 +41,9 @@
 \chead{\textbf{\textsf{\Title}}}
 \lhead{\textsf{\today}}
 
+% Crea una nuova pagina per ogni sottosezione
+\newcommand{\subsectionbreak}{\clearpage}
+
 % Per avere le sezioni con le lettere
 \renewcommand{\thesection}{\Alph{section}}
 
@@ -557,13 +560,12 @@ allora $ G \cong H \times K $.
 \end{multicols}
 
 \subsection{Classificazione dei Gruppi di ordine 8}
-
 \[ \begin{tikzcd}
-& \text{esistono elementi di ordine 8?} \arrow{r}{\text{sì}} \arrow[swap]{d}{no} & \mathbb{Z}_8 \\
-& \text{tutti gli elementi hanno ordine 2?} \arrow{r}{\text{sì}} \arrow[swap]{d}{no} & \mathbb{Z}_2 \times \mathbb{Z}_2 \times \mathbb{Z}_2 \\
-& \text{esiste } h \notin C_4 \text{ di ordine 4?} \arrow{dr}{\text{no}} \arrow{dl}{\text{sì}} \\
-\text{il coniugio per }h\text{ cos'è?} \arrow{d}{\text{-id}} \arrow{dr}[swap]{\text{id}}  & & \text{il coniugio per }h\text{ cos'è?} \arrow{d}{\text{-id}} \arrow{dl}[swap]{\text{id}}\\
-Q_8 & \mathbb{Z}_2 \times \mathbb{Z}_4 & D_4
+\boxed{\exists g \mid \text{ord}(g) = 8} \arrow{r}{\text{sì}} \arrow[swap]{d}{no} & \mathbb{Z}_8 \\
+\boxed{g^2 = e \;\;\forall g \arrow{r}{\text{sì}}} \arrow[swap]{d}{no} & \left(\mathbb{Z}_2\right)^3 \\
+\boxed{\varphi_h \mid h \notin C_4 \arrow{d}{\text{-id}}} \arrow{r}{\text{id}} & \mathbb{Z}_2 \times \mathbb{Z}_4  \\
+\boxed{\text{ord}(h) = 2} \arrow{r}{\text{sì}} \arrow{d}[swap]{no}  & D_4 \\
+Q_8
 \end{tikzcd}
 \]
 
