@@ -33,7 +33,6 @@
 \newtheorem{definition}[theorem]{Definizione}
 \renewcommand\qedsymbol{$\clubsuit$}
 
-
 % Frontespizio e piè di pagina
 \pagestyle{fancy}
 \fancyhf{}
@@ -96,7 +95,7 @@
 	\item $ \Aut{\mathbb{Z}} \cong \{\pm id\} \cong \mathbb{Z}_2 $
 	\item $ \Aut{\mathbb{Z}_n} \cong \mathbb{Z}_n^\times $
 	\item $ \Aut{\mathbb{Q}} \cong \mathbb{Q}^\times $
-	\item $ \Aut{\mathbb{R}} \cong \mathcal{S}(\mathbb{R}) \times \mathbb{Q}^\times $
+	\item $ \Aut{\mathbb{R}} \cong \; ? $
 \end{enumerate} 
 
 \begin{definition}[Gruppo degli automorfismi interni]
@@ -480,7 +479,7 @@ A un certo punto vorremo arrivare a dimostrare il seguente risultato, che ora en
 	Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo. Ovvero $ H < G $, dove $ |G| = p^mn $ con $ (m, n) = 1 $ e $ |H| = p^m $.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}{\label{struttura}}
 	Sia $ G $ un gruppo e $ H, K \lhd G $ due sottogruppi normali. Se
 	\begin{enumerate}
 		\item $ HK = G $
@@ -580,7 +579,7 @@ Q_8
 \end{theorem}
 \begin{proof}
 	Osserviamo che $ a^2b^2 = e = (ab)^2 = abab $ e, moltiplicando per $ a $ a sinistra e per $ b $ a destra, otteniamo $ ab = ba $ per ogni $ a, b \in G $. Pertanto $ G $ è abeliano. Possiamo ora procedere per induzione sulla dimensione di $ G $. Se $ |G| = 2 $ il risultato è chiaro. Supponiamo ora che sia vero per tutti i gruppi di ordine $ < 2^n $ e supponiamo $ 2^ n \leq |G| < 2^{n+1} $. Quando prendiamo un insieme minimale di $ h < n $ generatori $ \langle g_1, \dots g_h \rangle $ di un sottogruppo di $ H < G $, questo sarà isomorfo a $ \left(\mathbb{Z}_2\right)^h $ per ipotesi induttiva. Prendiamo un elemento $ g \notin H$, abbiamo che $ H $ e $ \langle g \rangle \cong \mathbb{Z}_2 $ sono sottoinsiemi normali e con intersezione banale, pertanto il sottoinsieme \[ \langle g, g_1, \dots g_h \rangle \cong H \times\langle g \rangle \cong \left(\mathbb{Z}_2\right)^h \times \mathbb{Z}_2 \cong \left(\mathbb{Z}_2\right)^{h+1} \]
-	per il teorema (??).
+	per il teorema di struttura \ref{struttura}.
 	Così facendo possiamo continuare ad aggiungere elementi fino a saturare il gruppo e raggiungere la tesi.
 \end{proof}
 Sia ora $ g \in G $ l'elemento di ordine 4 richiesto e $ C_4 = \langle g \rangle $. Sia $ h \notin C_4 $ e consideriamo l'azione di coniugio di $ h $ su $ C_4 $
@@ -605,7 +604,7 @@ ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché 
 
 \begin{multicols}{2}
 	
-\begin{theorem}
+\begin{theorem}\label{ppp}
 	Siano $ G $ un gruppo finito e $ H $ un sottogruppo che ha come ordine il più piccolo primo $ p $ che divide $ G $, allora $ H \lhd G $.
 \end{theorem}
 \begin{proof}
@@ -691,7 +690,40 @@ dunque $ \Phi $ è un isomorfismo come desiderato.
 \end{proof}
 
 \textbf{Esempi.}
+\begin{enumerate}
+	\item $ \mathcal{S}_n \cong A_n \rtimes_\varphi \langle (1 \; 2) \rangle $, con $ \varphi $ di coniugio.
+	\item $ D_n \cong \langle \rho \rangle \rtimes_\varphi \langle \sigma \rangle $, con $ \varphi $ di coniugio.
+\end{enumerate}
+\end{multicols}
 
+
+\subsection{Sottogruppi di Ordine $ pq $}
+\begin{multicols}{2}
+	Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. Allora necessariamente
+	\[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p} \]
+	Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale $$  K = \langle x \rangle < G \quad\text{e}\quad H = \langle y \rangle \lhd G $$ per il teorema \ref{ppp}. Inoltre osserviamo che $ HK = G $ e i due sottogruppi hanno intersezione banale. Quindi
+	\[ G \cong H \rtimes_\varphi K \]
+	dove
+	\fun{\varphi_1}{K}{\Aut{H} \cong \mathbb{Z}_q^\times}{y}{\varphi_y: x \mapsto yxy^{-1}}
+	e necessariamente dobbiamo avere che
+	\[ yxy^{-1} = x^k \qquad\text{con}\quad (k, q) = 1 \]
+	ma, poiché $ \varphi $ è un omomorfismo, abbiamo che
+	\[ \text{ord}\left(\varphi_y\right) \mid \text{ord}(y) = p \]
+	quindi abbiamo solo due casi: $ \text{ord}\left(\varphi_y\right) = 1 $ e $ \text{ord}\left(\varphi_y\right) = p $. Nel primo caso $ \varphi $ manda ogni elemento nell'identità, dunque il prodotto semidiretto è in realtà diretto e dunque
+	\[ G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{q} \]
+	Nel secondo caso dobbiamo avere $$  p = \text{ord}\left(\varphi_y\right) \mid \text{ord}(x^k) \mid q-1  $$
+	Vogliamo mostrare che qualunque omomorfismo $ \psi $ da $ K $ a $ \Aut{H} $, non banale, costruisce un prodotto semidiretto isomorfo a $ G $ e ci è pertanto concesso scrivere
+	\[ G \cong H \rtimes K \]
+	
+	Osserviamo innanzitutto che le azioni del tipo
+	\[ \varphi_i: y \mapsto \varphi_{y^i}: x \mapsto y^ixy^{-i} \qquad 0 \leq i < p \]
+	sono tutte e sole le azioni di $ K $ su $ H $.
+	
+	Queste sono $ p $ e sono tutte distinte.
+	
+	Inoltre una qualunque azione è un omomorfismo da $ K $ ad $ \Aut{H} \cong \Aut{\mathbb{Z}_q} \cong \mathbb{Z}_{q-1} $. Dovendo l'azione avere ordine $ p $, dev'essere un omomorfismo da $ K $ al sottogruppo ciclico di ordine $ p $ di $ \Aut{H} $. Pertanto, escluso l'omomorfismo banale $ \varphi_0 $, gli omomorfismi sono isomorfismi del gruppo ciclico sopracitato e perciò sono in totale $ 1 + \left|\Aut{\mathbb{Z}_p}\right| = 1 + (p-1) = p$.
+	
+	A questo punto è facile convincersi che la mappa \fun{\Phi}{H \rtimes_{\varphi_1} K}{H \rtimes_{\varphi_i} K}{(x, y)}{(x, y^{k})} è un'isomorfismo tra tutti i possibili prodotti semidiretti.
 \end{multicols}
 
 
