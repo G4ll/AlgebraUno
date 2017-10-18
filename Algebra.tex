@@ -220,7 +220,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\item Una possibile dimostrazione del Teorema di Cauchy:
 \end{enumerate}
 
-\begin{theorem}[di Cauchy]
+\begin{theorem}[di Cauchy] \label{cauchy}
 	Per ogni fattore primo $ p $ di $ |G| $ esiste un elemento $ g $ di $ G $ di ordine $ p $.
 \end{theorem}
 \begin{proof}[Dimostrazione Classica]
@@ -694,36 +694,119 @@ dunque $ \Phi $ è un isomorfismo come desiderato.
 	\item $ \mathcal{S}_n \cong A_n \rtimes_\varphi \langle (1 \; 2) \rangle $, con $ \varphi $ di coniugio.
 	\item $ D_n \cong \langle \rho \rangle \rtimes_\varphi \langle \sigma \rangle $, con $ \varphi $ di coniugio.
 \end{enumerate}
+
+\columnbreak
+\textbf{Classificazione dei gruppi di ordine pq.} \\
+
+Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. Allora necessariamente
+\[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p} \]
+Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale $$  K = \langle x \rangle < G \quad\text{e}\quad H = \langle y \rangle \lhd G $$ per il teorema \ref{ppp}. Inoltre osserviamo che $ HK = G $ e i due sottogruppi hanno intersezione banale. Quindi
+\[ G \cong H \rtimes_{\varphi_1} K \]
+dove
+\fun{\varphi_1}{K}{\Aut{H} \cong \mathbb{Z}_q^\times}{y}{\varphi_y: x \mapsto yxy^{-1}}
+e necessariamente dobbiamo avere che
+\[ yxy^{-1} = x^k \qquad\text{con}\quad (k, q) = 1 \]
+ma, poiché $ \varphi $ è un omomorfismo, abbiamo che
+\[ \text{ord}\left(\varphi_y\right) \mid \text{ord}(y) = p \]
+quindi abbiamo solo due casi: $ \text{ord}\left(\varphi_y\right) = 1 $ e $ \text{ord}\left(\varphi_y\right) = p $. Nel primo caso $ \varphi $ manda ogni elemento nell'identità, dunque il prodotto semidiretto è in realtà diretto e dunque
+\[ G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{q} \]
+Nel secondo caso dobbiamo avere $$  p = \text{ord}\left(\varphi_y\right) \mid \text{ord}(x^k) \mid q-1  $$
+Vogliamo mostrare che qualunque omomorfismo $ \psi $ da $ K $ a $ \Aut{H} $, non banale, costruisce un prodotto semidiretto isomorfo a $ G $ e ci è pertanto concesso scrivere
+\[ G \cong H \rtimes K \]
+
+Osserviamo innanzitutto che le azioni del tipo
+\[ \varphi_i: y \mapsto \varphi_{y^i}: x \mapsto y^ixy^{-i} \qquad 0 \leq i < p \]
+sono tutte e sole le azioni di $ K $ su $ H $:
+
+\begin{itemize}
+	\item Queste sono $ p $ e sono tutte distinte.
+	
+	\item Una qualunque azione è un omomorfismo da $ K $ ad $$  \Aut{H} \cong \Aut{\mathbb{Z}_q} \cong \mathbb{Z}_{q-1}  $$ Dovendo l'azione avere ordine $ p $, dev'essere un omomorfismo da $ K $ al sottogruppo ciclico di ordine $ p $ di $ \Aut{H} $. Pertanto, escluso l'omomorfismo banale $ \varphi_0 $, gli omomorfismi sono isomorfismi del gruppo ciclico sopracitato e perciò sono in totale $$  1 + \left|\Aut{\mathbb{Z}_p}\right| = 1 + (p-1) = p $$
+\end{itemize}
+
+A questo punto è facile convincersi che la mappa \fun{\Phi}{H \rtimes_{\varphi_1} K}{H \rtimes_{\varphi_i} K}{(x, y)}{(x, y^{k})} è un'isomorfismo tra tutti i possibili prodotti semidiretti.
 \end{multicols}
 
-
-\subsection{Sottogruppi di Ordine $ pq $}
+\subsection{Teorema di Sylow}
 \begin{multicols}{2}
-	Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. Allora necessariamente
-	\[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p} \]
-	Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale $$  K = \langle x \rangle < G \quad\text{e}\quad H = \langle y \rangle \lhd G $$ per il teorema \ref{ppp}. Inoltre osserviamo che $ HK = G $ e i due sottogruppi hanno intersezione banale. Quindi
-	\[ G \cong H \rtimes_\varphi K \]
-	dove
-	\fun{\varphi_1}{K}{\Aut{H} \cong \mathbb{Z}_q^\times}{y}{\varphi_y: x \mapsto yxy^{-1}}
-	e necessariamente dobbiamo avere che
-	\[ yxy^{-1} = x^k \qquad\text{con}\quad (k, q) = 1 \]
-	ma, poiché $ \varphi $ è un omomorfismo, abbiamo che
-	\[ \text{ord}\left(\varphi_y\right) \mid \text{ord}(y) = p \]
-	quindi abbiamo solo due casi: $ \text{ord}\left(\varphi_y\right) = 1 $ e $ \text{ord}\left(\varphi_y\right) = p $. Nel primo caso $ \varphi $ manda ogni elemento nell'identità, dunque il prodotto semidiretto è in realtà diretto e dunque
-	\[ G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{q} \]
-	Nel secondo caso dobbiamo avere $$  p = \text{ord}\left(\varphi_y\right) \mid \text{ord}(x^k) \mid q-1  $$
-	Vogliamo mostrare che qualunque omomorfismo $ \psi $ da $ K $ a $ \Aut{H} $, non banale, costruisce un prodotto semidiretto isomorfo a $ G $ e ci è pertanto concesso scrivere
-	\[ G \cong H \rtimes K \]
+\begin{theorem}
+	Sia G un gruppo finito di ordine $ |G| = p^nm  $, dove $ p $ è primo e $ m $ è un intero a lui coprimo: $ (p, m) = 1 $. Allora sappiamo che:
+	\begin{itemize}
+		\item[$ \exists $.] Per ogni $ 0 \leq \alpha \leq n $, esiste un sottogruppo $ H<G $ di ordine $|H| = p^\alpha $.
+		\item[$ \subseteq $.] Ogni $ p $-sottogruppo è incluso in un $ p $-sylow.
+		\item[$ \varphi_g $.] Due qualsiasi $ p $-sylow sono coniugati.
+		\item[$ n_p $.] Il numero $ n_p $ di $ p $-sylow è congruo a $ 1 \mod{p}$.
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+		bla
+	\begin{itemize}
+
+		\item[$ \exists $.] Fissiamo $ 0 \leq \alpha \leq n $. Sia $ \mathcal{M}_\alpha $ l'insieme di tutti i sottoinsiemi di $ G $ di cardinalità $ p^\alpha $ \[ \mathcal{M}_\alpha = \{ M < G \mid |M| = p^\alpha \} \] possiamo allora calcolarci
+		\[ |\mathcal{M}_\alpha| = {p^nm \choose p^\alpha} = p^{n-\alpha}m \prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1} \]
+		e poiché $ v_p({p^nm-i}) = v_p(i) =  v_p({p^\alpha -i}) $, allora
+		$$  v_p\left(\prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1}\right) =  0  $$
+		e possiamo concludere che 
+		\[ p^{n-\alpha} \mid\mid \mathcal{M}_\alpha \]
+		Consideriamo ora l'azione di $ G $ su $ \mathcal{M}_\alpha $ data dalla moltiplicazione a sinistra
+		\fun{\Phi}{G}{\mathcal{S}(\mathcal{M}_\alpha)}{g}{\psi_g: M \mapsto gM}
+		Vogliamo ora mostrare che esiste uno stabilizzatore della cardinalità giusta. Per la solita decomposizione in orbite abbiamo
+		\[ |\mathcal{M}_\alpha| = \sum \frac{|G|}{|\Stab{M_i}|} \]
+		Per le osservazione sulla cardinalità, deve esistere un'orbita di cardinalità non divisibile per $ p^{n-\alpha +1} $
+		\[ \exists M_i \text{ tale che }  p^{n-\alpha +1}\nmid |\Orb{M_i}| \]
+		 Il corrispondente stabilizzatore avrà pertanto cardinalità divisibile almeno per $ p^\alpha $.
+		 Ma se fissiamo un elemento $ x \in M_i $ e consideriamo la funzione iniettiva
+		 \fun{f}{\Stab{M_i}}{M_i}{y}{xy}
+		 ci rendiamo conto che lo stabilizzatore non avrà una cardinalità maggiore dell'insieme che stabilizza
+		 \[ p \mid |\Stab{M_i}| \leq |M_i| = p^\alpha \]
+		 ed è dunque il sottogruppo che cercavamo.
+		
+		\item[$ \subseteq $.] Sia $ H < G $ un $ p $-sottogruppo $ |H| = p^\alpha $ e $ S $ un $ p $-sylow. Consideriamo l'azione di $ H $ sull'insieme $ X $ delle classi laterali di $ S $ per moltiplicazione a sinistra
+		\fun{F}{H}{\mathcal{S}(X)}{h}{\psi_h : gS \mapsto hgS}
+		Per la decomposizione in orbite
+		\[ m=[G:S]=|X| = \sum\frac{|H|}{|\Stab{gS}|} = \sum\frac{p^\alpha}{p^{e_i}} \]
+		ma, non potendo $ p $ dividere $ m $, esiste un laterale $ \bar{g}S $ stabilizzato da tutto $ H $. Ovvero
+		\[ h\bar{g}S = \bar{g}S \;\Leftrightarrow\; h \in \bar{g}S\bar{g}^{-1} \; \forall h \in H \]
+		Dunque $ H \in \bar{g}S\bar{g}^{-1} $, che è il $ p $-sylow cercato.
+		
+		\item[$ \varphi_g $.] Siano $ A, B $ $ p $-sylow. Per il punto precedente  \[ \exists g \in G \text{ tale che } A < gBg^{-1} \]
+		che hanno la stessa cardinalità e pertanto coincidono.
+		\item[$ n_p $.] Consideriamo l'azione di coniugio di un $ p $-sylow $ S $ sull'insieme $ Y $ dei suoi coniugati
+		\fun{\Psi}{S}{\mathcal{S}(Y)}{g}{\varphi_g: H \mapsto gHg^{-1}}
+		Mostriamo che l'orbita di $ S $ è l'unica banale. Infatti se $ H \in Y $ ha orbita banale significa che è stabilizzato da $ S $, dunque che i due commutano e pertanto il loro prodotto è un sottogruppo di $ G $. \[ |HS| = \frac{|H||S|}{|H \cap S|} = \frac{p^{2n}}{|H \cap S|} \mid p^nm \] Necessariamente $ |H \cap S| = p^n $ e dunque $ H = S $. Per una formula ancora mai usata
+		\[ n_p = |Y| = \Orb{S} + \sum_{H \neq S}\frac{|S|}{\Stab{H}} \equiv 1 \mod{p} \]
+		Per concludere è sufficiente osservare che se $ \Stab{H} \lneq S $ allora l'orbita corrispondente ha cardinalità divisibile per $ p $.
+	\end{itemize}
+\end{proof}
+
+\begin{theorem}
+	Ogni gruppo $ G $ abeliano finito è prodotto diretto dei suoi $ p $-sylow.
+\end{theorem}
+\begin{proof}
+	Visto che i gruppi sono abeliani usiamo la nozione additiva. Per ogni divisore $ d||G| $ dell'ordine del gruppo sia
+	\[ G_d = \ker\psi_d = \{ g \in G \mid dg = 0 \} \]
+	Ci è sufficiente mostrare che se $ G = p^nm $, come al solito, allora 
+	\[ G \cong G_{p^n} \times G_m \]
+	Osserviamo innanzitutto che $ G_{p^n} $ è un p-sylow. Dev'essere un $ p $-gruppo perché se $ |G_{p^n}| $ fosse divisibile per un primo $ q $, allora per il Teorema di Cauhcy \ref{cauchy} conterrebbe almeno un elemento di ordine $ q $, contro la sua definizione. A questo punto, dovendo contenere l'unico $ p $-sylow di $ G $  (il coniugio è banale negli abeliani, più sylow coinciderebbero), non può che esserlo (non può avere cardinalità maggiore).
+	E' inoltre immediato verificare che
+	\begin{enumerate}
+		\item I due sottogruppi sono normali in $ G $ perché è abeliano.
+		\item La loro intersezione è banale, perché tutti gli elementi del $ p $-sylow hanno ordine divisibile per un primo che non divide l'ordine $ m $ dell'altro sottogruppo.
+		\item La loro somma è $ G $. Infatti per Bezout esistono interi $ a, b $ tali che
+		\[ ap^n + bm = 1 \]
+		che moltiplicato per un qualunque elemento di $ g \in G $ diventa
+		\[ a(gp^n) + b(gm) = g \]
+		Osserviamo che $ gp^n \in G_{m} $, poiché $$  m (gp^n) = (mp^n) g = |G| g = 0  $$
+		Analogamente $ gm \in G_{p^n} $ e pertanto la somma dei due sottogruppi contiene $ G $ 
+	\end{enumerate}
 	
-	Osserviamo innanzitutto che le azioni del tipo
-	\[ \varphi_i: y \mapsto \varphi_{y^i}: x \mapsto y^ixy^{-i} \qquad 0 \leq i < p \]
-	sono tutte e sole le azioni di $ K $ su $ H $.
-	
-	Queste sono $ p $ e sono tutte distinte.
-	
-	Inoltre una qualunque azione è un omomorfismo da $ K $ ad $ \Aut{H} \cong \Aut{\mathbb{Z}_q} \cong \mathbb{Z}_{q-1} $. Dovendo l'azione avere ordine $ p $, dev'essere un omomorfismo da $ K $ al sottogruppo ciclico di ordine $ p $ di $ \Aut{H} $. Pertanto, escluso l'omomorfismo banale $ \varphi_0 $, gli omomorfismi sono isomorfismi del gruppo ciclico sopracitato e perciò sono in totale $ 1 + \left|\Aut{\mathbb{Z}_p}\right| = 1 + (p-1) = p$.
-	
-	A questo punto è facile convincersi che la mappa \fun{\Phi}{H \rtimes_{\varphi_1} K}{H \rtimes_{\varphi_i} K}{(x, y)}{(x, y^{k})} è un'isomorfismo tra tutti i possibili prodotti semidiretti.
+\end{proof}
+
+\textbf{Esercizi.}
+\begin{enumerate}
+	\item Chi è il 2-sylow di $ D_4 $?
+	\item Chi sono i gruppi di ordine $ 12 $?
+\end{enumerate}
 \end{multicols}
 
 

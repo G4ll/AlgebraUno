@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  16 OCT 2017 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  18 OCT 2017 16:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1374,16 +1374,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 633--635
 
 [9
 
-] [10
+]
+Underfull \hbox (badness 10000) in paragraph at lines 699--700
 
-] [11
+ []
+
+[10
+
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 746.
+
+[11
 
 ] (./Algebra.aux) ) 
 Here is how much of TeX's memory you used:
- 25575 strings out of 494934
- 500319 string characters out of 6180556
- 661913 words of memory out of 5000000
- 28456 multiletter control sequences out of 15000+600000
+ 25576 strings out of 494934
+ 500327 string characters out of 6180556
+ 661924 words of memory out of 5000000
+ 28457 multiletter control sequences out of 15000+600000
  15847 words of font info for 60 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,22n,84p,10396b,1047s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1408,7 +1419,7 @@ ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf
 -dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/wasy2-ps/wasy9.pfb>
-Output written on Algebra.pdf (11 pages, 273376 bytes).
+Output written on Algebra.pdf (11 pages, 282988 bytes).
 PDF statistics:
  131 PDF objects out of 1000 (max. 8388607)
  95 compressed objects within 1 object stream
