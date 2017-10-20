@@ -51,6 +51,7 @@
 \newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
 \newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
 \newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
+\newcommand{\gen}[1]{\langle x \rangle}
 
 \newcommand{\fun}[5]{\begin{align*}
 	#1 \colon #2 &\to #3 \\
@@ -445,8 +446,8 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Infine, tutte le trasposizioni hanno segno negativo. 
 \end{proof}
 \begin{definition}[Gruppo Alterno]
-	Chiamiamo $ A_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
-	\[ \ker(\text{sgn}) = A_n \lhd \mathcal{S}_n \]
+	Chiamiamo $ \mathcal{A}_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
+	\[ \ker(\text{sgn}) = \mathcal{A}_n \lhd \mathcal{S}_n \]
 \end{definition}
 
 \begin{theorem}
@@ -475,9 +476,7 @@ A un certo punto vorremo arrivare a dimostrare il seguente risultato, che ora en
  dove $n_1, \dots, n_k$ sono interi tali che $n_1 \mid n_2 \mid \dots \mid n_k $. 
 \end{theorem}
 
-\begin{definition}
-	Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo. Ovvero $ H < G $, dove $ |G| = p^mn $ con $ (m, n) = 1 $ e $ |H| = p^m $.
-\end{definition}
+
 
 \begin{theorem}{\label{struttura}}
 	Sia $ G $ un gruppo e $ H, K \lhd G $ due sottogruppi normali. Se
@@ -729,7 +728,10 @@ A questo punto è facile convincersi che la mappa \fun{\Phi}{H \rtimes_{\varphi_
 
 \subsection{Teorema di Sylow}
 \begin{multicols}{2}
-\begin{theorem}
+	\begin{definition}
+		Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo. Ovvero $ H < G $, dove $ |G| = p^mn $ con $ (m, n) = 1 $ e $ |H| = p^m $.
+	\end{definition}
+\begin{theorem}\label{sylow}
 	Sia G un gruppo finito di ordine $ |G| = p^nm  $, dove $ p $ è primo e $ m $ è un intero a lui coprimo: $ (p, m) = 1 $. Allora sappiamo che:
 	\begin{itemize}
 		\item[$ \exists $.] Per ogni $ 0 \leq \alpha \leq n $, esiste un sottogruppo $ H<G $ di ordine $|H| = p^\alpha $.
@@ -809,5 +811,136 @@ A questo punto è facile convincersi che la mappa \fun{\Phi}{H \rtimes_{\varphi_
 \end{enumerate}
 \end{multicols}
 
+\subsection{Automorfismi di un gruppo buffo}
+\begin{multicols}{2}
+	Vogliamo scoprire chi è $ \Aut{Q_8 \times D_4} $. Per far questo, possiamo scomporre un qualunque automorfismo $ \varphi $ nelle sue restrizioni ai due termini del prodotto e proiettarli sulle due componenti. Il seguente diagramma magico è molto esplicativo
+	\[ \begin{tikzcd}
+	Q_8 \arrow[swap]{dr}{} & & & Q_8 \\
+	D_4 \arrow[swap]{r}{} & G \arrow{r}{\varphi} & G \arrow[swap]{ur}{\Pi_Q}\arrow[swap]{r}{\Pi_D} & D_4
+	\end{tikzcd}\]
+	Dunque possiamo scomporre l'automorfismo nei quattro omomorfismi
+	\[ \varphi= \left(\begin{matrix}
+	\alpha & \beta \\
+	\gamma & \delta \\
+	\end{matrix}\right) \]
+	dove 
+	\begin{align*}
+		\alpha: Q_8 \rightarrow Q_8 \qquad & \qquad \beta: D_4 \rightarrow Q_8 \\
+		\gamma: Q_8 \rightarrow D_4 \qquad & \qquad \delta: D_4 \rightarrow D_4
+	\end{align*}
+	 Iniziamo ad analizzare i possibili omomorfismi.
+	 \begin{itemize}
+	 	\item [$ \beta $.] Consideriamo le possibili immagini per dimensione, tra i sottogruppi dei quaternioni:
+	 	\begin{itemize}
+	 		\item [$\{e\}  $.] Ovviamente abbiamo un omomorfismo banale.
+	 		\item [$ \mathbb{Z}_2 $.] Il nucleo dev'essere un sottogruppo di indice 2 e il diedrale ne ha tre: $ \langle \rho \rangle, \langle \rho^2, \sigma \rangle, \langle \rho^2, \sigma\rho \rangle $.
+	 		\item [$ \mathbb{Z}_4 $.] L'unico sottogruppo di indice $ 4 $ del diedrale è $ \langle \rho \rangle \cong \mathbb{Z}_4 $ ed è il nucleo di un omomorfismo che uccide i termini di ordine $ 4 $.
+	 		\item [$ Q_8 $.] Non è possibile, sarebbe un isomorfismo!
+	 	\end{itemize}
+	 	Tutti questi omomorfismi preservano necessariamente i centralizzatori, perché l'unico sottogruppo dei quaternioni di ordine $ 2 $ è il centro. Dunque sembrano accettabili tutti gli omomorfismi
+	 	\[ \beta: D_4 \to Z(Q_8) \]
+	 	
+	 	\item [$ \gamma $.] Consideriamo le possibili immagini, per dimensione:
+	 	\begin{itemize}
+	 		\item [$\{e\}  $.][$ \checkmark $] Ovviamente abbiamo un omomorfismo banale.
+	 		\item [$ \mathbb{Z}_2 $.][$ \checkmark $] Il nucleo dev'essere un sottogruppo di indice 2 e i quaterionioni ne hanno tre: $ \langle i \rangle, \langle j \rangle, \langle k \rangle $.
+	 		\item [$ \mathbb{Z}_4 $.] L'unico sottogruppo di indice $ 4 $ dei quaternioni è $ \{\pm 1\} $ ed è il nucleo di un omomorfismo che uccide i termini di ordine $ 4 $.
+	 		\item [$ \mathbb{Z}_2\times\mathbb{Z}_2 $.] Possiamo mandare i quaternioni in $ \left(\mathbb{Z}_2\right)^3 $ usando i tre omomorfismi con immagine $ \mathbb{Z}_2 $, questo omomorfismo non sarà suriettivo, altrimenti sarebbe un isomorfismo, e ha almeno $ 4 $ elementi nell'immagine, visto che gli omomorfismi di sopra sono distinti. Quindi, permutando le componenti opportunamente, otteniamo $ 6 $ omomorfismi.
+	 		\item [$ D_4 $.] Non è possibile, sarebbe un isomorfismo!
+	 	\end{itemize}
+	 	possiamo però escludere alcuni omomorfismi osservando che l'automorfismo $ \varphi $ deve preservare i centralizzatori. Infatti osservando il magico diagramma
+	 	\begin{align*}
+	 		Q_8 &\hookrightarrow Q_8 \times D_4 &\rightarrow Q_8 \times D_4 \\
+	 		i &\mapsto (i, e) &\mapsto (\alpha(i), \gamma(i))
+	 	\end{align*}
+		 scopriamo che $ Z(i, e) \cong \mathbb{Z}_4 \times D_4 $. Possiamo ora cercare di capire cosa dovrebbe essere $ Z(\alpha(i))\times Z(\gamma(i)) $, per esempio elencando i possibili prodotti di sottogruppi di ordine $ 32 $
+		 \begin{itemize}
+		 	\item [$ Q_8 \times \left(\mathbb{Z}_2\right)^2 $.]
+		 	Che però ha solo $ 25 $ elementi di ordine $ 2 $.
+		 	\item [$ Q_8 \times \mathbb{Z}_4 $.]
+		 	Che ha sol $ 11 $ elementi di ordine $ 2 $.
+		 	\item [$ \mathbb{Z}_4 \times \left(\mathbb{Z}_2\right)^2 $.] Che però è abeliano.
+		 	\item [$ \mathbb{Z}_4 \times \mathbb{Z}_4 $.] Che è abeliano.
+		 	\item [$ \mathbb{Z}_4 \times D_4$.][$ \checkmark $] Che sicuramente è il gruppo che cerchiamo.
+		 \end{itemize}
+	 quindi necessariamente il centralizzatore di $ Z(\gamma(i)) \cong D_4 $ e pertanto $ \gamma(i) $ è un elemento del centro di $ D_4 $, che ha solo due elementi. Quindi gli omomorfismi $ \gamma $ accettabili sono solo quello banale e i tre che hanno immagine in $ \mathbb{Z}_2 $. Dunque sembrano accettabili tutti gli omomorfismi
+	 \[ \beta: Q_8 \to Z(D_4) \]
+	 
+	 \item [$ \alpha $.] Dev'essere un isomorfismo. Se non fosse un'isomorfismo l'immagine non potrebbe avere dimensione $ 4 $, perché come già visto i sottogruppi di indice adatto eliminano gli elementi di ordine $ 4 $, e non potrebbe avere dimensione più piccola, perché altrimenti il primo termine dell'immagine di $ \varphi $ apparterrebbe sempre al centro di $ G $.
+	 
+	 \item [$ \delta $.] Analogamente dev'essere un isomorfismo. 
+	\end{itemize}
+Mostriamo ora che le condizioni trovate sono sufficienti. Ci basta mostrare che $ \varphi $, costruito con le componenti sopra trovate, è iniettivo. Supponiamo di aver trovato $ (x, y) \in G $ tale che
+\[ \varphi(x, y) = (\alpha(x)\beta(y), \gamma(x)\delta(y)) = (e, e) \]
+Visto che $ \beta(y) $ e $ \gamma(x) $ stanno nei centri dei rispettivi insiemi, anche $ \alpha(x) $ e $ \delta(y) $, che sono i loro inversi, vi staranno. Ma $ \alpha $ e $ \delta $ sono isomorfismi, pertanto anche $ x, y $ staranno nei centri dei loro rispettivi gruppi! Ma $ \beta $ e $ \gamma $ contengono i centri nei loro nuclei, quindi si annullano, così come i rispettivi isomorfismi. Così $ x, y $ sono necessariamente l'elemento neutro del proprio gruppo e $ \ker\varphi = \{(e, e)\} $. \\
+
+Conosciamo già $ \Aut{D_4} $, cerchiamo, per concludere, di capire chi sia $ \Aut{Q_8} $. \\
+
+Qui succederanno cose. \\
+
+\begin{theorem}
+	Il gruppo alterno $ \mathcal{A}_n $ è semplice per $ n \geq 5 $.
+\end{theorem}
+
+
+\end{multicols}
+
+
+\subsection{Teorema Fondamentale dei Gruppi Abeliani Finiti}
+\begin{multicols}{2}
+\begin{theorem}\label{tfgaf}
+	Se $ G $ è un gruppo abeliano finito allora si decompone in modo unico come prodotto diretto di gruppi ciclici di ordine $ n_1, \dots, n_s $ \[ G \cong \mathbb{Z}_{n_1} \times \cdots \times \mathbb{Z}_{n_s} \] con $ n_1 \mid \dots \mid n_s $.
+\end{theorem}
+\begin{proof}
+	Avendo già dimostrato che ogni gruppo abeliano finito si decompone nel prodotto dei suoi $ p $-sylow ci è sufficiente dimostrare la tesi per i $ p $-gruppi. Dato gruppo abeliano $ G $ di ordine $ p^n $, ci basta mostrare che possiamo scriverlo come prodotto diretto del generato da un suo elemento di ordine massimo $ g $ e un altro sottogruppo $ K $
+	\[ G \cong \langle g \rangle \times K \]
+	così da poter procedere per induzione. \\
+	
+	Mostriamo questo risultato intermedio per induzione sull'ordine del $ p $-gruppo $ G $. Se $ |G|=p $ allora il gruppo è ciclico ed è generato da $ g $. Supponiamo ora la tesi vera per ogni $ k $ con $ 1 \leq k < n $ e prendiamo $ g $ un elemento di ordine massimo, diciamo $ p^m $. Prendiamo ora un elemento $ h \in G  $ che non stia nel sottogruppo $ \langle g \rangle $ e in modo che abbia ordine minimo possibile, se non esiste abbiamo $ G = \langle g \rangle $ e abbiamo finito. \\
+	
+	Vogliamo ora mostrare che 
+	\[ \langle g \rangle \cap \langle h \rangle = \{e\} \]
+	L'ordine di $ h^p $ è ovviamente minore di quello di $ h $, dunque $ h^p \in \langle g \rangle $, ovvero esiste un intero $ r \in \mathbb{Z} $ tale che
+	\[ h^p = g^r \]
+	L'ordine di $ g^r $ è al più $ p^{m-1} $, per tanto non è un generatore di $ \langle g \rangle $, dunque per un qualche intero $ s $ abbiamo
+	\[ h^p = g^r = g^{ps} \]
+	e succede che 
+	\[ (g^{-s}h)^p = g^{-sp}h^p = e \]
+	esiste un elemento di ordine $ p $ che non appartiene a $ \langle g \rangle $! Quindi anche l'ordine di $ h $ è $ p $ e i due sottogruppi devono essere disgiunti. \\
+	
+	Osserviamo ora che, detto $ H = \langle h \rangle $, l'ordine di $ gH $ in $ \faktor{G}{H} $ è lo stesso di $ g $ in $ G $, in particolare è ancora massimo. Se fosse più piccolo, sarebbe al più $ p^{m-1} $ e
+	\[ H = (gH)^{p^{m-1}} = g^{p^{m-1}}H \]
+	e pertanto $ g^{p^{m-1}} \in H $, assurdo.
+	 Per l'ipotesi induttive e il teorema di corrispondenza
+	\[ \faktor{G}{H} \cong \langle gH \rangle \times \faktor{K}{H} \]
+	per un certo sottogruppo $ H < K < G $. Mostriamo che $ K $ è il sottogruppo che cercavamo
+	\begin{itemize}
+		\item $ \langle g \rangle \cap K = \{e\} $. Infatti se $ b $ stesse nell'intersezione, $ bH $ apparterrebbe all'intersezione $ \langle gH \rangle \cap \faktor{K}{H} $ che è $ H $, dunque $ b \in H $.
+		\item $ G = \langle g \rangle K $. Per ragioni di cardinalità. 
+	\end{itemize}
+\end{proof}
+	
+\textbf{Classificazione dei Gruppi di Ordine 30.}\\
+Tiriamo a caso qualche gruppo di quest'ordine
+\[ \mathbb{Z}_2\times\mathbb{Z}_3\times\mathbb{Z}_5 \qquad D_{15} \qquad D_5\times\mathbb{Z}_3 \qquad D_{3}\times\mathbb{Z}_5 \]
+questi sono distinti perché il primo è l'unico abeliano e i centri di dei seguenti sono rispettivamente $ \{e\},\, \mathbb{Z}_3,\, \mathbb{Z}_5 $. Sappiamo che
+\[ n_5 \equiv 1 \mod{5} \qquad\text{e}\qquad n_5 \mid 6 \]
+per il Teorema di Sylow \ref{sylow} e perché $ n_5 \mid |G| $ in quanto cardinalità dell'orbita dell'azione di coniugio, rispettivamente. E, analogamente
+\[ n_3 \equiv 1 \mod{3} \qquad\text{e}\qquad n_3 \mid 10 \]
+Allora, se $ P_5 $ non è normale, ci sono sei 5-sylow, quindi 24 elementi di ordine 5. Tra i pochi elementi che rimangono non ci stanno sicuramente dieci 3-sylow e pertanto $ P_3 $ è normale. Allora $ P_3 $ e $ P_5 $ commutano, dunque
+\[ P_3P_5 < G \]
+e avendo indice $ 2 $ è normale, nonché ciclico.
+
+Abbiamo allora che
+\[ G \cong \mathbb{Z}_{15} \rtimes_\varphi \mathbb{Z}_2 \]
+per una qualche azione di coniugio 
+\fun{\varphi}{\mathbb{Z}_2}{\mathbb{Z}_{15}}{y}{\varphi_y: x \mapsto yxy^{-1} = x^a}
+sapendo che $ \phi_y^2(x) = x^{a^2} = x $, dobbiamo avere che $$  a^2 \equiv 1 \mod{15}  $$ e risolvendo il sistema di diofantee troviamo
+\[ a = \pm 1,\, \pm 4 \mod{15} \]
+e ognuna di questa azioni ci costruisce un prodotto diretto a uno dei gruppi trovati all'inizio.
+
+Devo Finireeeeeeeee
+	
+\end{multicols}
 
 \end{document}
