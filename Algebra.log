@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  25 OCT 2017 17:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  28 OCT 2017 11:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1546,29 +1546,29 @@ Package amsmath Warning: Foreign command \atopwithdelims;
 [11
 
 ] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 941--943
+Underfull \hbox (badness 10000) in paragraph at lines 946--948
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 944--945
+Underfull \hbox (badness 10000) in paragraph at lines 949--950
 
  []
 
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 981--983
+Underfull \hbox (badness 10000) in paragraph at lines 986--988
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 984--985
+Underfull \hbox (badness 10000) in paragraph at lines 989--990
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 993--995
+Underfull \hbox (badness 10000) in paragraph at lines 998--1000
 
  []
 
@@ -1577,18 +1577,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 993--995
 ] [15
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1061.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1061.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1083.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1083.
  (./Algebra.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1061.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1061.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1083.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1083.
 
 Package rerunfilecheck Info: File `Algebra.out' has not changed.
 (rerunfilecheck)             Checksum: F49CF10506E31C8AF1181E0579BEB407;951.
  ) 
 Here is how much of TeX's memory you used:
- 29183 strings out of 494934
- 555111 string characters out of 6180556
+ 29191 strings out of 494934
+ 555167 string characters out of 6180556
  750551 words of memory out of 5000000
  31898 multiletter control sequences out of 15000+600000
  15847 words of font info for 60 fonts, out of 8000000 for 9000
@@ -1615,10 +1615,10 @@ ts/type1/public/amsfonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/wasy2-ps/wasy9.pfb>
-Output written on Algebra.pdf (15 pages, 314054 bytes).
+Output written on Algebra.pdf (15 pages, 316528 bytes).
 PDF statistics:
- 361 PDF objects out of 1000 (max. 8388607)
- 318 compressed objects within 4 object streams
- 128 named destinations out of 1000 (max. 500000)
+ 370 PDF objects out of 1000 (max. 8388607)
+ 327 compressed objects within 4 object streams
+ 136 named destinations out of 1000 (max. 500000)
  117 words of extra memory for PDF output out of 10000 (max. 10000000)
 

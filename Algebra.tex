@@ -82,7 +82,7 @@
 % Per disegnare diagrammi commuatativi
 \usepackage{tikz-cd}
 
-% Serve a decidere il bullet delle liste puntate
+% Bullet delle liste puntate
 \renewcommand\labelitemi{$ \blacktriangleright $}
 
 \begin{document}
@@ -775,14 +775,14 @@ e verificare che è un'isomorfismo:
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-		bla
+		Dimostriamo pure i punti in ordine
 	\begin{itemize}
 
 		\item[$ \exists $.] Fissiamo $ 0 \leq \alpha \leq n $. Sia $ \mathcal{M}_\alpha $ l'insieme di tutti i sottoinsiemi di $ G $ di cardinalità $ p^\alpha $ \[ \mathcal{M}_\alpha = \{ M < G \mid |M| = p^\alpha \} \] possiamo allora calcolarci
 		\[ |\mathcal{M}_\alpha| = {p^nm \choose p^\alpha} = p^{n-\alpha}m \prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1} \]
 		e poiché $ v_p({p^nm-i}) = v_p(i) =  v_p({p^\alpha -i}) $, allora
 		$$  v_p\left(\prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1}\right) =  0  $$
-		e possiamo concludere che 
+		concludiamo che
 		\[ p^{n-\alpha} \mid\mid \mathcal{M}_\alpha \]
 		Consideriamo ora l'azione di $ G $ su $ \mathcal{M}_\alpha $ data dalla moltiplicazione a sinistra
 		\fun{\Phi}{G}{\mathcal{S}(\mathcal{M}_\alpha)}{g}{\psi_g: M \mapsto gM}
@@ -814,6 +814,11 @@ e verificare che è un'isomorfismo:
 		Per concludere è sufficiente osservare che se $ \Stab{H} \lneq S $ allora l'orbita corrispondente ha cardinalità divisibile per $ p $.
 	\end{itemize}
 \end{proof}
+
+\begin{remark}
+	$ n_p $ è l'indice del normalizzatore di un $ p$-sylow in $ G $. Infatti, estendendo l'azione di coniugio a tutto il gruppo
+	\[ n_p = |\Orb{P}| = \frac{|G|}{|\Stab{P}|} = \frac{|G|}{|N(P)|} = [G : N(P)] \]
+\end{remark}
 
 \begin{theorem}
 	Ogni gruppo $ G $ abeliano finito è prodotto diretto dei suoi $ p $-sylow.
@@ -1033,13 +1038,29 @@ Se invece $ P_5 $ fosse normale?
 
 \subsection{Lemmini ed esercizietti}
 \begin{multicols}{2}
-	\begin{itemize}
-		\item Dati $$  H \lhd K \lhd G  $$ quali sottogruppi devono essere caratteristici per far si che $ H $ sia normale o carattertico in $ G $?
+	\begin{enumerate}
+		\item Dati $$  H \lhd K \lhd G  $$ quali inclusioni devono essere caratteristiche per far si che $ H $ sia normale o carattertico in $ G $?
 		
-		\item Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.
+		\item \textbf{Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.}
+		
+		Il Teorema di Cayley ci fornisce l'immersione seguente, per prodotto sinistro
+		\begin{align*}
+		 \Phi \colon & G \hookrightarrow \S_{2d} \\
+		 & g \mapsto \varphi_g \colon x \mapsto gx
+		\end{align*}
+		Dato un elemento $ g $, conosciamo la decomposizione in cicli $ \varphi_g $, questa dev'essere prodotto di cicli del tipo
+		$$  (x \, gx \, \dots \, g^{m-1}x)  $$
+		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà come immagine il prodotto di $ d $ 2-cicli. Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G \cap G : \mathcal{A}_{2d}] = 2  $$
+		
 		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
 		
-		\item Sia $ G $ un gruppo semplice e finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un'immersione di $ G $ in $ \mathcal{A}_n $.
+		\item \textbf{Sia $ G $ un gruppo semplice e finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un'immersione di $ G $ in $ \mathcal{A}_n $.}
+		
+		Facendo agire $ G $ per moltiplicazione sinistra sull'insieme degli $ n $ laterali di $ H $ otteniamo un omomorfismo
+		
+		\[ \Phi \colon G \to \mathcal{A}_n \]
+		
+		il cui nucleo dev'essere però banale, per non contraddire la normalità di $ G $. Ovviamente l'omomorfismo non è banale, dunque $ \Phi $ è un'immersione.
 		
 		\item Un gruppo di ordine 112 non è semplice.
 		
@@ -1053,9 +1074,10 @@ Se invece $ P_5 $ fosse normale?
 			\item dimostrare che $ G' = Z(G) $.
 			\item contare il numero di classi di coniugio.
 		\end{enumerate}
-	\end{itemize}
+	\end{enumerate}
 	
 \end{multicols}
-
-
+%\newpage
+%\setcounter{section}{0} % per scegliere la lettera giusta
+%\section{Anelli}
 \end{document}
