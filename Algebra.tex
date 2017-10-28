@@ -5,7 +5,7 @@
 \author{Andrea Gallese}\let\Author\@author
 \date{\today}\let\Date\@date
 
-\usepackage[english]{babel}
+\usepackage[italian]{babel}
 \usepackage[utf8]{inputenc}
 
 \usepackage{mathtools}
@@ -24,6 +24,17 @@
 \usepackage{multicol}
 \usepackage{setspace}
 \usepackage{mdframed}
+\usepackage{color}
+
+% magia
+\usepackage{hyperref}
+\hypersetup{
+	colorlinks,
+	citecolor=black,
+	filecolor=black,
+	linkcolor=black,
+	urlcolor=black
+}
 
 % Formato Teoremi, Dimostrazioni, Definizioni
 \newtheorem{theorem}{Teorema}[section]
@@ -53,6 +64,7 @@
 \newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
 \newcommand{\gen}[1]{\langle #1 \rangle}
 \newcommand{\Z}{\mathbb{Z}}
+\renewcommand{\S}{\mathcal{S}}
 
 \newcommand{\fun}[5]{\begin{align*}
 	#1 \colon #2 &\to #3 \\
@@ -83,6 +95,9 @@
 	\vspace{0,7 cm}
 \end{center}
 \small
+
+\tableofcontents
+\newpage
 
 \setcounter{section}{6} % per scegliere la lettera giusta
 \section{Teoria dei Gruppi}
@@ -450,6 +465,9 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Chiamiamo $ \mathcal{A}_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
 	\[ \ker(\text{sgn}) = \mathcal{A}_n \lhd \mathcal{S}_n \]
 \end{definition}
+\begin{remark}
+	Ogni sottogruppo $ H < \mathcal{S}_n $ è contenuto interamente in $ \mathcal{A}_n $ o viene spezzato a metà dal gruppo alterno. Questo perché possiamo restringere l'omomorfismo $ \det $ al solo $ H $, dunque l'immagine può solo restringersi.
+\end{remark}
 
 \begin{theorem}
 	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli.
@@ -863,7 +881,8 @@ Quindi uno tra un 2-sylow e un 3-sylow dev'essere normale, inoltre sono ciclici 
 \begin{multicols}{2}
 	Vogliamo scoprire chi è $ \Aut{Q_8 \times D_4} $. Per far questo, possiamo scomporre un qualunque automorfismo $ \varphi $ nelle sue restrizioni ai due termini del prodotto e proiettarli sulle due componenti. Il seguente diagramma magico è molto esplicativo
 	\[ \begin{tikzcd}
-	Q_8 \arrow[swap]{dr}{imm.} & & & Q_8 \\
+	Q_8 \arrow[swap]{dr}{imm.
+	} & & & Q_8 \\
 	D_4 \arrow[swap]{r}{imm.} & G \arrow{r}{\varphi} & G \arrow[swap]{ur}{\Pi_Q}\arrow[swap]{r}{\Pi_D} & D_4
 	\end{tikzcd}\]
 	Dunque possiamo scomporre l'automorfismo nei quattro omomorfismi
@@ -1011,5 +1030,32 @@ e ognuna di questa azioni induce un prodotto semidiretto isomorfo a uno dei grup
 Se invece $ P_5 $ fosse normale?
 	
 \end{multicols}
+
+\subsection{Lemmini ed esercizietti}
+\begin{multicols}{2}
+	\begin{itemize}
+		\item Dati $$  H \lhd K \lhd G  $$ quali sottogruppi devono essere caratteristici per far si che $ H $ sia normale o carattertico in $ G $?
+		
+		\item Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.
+		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
+		
+		\item Sia $ G $ un gruppo semplice e finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un'immersione di $ G $ in $ \mathcal{A}_n $.
+		
+		\item Un gruppo di ordine 112 non è semplice.
+		
+		\item Un gruppo di ordine 144 non è semplice.
+		
+		\item Quanti sono i $ p $-sylow di $ \textbf{GL}_n(\mathbb{F}_p) $?
+		
+		\item Dimostrare che dato un gruppo di ordine $ |G|= p^3 $
+		\begin{enumerate}
+			\item dimostrare che $ |Z(G)| = p $.
+			\item dimostrare che $ G' = Z(G) $.
+			\item contare il numero di classi di coniugio.
+		\end{enumerate}
+	\end{itemize}
+	
+\end{multicols}
+
 
 \end{document}
