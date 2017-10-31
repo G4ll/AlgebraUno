@@ -494,6 +494,13 @@ Ovvero
 e pertanto
 \[ |N(\gen{\sigma})| = |Z(\sigma)| \cdot \phi(\text{ord}(\sigma)) \]
 
+\begin{theorem}
+	Il gruppo alterno $ \mathcal{A}_n $ è semplice per $ n \geq 5 $.
+\end{theorem}
+\begin{proof}
+	Iniziamo a dimostrare che $ \mathcal{A}_5 $ è semplice, prima o poi concluderemo per induzione. Le classi di coniugio di questo gruppo hanno dimensione 1, 12, 12, 15, 20. Un gruppo normale dovrebbe essere unione di un certo numero di queste orbite, ma sommando le loro cardinalità non ottengo mai divisori di 60.
+\end{proof}
+
 \end{multicols}
 \subsection{Prodotti diretti}
 
@@ -723,40 +730,50 @@ dunque $ \Phi $ è un isomorfismo come desiderato.
 	\item $ D_n \cong \langle \rho \rangle \rtimes_\varphi \langle \sigma \rangle $, con $ \varphi $ di coniugio.
 \end{enumerate}
 
-% \columnbreak
+\columnbreak
 \textbf{Classificazione dei gruppi di ordine pq.} \\
 
 Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. Allora necessariamente
 \[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p} \]
-Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale $$  K = \langle x \rangle < G \quad\text{e}\quad H = \langle y \rangle \lhd G $$ per il teorema \ref{ppp}. Inoltre osserviamo che $ HK = G $ e i due sottogruppi hanno intersezione banale. Quindi
-\[ G \cong H \rtimes_{\varphi} K \]
+Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale perché ha indice $ p $ (vedi \ref{ppp}):
+$$  \mathbb{Z}_p < G \quad\text{e}\quad \Z_q \lhd G $$
+Osserviamo inoltre che i due sottogruppi hanno intersezione banale e pertanto $ \Z_p\Z_q = G $ per ragioni di cardinalità. Quindi
+\[ G \cong \Z_q \rtimes_{\varphi} \Z_p \]
 dove
-\fun{\varphi_1}{K}{\Aut{H} \cong \mathbb{Z}_q^\times}{y}{\varphi_y: x \mapsto yxy^{-1} = x^a}
-e necessariamente dobbiamo avere che
-\[ yxy^{-1} = x^a \qquad\text{con}\quad (a, q) = 1 \]
-ma, poiché $ \varphi $ è un omomorfismo, abbiamo che
-\[ \text{ord}\left(\varphi_y\right) \mid \text{ord}(y) = p \]
-quindi abbiamo solo due casi: $ \text{ord}\left(\varphi_y\right) = 1 $ e $ \text{ord}\left(\varphi_y\right) = p $. Nel primo caso $ \varphi $ manda ogni elemento nell'identità, dunque il prodotto semidiretto è in realtà diretto e dunque
-\[ \boxed{G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{q}} \]
+\fun{\varphi}{\Z_p}{\Aut{\Z_q}  \cong \mathbb{Z}_q^\times \cong \mathbf{GL}_1(\mathbb{F}_q)}{1}{\varphi_1: x \mapsto kx}
 
-Nel secondo caso dobbiamo avere $$  p = \text{ord}\left(\varphi_y\right) \mid q-1 = |\Aut{\Z_q}| $$
-Vogliamo mostrare che qualunque omomorfismo $ \psi $ da $ K $ a $ \Aut{H} $, non banale, costruisce un prodotto semidiretto isomorfo a $ G $ e ci è pertanto concesso scrivere
-\[ \boxed{G \cong H \rtimes K} \]
+\textbf{Achtung!} Capire com'è fatta questa azione non è semplice. Prima di tutto, siamo passati in notazione additiva, perché i gruppi in questione sono abeliani e cilici. A questo punto è molto comodo pensare a $ \Z_q $ come spazio vettoriale unidimensionale e al suo gruppo di automorfismi come l'insieme delle "matrici" invertibili che vi agisce sopra, ovvero l'insieme degli elementi invertibili di $ \mathbb{F}_p $. Infine abbiamo definito l'omomorfismo solo per il generatore di $ \Z_p $, perché possiamo ottenere gli altri da
+\[ y \mapsto \varphi_y : x \mapsto k^yx \]
+ed è molto semplice convincersene: stiamo componendo applicazioni lineari, dunque moltiplicando fra loro le corrispondenti matrici.
+Non tutte le scelte di $ k \in \Z_q $ sono accettabili però, per esempio se 
+$$  p \nmid q-1 = |\Z_q^\times| $$
+l'unico omomorfismo $ \varphi $ possibile è quello banale che ci induce
+\[ \boxed{G \cong \Z_p \times \Z_q} \]
+
+Se invece 
+$ p \mid q -1 $
+possiamo scegliere $ k $ come un qualunque generatore del solo sottogruppo di ordine $ p $ di $ \Z_q^\times \cong \Z_{q-1} $. Fissiamo un generatore $ g $, allora tutte le possibili azioni saranno della forma
+
+\fun{\psi^m}{\Z_p}{\Aut{\Z_q}}{1}{\psi^m_{1}: x \mapsto g^mx}
+al variare di $ m $ in $ \{1, \dots, p-1\} $.
+Osserviamo dunque che
+
+\[ \psi^m_1(x) = g^{m}(x) = \psi^1_m(x) \]
 
 
-Osserviamo innanzitutto l'azione è completamente determinata dal valore che assume quando viene valutata su due fissati generatori dei due sottogruppi ciclici, $ x $ e $ y $. E sarà del tipo
-\[ \varphi: y \mapsto \varphi_{y}: x \mapsto yxy^{-1} = x^a  \]
-per un certo $ a \in \Z_q^\times $ di ordine $ p $. Preso una diversa azione $ \psi $ avremo una valutazione $ x^b $ diversa nei generatori. Abbiamo però che esiste $ m \in \Z $ tale che $ b^m = a $, perché sono entrambi generatori del sottogruppo di ordine $ p $ di $ \Z_q^\times$. (Questa cosa non è chiarissima, perché siamo abituati a vedere questi gruppi in notazione additiva. E' un utile esercizio provare a riscriverli in questo modo e usare impunemente il fatto che $ \Z_r^\times \cong \Z_{r-1} $ per ogni $ r $ primo). Abbiamo allora
-\[ \psi_{y^{m}}(x)  = x^{b^m} = x^a = \varphi_y(x) \]
 e possiamo dunque costruire la funzione
-\fun{\Phi}{H \rtimes_\psi K}{H \rtimes_\varphi K}{(h, k)}{(h, k^m)}
+\fun{\Phi}{\Z_q \rtimes_{\psi^m} \Z_p}{\Z_q \rtimes_{\psi^1} \Z_p}{(x, y)}{(x, my)}
 e verificare che è un'isomorfismo:
 \begin{itemize}
 	\item è un omomorfismo
-	\begin{align*} \Phi(h, k)\Phi(h', k') &= (h, k^m)(h', k'^m) \\&= (h\psi_{k^m}(h'), (kk')^m)
-	\\&= (h \varphi_k(h'), (kk')^m) \\&= \Phi(h\varphi_k(h'), kk')  \end{align*} 
+	\begin{align*} \Phi(x,\, y)\,\Phi(x',\, y') &= (x,\, my)(x',\, my') \\&= (x + \psi_{my}^1(x'), \,my + my')
+	\\&= (x + \psi_y^{m}(x'),\, my + my') \\&= \Phi(x + \psi^m_y(x'),\, y + y')  \end{align*} 
 	\item è iniettivo: se $ \Phi(h, k) = (e, e) $, allora $ h = e $ e, poiché $ k^m $ è un automorfismo di $ \Z_p $, $ k = e $.
 \end{itemize}
+pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abeliano. 
+\[ \boxed{G \cong \Z_q \rtimes Z_p} \]
+
+
 
 \end{multicols}
 
@@ -969,9 +986,7 @@ questi generano un sottogruppo "disgiunto" da $ \Z_2 \times \Z_2 $ isomorfo a $ 
 \[ \Aut{Q_8} \cong \Z_2 \times \Z_2 \rtimes_\phi \mathcal{S}_3 \] Per una certa azione $ \phi $ che rende il gruppo $ \mathcal{S}_4 $ (per ragioni magiche non dimostrate).
 
 
-\begin{theorem}
-	Il gruppo alterno $ \mathcal{A}_n $ è semplice per $ n \geq 5 $.
-\end{theorem}
+
 
 \end{multicols}
 
@@ -1049,8 +1064,8 @@ Se invece $ P_5 $ fosse normale?
 		 & g \mapsto \varphi_g \colon x \mapsto gx
 		\end{align*}
 		Dato un elemento $ g $, conosciamo la decomposizione in cicli $ \varphi_g $, questa dev'essere prodotto di cicli del tipo
-		$$  (x \, gx \, \dots \, g^{m-1}x)  $$
-		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà come immagine il prodotto di $ d $ 2-cicli. Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G \cap G : \mathcal{A}_{2d}] = 2  $$
+		$$  (x \; gx \; \cdots \; g^{m-1}x)  $$
+		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà come immagine il prodotto di $ d $ 2-cicli. Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G G \cap \mathcal{A}_{2d}] = 2  $$
 		
 		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
 		
@@ -1068,13 +1083,17 @@ Se invece $ P_5 $ fosse normale?
 		
 		\item Quanti sono i $ p $-sylow di $ \textbf{GL}_n(\mathbb{F}_p) $?
 		
-		\item Dimostrare che dato un gruppo di ordine $ |G|= p^3 $
+		\item Dato un gruppo di ordine $ |G|= p^3 $
 		\begin{enumerate}
 			\item dimostrare che $ |Z(G)| = p $.
 			\item dimostrare che $ G' = Z(G) $.
 			\item contare il numero di classi di coniugio.
 		\end{enumerate}
+		
+		
+	
 	\end{enumerate}
+	
 	
 \end{multicols}
 %\newpage
