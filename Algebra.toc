@@ -5,11 +5,13 @@
 \contentsline {subsection}{\numberline {G.2}Formula delle Classi e Cauchy}{3}{subsection.7.2}
 \contentsline {subsection}{\numberline {G.3}Gruppi Diedrali $ D_n $}{5}{subsection.7.3}
 \contentsline {subsection}{\numberline {G.4}Gruppi di Permutazioni $ \mathcal {S}_n $}{6}{subsection.7.4}
-\contentsline {subsection}{\numberline {G.5}Prodotti diretti}{7}{subsection.7.5}
-\contentsline {subsection}{\numberline {G.6}Classificazione dei Gruppi di ordine 8}{8}{subsection.7.6}
-\contentsline {subsection}{\numberline {G.7}Lemmi vari}{9}{subsection.7.7}
-\contentsline {subsection}{\numberline {G.8}Prodotto Semidiretto}{10}{subsection.7.8}
-\contentsline {subsection}{\numberline {G.9}Teorema di Sylow}{11}{subsection.7.9}
-\contentsline {subsection}{\numberline {G.10}Automorfismi di un gruppo buffo}{13}{subsection.7.10}
-\contentsline {subsection}{\numberline {G.11}Teorema Fondamentale dei Gruppi Abeliani Finiti}{14}{subsection.7.11}
-\contentsline {subsection}{\numberline {G.12}Lemmini ed esercizietti}{15}{subsection.7.12}
+\contentsline {subsection}{\numberline {G.5}Prodotti diretti}{8}{subsection.7.5}
+\contentsline {subsection}{\numberline {G.6}Classificazione dei Gruppi di ordine 8}{9}{subsection.7.6}
+\contentsline {subsection}{\numberline {G.7}Lemmi vari}{10}{subsection.7.7}
+\contentsline {subsection}{\numberline {G.8}Prodotto Semidiretto}{11}{subsection.7.8}
+\contentsline {subsection}{\numberline {G.9}Teorema di Sylow}{12}{subsection.7.9}
+\contentsline {subsection}{\numberline {G.10}Automorfismi di un gruppo buffo}{14}{subsection.7.10}
+\contentsline {subsection}{\numberline {G.11}Teorema Fondamentale dei Gruppi Abeliani Finiti}{15}{subsection.7.11}
+\contentsline {subsection}{\numberline {G.12}Lemmini ed esercizietti}{16}{subsection.7.12}
+\contentsline {section}{\numberline {A}Anelli}{17}{section.1}
+\contentsline {subsection}{\numberline {A.1}Prime definizioni}{17}{subsection.1.1}
