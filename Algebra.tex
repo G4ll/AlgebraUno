@@ -66,11 +66,15 @@
 \newcommand{\gen}[1]{\langle #1 \rangle}
 \newcommand{\Z}{\mathbb{Z}}
 \renewcommand{\S}{\mathcal{S}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\K}{\mathbb{K}}
 
-\newcommand{\fun}[5]{\begin{align*}
+\newcommand{\fun}[5]{
+	\begin{align*}
 	#1 \colon #2 &\to #3 \\
 	#4 &\mapsto #5
-	\end{align*}}
+	\end{align*}
+}
 
 % indentazione
 \setlength{\parindent}{0pt}
@@ -1187,7 +1191,7 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	\end{tikzcd} \]
 \end{theorem}
 \begin{proof}
-	contenuto...
+	Quello che dice non mi convince.
 \end{proof}
 \begin{remark}
 	Questo dimostra che gli ideali sono tutti e soli i nuclei di omorfismi.
@@ -1204,7 +1208,7 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-	contenuto...
+	Dato un omomorfismo $ f $ e un ideale $ J \subseteq A $, osserviamo che $ f^{-1}(J) $ è un anello.
 \end{proof}
 \begin{remark}
 	Vale sempre che
@@ -1221,7 +1225,17 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	\[ \faktor{A}{IJ} \cong \faktor{A}{I} \times \faktor{A}{J} \]
 \end{theorem}
 \begin{proof}
-	contenuto...
+	La mappa
+	\fun{f}{A}{\faktor{A}{I} \times \faktor{A}{J}}{a}{(a + I, a + J)}
+	è un omomorfismo di nucleo
+	\[ \ker f = I \cap J \]
+	Inoltre $ f $ è suriettivo se e solo se $ I + J = A $: se $ f $ è suriettivo, prendiamo un elemento $ a $ nella controimmagine di $ (1 + I, J) $, ossia un elemento tale che 
+	$ a-1 \in I $ e $ a \in J $.
+	Pertanto 
+	\[ a-1 = i \quad\Rightarrow\quad 1 = a + i \in I + J \]
+	Se invece $ 1 \in I + J $, allora possiamo trovare due elementi tale che \[ 1 = i + j \]
+	e scelta una qualunque coppia $ (x + I, y + J) $, abbiamo che
+	\[ y + j(x-y) = xj + yi = x + i(y-x) \]
 \end{proof}
 
 \begin{definition}[ideale primo]
@@ -1234,7 +1248,9 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 \end{definition}
 
 \begin{theorem}
-	primo sse dominio, massimale sse campo.
+	Dato un ideale $ I \subseteq A $
+	\[ I \text{ primo} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ dominio} \]
+	\[ I \text{ massimale} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ campo} \]
 \end{theorem}
 
 \begin{remark}
@@ -1247,8 +1263,229 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	Un ideale massimale è anche primo, perché ogni campo è anche un dominio.
 \end{remark}
 
+\textbf{Fatti su $ \sqrt{I} $.}
+\begin{enumerate}
+	\item $ \sqrt{I} $ è un ideale. \\ (Infatti è un sottoinsieme additivamente chiuso
+	\[ a^n \in I,\;  b^m \in I \quad\Rightarrow\quad (a+b)^{n+m} \in I \]
+	e assorbente per moltiplicazione
+	\[ a^n \in I \quad\Rightarrow\quad (sa)^{n} = s^na^n \in sI = I ) \]
+	
+	\item $ I \subseteq \sqrt{I} $.
+	\item $ \sqrt{IJ} = \sqrt{I \cap J} = \sqrt{I} \cap \sqrt{J} $. \\ (Osserviamo che
+	\[ I \subseteq J \quad\Rightarrow\quad \sqrt{I} \subseteq \sqrt{J} \]
+	dunque 
+	\[ \sqrt{IJ} \subseteq \sqrt{I \cap J} \subseteq \sqrt{I} \cap \sqrt{J} \subseteq \sqrt{IJ} \]
+	dove le prime due inclusioni sono conseguenza dell'osservazione di sopra, mentre l'ultima si ottiene da
+	\[ a^n \in I, b^m \in J \quad\Rightarrow\quad (ab)^{m + n} \in I \cap J )\]
+	
+	\item $ \sqrt{I} = A $ se e solo se $ I = A $.
+	\item Se $ P $ è un ideale primo, allora $ \sqrt{P} = P $. \\ 
+	(Se $ x^n \in P $, ho $ x = x \cdot x \cdots x $ per $ n $ volte e almeno uno dei fattori sta in $ P $)
+	
+	\item $ \mathcal{N} = \bigcap_{P \subseteq A} P $. \\ (Chiaramente se $ x $ è nilpotente $ x ^n \in P $ per ogni ideale primo $ P $.
+	
+	Mostriamo che, viceversa, se $ x $ appartiene a tutti gli ideali primi allora è nilpotente. Ragioniamo per assurdo: fissato $ x $ nell'intersezione, assumiamo $$  x^n \neq 0 \qquad \forall n \in \mathbb{N} $$ Consideriamo la famiglia di ideali
+	$$  \mathcal{F} = \{ I \subseteq A \mid x^n \notin I \;\forall n \in \mathbb{N}  \}  $$
+	Osserviamo che per ipotesi $ {0} \in \mathcal{F} $, quindi la famiglia non è vuota. Inoltre è induttiva! (L'unione di una catena di ideali è un ideale e la proprietà di famiglia si conserva). Dunque, per il Lemma di Zorn, abbiamo un ideale $ P $ massimale in $ \mathcal F $.
+	
+	Mostriamo che $ P $ deve essere primo, giungendo all'assurdo. Preso $ ab \in P $ se uno degli ideali 
+	\[ P + (a) \qquad \qquad P + (b) \]
+	appartenesse alla famiglia $ \mathcal{F} $, allora sarebbe sottoinsieme di $ P $ (e dunque $ a \in P $). Se nessuno dei due appartenesse alla famiglia, allora
+	\[ x^n \in P + (a) \qquad x^m \in P + (b) \]
+	ma
+	\[ x^{n + m} \in (P + (a))(P + (b)) = P \]
+	che dunque dev'essere primo.)
+	
+	\item $ \sqrt{I} = \bigcap_{I \subseteq P} P $. \\ (Il radicale sono i nilpotenti del quoziente, il fatto segue dal teorema di corrispondenza.)
+	
+\end{enumerate}
 
 \end{multicols}
+
+\subsection{Domini}
+\begin{multicols}{2}
+
+\textbf{Campo dei quozienti. $ \Q(A) $}
+
+\begin{definition}
+	Un insieme $ S $ di elementi di un dominio $ A $ è detto \emph{parte moltiplicativa} se
+	\begin{enumerate}
+		\item è moltiplicativamente chiuso
+		\item $ 1 \in S $
+		\item $ 0 \notin S $
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	$ A $ è dominio se e sole se $ A - \{0\} $ è parte moltiplicativa.
+\end{remark}
+
+Costruiamo il campo dei quozienti del dominio $ A $ come il quoziente di $ A \times (A \setminus \{0\}) $ per la relazione di equivalenza $$  (a, b) \sim (c, d) \quad\Leftrightarrow\quad ad = bc $$
+Denotiamo questo insieme con $ \Q(A) $. Indichiamo i suoi elementi come $ \frac{a}{b} $ e definiamo la somma e il prodotto in modo che
+\[ \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \qquad\qquad \frac{a}{b}\cdot \frac{c}{d} = \frac{ac}{bd} \]
+
+\begin{remark}
+	$ (Q(A),\, +,\, \cdot\,) $ sopra definito è un campo e
+	\begin{align*}
+	q \colon A &\hookrightarrow \Q(A) \\
+	a &\mapsto \frac{a}{1}
+	\end{align*}
+	è omomorfismo iniettivo.
+\end{remark}
+
+\begin{theorem}
+	$ (Q(A),\, +,\, \cdot\,) $ è il più piccolo campo in cui possiamo immergere $ A $. Nel senso che l'immersione di $ A $ in un campo $ \mathbb{K} $ si estende all'immersione di $ \Q(A) $ in $ \mathbb{K} $.
+	\[ \begin{tikzcd}
+	A \arrow{r}{\varphi} \arrow[swap]{d}{q} & \K \\
+	\Q(A) \arrow[swap]{ru}{\bar{\varphi}}
+	\end{tikzcd} \]
+\end{theorem}
+\begin{proof}
+	L'estensione è naturale
+	\[ \bar{\varphi}: \frac{a}{b} \mapsto \varphi(a) \varphi(b)^{-1} \]
+	Una volta verificato che è un omomorfismo, questo dev'essere necessariamente iniettivo perché $ \Q(A) $ è un campo, pertanto ha solo ideali banali.
+\end{proof}
+
+\columnbreak
+\textbf{Divisibilità.}\\
+Come al solito, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E' immediato tradurre la relazione di divisibilità in termini di ideali generati, infatti 
+\[ a \mid b \quad\Leftrightarrow\quad (b) \subseteq (a) \]
+
+\begin{definition}
+	Diciamo che due elementi $ a, a' \in A $ sono \emph{associati} quando si dividono vincendevolmente
+
+\[ (a) = (a') \quad\Leftrightarrow\quad a' = au \;\text{ per } u \in A^\times \]
+
+lo indicheremo con $ a \sim a' $.
+\end{definition}
+
+Possiamo definire l'MCD tra due elementi $ a, b $ come quegli elementi $ d $ tali che
+\begin{enumerate}
+	\item $ d \mid a $ e $ d \mid b $.
+	\item Se $ c \mid a $ e $ c \mid b $, allora $ c \mid d $.
+\end{enumerate}
+è immediato osservare che gli MCD di una coppia sono associati.
+
+\begin{definition}
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è primo se \[ x \mid ab \quad\Rightarrow\quad x \mid a \; \text{ o }\; x \mid b \]
+\end{definition}
+
+\begin{definition}
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è irriducibile se \[ x = ab \quad\Rightarrow\quad a\in A^\times \; \text{ o }\; b \in A^\times \]
+\end{definition}
+
+I seguenti risultati sono la semplice traduzione delle relazioni di divisibilità di queste ultime definizioni nel linguaggio degli ideali.
+
+\begin{theorem}\label{prpr}
+	Un elemento $ x $ è primo se e solo se l'ideale da lui generato $ (x) $ è primo e non banale.
+\end{theorem}
+
+\begin{theorem}\label{mama}
+	Un elemento $ x $ è massimale se e solo se l'ideale da lui generato $ (x) $ è massimale tra i principali.
+\end{theorem}
+
+\begin{theorem}\label{epei}
+	Ogni elemento primo è anche irriducibile. 
+\end{theorem}
+
+\end{multicols}
+
+\subsection{Domini Speciali}
+\begin{multicols}{2}
+	Diamo un po' di definizioni insieme
+	\begin{definition}
+		Ci piacciono i seguenti domini speciali:
+		\begin{itemize}
+			\item [(\textsc{ufd})] Ogni elemento non nullo e non invertibile si scrive in modo unico come prodotto di irriducibili.
+			
+			\item [(\textsc{pid})] Tutti gli ideali sono principali.
+			
+			\item [(\textsc{ed})] Esiste una funzione grado \[{d}:{A\setminus\{0\}}\to{\mathbb{N}}\]
+			tale che 
+			\begin{enumerate}
+				\item $ d(a) \leq d(ab) $ su tutti i valori in cui è definita.
+				\item Presi comunque due elementi $ a, b $ con $ b \neq 0 $ esistono $ q, r $ tali che
+				\[ a = qb + r \]
+				e tali che $ d(r) < d(b) $ oppure $ r = 0 $.
+			\end{enumerate}
+			
+		\end{itemize}
+	\end{definition}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item $ \Z $ con la funzione $ \mid \cdot\mid $ è un dominio euclideo.
+	\item $ \K[x] $ con la funzione $ \deg(\,\cdot\,) $ è un dominio euclideo.
+	\item $ \Z[\,i\,] $ con la norma $ N(x) = x\bar{x} $ è un dominio euclideo.
+\end{enumerate}
+
+\begin{theorem}
+	Vale la seguente catena di implicazioni
+	\[ (\textsc{ed})\Rightarrow(\textsc{pid})\Rightarrow(\textsc{ufd}) \]
+\end{theorem}
+	
+\subsubsection{Domini Euclidei}
+
+\begin{theorem}
+	Gli elementi invertibili sono tutti e soli quelli di grado minimo.
+\end{theorem}
+\begin{proof}
+	Osserviamo innanzitutto che ha senso parlare di grado minimo, poiché l'immagine del grado è un sottoinsieme non vuoto dei naturali.
+	
+	Se $ x $ è invertibile, per ogni $ a \in A $ non nullo
+	\[ d(x) \leq d(x) d(ax^{-1}) \leq d(x \cdot ax^{-1}) = d(a) \]
+	e se per sbaglio $ d(ax^{-1}) = 0 $, allora lo stesso vale per il grado di $ x^{-1} $ e quindi di $ x $.
+	
+	Viceversa, sia $ x $ un elemento di grado minimo e $ a $ un elemento qualunque. Abbiamo che
+	\[ a = qx + r \]
+	e, escludendo $ d(r) < d(x) $, dobbiamo avere che $ r = 0 $. Quindi $ x $ divide ogni elemento ed è pertanto invertibile. 
+\end{proof}
+
+\begin{theorem}
+	Esiste l'MCD e lo possiamo calcolare con l'algoritmo di Euclide.
+\end{theorem}
+	
+\begin{theorem}
+	$ (\textsc{ed})\Rightarrow(\textsc{pid}) $
+\end{theorem}
+\begin{proof}
+	Prendiamo un ideale $ I $ di un \textsc{ed} e sia $ x $ il suo elemento di grado minimo. Vogliamo dimostrare che 
+	\[ I = (x) \]
+	per assurdo. Supponiamo che esista $ y \in I $ tale che
+	\[ x = qy + r \]
+	con $ r \neq 0 $, abbiamo allora necessariamente che $ d(r) < d(x) $. Purtroppo però
+	\[ r = x - qy \in I \]
+	contraddice la minimalità di $ x $.
+\end{proof}
+
+\textbf{Controesempio?} 
+
+\subsubsection{Dominio a Ideali Principali}
+\begin{remark}
+	L'MCD $ (a, b) $ esiste: è il generatore dell'ideale $$  (a, b) = (d)  $$
+\end{remark}
+
+\begin{theorem}
+	Gli ideali primi sono anche massimali.
+\end{theorem}
+\begin{proof}
+	\begin{align*}
+		(x) \text{ primo} \;& \Rightarrow\; x \text{ è un elemento primo} & \text{(\ref{prpr})} \\
+		& \Rightarrow x \text{ è irriducibile} &\text{(\ref{epei})} \\
+		& \Rightarrow (x) \text{ è massiamale tra gli ideali primi} &\text{(\ref{mama})} \\
+		& \Rightarrow (x) \text{ è massimale} &\text{(\textsc{pid})}
+	\end{align*}
+\end{proof}
+
+\begin{remark}
+	Ripercorrendo la catena di implicazioni sopra, ci si accorge che abbiamo mostrato anche l'equivalenza tra le definizioni di irriducibile e primo  nei \textsc{pid}.
+\end{remark}
+
+\end{multicols}
+
+
+
+
 
 
 
