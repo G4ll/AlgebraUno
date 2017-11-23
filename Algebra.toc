@@ -16,6 +16,8 @@
 \contentsline {section}{\numberline {A}Anelli}{17}{section.1}
 \contentsline {subsection}{\numberline {A.1}Prime definizioni}{17}{subsection.1.1}
 \contentsline {subsection}{\numberline {A.2}Domini}{19}{subsection.1.2}
-\contentsline {subsection}{\numberline {A.3}Domini Speciali}{20}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {A.3.1}Domini Euclidei}{20}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {A.3.2}Dominio a Ideali Principali}{20}{subsubsection.1.3.2}
+\contentsline {subsection}{\numberline {A.3}Anelli di Polinomi}{20}{subsection.1.3}
+\contentsline {subsection}{\numberline {A.4}Domini Speciali}{21}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {A.4.1}Domini Euclidei}{21}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {A.4.2}Dominio a Ideali Principali}{21}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{21}{subsubsection.1.4.3}

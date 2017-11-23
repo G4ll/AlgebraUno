@@ -1,0 +1,582 @@
+\setcounter{section}{0} % per scegliere la lettera giusta
+\section{Anelli}
+\subsection{Prime definizioni}
+\begin{multicols}{2}
+Da qua in avanti, per Anello intenderemo sempre che l'anello è commutativo e ha l'identità.
+
+\begin{definition}[Divisori di 0]
+	Un elemento di un anello $ x \in A $ si dice \emph{divisore di zero} quando
+	\[ \exists y \in A \quad\text{    tale che    }\quad yx = 0 \]
+	Un anello $ A $ si dice \emph{dominio d'integrità} quando l'unico divisore di zero è lo 0 stesso
+	\[ \mathcal{D}:= \{\text{divisori di zero}\} = \{0\} \]
+\end{definition}
+\begin{definition}[Nilpotenza]
+	Un elemento di un anello $ x \in A $ si dice \emph{nilpotente} quando
+	 \[ \exists n \in \mathbb{N} \quad\text{    tale che    }\quad x^n = 0 \]
+	 Un anello $ A $ si dice \emph{ridotto} quando l'unico elemento nilpotente è 0
+	 \[ \mathcal{N}: = \{\text{nilpotenti}\} = \{0\} \]
+\end{definition}
+
+\begin{theorem}[Prime proprietà]
+	Valgono queste proprietà
+	\begin{enumerate}
+		\item $ A^\times $ è un gruppo moltiplicativo.
+		\item $ A^\times \cap \mathcal{D} = \phi $.
+		\item Se $ A $ è finito $ A = A^\times \sqcup \mathcal{D} $.
+	\end{enumerate}
+\end{theorem}
+\begin{remark}
+	Un dominio d'integrità finito è un campo.
+\end{remark}
+
+Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
+\begin{itemize}
+	\item  $ I \cup J $
+	\item  $ I \cap J $
+	\item $ I + J $
+	\item  $ IJ $
+	\item $ \sqrt{I} := \{ x \in A \mid x^n \in I \} $
+	\item $ (I:J) := \{ x \in A \mid xJ \in I \} $
+\end{itemize}
+
+
+\begin{remark}
+	Abbiamo una bella caratterizzazione degli ideali propri
+	\[ I \subsetneq A \;\Leftrightarrow\; I \cap A^\times = \phi \;\Leftrightarrow\; 1 \notin I \]
+	(è quasi completamente ovvia guardando la contronominale)
+\end{remark}
+
+
+\begin{remark}
+	Un campo $ \mathbb{K} $ ha solo anelli banali.
+\end{remark}
+
+\begin{definition}[Omomorfismo]
+	Una funzione tra due anelli $ A $ e $ B $ è detta omomorfismo di anelli se
+	\begin{enumerate}
+		\item è omomorfismo dei rispettivi gruppi additivi.
+		\item $ f(ab)=f(a)f(b) $
+		\item $ f(1_A)=f(1_B) $
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}[di omomorfismo]\label{omoanelli}
+	Dato un omomorfismo di anelli $ f $ e un ideale $ I \subseteq \ker f $, esiste ed è unico l'omomorfismo $ \bar{f} $ che fa commutare il seguente diagramma
+	\[ \begin{tikzcd}
+	A \arrow{r}{f} \arrow[swap]{d}{\pi} & B \\
+	\faktor{A}{I} \arrow[swap]{ru}{\bar{f}}
+	\end{tikzcd} \]
+\end{theorem}
+\begin{proof}
+	Quello che dice non mi convince.
+\end{proof}
+\begin{remark}
+	Questo dimostra che gli ideali sono tutti e soli i nuclei di omorfismi.
+\end{remark}
+
+\begin{theorem}[di corrispondenza]\label{corr}
+	Ogni proiezione $ \Pi : A \to \faktor{A}{I} $ induce una relazione biunivoca tra gli ideali del quoziente e gli ideali di $ A $ che contengono $ I $
+	\[ \{ \text{ideali di }\faktor{A}{I} \} \leftrightarrow \{ \text{ideali di $ A $ che contengono $ I $} \} \]
+	che preserva:
+	\begin{itemize}
+		\item l'ordinamento indotto dall'inclusione.
+		\item l'indice.
+		\item primalità e massimalità.
+	\end{itemize}
+\end{theorem}
+\begin{proof}
+	Dato un omomorfismo $ f $ e un ideale $ J \subseteq A $, osserviamo che $ f^{-1}(J) $ è un anello.
+\end{proof}
+\begin{remark}
+	Vale sempre che
+	\[ IJ \subseteq I \cap J \]
+	c'è uguaglianza in caso di \emph{comassimalità}
+	\[ I + J = A \;\Leftrightarrow\; IJ = I \cap J \]
+\end{remark}
+\begin{proof}
+	contenuto...
+\end{proof}
+
+\begin{theorem}[cinese degli anelli]
+	Dati due ideali $ I, J \subseteq A $ comassimali, si ha che
+	\[ \faktor{A}{IJ} \cong \faktor{A}{I} \times \faktor{A}{J} \]
+\end{theorem}
+\begin{proof}
+	La mappa
+	\fun{f}{A}{\faktor{A}{I} \times \faktor{A}{J}}{a}{(a + I, a + J)}
+	è un omomorfismo di nucleo
+	\[ \ker f = I \cap J \]
+	Inoltre $ f $ è suriettivo se e solo se $ I + J = A $: se $ f $ è suriettivo, prendiamo un elemento $ a $ nella controimmagine di $ (1 + I, J) $, ossia un elemento tale che 
+	$ a-1 \in I $ e $ a \in J $.
+	Pertanto 
+	\[ a-1 = i \quad\Rightarrow\quad 1 = a + i \in I + J \]
+	Se invece $ 1 \in I + J $, allora possiamo trovare due elementi tale che \[ 1 = i + j \]
+	e scelta una qualunque coppia $ (x + I, y + J) $, abbiamo che
+	\[ y + j(x-y) = xj + yi = x + i(y-x) \]
+\end{proof}
+
+\begin{definition}[ideale primo]
+	Un ideale $ I \subseteq A $ si dice \emph{primo} quando
+	\[ \forall x, y \in A \qquad xy \in I \;\Rightarrow\; x \in I \text{ o } y \in I \]
+\end{definition}
+
+\begin{definition}[ideale massimale]
+	Un ideale $ I \subseteq A $ si dice \emph{massimale}, se è massimale rispetto all'inclusione tra gli ideali propri di $ A $.
+\end{definition}
+
+\begin{theorem}
+	Dato un ideale $ I \subseteq A $
+	\[ I \text{ primo} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ dominio} \]
+	\[ I \text{ massimale} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ campo} \]
+\end{theorem}
+
+\begin{remark}
+	$ A $ è un dominio se e solo se l'ideale $ \{0\} $ è primo.
+\end{remark}
+\begin{remark}
+	$ A $ è un campo se e solo se l'ideale $ \{0\} $ è massimale.
+\end{remark}
+\begin{remark}
+	Un ideale massimale è anche primo, perché ogni campo è anche un dominio.
+\end{remark}
+
+\textbf{Fatti su $ \sqrt{I} $.}
+\begin{enumerate}
+	\item $ \sqrt{I} $ è un ideale. \\ (Infatti è un sottoinsieme additivamente chiuso
+	\[ a^n \in I,\;  b^m \in I \quad\Rightarrow\quad (a+b)^{n+m} \in I \]
+	e assorbente per moltiplicazione
+	\[ a^n \in I \quad\Rightarrow\quad (sa)^{n} = s^na^n \in sI = I ) \]
+	
+	\item $ I \subseteq \sqrt{I} $.
+	\item $ \sqrt{IJ} = \sqrt{I \cap J} = \sqrt{I} \cap \sqrt{J} $. \\ (Osserviamo che
+	\[ I \subseteq J \quad\Rightarrow\quad \sqrt{I} \subseteq \sqrt{J} \]
+	dunque 
+	\[ \sqrt{IJ} \subseteq \sqrt{I \cap J} \subseteq \sqrt{I} \cap \sqrt{J} \subseteq \sqrt{IJ} \]
+	dove le prime due inclusioni sono conseguenza dell'osservazione di sopra, mentre l'ultima si ottiene da
+	\[ a^n \in I, b^m \in J \quad\Rightarrow\quad (ab)^{m + n} \in I \cap J )\]
+	
+	\item $ \sqrt{I} = A $ se e solo se $ I = A $.
+	\item Se $ P $ è un ideale primo, allora $ \sqrt{P} = P $. \\ 
+	(Se $ x^n \in P $, ho $ x = x \cdot x \cdots x $ per $ n $ volte e almeno uno dei fattori sta in $ P $)
+	
+	\item $ \mathcal{N} = \bigcap_{P \subseteq A} P $. \\ (Chiaramente se $ x $ è nilpotente $ x ^n \in P $ per ogni ideale primo $ P $.
+	
+	Mostriamo che, viceversa, se $ x $ appartiene a tutti gli ideali primi allora è nilpotente. Ragioniamo per assurdo: fissato $ x $ nell'intersezione, assumiamo $$  x^n \neq 0 \qquad \forall n \in \mathbb{N} $$ Consideriamo la famiglia di ideali
+	$$  \mathcal{F} = \{ I \subseteq A \mid x^n \notin I \;\forall n \in \mathbb{N}  \}  $$
+	Osserviamo che per ipotesi $ {0} \in \mathcal{F} $, quindi la famiglia non è vuota. Inoltre è induttiva! (L'unione di una catena di ideali è un ideale e la proprietà di famiglia si conserva). Dunque, per il Lemma di Zorn, abbiamo un ideale $ P $ massimale in $ \mathcal F $.
+	
+	Mostriamo che $ P $ deve essere primo, giungendo all'assurdo. Preso $ ab \in P $ se uno degli ideali 
+	\[ P + (a) \qquad \qquad P + (b) \]
+	appartenesse alla famiglia $ \mathcal{F} $, allora sarebbe sottoinsieme di $ P $ (e dunque $ a \in P $). Se nessuno dei due appartenesse alla famiglia, allora
+	\[ x^n \in P + (a) \qquad x^m \in P + (b) \]
+	ma
+	\[ x^{n + m} \in (P + (a))(P + (b)) = P \]
+	che dunque dev'essere primo.)
+	
+	\item $ \sqrt{I} = \bigcap_{I \subseteq P} P $. \\ (Il radicale sono i nilpotenti del quoziente, il fatto segue dal teorema di corrispondenza.)
+	
+\end{enumerate}
+
+\textbf{Prodotto diretto tra anelli.} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale \[ (1, 0)(0, 1) = (0, 0) \] non è un dominio.
+
+I nilpotenti nel prodotto
+\[ \mathcal{N}_{A \times B} = \mathcal{N}_A \times \mathcal{N}_B \]
+
+Gli invertibili
+\[ (A\times B)^\times = A^\times \times B^\times  \]
+
+Fatto piacevole: gli ideali sono tutti e soli i prodotti di ideali. Prendiamo $ I \subseteq A \times B $ e consideriamo le proiezioni $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideali di $ A $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $, perché l'inclusione opposta è un fatto insiemistico. Se $ (a, y), (x, b) \in I $, deve starci anche $ (a, b) $: ma $ (1, 0)(a, y) = (a, 0) \in I $, analogamente $ (0, b) \in I $, dunque
+\[ (a, 0) + (0, b) \in I \]
+
+\textbf{Estensione e Contrazione di Ideali.} Dati due anelli, ognuno col proprio ideale $ I \subseteq A $ e $ J  \subseteq B $, e un omomorfismo $ f $ tra i due
+
+\[ \begin{tikzcd}
+A \arrow{r}{f}  & B \\
+I \arrow[swap]{u}{id} & J \arrow[swap]{u}{id}
+\end{tikzcd} \]
+
+Sappiamo che 
+\begin{enumerate}
+	\item $ f^{-1}(J) $ è sempre un ideale.
+	\item $ f(I) $ è un ideale se e solo se l'omomorfismo è suriettivo.
+\end{enumerate}
+
+\begin{definition}
+	Chiamiamo ideale contratto $ J^c $ la sua controimmagine $$  J^c = f^{-1}(J)  $$
+\end{definition}
+\begin{definition}
+	Chiamiamo ideale esteso $ I^e $ il generato dalla sua immagine
+	\[I^e = \left(f(I)\right) \]
+\end{definition}
+
+Poiché possiamo spezzare la mappa $ f $ passando per il quoziente
+\[ \begin{tikzcd}
+A \arrow{r}{f} \arrow[swap]{d}{\pi} & B \\
+\faktor{A}{\ker f} \arrow[swap]{ru}{\varphi}
+\end{tikzcd} \]
+e il comportamento degli ideali attraverso la proiezione $ \pi $ è completamente determinato dal Teorema di Corrispondenza (\ref{corr}), possiamo limitarci a studiare cosa succede attraverso l'omomorfismo $ \varphi $, che essendo iniettivo possiamo considerare come omomorfismo di inclusione.
+
+Prendiamo quindi $ A \subseteq B $, abbiamo
+\begin{enumerate}
+	\item $ J^c = J \cap A $
+	\item $ I^e = (I) $
+\end{enumerate}
+
+\begin{theorem}
+	La contrazione di un ideale primo è ancora un ideale primo.
+\end{theorem}
+\begin{proof}
+	$ J $ è primo se e solo se $ \faktor{B}{J} $ è un dominio. Consideriamo la mappa composizione 
+	\[ \varphi : A \hookrightarrow B \to \faktor{B}{J} \]
+	questa è un omomorfismo di nucleo
+	\[ \ker\varphi = J \cap A = J^c \]
+	Dunque per il primo teorema di omomorfismo esiste un omomorfismo iniettivo
+	\[ \faktor{A}{J^c} \hookrightarrow \faktor{B}{J} \]
+	e i sottoanelli di domini sono a loro volta domini.
+\end{proof}
+
+Teoremi analoghi con ideali massimali, o estensioni, non funzionano. Controesempio?
+
+\end{multicols}
+
+\subsection{Domini}
+\begin{multicols}{2}
+
+\textbf{Campo dei quozienti. $ \Q(A) $}
+
+\begin{definition}
+	Un insieme $ S $ di elementi di un dominio $ A $ è detto \emph{parte moltiplicativa} se
+	\begin{enumerate}
+		\item è moltiplicativamente chiuso
+		\item $ 1 \in S $
+		\item $ 0 \notin S $
+	\end{enumerate}
+\end{definition}
+
+\begin{remark}
+	$ A $ è dominio se e sole se $ A - \{0\} $ è parte moltiplicativa.
+\end{remark}
+
+Costruiamo il campo dei quozienti del dominio $ A $ come il quoziente di $ A \times (A \setminus \{0\}) $ per la relazione di equivalenza $$  (a, b) \sim (c, d) \quad\Leftrightarrow\quad ad = bc $$
+Denotiamo questo insieme con $ \Q(A) $. Indichiamo i suoi elementi come $ \frac{a}{b} $ e definiamo la somma e il prodotto in modo che
+\[ \frac{a}{b} + \frac{c}{d} = \frac{ad + bc}{bd} \qquad\qquad \frac{a}{b}\cdot \frac{c}{d} = \frac{ac}{bd} \]
+
+\begin{remark}
+	$ (Q(A),\, +,\, \cdot\,) $ sopra definito è un campo e
+	\begin{align*}
+	q \colon A &\hookrightarrow \Q(A) \\
+	a &\mapsto \frac{a}{1}
+	\end{align*}
+	è omomorfismo iniettivo.
+\end{remark}
+
+\begin{theorem}
+	$ (Q(A),\, +,\, \cdot\,) $ è il più piccolo campo in cui possiamo immergere $ A $. Nel senso che l'immersione di $ A $ in un campo $ \mathbb{K} $ si estende all'immersione di $ \Q(A) $ in $ \mathbb{K} $.
+	\[ \begin{tikzcd}
+	A \arrow{r}{\varphi} \arrow[swap]{d}{q} & \K \\
+	\Q(A) \arrow[swap]{ru}{\bar{\varphi}}
+	\end{tikzcd} \]
+\end{theorem}
+\begin{proof}
+	L'estensione è naturale
+	\[ \bar{\varphi}: \frac{a}{b} \mapsto \varphi(a) \varphi(b)^{-1} \]
+	Una volta verificato che è un omomorfismo, questo dev'essere necessariamente iniettivo perché $ \Q(A) $ è un campo, pertanto ha solo ideali banali.
+\end{proof}
+
+\columnbreak
+\textbf{Divisibilità.}\\
+Come al solito, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E' immediato tradurre la relazione di divisibilità in termini di ideali generati, infatti 
+\[ a \mid b \quad\Leftrightarrow\quad (b) \subseteq (a) \]
+
+\begin{definition}
+	Diciamo che due elementi $ a, a' \in A $ sono \emph{associati} quando si dividono vincendevolmente
+
+\[ (a) = (a') \quad\Leftrightarrow\quad a' = au \;\text{ per } u \in A^\times \]
+
+lo indicheremo con $ a \sim a' $.
+\end{definition}
+
+Possiamo definire l'MCD tra due elementi $ a, b $ come quegli elementi $ d $ tali che
+\begin{enumerate}
+	\item $ d \mid a $ e $ d \mid b $.
+	\item Se $ c \mid a $ e $ c \mid b $, allora $ c \mid d $.
+\end{enumerate}
+è immediato osservare che gli MCD di una coppia sono associati.
+
+\begin{definition}
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è primo se \[ x \mid ab \quad\Rightarrow\quad x \mid a \; \text{ o }\; x \mid b \]
+\end{definition}
+
+\begin{definition}
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è irriducibile se \[ x = ab \quad\Rightarrow\quad a\in A^\times \; \text{ o }\; b \in A^\times \]
+\end{definition}
+
+I seguenti risultati sono la semplice traduzione delle relazioni di divisibilità di queste ultime definizioni nel linguaggio degli ideali.
+
+\begin{theorem}\label{prpr}
+	Un elemento $ x $ è primo se e solo se l'ideale da lui generato $ (x) $ è primo e non banale.
+\end{theorem}
+
+\begin{theorem}\label{mama}
+	Un elemento $ x $ è massimale se e solo se l'ideale da lui generato $ (x) $ è massimale tra i principali.
+\end{theorem}
+
+\begin{theorem}\label{epei}
+	Ogni elemento primo è anche irriducibile. 
+\end{theorem}
+
+\end{multicols}
+
+\subsection{Anelli di Polinomi}
+
+\newpage
+\subsection{Domini Speciali}
+\begin{multicols}{2}
+	Diamo un po' di definizioni insieme
+	\begin{definition}
+		Ci piacciono i seguenti domini speciali:
+		\begin{itemize}
+			\item [(\textsc{ufd})] Ogni elemento non nullo e non invertibile si scrive in modo unico come prodotto di irriducibili.
+			
+			\item [(\textsc{pid})] Tutti gli ideali sono principali.
+			
+			\item [(\textsc{ed})] Esiste una funzione grado \[{d}:{A\setminus\{0\}}\to{\mathbb{N}}\]
+			tale che 
+			\begin{enumerate}
+				\item $ d(a) \leq d(ab) $ su tutti i valori in cui è definita.
+				\item Presi comunque due elementi $ a, b $ con $ b \neq 0 $ esistono $ q, r $ tali che
+				\[ a = qb + r \]
+				e tali che $ d(r) < d(b) $ oppure $ r = 0 $.
+			\end{enumerate}
+			
+		\end{itemize}
+	\end{definition}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item $ \Z $ con la funzione $ \mid \cdot\mid $ è un dominio euclideo.
+	\item $ \K[x] $ con la funzione $ \deg(\,\cdot\,) $ è un dominio euclideo.
+	\item $ \Z[\,i\,] $ con la norma $ N(x) = x\bar{x} $ è un dominio euclideo.
+\end{enumerate}
+
+\begin{theorem}
+	Vale la seguente catena di implicazioni
+	\[ (\textsc{ed})\Rightarrow(\textsc{pid})\Rightarrow(\textsc{ufd}) \]
+\end{theorem}
+	
+\textbf{Controesempi.}
+\begin{itemize}
+	\item $ \Z[x] $ è \textsc{pid} ma non è \textsc{ed}.
+\end{itemize}
+	
+\subsubsection{Domini Euclidei}
+
+\begin{theorem}
+	Gli elementi invertibili sono tutti e soli quelli di grado minimo.
+\end{theorem}
+\begin{proof}
+	Osserviamo innanzitutto che ha senso parlare di grado minimo, poiché l'immagine del grado è un sottoinsieme non vuoto dei naturali.
+	
+	Se $ x $ è invertibile, per ogni $ a \in A $ non nullo
+	\[ d(x) \leq d(x) d(ax^{-1}) \leq d(x \cdot ax^{-1}) = d(a) \]
+	e se per sbaglio $ d(ax^{-1}) = 0 $, allora lo stesso vale per il grado di $ x^{-1} $ e quindi di $ x $.
+	
+	Viceversa, sia $ x $ un elemento di grado minimo e $ a $ un elemento qualunque. Abbiamo che
+	\[ a = qx + r \]
+	e, escludendo $ d(r) < d(x) $, dobbiamo avere che $ r = 0 $. Quindi $ x $ divide ogni elemento ed è pertanto invertibile. 
+\end{proof}
+
+\begin{theorem}
+	Esiste il \textsc{mcd} e lo possiamo calcolare con l'algoritmo di Euclide.
+\end{theorem}
+	
+\begin{theorem}
+	$ (\textsc{ed})\Rightarrow(\textsc{pid}) $
+\end{theorem}
+\begin{proof}
+	Prendiamo un ideale $ I $ di un \textsc{ed} e sia $ x $ il suo elemento di grado minimo. Vogliamo dimostrare che 
+	\[ I = (x) \]
+	per assurdo. Supponiamo che esista $ y \in I $ tale che
+	\[ x = qy + r \]
+	con $ r \neq 0 $, abbiamo allora necessariamente che $ d(r) < d(x) $. Purtroppo però
+	\[ r = x - qy \in I \]
+	contraddice la minimalità di $ x $.
+\end{proof}
+
+\textbf{Controesempio?} 
+
+\subsubsection{Dominio a Ideali Principali}
+\begin{remark}
+	Il \textsc{mcd}$ (a, b) $ esiste: è il generatore dell'ideale $$  (a, b) = (d)  $$
+\end{remark}
+
+\begin{theorem}
+	Gli ideali primi sono anche massimali.
+\end{theorem}
+\begin{proof}
+	\begin{align*}
+		(x) \text{ primo} \;& \Rightarrow\; x \text{ è un elemento primo} & \text{(\ref{prpr})} \\
+		& \Rightarrow x \text{ è irriducibile} &\text{(\ref{epei})} \\
+		& \Rightarrow (x) \text{ è massiamale tra gli ideali primi} &\text{(\ref{mama})} \\
+		& \Rightarrow (x) \text{ è massimale} &\text{(\textsc{pid})}
+	\end{align*}
+\end{proof}
+
+\begin{remark}
+	Ripercorrendo la catena di implicazioni sopra, ci si accorge che abbiamo mostrato anche l'equivalenza tra le definizioni di irriducibile e primo  nei \textsc{pid}.
+\end{remark}
+
+\subsubsection{Dominio a Fattorizzazione Unica}
+
+\textbf{MCD.} Negli anelli \textsc{ufd} l'$ \textsc{mcd}(a, b) $ esiste, perché possiamo caratterizzarlo attraverso la fattorizzazione, come sugli interi. Però non è detto che appartenga all'ideale $ (a, b) $. Per esempio: in $ \Z[x] $ abbiamo che $ (2, x) = 1 $ ma non esistono polinomi $ f, g $ tali che
+\[ 1 = 2f + xg \]
+infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
+
+\begin{theorem}[Caratterizzazione degli \textsc{ufd}] \label{carufd}
+	Un dominio A è \textsc{ufd} se e solo se valgono le seguenti condizioni
+	\begin{enumerate}
+		\item irriducibile $ \Rightarrow $ primo
+		\item Ogni catena discendente di divisibilità è stazionaria.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	Cominciamo con la freccia più interessante.
+	
+	 La proprietà 2 ci garantisce l'esistenza della fattorizzazione. Ragioniamo per assurdo: prendiamo $ x \in A\setminus(A^\times \cup \{0\}) $ e supponiamo che non ammetta fattorizzazione. Non può essere irriducibile, altrimenti avremmo trovato una fattorizzazione, pertanto si può scrivere come
+	\[ x = y_0z_0 \quad\text{con } y_0, z_0 \notin A^\times \]
+	Però questa non può essere una fattorizzazione, pertanto uno dei due non è né irriducibile né fattorizzabile, diciamo $ y_0 $. Allora lo possiamo scrivere come
+	\[ y_0 = y_1 z_1 \]
+	e trovandoci nelle stesse ipotesi di prima, possiamo iterare il procedimento indefinitamente, ottenendo
+	\[ \cdots \mid y_2 \mid y_1 \mid y_0 \]
+	una catena discendente infinita e non stazionaria, assurdo.
+	
+	La proprietà 1 ci garantisce l'unicità della fattorizzazione. Procediamo per induzione forte sulla lunghezza minima $ l_x $ della fattorizzazione di un certo elemento $ x $. Se $ l_x = 1 $ e
+	\[ p = x = q_1 \cdots q_s \]
+	poiché $ p $ è irriducibile, tutti i $ q_i $ tranne uno sono invertibili e quello che si salva non può che essere associato a $ p $. Supponiamo ora che tutti gli elementi per cui $ l_x < n $ abbiamo fattorizzazione unica e prendiamo un elemento $ x $ tale che $ l_x = n $. Allora prese
+	\[ p_1 \cdots p_n = x = q_1 \cdots q_s \]
+	sappiamo che $ p_n $ è irriducibile e quindi primo, dunque
+	\[ p_n \mid q_1 \cdots q_s \quad\Rightarrow\quad \textsc{wlog }\; p_n \mid q_s  \]
+	poiché anche $ q_n $ è irriducibile e quindi primo, devono essere associati. Pertanto dobbiamo avere che
+	\[ p_1 \cdots p_{n-1} = \tilde{x} = q_1 \cdots q_{s-1} \]
+	ma le due fattorizzazione sono uguali per ipotesi induttiva, poiché $ l_{\tilde{x}} \leq n-1 < n $.
+	
+	Viceversa, se $ A $ è \textsc{ufd}, presa una catena discendente di divisibilità
+	\[ \cdots \mid a_2 \mid a_1 \mid a_0 \]
+	possiamo considerare gli insiemi $ A_n $ di tutti i fattori di $ a_n $ presi con molteplicità e osservare che la catena discendente
+	\[ \cdots \subseteq A_2 \subseteq A_1 \subseteq A_0 \]
+	si stabilizza, perché le cardinalità corrispondenti formano una catena discendente di interi.
+	
+	Inoltre, preso un elemento irriducibile $ x $, se
+	\[ x \mid ab \]
+	un associato di $ x $ deve comparire nella fattorizzazione di almeno uno tra $ a $ e $ b $, quindi $ x $ divide almeno uno dei due e pertanto soddisfa la definizione di elemento primo.
+\end{proof}
+
+\begin{remark}
+	Segue che $ \textsc{pid}\Rightarrow \textsc{ufd} $
+\end{remark}
+\begin{proof}
+	La prima condizione l'abbiamo già mostrata. Presa una catena discendente di divisibilità, possiamo tradurla in una catena ascendente di ideali
+	\[ (a_0) \subseteq (a_1 ) \subseteq (a_2) \subseteq \cdots \]
+	Però l'ideale $ I = \bigcup (a_i) $ è generato da un elemento $ a $, perché tutti gli ideali sono principali. Ma per come è definito $ I $, l'elemento $ a $ già apparteneva a un certo $ (a_n) $, generando lui come tutti i suoi successori. 
+\end{proof}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item $ \K [x, \sqrt{x}, \sqrt[3]{x}, \cdots ] $ non è \textsc{ufd}. Infatti 
+	\[ \cdots \mid \sqrt[8]{x} \mid \sqrt[4]{x} \mid \sqrt[2]{x} \mid x \]
+	è una catena discendente infinita di divisibilità.
+	
+	\item $ \Z[\sqrt{-5}] $ non è \textsc{ufd}. Infatti $ 2 $ è irriducibile ma non primo.
+	Se \[ 2 = (a+b\sqrt{-5})(c + d\sqrt{-5}) \] in norma abbiamo una contraddizione, mentre
+	\[ (1 + \sqrt{-5})\cdot (1 - \sqrt{-5}) = 2 \cdot 3 \]
+	dunque \[ 2 \mid (1 + \sqrt{-5})\cdot (1 - \sqrt{-5})  \] ma
+	\[ N(2) \nmid N(1 \pm \sqrt{-5}) \]
+	
+\end{enumerate}
+
+\begin{definition}
+	Chiamiamo \emph{contenuto} del polinomio $ f \in A[x] $ l'\textsc{mcd} dei suoi coefficienti
+	\[ c(f) = \textsc{mcd}(a_0, \dots , a_n) \]
+\end{definition}
+
+\begin{definition}
+	Chiamiamo \emph{primitivo} un polinomio $ f $ con contenuto unitario
+	\[ c(f) = 1 \]
+\end{definition}
+
+\begin{theorem}[Lemma di Gauss]\label{LemmaGauss}
+	Valgono i seguenti enunciati
+	\begin{enumerate}
+	\item Il prodotto di polinomi primitivi è primitivo.
+	\item La funzione contenuto è completamente moltiplicativa.
+	\item Se $ c(f) = 1 $ e $ f \mid g $ in $ \Q(A)[x] $, allora $ f \mid g $ in $ A[x] $.
+	\item Se $ f = hg $ in $ \Q(A)[x] $, esistono $ h_1, g_1 \in A[x] $ tali che $ f = h_1g_1 $.
+	\end{enumerate}
+	
+\end{theorem}
+\begin{proof}
+	
+\begin{enumerate}
+	\item  
+\end{enumerate}
+\end{proof}
+
+\begin{theorem}
+	$ A $ è \textsc{ufd} $ \Rightarrow $ $ A[x] $ è \textsc{ufd}
+\end{theorem}
+\begin{proof}
+	Vogliamo utilizzare la caratterizzazione dei domini a fattorizzazione unica (\ref{carufd}).
+	
+	
+	Iniziamo verificando che dato un polinomio $ f \in A[x] $ irriducibile, questo è anche primo. Ovviamente 
+	\[ c(f) \mid f \quad\Rightarrow\quad c(f) = f \;\text{ o }\; c(f) = 1 \]
+	Se $ c(f) = f $, allora $ f \in A $ e necessariamente $ f $ dev'essere irriducibile in $ A $.
+	Se $ c(f) = 1 $, allora $ f $ è primitivo e deve necessariamente essere essere irriducibile anche in $ \Q(A)[x] $, altrimenti potremmo riportare la decomposizione in $ A[x] $ mediante il Lemma di Gauss. Ma $ \Q(A)[x] $ è un \textsc{ed}, pertanto $ f $ è anche primo. Quindi se $ f \mid gh $ in $ A[x] $, naturalmente lo divide anche in $ \Q(A)[x] $, dove essendo primo divide uno dei due, che quindi divide anche in $ A[x] $ (ancora una volta per Lemma di Gauss).
+	
+	
+	Mostriamo ora che ogni catena discendente di divisibilità è stazionaria. Prendiamo una sequenza di polinomi $ \{ f_n \} $ tale che
+	\[ \cdots \mid f_3 \mid f_2 \mid f_1 \mid f_0 \]
+	Possiamo decomporre ogni polinomio nel prodotto della parte primitiva per il contenuto
+	\[ f = c(f)f' \]
+	e osservare che la relazione di divisibilità è soddisfatta se e solo se lo è per componenti
+	\[ f \mid g \quad\Leftrightarrow\quad c(f) \mid c(g) \;\text{ e }\; f' \mid g \]
+	ci riduciamo dunque a contemplare due diverse catene discendenti di divisibilità
+	\[ \cdots \mid c(f_3) \mid c(f_2) \mid c(f_1) \mid c(f_0) \]
+	stazionaria perché  $ A[x] $ è \textsc{ufd}
+	\[ \cdots \mid f'_3 \mid f'_2 \mid f'_1 \mid f'_0 \]
+	stazionaria perché  $ \Q(A)[x] $ è \textsc{ufd}.
+\end{proof}
+
+
+
+\begin{theorem}[Criterio di Eisenstein]
+	Dato $ f \in A[x] $ primitivo e $ p \in A $ primo, se
+	\begin{enumerate}
+		\item  $ p \nmid a_n $.
+		\item $ p \mid a_i $ per $ 0\leq i\leq n-1  $.
+		\item $ p^2 \nmid a_0 $
+	\end{enumerate}
+	allora $ f $ è irriducibile.
+\end{theorem}
+\begin{proof}
+	contenuto...
+\end{proof}
+
+\textbf{Esempi.}
+\begin{enumerate}
+	\item  In $ \K[x][\,t\,] $, l'elemento $ f = t^n - x $ è irriducibile per il criterio di Eisenstein con $ p = x $. 
+	\item $ A[\{x_i\}_{i \in \mathbb{N}}] $ non è Noetheriano
+	\[ (x_0) \subsetneq (x_0, x_1) \subsetneq (x_0, x_1, x_2) \subsetneq \dots  \]
+	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ A[x_1, \dots, x_m] $ per un qualche intero $ m $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, avremmo più fattorizzazioni in $ A[x_1, \dots, x_k] $.
+\end{enumerate}
+
+
+\end{multicols}
+
+
+
+
+
+
+
