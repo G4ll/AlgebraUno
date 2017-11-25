@@ -2,7 +2,7 @@
 \section{Anelli}
 \subsection{Prime definizioni}
 \begin{multicols}{2}
-Da qua in avanti, per Anello intenderemo sempre che l'anello è commutativo e ha l'identità.
+Per "Anello" si intende un anello commutativo con identità.
 
 \begin{definition}[Divisori di 0]
 	Un elemento di un anello $ x \in A $ si dice \emph{divisore di zero} quando
@@ -29,16 +29,9 @@ Da qua in avanti, per Anello intenderemo sempre che l'anello è commutativo e ha
 	Un dominio d'integrità finito è un campo.
 \end{remark}
 
-Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
-\begin{itemize}
-	\item  $ I \cup J $
-	\item  $ I \cap J $
-	\item $ I + J $
-	\item  $ IJ $
-	\item $ \sqrt{I} := \{ x \in A \mid x^n \in I \} $
-	\item $ (I:J) := \{ x \in A \mid xJ \in I \} $
-\end{itemize}
-
+\begin{definition}[ideale]
+	Chiamiamo \emph{ideale} un sottogruppo additivamente chiuso $ I \subseteq A $ che assorbe per moltiplicazione.
+\end{definition}
 
 \begin{remark}
 	Abbiamo una bella caratterizzazione degli ideali propri
@@ -48,7 +41,7 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 
 
 \begin{remark}
-	Un campo $ \mathbb{K} $ ha solo anelli banali.
+	Un campo $ \mathbb{K} $ ha solo ideali banali.
 \end{remark}
 
 \begin{definition}[Omomorfismo]
@@ -64,18 +57,18 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	Dato un omomorfismo di anelli $ f $ e un ideale $ I \subseteq \ker f $, esiste ed è unico l'omomorfismo $ \bar{f} $ che fa commutare il seguente diagramma
 	\[ \begin{tikzcd}
 	A \arrow{r}{f} \arrow[swap]{d}{\pi} & B \\
-	\faktor{A}{I} \arrow[swap]{ru}{\bar{f}}
+	\faktor{A}{I} \arrow[swap, dashed]{ru}{\bar{f}}
 	\end{tikzcd} \]
 \end{theorem}
 \begin{proof}
 	Quello che dice non mi convince.
 \end{proof}
 \begin{remark}
-	Questo dimostra che gli ideali sono tutti e soli i nuclei di omorfismi.
+	Gli ideali sono tutti e soli i nuclei di omorfismi.
 \end{remark}
 
 \begin{theorem}[di corrispondenza]\label{corr}
-	Ogni proiezione $ \Pi : A \to \faktor{A}{I} $ induce una relazione biunivoca tra gli ideali del quoziente e gli ideali di $ A $ che contengono $ I $
+	Ogni proiezione $$  \Pi : A \to \faktor{A}{I}  $$ induce una relazione biunivoca tra gli ideali del quoziente e gli ideali di $ A $ che contengono $ I $
 	\[ \{ \text{ideali di }\faktor{A}{I} \} \leftrightarrow \{ \text{ideali di $ A $ che contengono $ I $} \} \]
 	che preserva:
 	\begin{itemize}
@@ -85,7 +78,7 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-	Dato un omomorfismo $ f $ e un ideale $ J \subseteq A $, osserviamo che $ f^{-1}(J) $ è un anello.
+	
 \end{proof}
 \begin{remark}
 	Vale sempre che
@@ -124,7 +117,7 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	Un ideale $ I \subseteq A $ si dice \emph{massimale}, se è massimale rispetto all'inclusione tra gli ideali propri di $ A $.
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}\label{idealequoziente}
 	Dato un ideale $ I \subseteq A $
 	\[ I \text{ primo} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ dominio} \]
 	\[ I \text{ massimale} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ campo} \]
@@ -140,7 +133,8 @@ Lista di oggetti che potrebbero sembrare ideali, dati due ideali $ I $ e $ J $:
 	Un ideale massimale è anche primo, perché ogni campo è anche un dominio.
 \end{remark}
 
-\textbf{Fatti su $ \sqrt{I} $.}
+\subsection{Fatti su Ideali}
+\textbf{Fatti su $ \sqrt{I}:= \{ x \in A \mid x^n \in I \} $.}
 \begin{enumerate}
 	\item $ \sqrt{I} $ è un ideale. \\ (Infatti è un sottoinsieme additivamente chiuso
 	\[ a^n \in I,\;  b^m \in I \quad\Rightarrow\quad (a+b)^{n+m} \in I \]
@@ -192,7 +186,7 @@ Fatto piacevole: gli ideali sono tutti e soli i prodotti di ideali. Prendiamo $ 
 
 \[ \begin{tikzcd}
 A \arrow{r}{f}  & B \\
-I \arrow[swap]{u}{id} & J \arrow[swap]{u}{id}
+I \arrow[swap, hook]{u}{} & J \arrow[swap, hook]{u}{}
 \end{tikzcd} \]
 
 Sappiamo che 
@@ -273,8 +267,8 @@ Denotiamo questo insieme con $ \Q(A) $. Indichiamo i suoi elementi come $ \frac{
 \begin{theorem}
 	$ (Q(A),\, +,\, \cdot\,) $ è il più piccolo campo in cui possiamo immergere $ A $. Nel senso che l'immersione di $ A $ in un campo $ \mathbb{K} $ si estende all'immersione di $ \Q(A) $ in $ \mathbb{K} $.
 	\[ \begin{tikzcd}
-	A \arrow{r}{\varphi} \arrow[swap]{d}{q} & \K \\
-	\Q(A) \arrow[swap]{ru}{\bar{\varphi}}
+	A \arrow[hook]{r}{\varphi} \arrow[swap, hook]{d}{q} & \K \\
+	\Q(A) \arrow[swap, dashed]{ru}{\bar{\varphi}}
 	\end{tikzcd} \]
 \end{theorem}
 \begin{proof}
@@ -285,7 +279,7 @@ Denotiamo questo insieme con $ \Q(A) $. Indichiamo i suoi elementi come $ \frac{
 
 \columnbreak
 \textbf{Divisibilità.}\\
-Come al solito, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E' immediato tradurre la relazione di divisibilità in termini di ideali generati, infatti 
+In modo naturale, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E' immediato tradurre la relazione di divisibilità in termini di ideali generati, infatti 
 \[ a \mid b \quad\Leftrightarrow\quad (b) \subseteq (a) \]
 
 \begin{definition}
@@ -296,38 +290,78 @@ Come al solito, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E
 lo indicheremo con $ a \sim a' $.
 \end{definition}
 
-Possiamo definire l'MCD tra due elementi $ a, b $ come quegli elementi $ d $ tali che
+Possiamo definire  i \textsc{mcd} tra due elementi $ a,\, b $ come quegli elementi $ d $ tali che
 \begin{enumerate}
-	\item $ d \mid a $ e $ d \mid b $.
-	\item Se $ c \mid a $ e $ c \mid b $, allora $ c \mid d $.
+	\item $ d \mid a \;$   e   $\; d \mid b $.
+	\item Se $ c \mid a\; $ e $ \; c \mid b $, allora $ c \mid d $.
 \end{enumerate}
-è immediato osservare che gli MCD di una coppia sono associati.
+è immediato osservare che gli \textsc{mcd} di una coppia sono associati.
 
-\begin{definition}
-	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è primo se \[ x \mid ab \quad\Rightarrow\quad x \mid a \; \text{ o }\; x \mid b \]
+\begin{definition}[Primo]
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è \emph{primo} se \[ x \mid ab \quad\Rightarrow\quad x \mid a \; \text{ o }\; x \mid b \]
 \end{definition}
 
-\begin{definition}
-	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è irriducibile se \[ x = ab \quad\Rightarrow\quad a\in A^\times \; \text{ o }\; b \in A^\times \]
+\begin{definition}[Irriducibile]
+	Diciamo che un elemento non invertibile e non nullo $ x \in A\setminus(A^\times \cup \{0\}) $ è \emph{irriducibile} se \[ x = ab \quad\Rightarrow\quad a\in A^\times \; \text{ o }\; b \in A^\times \]
 \end{definition}
 
-I seguenti risultati sono la semplice traduzione delle relazioni di divisibilità di queste ultime definizioni nel linguaggio degli ideali.
+I seguenti risultati sono la semplice traduzione delle ultime definizioni nel linguaggio degli ideali:
 
 \begin{theorem}\label{prpr}
 	Un elemento $ x $ è primo se e solo se l'ideale da lui generato $ (x) $ è primo e non banale.
+	\[ x \text{ è primo} \quad\Leftrightarrow\quad (x) \text{ è primo } \neq \{0\}  \]
 \end{theorem}
 
 \begin{theorem}\label{mama}
 	Un elemento $ x $ è massimale se e solo se l'ideale da lui generato $ (x) $ è massimale tra i principali.
+	\[ x \text{ è irriducibile} \quad\Leftrightarrow\quad (x) \text{ è massimale tra i principali} \]
 \end{theorem}
 
 \begin{theorem}\label{epei}
-	Ogni elemento primo è anche irriducibile. 
+	Ogni elemento primo è anche irriducibile.
+	\[ x \text{ è primo} \quad\Rightarrow\quad x \text{ è irriducibile} \]
 \end{theorem}
 
 \end{multicols}
 
-\subsection{Anelli di Polinomi}
+
+\subsection{Esercizi Notevoli}
+\begin{multicols}{2}
+
+\textbf{Un solo esercizio in algebra non commutativa.}
+\begin{itemize}
+	\item Chi sono gli ideali di $ \mathcal{M}_{n \times n}(\K) $?
+
+\end{itemize}
+
+\textbf{Anelli di Polinomi.}
+\begin{itemize}
+	\item Chi sono gli elementi nilpotenti di $ A[\,x\,] $?
+	
+	\item Chi sono gli elementi invertibili di $ A[\,x\,] $?
+	
+	\item Chi sono i divisori di zero di $ A[\,x\,] $?
+\end{itemize}
+
+\textbf{Serie Formali.}
+\begin{itemize}
+	\item $ f \in K[[\, x\,]] $ è invertibile se e solo se $ a_0 \neq 0 $.
+	
+	\item $ (x) $ è l'unico ideale massimale
+	
+	\item $ \deg(f) = \min \{n \in \mathbb{N} \mid a_n \neq 0 \} $ è una funzione grado.
+\end{itemize}
+
+
+\textbf{Parti Moltiplicative.}
+
+
+\begin{itemize}
+	\item 
+\end{itemize}
+	
+\end{multicols}
+
 
 \newpage
 \subsection{Domini Speciali}
@@ -369,7 +403,7 @@ I seguenti risultati sono la semplice traduzione delle relazioni di divisibilit�
 	\item $ \Z[x] $ è \textsc{pid} ma non è \textsc{ed}.
 \end{itemize}
 	
-\subsubsection{Domini Euclidei}
+\subsubsection{Dominio Euclideo}
 
 \begin{theorem}
 	Gli elementi invertibili sono tutti e soli quelli di grado minimo.
@@ -410,7 +444,7 @@ I seguenti risultati sono la semplice traduzione delle relazioni di divisibilit�
 	Il \textsc{mcd}$ (a, b) $ esiste: è il generatore dell'ideale $$  (a, b) = (d)  $$
 \end{remark}
 
-\begin{theorem}
+\begin{theorem}\label{primossemassimale}
 	Gli ideali primi sono anche massimali.
 \end{theorem}
 \begin{proof}
@@ -491,7 +525,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	Se \[ 2 = (a+b\sqrt{-5})(c + d\sqrt{-5}) \] in norma abbiamo una contraddizione, mentre
 	\[ (1 + \sqrt{-5})\cdot (1 - \sqrt{-5}) = 2 \cdot 3 \]
 	dunque \[ 2 \mid (1 + \sqrt{-5})\cdot (1 - \sqrt{-5})  \] ma
-	\[ N(2) \nmid N(1 \pm \sqrt{-5}) \]
+	\[ 4 = N(2) \nmid N(1 \pm \sqrt{-5}) = 6 \]
 	
 \end{enumerate}
 
@@ -566,9 +600,9 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 \textbf{Esempi.}
 \begin{enumerate}
 	\item  In $ \K[x][\,t\,] $, l'elemento $ f = t^n - x $ è irriducibile per il criterio di Eisenstein con $ p = x $. 
-	\item $ A[\{x_i\}_{i \in \mathbb{N}}] $ non è Noetheriano
+	\item $ \K[\{x_i\}_{i \in \mathbb{N}}] $ non è Noetheriano
 	\[ (x_0) \subsetneq (x_0, x_1) \subsetneq (x_0, x_1, x_2) \subsetneq \dots  \]
-	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ A[x_1, \dots, x_m] $ per un qualche intero $ m $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, avremmo più fattorizzazioni in $ A[x_1, \dots, x_k] $.
+	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ \K[x_1, \dots, x_m] $ per un qualche intero $ m $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, avremmo più fattorizzazioni in $ A[x_1, \dots, x_k] $.
 \end{enumerate}
 
 

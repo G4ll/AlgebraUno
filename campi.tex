@@ -1,0 +1,107 @@
+\setcounter{section}{10} % per scegliere la lettera giusta
+\section{Campi}
+
+\subsection{Richiami}
+\begin{multicols}{2}
+
+\begin{definition}
+	Data un'estensione di campi $ K \subseteq L $, un elemento $ \alpha \in L $ si dice \emph{algebrico} su $ K $ quando 
+	\[ \exists f \in K[x] \quad \text{tale che} \quad f(\alpha) = 0 \]
+	Un elemento si dice \emph{trascendente} se non è algebrico.
+\end{definition}
+
+\begin{definition}
+	Un'estensione di campi $ K \subseteq L $ si dice \emph{algebrica} quando ogni elemento di $ L $ è algebrico su $ K $
+\end{definition}
+
+\begin{definition}
+	L'indice di un'estensione $ [L:K] $ è la dimensione di $ L $ visto come $ K $ spazio vettoriale.
+\end{definition}
+
+\begin{definition}
+	Diciamo che un'estensione $ K \subseteq L $ è \emph{semplice} se esiste un elemento $ \alpha \in L $ tale che
+	\[ L = K(\alpha) = \left\{ \frac{f(\alpha)}{g(\alpha)} \mid f, g \in K[x] \quad g(x) \neq 0  \right\} \]
+\end{definition}
+
+Possiamo costruire l'estensione semplice a partire dall'anello dei polinomi su K, applicandovi l'omomorfismo di valutazione in $ \alpha $
+\fun{\varphi_\alpha}{K[x]}{K[\alpha] \subseteq L}{f(x)}{f(\alpha)}
+l'immagine $ K[\alpha] $ è un sottoanello di un campo ed è quindi un dominio, di cui possiamo costruire il campo dei quozienti
+\[ \Q(K[\alpha]) = K(\alpha) \]
+Possiamo però mostrare che, se $ \alpha $ è algebrico, questa operazione non è necessaria. Infatti, il nucleo dell'omomorfismo di valutazione è costituito da tutti quei polinomi che si annullano in $ \alpha $, i quali costituiscono un ideale principale (perché K[x] è \textsc{ed}, dunque \textsc{pid}):
+\[ \ker\varphi_\alpha = (\mu(x)) \]
+Abbiamo già osservato che  l'immagine è un dominio, dunque $ (\mu(x)) $ è un'ideale primo (\ref{idealequoziente}).
+\[ K[\alpha] \cong \faktor{K[x]}{(\mu(x))} \]
+Ma, poiché ci troviamo in un \textsc{pid}, $ (\mu(x)) $ è anche un ideale massimale (\ref{primossemassimale}) e dunque $ K[\alpha] $ è un campo, che coincide con il proprio campo dei quozienti:
+\[ K[\,\alpha\,] = \Q(K[\,\alpha\,]) = K(\alpha) \]
+In questo caso, dobbiamo avere anche che $ \mu(x) $ è un polinomio irriducibile, possiamo quindi scegliere un rappresentate privilegiato tra i generatori del nucleo:
+
+\begin{definition}
+	Chiamiamo \emph{polinomio minimo} di $ \alpha $ l'unico generatore monico di $ \ker\varphi_\alpha $, che indicheremo con $ \mu_\alpha $:
+	\[ \ker\varphi_\alpha = (\mu_\alpha(x)) \]
+\end{definition}
+
+\begin{remark}
+	Nel caso di estensioni algebriche semplici \[ [K(\alpha) : K ] = \deg \mu_\alpha \] questo perché $ K[\,\alpha\,] $ è un $ K $-spazio vettoriale di base $$  1,\, \alpha,\, \dots,\, \alpha^{\deg \mu_\alpha-1}  $$
+\end{remark}
+
+\begin{definition}
+	Dato un insieme $ S \subseteq L $  definiamo
+	\[ K(S) = \bigcap_{K, S \subseteq F \subseteq L} F  \]
+\end{definition}
+
+\begin{definition}
+	Chiamiamo \emph{Torre di Estensioni} una catena di inclusioni tra campi
+	\[ K \subseteq F \subseteq L \qquad\text{o anche}\qquad \begin{tikzcd}[row sep=0.25cm]
+	L \arrow [d,-] \\
+	F \arrow [d,-] \\
+	K
+	\end{tikzcd} \]
+\end{definition}
+
+Elenchiamo ora una serie di proprietà delle torri di estensioni:
+
+\begin{itemize}
+	\item $ L/K $ è finita $ \Leftrightarrow $ $ L/F $ e $ F/K $ sono finite
+	\[ [L : K] = [L : F][F : K] \]
+	
+	\item $ L/K $ è finita $ \Rightarrow $ $ L/K $ è algebrica.
+	
+	\item Il viceversa è falso, si pensi a $ [\bar{\Q} : \Q] $.
+	
+	\item $ L/K $ algebrica e finitamente generata $ \Rightarrow $ finita.
+	
+	\item $ L/K $ algebrica $ \Leftrightarrow $ $ L/F $ e $ F/K $ algebriche.
+	
+	
+\end{itemize}
+
+\begin{definition}
+	Un campo $ \Omega $ è detto \emph{algebricamente chiuso} quando ogni polinomio $ f \in \Omega[\, x\,] $ ammette almeno una radice in $ \Omega $.
+\end{definition}
+
+\begin{definition}(buggata)
+	$ \bar{\Omega} $ è detta \emph{chiusura algebrica} di $ \Omega $ se:
+	\begin{enumerate}
+		\item $ \bar{\Omega} $ è algebricamente chiuso.
+		\item $ \bar{\Omega} \setminus \Omega $ è algebricamente chiuso.
+	\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+	Ogni campo $ K $ ammette una chiusura algebrica $ \bar{K} $ e ogni due sue chiusure $ \bar{K}, \bar{\bar{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
+	\[ \varphi : \bar{K} \to \bar{\bar{K}} \]
+	tale che $ \varphi_{|K} = id $.
+\end{theorem}
+
+\textbf{Esercizi.}
+\begin{itemize}
+	\item Se $ \alpha_1,\, \cdots,\, \alpha_m $ sono le radici di $ f \in K[\,x\,] $, allora
+	 \[ K(\alpha_1,\, \cdots,\, \alpha_m) \leq (\deg f)! \]
+	 
+	 \item Quante sono le $ K $-immersioni di $ K(\alpha) $ in $ \bar{K} $?
+	 
+	 \item Quante sono le radici distinte di un polinomio irriducibile?
+\end{itemize}
+
+
+\end{multicols}

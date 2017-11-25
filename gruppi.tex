@@ -269,13 +269,13 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 \begin{proof}
 	Se $ H < C_n $ il risultato viene da Aritmetica. Se $ H \nless C_n $, $ H $ contiene almeno una rotazione $ \tau = \sigma\rho^i $. Consideriamo l'omomorfismo $ f $ che fa commutare il diagramma
 	\[ \begin{tikzcd}
-	D_n \arrow{r}{\Phi} \arrow[swap]{dr}{f} & \mathbf{O}_2(\mathbb{R}) \arrow{d}{det} \\
+	D_n \arrow{r}{\Phi} \arrow[swap, dashed]{dr}{f} & \mathbf{O}_2(\mathbb{R}) \arrow{d}{det} \\
 	& \{\pm 1\} \cong \mathbb{Z}_2	\end{tikzcd}
 	\]
 	Restringiamo l'omomorfismo trovato ad $ H $
 	\[ \begin{tikzcd}
 	D_n \arrow{r}{\Phi} \arrow[swap]{dr}{f} & \mathbf{O}_2(\mathbb{R}) \arrow{d}{det} \\
-	H \arrow{r}{} \arrow[swap]{u}{i} & \mathbb{Z}_2	\end{tikzcd}
+	H \arrow[dashed]{r}{} \arrow[swap, hook]{u}{} & \mathbb{Z}_2	\end{tikzcd}
 	\]
 	Visto che $ \ker f = C_n \lhd D_n $, il sottogruppo $ H $ viene scomposto in nucleo e laterale
 	\[ H = f^{-1}(0) \sqcup f^{-1}(1) = (H \cap C_n) \sqcup \tau (H\cap C_n) \]
@@ -819,9 +819,8 @@ Quindi uno tra un 2-sylow e un 3-sylow dev'essere normale, inoltre sono ciclici 
 \begin{multicols}{2}
 	Vogliamo scoprire chi è $ \Aut{Q_8 \times D_4} $. Per far questo, possiamo scomporre un qualunque automorfismo $ \varphi $ nelle sue restrizioni ai due termini del prodotto e proiettarli sulle due componenti. Il seguente diagramma magico è molto esplicativo
 	\[ \begin{tikzcd}
-	Q_8 \arrow[swap]{dr}{imm.
-	} & & & Q_8 \\
-	D_4 \arrow[swap]{r}{imm.} & G \arrow{r}{\varphi} & G \arrow[swap]{ur}{\Pi_Q}\arrow[swap]{r}{\Pi_D} & D_4
+	Q_8 \arrow[swap, hook]{dr}{} & & & Q_8 \\
+	D_4 \arrow[swap, hook]{r}{} & G \arrow{r}{\varphi} & G \arrow[swap]{ur}{\Pi_Q}\arrow[swap]{r}{\Pi_D} & D_4
 	\end{tikzcd}\]
 	Dunque possiamo scomporre l'automorfismo nei quattro omomorfismi
 	\[ \varphi= \left(\begin{matrix}
