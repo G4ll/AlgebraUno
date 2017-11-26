@@ -29,6 +29,74 @@ Per "Anello" si intende un anello commutativo con identità.
 	Un dominio d'integrità finito è un campo.
 \end{remark}
 
+\subsubsection{Anelli di polinomi}
+Dato un anello $ A $, consideriamo il corrispondente anello dei polinomi a coefficienti in $ A $: $$  A[\,x\,] = \{ a_0 + \dots + n x^n \mid a_k \in A \}  $$
+
+\textbf{Quali sono gli elementi nilpotenti di $ A[\,x\,] $ ?} \\
+
+Prendiamo un polinomio nilpotente 
+\[ f = a_0 + \dots + a_nx^n \]
+e osserviamo che il termine di grado maggiore in $ f^k $ è $ a_n^kx^{nk} $. Quindi, affinché $ f $ sia nilpotente, $ a_n $ dev'essere nilpotente in $ A $ e pertanto $ a_nx^n $ sarà nilpotente in $ A[\, x\,] $. Osserviamo che \emph{la somma di elementi nilpotenti è nilpotente}:
+\[ a^n = 0,\, b^m = 0 \quad\Rightarrow\quad (a+b)^{n+m} = 0 \]
+per concludere che anche $ f-a_nx^n $ sarà nilpotente, e quindi, iterando
+\[ \boxed{f \in \mathcal{N}(A[\,x\,]) \LR a_0, \,\dots,\, a_n \in \mathcal{N}(A)}  \]
+
+La freccia inversa è banale: elevando il polinomio a una potenza sufficientemente alta, otteniamo prodotti di potenze dei coefficienti tali che in ogni prodotto compare almeno un coefficiente con potenza maggiore del suo indice di nilpotenza. \\
+
+\textbf{Quali sono gli elementi invertibili di $ A[\,x\,] $ ?} \\
+
+Procediamo come prima, prendendo un polinomio invertibile
+\[ f = a_0 + \dots + a_nx^n \]
+e il suo inverso
+\[ g = b_0 + \dots + b_mx^m \quad \text{tale che } fg = 1 \]
+e osserviamo le relazioni tra i coefficienti di $ fg $ e quelli dei fattori:
+\begin{align*}
+	1 & = a_0 b_0 \\
+	0 & = a_0 b_1 + a_1b_0 \\
+	&  \vdots \\
+	0 & = a_nb_{m-2} + a_{n-1}b_{m-1}+ a_{n-2}{b_m}\\
+	0 & = a_nb_{m-1} + a_{n-1}b_m \\
+	0 & = a_nb_m
+\end{align*}
+
+Innanzitutto, $ a_0 $ e $ b_0 $ sono invertibili. Moltiplicando la penultima relazione per $ a_n $ otteniamo
+\[ 0 = a_n^2b_{m-1} + a_{n}a_{n-1}b_m = a_n^2b_{m-1} \]
+moltiplicando la terzultima per $ a_n^2 $
+\[ 0 = a_n^3b_{m-2} \]
+e iterando
+\[ 0 = a_n^{m+1}b_0 \]
+ma $ b_0 $ è invertibile, quindi non può essere un divisore di zero, pertanto $ a_n^{m+1} = 0 $. Procedendo come prima
+\[ \boxed{f \in A[\,x\,]^\times \LR a_0 \in A^\times \text{ e } f-a_0 \in \mathcal{N}(A[\,x\,])} \]
+
+Per la freccia inversa scriviamo 
+\[ f = a_0 + g \quad \text{con } a_0 \in A^\times \text{ e } g \in \mathcal{N}(A[\,x\,])  \]
+e consideriamo i polinomi
+\[ h_m(x) = a_0^{2m} - a_0^{2m-1}g + a_0^{2m-2}g^2 + \dots + g^{2m}  \]
+che moltiplicati per $ f $ restituiscono
+\[ fh_m = a_0^{2m+1} + g^{2m+1}  \]
+scelto $ m $ maggiore dell'indice di nilpotenza di $ g $, abbiamo che $$  a_0^{-(2m+1)}f h_{m} = 1  $$
+
+\textbf{Quali sono i divisori di zero in $ A[\,x\,] $ ?} \\
+
+Prendiamo un polinomio divisore di zero
+\[ f = a_0 + \dots + a_nx^n \]
+e un polinomio 
+\[ g = b_0 + \dots + b_mx^m \quad \text{tale che } fg = 0 \]
+di grado minimo possibile.
+Consideriamo, al variare di $ 0 \leq k \leq n $, i prodotti
+ $ a_k q $.
+Se questi non sono tutti nulli, consideriamo il più grande $ k $ tale che \[  a_kq \neq 0 \]
+Allora
+\[ 0 = fg = (a_0 + \dots a_kx^k) (b_0 + \dots + b_mx^m) \]
+osserviamo che il coefficienti del termine di grado massimo è
+\[ a_kb_m = 0 \]
+e quindi
+\[ p \cdot (a_k q) = 0 \]
+ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq = 0 \;\forall k $, quindi che $ a_kb_0 = 0 \;\forall k $, ossia
+\[ \boxed{f \in \mathcal{D}(A[\,x\,]) \LR \exists b \neq 0 \in A \mid b a_k = 0 \;\;\forall k} \] 
+
+
+\subsection{Fatti su Ideali}
 \begin{definition}[ideale]
 	Chiamiamo \emph{ideale} un sottogruppo additivamente chiuso $ I \subseteq A $ che assorbe per moltiplicazione.
 \end{definition}
@@ -61,7 +129,9 @@ Per "Anello" si intende un anello commutativo con identità.
 	\end{tikzcd} \]
 \end{theorem}
 \begin{proof}
-	Quello che dice non mi convince.
+	Come per l'analogo teorema sui gruppi, consideriamo la mappa
+	\fun{\bar{f}}{\faktor{A}{I}}{B}{a + I}{f(a)}
+	e verifichiamo che è ben definita e un omomorfismo.
 \end{proof}
 \begin{remark}
 	Gli ideali sono tutti e soli i nuclei di omorfismi.
@@ -78,16 +148,27 @@ Per "Anello" si intende un anello commutativo con identità.
 	\end{itemize}
 \end{theorem}
 \begin{proof}
+	Osserviamo che la controimmagine di un ideale è sempre un ideale. Infatti, preso $ J \subseteq \faktor{A}{I} $, osserviamo che e la sua controimmagine $ f^{-1}(J) $ assorbe per prodotto
+	\[ f(af^{-1}(J)) = f(a)J = J \quad\Rightarrow\quad af^{-1}(J) = f^{-1}(J)  \]
+	ed è additivamente chiusa
+	\[ f(i + j) = f(i) + f(j) \in J \qquad \forall i, \, j \in f^{-1}(J) \]
 	
+	Inoltre ogni ideale contiene lo $ 0 $, quindi la controimmagine contiene $ \ker f = I $. Ci basta mostrare che l'immagine di ogni ideale, attraverso un omomorfismo suriettivo, è ancora un ideale.
 \end{proof}
 \begin{remark}
 	Vale sempre che
 	\[ IJ \subseteq I \cap J \]
 	c'è uguaglianza in caso di \emph{comassimalità}
-	\[ I + J = A \;\Leftrightarrow\; IJ = I \cap J \]
+	\[ I + J = A \;\Rightarrow\; IJ = I \cap J \]
 \end{remark}
 \begin{proof}
-	contenuto...
+	Dato l'assorbimento per moltiplicazione
+	\[ IJ \subseteq J, \quad JI \subseteq I \quad\Rightarrow\quad IJ \subseteq I \cap J  \]
+	Se $ I $, $ J $ sono comassimali, allora
+	\[ I + J = A \quad\Rightarrow\quad \exists i \in I, \, j \in J \text{ tali che } i + j = 1 \]
+	e per ogni elemento $ x \in I \cap J $ si ha che
+	\[ x = xi + xj \in IJ \]
+	perché entrambi gli addendi appartengono a $ IJ $.
 \end{proof}
 
 \begin{theorem}[cinese degli anelli]
@@ -106,6 +187,7 @@ Per "Anello" si intende un anello commutativo con identità.
 	Se invece $ 1 \in I + J $, allora possiamo trovare due elementi tale che \[ 1 = i + j \]
 	e scelta una qualunque coppia $ (x + I, y + J) $, abbiamo che
 	\[ y + j(x-y) = xj + yi = x + i(y-x) \]
+	Dunque, se $ I + J = A $, abbiamo $ \ker f = I \cap J = IJ $ per l'osservazione di sopra.
 \end{proof}
 
 \begin{definition}[ideale primo]
@@ -118,10 +200,24 @@ Per "Anello" si intende un anello commutativo con identità.
 \end{definition}
 
 \begin{theorem}\label{idealequoziente}
-	Dato un ideale $ I \subseteq A $
-	\[ I \text{ primo} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ dominio} \]
-	\[ I \text{ massimale} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ campo} \]
+	Dato un ideale $ I \subseteq A $, valgono le seguenti relazioni con il rispettivo anello quoziente:
+	\[ I \text{ è primo} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ è  un dominio} \]
+	\[ I \text{ è massimale} \quad\Leftrightarrow\quad \faktor{A}{I} \text{ è un campo} \]
 \end{theorem}
+
+\begin{proof}
+	Per la prima proposizione, osserviamo che
+	
+	\[xy \in I \quad\Leftrightarrow\quad \pi(xy) = 0 
+	\quad\Leftrightarrow\quad \pi(x)\pi(y) = 0 \]
+	
+	e osserviamo che allora
+	\[ \pi(x)\pi(y) = 0 \quad\Leftrightarrow\quad \pi(x) =0 \text{ o } \pi(y) = 0   \]
+	è equivalente a 
+	\[ xy \in I \quad\Leftrightarrow\quad x \in I \text{ o } y \in I  \]
+	
+	Per la seconda, ci basta invocare il teorema di corrispondenza e ricordare che un anello è anche un campo se e solo se ha solo ideali banali.
+\end{proof}
 
 \begin{remark}
 	$ A $ è un dominio se e solo se l'ideale $ \{0\} $ è primo.
@@ -133,8 +229,11 @@ Per "Anello" si intende un anello commutativo con identità.
 	Un ideale massimale è anche primo, perché ogni campo è anche un dominio.
 \end{remark}
 
-\subsection{Fatti su Ideali}
-\textbf{Fatti su $ \sqrt{I}:= \{ x \in A \mid x^n \in I \} $.}
+\subsubsection{Fatti sul radicale}
+\begin{definition}
+	$$  \sqrt{I}:= \{ x \in A \mid x^n \in I \}  $$
+\end{definition}
+
 \begin{enumerate}
 	\item $ \sqrt{I} $ è un ideale. \\ (Infatti è un sottoinsieme additivamente chiuso
 	\[ a^n \in I,\;  b^m \in I \quad\Rightarrow\quad (a+b)^{n+m} \in I \]
@@ -171,7 +270,7 @@ Per "Anello" si intende un anello commutativo con identità.
 	
 \end{enumerate}
 
-\textbf{Prodotto diretto tra anelli.} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale \[ (1, 0)(0, 1) = (0, 0) \] non è un dominio.
+\subsubsection{Prodotto diretto tra anelli} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale \[ (1, 0)(0, 1) = (0, 0) \] non è un dominio.
 
 I nilpotenti nel prodotto
 \[ \mathcal{N}_{A \times B} = \mathcal{N}_A \times \mathcal{N}_B \]
@@ -182,14 +281,14 @@ Gli invertibili
 Fatto piacevole: gli ideali sono tutti e soli i prodotti di ideali. Prendiamo $ I \subseteq A \times B $ e consideriamo le proiezioni $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideali di $ A $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $, perché l'inclusione opposta è un fatto insiemistico. Se $ (a, y), (x, b) \in I $, deve starci anche $ (a, b) $: ma $ (1, 0)(a, y) = (a, 0) \in I $, analogamente $ (0, b) \in I $, dunque
 \[ (a, 0) + (0, b) \in I \]
 
-\textbf{Estensione e Contrazione di Ideali.} Dati due anelli, ognuno col proprio ideale $ I \subseteq A $ e $ J  \subseteq B $, e un omomorfismo $ f $ tra i due
+\subsubsection{Estensione e Contrazione di Ideali} Dati due anelli, ognuno col proprio ideale $ I \subseteq A $ e $ J  \subseteq B $, e un omomorfismo $ f $ tra i due
 
 \[ \begin{tikzcd}
 A \arrow{r}{f}  & B \\
 I \arrow[swap, hook]{u}{} & J \arrow[swap, hook]{u}{}
 \end{tikzcd} \]
 
-Sappiamo che 
+Dalla dimostrazione del teorema di Corrispondenza (\ref{corr}), aappiamo che 
 \begin{enumerate}
 	\item $ f^{-1}(J) $ è sempre un ideale.
 	\item $ f(I) $ è un ideale se e solo se l'omomorfismo è suriettivo.
@@ -208,7 +307,7 @@ Poiché possiamo spezzare la mappa $ f $ passando per il quoziente
 A \arrow{r}{f} \arrow[swap]{d}{\pi} & B \\
 \faktor{A}{\ker f} \arrow[swap]{ru}{\varphi}
 \end{tikzcd} \]
-e il comportamento degli ideali attraverso la proiezione $ \pi $ è completamente determinato dal Teorema di Corrispondenza (\ref{corr}), possiamo limitarci a studiare cosa succede attraverso l'omomorfismo $ \varphi $, che essendo iniettivo possiamo considerare come omomorfismo di inclusione.
+e il comportamento degli ideali attraverso la proiezione $ \pi $ è completamente determinato dal Teorema di Corrispondenza (\ref{corr}), possiamo limitarci a studiare cosa succede attraverso l'omomorfismo $ \varphi $, che essendo iniettivo possiamo scambiare con l'omomorfismo di inclusione.
 
 Prendiamo quindi $ A \subseteq B $, abbiamo
 \begin{enumerate}
@@ -236,7 +335,7 @@ Teoremi analoghi con ideali massimali, o estensioni, non funzionano. Controesemp
 \subsection{Domini}
 \begin{multicols}{2}
 
-\textbf{Campo dei quozienti. $ \Q(A) $}
+\subsubsection{Campo dei quozienti. $ \Q(A) $}
 
 \begin{definition}
 	Un insieme $ S $ di elementi di un dominio $ A $ è detto \emph{parte moltiplicativa} se
@@ -278,7 +377,7 @@ Denotiamo questo insieme con $ \Q(A) $. Indichiamo i suoi elementi come $ \frac{
 \end{proof}
 
 \columnbreak
-\textbf{Divisibilità.}\\
+\subsubsection{Divisibilità.}
 In modo naturale, diciamo che $ a \mid b $ se esiste $ c  $ tale che $ b = ac $. E' immediato tradurre la relazione di divisibilità in termini di ideali generati, infatti 
 \[ a \mid b \quad\Leftrightarrow\quad (b) \subseteq (a) \]
 
@@ -332,15 +431,6 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 \begin{itemize}
 	\item Chi sono gli ideali di $ \mathcal{M}_{n \times n}(\K) $?
 
-\end{itemize}
-
-\textbf{Anelli di Polinomi.}
-\begin{itemize}
-	\item Chi sono gli elementi nilpotenti di $ A[\,x\,] $?
-	
-	\item Chi sono gli elementi invertibili di $ A[\,x\,] $?
-	
-	\item Chi sono i divisori di zero di $ A[\,x\,] $?
 \end{itemize}
 
 \textbf{Serie Formali.}
@@ -602,7 +692,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	\item  In $ \K[x][\,t\,] $, l'elemento $ f = t^n - x $ è irriducibile per il criterio di Eisenstein con $ p = x $. 
 	\item $ \K[\{x_i\}_{i \in \mathbb{N}}] $ non è Noetheriano
 	\[ (x_0) \subsetneq (x_0, x_1) \subsetneq (x_0, x_1, x_2) \subsetneq \dots  \]
-	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ \K[x_1, \dots, x_m] $ per un qualche intero $ m $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, avremmo più fattorizzazioni in $ A[x_1, \dots, x_k] $.
+	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ \K[x_1, \dots, x_m] $ per un qualche intero $ m $, che è un $ \textsc{ed} $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, non sarebbero rispettate le condizioni sulla funzione grado.
 \end{enumerate}
 
 
