@@ -30,3 +30,5 @@
 \contentsline {subsubsection}{\numberline {A.5.3}Dominio a Fattorizzazione Unica}{22}{subsubsection.1.5.3}
 \contentsline {section}{\numberline {K}Campi}{24}{section.11}
 \contentsline {subsection}{\numberline {K.1}Richiami}{24}{subsection.11.1}
+\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a} e Normalit\IeC {\`a}}{25}{subsection.11.2}
+\contentsline {subsection}{\numberline {K.3}Teoria di Galois}{26}{subsection.11.3}
