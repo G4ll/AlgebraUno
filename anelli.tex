@@ -423,36 +423,6 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 
 \end{multicols}
 
-
-\subsection{Esercizi Notevoli}
-\begin{multicols}{2}
-
-\textbf{Un solo esercizio in algebra non commutativa.}
-\begin{itemize}
-	\item Chi sono gli ideali di $ \mathcal{M}_{n \times n}(\K) $?
-
-\end{itemize}
-
-\textbf{Serie Formali.}
-\begin{itemize}
-	\item $ f \in K[[\, x\,]] $ è invertibile se e solo se $ a_0 \neq 0 $.
-	
-	\item $ (x) $ è l'unico ideale massimale
-	
-	\item $ \deg(f) = \min \{n \in \mathbb{N} \mid a_n \neq 0 \} $ è una funzione grado.
-\end{itemize}
-
-
-\textbf{Parti Moltiplicative.}
-
-
-\begin{itemize}
-	\item 
-\end{itemize}
-	
-\end{multicols}
-
-
 \newpage
 \subsection{Domini Speciali}
 \begin{multicols}{2}
@@ -479,8 +449,9 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 \textbf{Esempi.}
 \begin{enumerate}
 	\item $ \Z $ con la funzione $ \mid \cdot\mid $ è un dominio euclideo.
-	\item $ \K[x] $ con la funzione $ \deg(\,\cdot\,) $ è un dominio euclideo.
+	\item $ \K[\,x\,] $ con la funzione $ \deg(\,\cdot\,) $ è un dominio euclideo.
 	\item $ \Z[\,i\,] $ con la norma $ N(x) = x\bar{x} $ è un dominio euclideo.
+	\item $ \K[[\,x\,]] $ con la funzione $ \deg(f) = \min \{n \in \mathbb{N} \mid a_n \neq 0 \} $ è un dominio euclideo.
 \end{enumerate}
 
 \begin{theorem}
@@ -490,7 +461,7 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 	
 \textbf{Controesempi.}
 \begin{itemize}
-	\item $ \Z[x] $ è \textsc{pid} ma non è \textsc{ed}.
+	\item $ \Z[\,x\,] $ è \textsc{pid} ma non è \textsc{ed}.
 \end{itemize}
 	
 \subsubsection{Dominio Euclideo}
@@ -526,8 +497,6 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 	\[ r = x - qy \in I \]
 	contraddice la minimalità di $ x $.
 \end{proof}
-
-\textbf{Controesempio?} 
 
 \subsubsection{Dominio a Ideali Principali}
 \begin{remark}
@@ -620,7 +589,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 \end{enumerate}
 
 \begin{definition}
-	Chiamiamo \emph{contenuto} del polinomio $ f \in A[x] $ l'\textsc{mcd} dei suoi coefficienti
+	Chiamiamo \emph{contenuto} del polinomio $ f \in A[\,x\,] $ l'\textsc{mcd} dei suoi coefficienti
 	\[ c(f) = \textsc{mcd}(a_0, \dots , a_n) \]
 \end{definition}
 
@@ -628,7 +597,6 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	Chiamiamo \emph{primitivo} un polinomio $ f $ con contenuto unitario
 	\[ c(f) = 1 \]
 \end{definition}
-
 \begin{theorem}[Lemma di Gauss]\label{LemmaGauss}
 	Valgono i seguenti enunciati
 	\begin{enumerate}
@@ -641,13 +609,11 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 \end{theorem}
 \begin{proof}
 	
-\begin{enumerate}
-	\item  
-\end{enumerate}
+Come quella di Aritmetica.
 \end{proof}
 
 \begin{theorem}
-	$ A $ è \textsc{ufd} $ \Rightarrow $ $ A[x] $ è \textsc{ufd}
+	$ A $ è \textsc{ufd} $ \Rightarrow $ $ A[\,x\,] $ è \textsc{ufd}
 \end{theorem}
 \begin{proof}
 	Vogliamo utilizzare la caratterizzazione dei domini a fattorizzazione unica (\ref{carufd}).
@@ -669,7 +635,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	\[ \cdots \mid c(f_3) \mid c(f_2) \mid c(f_1) \mid c(f_0) \]
 	stazionaria perché  $ A[x] $ è \textsc{ufd}
 	\[ \cdots \mid f'_3 \mid f'_2 \mid f'_1 \mid f'_0 \]
-	stazionaria perché  $ \Q(A)[x] $ è \textsc{ufd}.
+	stazionaria perché  $ \Q(A)[\,x\,] $ è \textsc{ufd}.
 \end{proof}
 
 
@@ -684,15 +650,15 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	allora $ f $ è irriducibile.
 \end{theorem}
 \begin{proof}
-	contenuto...
+	Come quella di Aritmetica.
 \end{proof}
 
 \textbf{Esempi.}
 \begin{enumerate}
-	\item  In $ \K[x][\,t\,] $, l'elemento $ f = t^n - x $ è irriducibile per il criterio di Eisenstein con $ p = x $. 
+	\item  In $ \K[\,x\,][\,t\,] $, l'elemento $ f = t^n - x $ è irriducibile per il criterio di Eisenstein con $ p = x $. 
 	\item $ \K[\{x_i\}_{i \in \mathbb{N}}] $ non è Noetheriano
 	\[ (x_0) \subsetneq (x_0, x_1) \subsetneq (x_0, x_1, x_2) \subsetneq \dots  \]
-	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ \K[x_1, \dots, x_m] $ per un qualche intero $ m $, che è un $ \textsc{ed} $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, non sarebbero rispettate le condizioni sulla funzione grado.
+	ma è \textsc{ufd}. Infatti preso un polinomio $ f $, questo è composto da un numero finito di addendi di grado finito, quindi è contenuto in $ \K[x_1, \dots, x_m] $ per un qualche intero $ m $, che è un $ \textsc{ed} $. Qui dentro ammette fattorizzazione unica. Inoltre, nella fattorizzazione non compaiono termini del tipo $ x_k $ con $ k > m $: se così fosse, guardandoli come polinomi in $ x_k $, non sarebbero rispettate le condizioni sulla funzione grado in $ \K[x_1, \dots, x_k] $.
 \end{enumerate}
 
 

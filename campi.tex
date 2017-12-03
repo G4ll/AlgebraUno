@@ -1,5 +1,5 @@
 \setcounter{section}{10} % per scegliere la lettera giusta
-\section{Campi}
+\section{Teoria dei Campi e di Galois}
 
 \subsection{Richiami}
 \begin{multicols}{2}
@@ -20,18 +20,18 @@
 
 \begin{definition}
 	Diciamo che un'estensione $ K \subseteq L $ è \emph{semplice} se esiste un elemento $ \alpha \in L $ tale che
-	\[ L = K(\alpha) = \left\{ \frac{f(\alpha)}{g(\alpha)} \mid f, g \in K[x] \quad g(x) \neq 0  \right\} \]
+	\[ L = K(\alpha) = \left\{ \frac{f(\alpha)}{g(\alpha)} \mid f, g \in K[\,x\,] \quad g(x) \neq 0  \right\} \]
 \end{definition}
 
 Possiamo costruire l'estensione semplice a partire dall'anello dei polinomi su K, applicandovi l'omomorfismo di valutazione in $ \alpha $
-\fun{\varphi_\alpha}{K[x]}{K[\alpha] \subseteq L}{f(x)}{f(\alpha)}
+\fun{\varphi_\alpha}{K[\,x\,]}{K[\,\alpha\,] \subseteq L}{f(x)}{f(\alpha)}
 l'immagine $ K[\alpha] $ è un sottoanello di un campo ed è quindi un dominio, di cui possiamo costruire il campo dei quozienti
-\[ \Q(K[\alpha]) = K(\alpha) \]
-Possiamo però mostrare che, se $ \alpha $ è algebrico, questa operazione non è necessaria. Infatti, il nucleo dell'omomorfismo di valutazione è costituito da tutti quei polinomi che si annullano in $ \alpha $, i quali costituiscono un ideale principale (perché K[x] è \textsc{ed}, dunque \textsc{pid}):
+\[ \Q(K[\,\alpha\,]) = K(\alpha) \]
+Possiamo però mostrare che, se $ \alpha $ è algebrico, questa operazione non è necessaria. Infatti, il nucleo dell'omomorfismo di valutazione è costituito da tutti quei polinomi che si annullano in $ \alpha $, i quali costituiscono un ideale principale (perché $ K[\,x\,] $ è \textsc{ed}, dunque \textsc{pid}):
 \[ \ker\varphi_\alpha = (\mu(x)) \]
 Abbiamo già osservato che  l'immagine è un dominio, dunque $ (\mu(x)) $ è un'ideale primo (\ref{idealequoziente}).
-\[ K[\alpha] \cong \frac{K[x]}{(\mu(x))} \]
-Ma, poiché ci troviamo in un \textsc{pid}, $ (\mu(x)) $ è anche un ideale massimale (\ref{primossemassimale}) e dunque $ K[\alpha] $ è un campo, che coincide con il proprio campo dei quozienti:
+\[ K[\,\alpha\,] \cong \frac{K[\,x\,]}{(\mu(x))} \]
+Ma, poiché ci troviamo in un \textsc{pid}, $ (\mu(x)) $ è anche un ideale massimale (\ref{primossemassimale}) e dunque $ K[\,\alpha\,] $ è un campo, che coincide con il proprio campo dei quozienti:
 \[ K[\,\alpha\,] = \Q(K[\,\alpha\,]) = K(\alpha) \]
 In questo caso, dobbiamo avere anche che $ \mu(x) $ è un polinomio irriducibile, possiamo quindi scegliere un rappresentate privilegiato tra i generatori del nucleo:
 
@@ -62,7 +62,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 
 \begin{itemize}
 	\item $ L/K $ è finita $ \Leftrightarrow $ $ L/F $ e $ F/K $ sono finite
-	\[ [L : K] = [L : F][F : K] \]
+	\[ \text{e in tal caso } [L : K] = [L : F][F : K] \]
 	
 	\item $ L/K $ è finita $ \Rightarrow $ $ L/K $ è algebrica.
 	
@@ -263,9 +263,53 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 		\item Se $ \faktor{E}{K} $ è di grado $ 2 $ e separabile, allora è di Galois e
 		\[ \Gal{\faktor{E}{K}} \cong \Z_2 \]
 		\item $ \Gal{x^3 -2} \cong \S_3 $
-		\item $ \Gal{\faktor{\Q(\zeta_7)}{\Q}} \cong \Z_6 $.
-		\item $ \Gal{\faktor{\Q(\zeta_7+ \zeta_7^{-1})}{\Q}} \cong \Z_3 $
+		\item $ \Gal{\Q(\zeta_7)/\Q} \cong \Z_6 $.
+		\item $ \Gal{\Q(\zeta_7+ \zeta_7^{-1})/\Q} \cong \Z_3 $
 	\end{enumerate}
+	
+	Come si comporta la proprietà di Galois sulle torri? Consideriamo
+	\[\begin{tikzcd}[row sep=0.25cm]
+	L \arrow [d,-] \\
+	F \arrow [d,-] \\
+	K
+	\end{tikzcd} \]
+	
+	e chiediamoci:
+	\begin{itemize}
+		\item Se L/K è di Galois, lo è anche L/F?
+		
+		 Sì! La separabilità passa, perché un polinomio minimo in $ F[\,x\,] $ divide il corrispondente in  $ K[\,x\,] $. La normalità passa, perché se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che dunque deve fissare $ \varphi(L)=L $.
+		
+		\item Se L/K è di Galois, lo è anche F/K? No!
+		\[\begin{tikzcd}[column sep=0.25cm]
+		\Q \arrow [r,-] &
+		\Q(\sqrt[4]{2}) \arrow [r,-] &
+		\Q(\sqrt[4]{2}, i)
+		\end{tikzcd} \]
+		
+		\item Se L/F e F/K sono di Galois, lo è anche L/K? No!
+		\[\begin{tikzcd}[column sep=0.25cm]
+		\Q \arrow [r,-] &
+		\Q(\sqrt{2}) \arrow [r,-] &
+		\Q(\sqrt[4]{2})
+		\end{tikzcd} \]
+	\end{itemize}
+	
+	\begin{theorem}[di corrispondenza]
+		Sia $ \faktor{L}{K} $ un'estensione di Galois finita. La mappa
+		\fun{f}
+		{\{F \text{ campo} \mid K \subseteq F \subseteq L \}}
+		{\left\{ H < \Gal{\faktor{L}{K}} \right\}}
+		{F}
+		{\Gal{\faktor{L}{F}}}
+		è bigettiva con inversa
+		\[ H \mapsto L^H = \{ \alpha \in L \mid \sigma\alpha = \alpha \;\forall \sigma \in H \} \]
+		Inoltre
+		\[ H \lhd G \LR \faktor{L^H}{K} \text{ è di Galois} \]
+		e in questo caso
+		\[ \Gal{\faktor{L^H}{K}} \cong \frac{\Gal{\faktor{L}{K}}}{\Gal{\faktor{L}{L^H}}} \]
+	\end{theorem}
+	
 	
 	
 \end{multicols}

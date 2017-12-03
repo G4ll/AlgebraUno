@@ -9,9 +9,12 @@
 \contentsline {subsection}{\numberline {G.6}Classificazione dei Gruppi di ordine 8}{9}{subsection.7.6}
 \contentsline {subsection}{\numberline {G.7}Lemmi vari}{10}{subsection.7.7}
 \contentsline {subsection}{\numberline {G.8}Prodotto Semidiretto}{11}{subsection.7.8}
+\contentsline {subsubsection}{\numberline {G.8.1}Classificazione dei gruppi di ordine pq}{11}{subsubsection.7.8.1}
 \contentsline {subsection}{\numberline {G.9}Teorema di Sylow}{12}{subsection.7.9}
+\contentsline {subsubsection}{\numberline {G.9.1}Classificazione dei gruppi di ordine 12}{13}{subsubsection.7.9.1}
 \contentsline {subsection}{\numberline {G.10}Automorfismi di un gruppo buffo}{14}{subsection.7.10}
 \contentsline {subsection}{\numberline {G.11}Teorema Fondamentale dei Gruppi Abeliani Finiti}{15}{subsection.7.11}
+\contentsline {subsubsection}{\numberline {G.11.1}Classificazione dei Gruppi di Ordine 30}{15}{subsubsection.7.11.1}
 \contentsline {subsection}{\numberline {G.12}Lemmini ed esercizietti}{16}{subsection.7.12}
 \contentsline {section}{\numberline {A}Anelli}{17}{section.1}
 \contentsline {subsection}{\numberline {A.1}Prime definizioni}{17}{subsection.1.1}
@@ -23,12 +26,11 @@
 \contentsline {subsection}{\numberline {A.3}Domini}{20}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {A.3.1}Campo dei quozienti. $ \mathbb {Q}(A) $}{20}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {A.3.2}Divisibilit\IeC {\`a}.}{20}{subsubsection.1.3.2}
-\contentsline {subsection}{\numberline {A.4}Esercizi Notevoli}{21}{subsection.1.4}
-\contentsline {subsection}{\numberline {A.5}Domini Speciali}{22}{subsection.1.5}
-\contentsline {subsubsection}{\numberline {A.5.1}Dominio Euclideo}{22}{subsubsection.1.5.1}
-\contentsline {subsubsection}{\numberline {A.5.2}Dominio a Ideali Principali}{22}{subsubsection.1.5.2}
-\contentsline {subsubsection}{\numberline {A.5.3}Dominio a Fattorizzazione Unica}{22}{subsubsection.1.5.3}
-\contentsline {section}{\numberline {K}Campi}{24}{section.11}
-\contentsline {subsection}{\numberline {K.1}Richiami}{24}{subsection.11.1}
-\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a} e Normalit\IeC {\`a}}{25}{subsection.11.2}
-\contentsline {subsection}{\numberline {K.3}Teoria di Galois}{26}{subsection.11.3}
+\contentsline {subsection}{\numberline {A.4}Domini Speciali}{21}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {A.4.1}Dominio Euclideo}{21}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {A.4.2}Dominio a Ideali Principali}{21}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{21}{subsubsection.1.4.3}
+\contentsline {section}{\numberline {K}Teoria dei Campi e di Galois}{23}{section.11}
+\contentsline {subsection}{\numberline {K.1}Richiami}{23}{subsection.11.1}
+\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a} e Normalit\IeC {\`a}}{24}{subsection.11.2}
+\contentsline {subsection}{\numberline {K.3}Teoria di Galois}{25}{subsection.11.3}
