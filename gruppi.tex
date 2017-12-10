@@ -20,9 +20,9 @@
 \begin{remark}
 	è immediato osservare che $ \Int{G} \lhd \Aut{G} $.
 \end{remark}
-\begin{theorem}[degli Automorfismi Interni]
+\begin{prop}[degli Automorfismi Interni]
 	\[ \Int{G} \cong \faktor{G}{Z(G)} \]
-\end{theorem}
+\end{prop}
 \begin{proof}
 	La funzione \fun{\Phi}{G}{\Int{G}}{g}{\varphi_g} è un omomorfismo con kernel $ Z(G) $. La tesi segue dal Primo Teorema di Omomorfismo.
 \end{proof}
@@ -67,9 +67,9 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	Lo stabilizzatore è un sottogruppo $$ \Stab{x} < G $$ ma non è necessariamente normale. $$  Z_{\mathcal{A}_{14}}(3 \; 1 \; 4) < \mathcal{A}_{14}$$
 \end{remark}
 
-\begin{theorem}[Relazione Orbite-Stabilizzatori]
+\begin{prop}[Relazione Orbite-Stabilizzatori]
 	\[ |G| = |\Orb{x}||\Stab{x}| \]
-\end{theorem}
+\end{prop}
 \begin{proof}
 	La funzione $ f $ così definita
 	\begin{align*}
@@ -180,9 +180,9 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 \begin{definition}[Sottogruppo generato]
 	Sia $ S \subset G $ un \emph{sottoinsieme} di $ G $. Chiamiamo $ \langle S \rangle $ il più sottogruppo contenente $ S $, sottogruppo generato da $ S $. \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
 \end{definition}
-\begin{theorem}[Caratterizzazione dei sottogruppi generati]
+\begin{prop}[Caratterizzazione dei sottogruppi generati]
 	\[ \langle S \rangle = \{ s_1 \cdots s_k \mid k \in \mathbb{N}, \; s_i \in S \cup S^{-1} \} \]
-\end{theorem}
+\end{prop}
 \begin{proof}
 	Chiamiamo $ X $ il magico insieme nel RHS. Chiaramente $ S \subseteq X $ e pertanto $ X $, che è facile verificare essere un gruppo, è parte della famiglia sotto intersezione: $ X \subseteq \bigcap \mathcal{F} $. Inoltre se $S \subseteq H < G $ sicuramente in $ H $ compaiono tutte le $ k $-uple di $ X $ e quindi $ X < H $ per ogni sottogruppo di $ \mathcal{F} $. Dunque $ X \subseteq \bigcap\mathcal{F} $.
 \end{proof}
@@ -247,25 +247,25 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $. $$ \langle \rho \rangle = C_n \lhd D_n $$
 \end{remark}
 
-\begin{theorem}[Ordine degli elementi di $ D_n $]
+\begin{prop}[Ordine degli elementi di $ D_n $]
 	Sappiamo che
 	\begin{itemize}
 		\item tutte le simmetrie hanno ordine 2.
 		\item ci sono $ \varphi(m) $ rotazioni di ordine $ m $, per ogni $ m \mid n $.
 	\end{itemize}
-\end{theorem}
+\end{prop}
 \begin{proof}
 	La seconda parte è immediata conseguenza della ciclicità del sottogruppo delle rotazioni.
 	L'ordine delle riflessioni possiamo calcolarlo esplicitamente notando che $ \left(\sigma\rho^k\right)\left(\sigma\rho^k\right) = \left(\sigma\rho^k\sigma\right)\rho^k = \rho^{-k}\rho^{k} = e $ grazie alla terza proprietà imposta nella caratterizzazione.
 \end{proof}
-
-\begin{theorem}[Sottogruppi di $ D_n $]
+\columnbreak
+\begin{prop}[Sottogruppi di $ D_n $]
 	I sottogruppi $ H < D_n $ rientrano in una di queste due categorie:
 	\begin{itemize}
 		\item $ H < C_n $: di cui ne abbiamo esattamente uno per ogni ordine divisore di $ n $.
 		\item $ H = (H \cap C_n) \sqcup \tau(H\cap C_n) $: di cui ce ne sono $ d $ di ordine $ \frac{2n}{d} $ per ogni $ d \mid n $.
 	\end{itemize}
-\end{theorem}
+\end{prop}
 \begin{proof}
 	Se $ H < C_n $ il risultato viene da Aritmetica. Se $ H \nless C_n $, $ H $ contiene almeno una rotazione $ \tau = \sigma\rho^i $. Consideriamo l'omomorfismo $ f $ che fa commutare il diagramma
 	\[ \begin{tikzcd}
@@ -302,9 +302,9 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	lo chiamiamo $ \mathcal{S}_n $.
 \end{definition}
 
-\begin{theorem}
+\begin{prop}
 	Ogni permutazione $ \sigma \in \mathcal{S}_n $ si scrive in modo unico come prodotto di cicli disgiunti.
-\end{theorem}
+\end{prop}
 \begin{remark}
 	Cicli disgiunti commutano.
 \end{remark}
@@ -357,9 +357,9 @@ Per Cauchy esistono $ x, y \in G $ di ordine, rispettivamente, 2 e 3.
 	Ogni sottogruppo $ H < \mathcal{S}_n $ è contenuto interamente in $ \mathcal{A}_n $ o viene spezzato a metà dal gruppo alterno. Questo perché possiamo restringere il determinante al solo $ H $, che dunque può spezzarsi in nucleo e laterale, o immergersi interamente nel nucleo.
 \end{remark}
 
-\begin{theorem}[delle permutazioni coniugate]
+\begin{prop}[delle permutazioni coniugate]
 	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli.
-\end{theorem}
+\end{prop}
 \begin{proof}
 	E' più che sufficiente osservare che dato un ciclo $$  \sigma = (a_1 \; \cdots \; a_k)  $$ e una permutazione tale che $ \tau : a_i \mapsto b_i $ si ha
 	\[\tau\sigma\tau^{-1} = (\tau(a_1) \; \cdots \; \tau(a_k)) = (b_1 \; \cdots \; b_k) \]
@@ -549,49 +549,7 @@ ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché 
 \end{definition}
 \end{multicols}
 
-\subsection{Lemmi vari}
 
-\begin{multicols}{2}
-	
-\begin{theorem}[del piccolo indice primo]\label{ppp}
-	Siano $ G $ un gruppo finito e $ H $ un sottogruppo che ha come indice il più piccolo primo $ p $ che divide $ G $, allora $ H \lhd G $.
-\end{theorem}
-\begin{proof}
-	Consideriamo l'azione di $ G $ sull'insieme $ X $ dei laterali di $ H $ per moltiplicazione a sinistra \fun{\Phi}{G}{\mathcal{S}_p}{g}{\Pi_g : xH \mapsto gxH}
-	Osserviamo che 
-	\begin{align*}
-		g \in \Stab{xH} &\Leftrightarrow gxH = xH \\
-		&\Leftrightarrow x^{-1}gx \in H \\
-		&\Leftrightarrow g \in xHx^{-1} \\
-	\end{align*}
-	dunque $ \Stab{xH} = xHx^{-1} $ è il sottogruppo coniugato di $ H $ rispetto ad $ x $. Possiamo ora riscrivere il nucleo come
-	\[ \ker\Phi = \bigcap_{x \in G} xHx^{-1} < H \]
-	e osservare che, per il Primo Teorema di Omomorfismo
-	\[ \Phi ' : \faktor{G}{\ker\Phi} \rightarrow \mathcal{S}_p \]
-	è iniettivo e pertanto
-	\[ \left| \faktor{G}{\ker\Phi} \right| \mid |\mathcal{S}_p| = p! \]
-	ma $ p $ era il più piccolo primo a dividere $ |G| $, quindi non potendo $ \ker\Phi $ coincidere con tutto il gruppo, dovrà essere proprio $ H $. Il che conclude la dimostrazione.
-\end{proof}
-
-\begin{remark}
-	Sia $ G $ un gruppo abeliano. Sia \fun{\psi_n}{G}{G}{x}{x^n} preso un qualunque automorfismo $ \varphi \in \Aut{G} $ il seguente diagramma è commutativo
-	\[ \begin{tikzcd}
-	G \arrow{r}{\psi _n} \arrow[swap]{d}{\varphi} & G \arrow{d}{\varphi} \\
-	G \arrow{r}{\psi _n} & G
-	\end{tikzcd}
-	\]
-	quindi $ \ker\psi _n $ e $ \psi _n(G) $ sono caratteristici in $ G $. \\
-	
-\end{remark}
-	
-	\textbf{Esercizi.}
-	\begin{enumerate}
-		\item Trova $ \Aut{\mathbb{Z}\times\mathbb{Z}_n} $.
-		\item Trova $ \Aut{\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_4} $.
-		\item Trova $ \Aut{Q_8 \times D_4} $.
-		\item Sia $ G $ un gruppo abeliano finito. Se $ H \lhd G $ è ciclico e lo è anche il loro quoziente, allora anche $ G $ è ciclico.
-	\end{enumerate}
-\end{multicols}
 
 \subsection{Prodotto Semidiretto}
 \begin{multicols}{2}
@@ -967,31 +925,76 @@ Se invece $ P_5 $ fosse normale?
 	
 \end{multicols}
 
-\subsection{Lemmini ed esercizietti}
+\subsection{Lemmi vari ed esercizi sparsi}
+
 \begin{multicols}{2}
-	\begin{enumerate}
-		\item Dati $$  H \lhd K \lhd G  $$ quali inclusioni devono essere caratteristiche per far si che $ H $ sia normale o carattertico in $ G $?
-		
-		\item \textbf{Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.}
-		
+	
+	\begin{prop}[del piccolo indice primo]\label{ppp}
+		Siano $ G $ un gruppo finito e $ H $ un sottogruppo che ha come indice il più piccolo primo $ p $ che divide $ G $, allora $ H \lhd G $.
+	\end{prop}
+	\begin{proof}
+		Consideriamo l'azione di $ G $ sull'insieme $ X $ dei laterali di $ H $ per moltiplicazione a sinistra \fun{\Phi}{G}{\mathcal{S}_p}{g}{\Pi_g : xH \mapsto gxH}
+		Osserviamo che 
+		\begin{align*}
+		g \in \Stab{xH} &\Leftrightarrow gxH = xH \\
+		&\Leftrightarrow x^{-1}gx \in H \\
+		&\Leftrightarrow g \in xHx^{-1} \\
+		\end{align*}
+		dunque $ \Stab{xH} = xHx^{-1} $ è il sottogruppo coniugato di $ H $ rispetto ad $ x $. Possiamo ora riscrivere il nucleo come
+		\[ \ker\Phi = \bigcap_{x \in G} xHx^{-1} < H \]
+		e osservare che, per il Primo Teorema di Omomorfismo
+		\[ \Phi ' : \faktor{G}{\ker\Phi} \rightarrow \mathcal{S}_p \]
+		è iniettivo e pertanto
+		\[ \left| \faktor{G}{\ker\Phi} \right| \mid |\mathcal{S}_p| = p! \]
+		ma $ p $ era il più piccolo primo a dividere $ |G| $, quindi non potendo $ \ker\Phi $ coincidere con tutto il gruppo, dovrà essere proprio $ H $. Il che conclude la dimostrazione.
+	\end{proof}
+	
+	\begin{prop}
+		Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.
+	\end{prop}
+	\begin{proof}
 		Il Teorema di Cayley ci fornisce l'immersione seguente, per prodotto sinistro
 		\begin{align*}
-		 \Phi \colon & G \hookrightarrow \S_{2d} \\
-		 & g \mapsto \varphi_g \colon x \mapsto gx
+		\Phi \colon & G \hookrightarrow \S_{2d} \\
+		& g \mapsto \varphi_g \colon x \mapsto gx
 		\end{align*}
 		Dato un elemento $ g $, conosciamo la decomposizione in cicli $ \varphi_g $, questa dev'essere prodotto di cicli del tipo
 		$$  (x \; gx \; \cdots \; g^{m-1}x)  $$
 		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà come immagine il prodotto di $ d $ 2-cicli. Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G : G \cap \mathcal{A}_{2d}] = 2  $$
-		
-		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
-		
-		\item \textbf{Sia $ G $ un gruppo semplice e finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un'immersione di $ G $ in $ \mathcal{A}_n $.}
-		
+	\end{proof}
+	\columnbreak
+	\begin{prop}
+		Sia $ G $ un gruppo semplice e finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un'immersione di $ G $ in $ \mathcal{A}_n $.
+	\end{prop}
+	\begin{proof}
 		Facendo agire $ G $ per moltiplicazione sinistra sull'insieme degli $ n $ laterali di $ H $ otteniamo un omomorfismo
 		
 		\[ \Phi \colon G \to \mathcal{A}_n \]
 		
 		il cui nucleo dev'essere però banale, per non contraddire la normalità di $ G $. Ovviamente l'omomorfismo non è banale, dunque $ \Phi $ è un'immersione.
+	\end{proof}
+	
+	
+	\begin{remark}
+		Sia $ G $ un gruppo abeliano. Sia \fun{\psi_n}{G}{G}{x}{x^n} preso un qualunque automorfismo $ \varphi \in \Aut{G} $ il seguente diagramma è commutativo
+		\[ \begin{tikzcd}
+		G \arrow{r}{\psi _n} \arrow[swap]{d}{\varphi} & G \arrow{d}{\varphi} \\
+		G \arrow{r}{\psi _n} & G
+		\end{tikzcd}
+		\]
+		quindi $ \ker\psi _n $ e $ \psi _n(G) $ sono caratteristici in $ G $. \\
+		
+	\end{remark}
+	
+	\textbf{Esercizi.}
+	\begin{enumerate}
+		\item Trova $ \Aut{\mathbb{Z}\times\mathbb{Z}_n} $.
+		\item Trova $ \Aut{\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_4} $.
+		\item Trova $ \Aut{Q_8 \times D_4} $.
+		\item Sia $ G $ un gruppo abeliano finito. Se $ H \lhd G $ è ciclico e lo è anche il loro quoziente, allora anche $ G $ è ciclico.
+		\item Dati $$  H \lhd K \lhd G  $$ quali inclusioni devono essere caratteristiche per far si che $ H $ sia normale o carattertico in $ G $?
+		
+		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
 		
 		\item Un gruppo di ordine 112 non è semplice.
 		
@@ -1009,8 +1012,7 @@ Se invece $ P_5 $ fosse normale?
 		\item In un $ p $-gruppo, il centro di uno stabilizzatore di un elemento non nel centro è più grande del centro di tutto il gruppo.
 		
 		\item $ \Z_n^\times $ è ciclico se e solo se $ n = 2, 4, p^n, 2p^n $.
-	
+		
 	\end{enumerate}
-	
-	
 \end{multicols}
+	

@@ -17,14 +17,14 @@ Per "Anello" si intende un anello commutativo con identità.
 	 \[ \mathcal{N}: = \{\text{nilpotenti}\} = \{0\} \]
 \end{definition}
 
-\begin{theorem}[Prime proprietà]
-	Valgono queste proprietà
+\begin{prop}[Prime proprietà]
+	Valgono:
 	\begin{enumerate}
 		\item $ A^\times $ è un gruppo moltiplicativo.
 		\item $ A^\times \cap \mathcal{D} = \phi $.
 		\item Se $ A $ è finito $ A = A^\times \sqcup \mathcal{D} $.
 	\end{enumerate}
-\end{theorem}
+\end{prop}
 \begin{remark}
 	Un dominio d'integrità finito è un campo.
 \end{remark}
@@ -96,7 +96,7 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 \[ \boxed{f \in \mathcal{D}(A[\,x\,]) \LR \exists b \neq 0 \in A \mid b a_k = 0 \;\;\forall k} \] 
 
 
-\subsection{Fatti su Ideali}
+\subsection{Ideali}
 \begin{definition}[ideale]
 	Chiamiamo \emph{ideale} un sottogruppo additivamente chiuso $ I \subseteq A $ che assorbe per moltiplicazione.
 \end{definition}
@@ -137,6 +137,24 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 	Gli ideali sono tutti e soli i nuclei di omorfismi.
 \end{remark}
 
+\begin{prop}\label{immideali}
+	Dato un omomorfismo $ f : A \to B $
+	\begin{itemize}
+		\item La controimmagine $ f^{-1}(J) $ di un ideale $ J \subseteq B $ è un ideale di $ A $.
+		\item L'immagine $ f(I) $ di un ideale $ I \subseteq A $ è un ideale di $ B $, se $ f $ è suriettiva.
+	\end{itemize}
+\end{prop}
+\begin{proof}
+	Preso $ J \subseteq B $, osserviamo che la sua controimmagine $ f^{-1}(J) $ assorbe per prodotto
+	\[ f(af^{-1}(J)) = f(a)J = J \quad\Rightarrow\quad af^{-1}(J) = f^{-1}(J)  \]
+	ed è additivamente chiusa
+	\[ f(i + j) = f(i) + f(j) \in J \qquad \forall i, \, j \in f^{-1}(J) \]
+	
+	Assumendo $ f $ suriettiva, per ogni $ b \in B $ peschiamo un elemento $ a $ della controimmagine, allora
+	\[ f(aI) = f(a)f(I) = af(I) = f(I) \]
+	e la chiusura additiva è analoga.
+\end{proof}
+
 \begin{theorem}[di corrispondenza]\label{corr}
 	Ogni proiezione $$  \Pi : A \to \faktor{A}{I}  $$ induce una relazione biunivoca tra gli ideali del quoziente e gli ideali di $ A $ che contengono $ I $
 	\[ \{ \text{ideali di }\faktor{A}{I} \} \leftrightarrow \{ \text{ideali di $ A $ che contengono $ I $} \} \]
@@ -148,12 +166,9 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 	\end{itemize}
 \end{theorem}
 \begin{proof}
-	Osserviamo che la controimmagine di un ideale è sempre un ideale. Infatti, preso $ J \subseteq \faktor{A}{I} $, osserviamo che e la sua controimmagine $ f^{-1}(J) $ assorbe per prodotto
-	\[ f(af^{-1}(J)) = f(a)J = J \quad\Rightarrow\quad af^{-1}(J) = f^{-1}(J)  \]
-	ed è additivamente chiusa
-	\[ f(i + j) = f(i) + f(j) \in J \qquad \forall i, \, j \in f^{-1}(J) \]
-	
-	Inoltre ogni ideale contiene lo $ 0 $, quindi la controimmagine contiene $ \ker f = I $. Ci basta mostrare che l'immagine di ogni ideale, attraverso un omomorfismo suriettivo, è ancora un ideale.
+	La controimmagine di un ideale del quoziente, per il lemma precedente (\ref{immideali}), è ancora un ideale.
+	Inoltre, essendo un ideale, contiene lo $ 0 $, dunque la sua controimmagine contiene $ \ker f = I $. Osserviamo ora che, essendo la proiezione una mappa suriettiva, l'immagine ogni ideale è ancora un ideale! Pertanto è sufficiente mostrare che ideali diversi, contenenti $ I $, vengono mandati dalla proiezione in ideali diversi. Questo accade perché se un elemento $ a $ di una classe laterale di $ I $ sta in un ideale $ J $, vi appartiene tutta la classe laterale:
+	\[ b \in a + I \quad\Rightarrow\quad \exists i \in I \mid b = a + i \quad\Rightarrow\quad b \in J \]
 \end{proof}
 \begin{remark}
 	Vale sempre che
@@ -266,20 +281,26 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 	\[ x^{n + m} \in (P + (a))(P + (b)) = P \]
 	che dunque dev'essere primo.)
 	
-	\item $ \sqrt{I} = \bigcap_{I \subseteq P} P $. \\ (Il radicale sono i nilpotenti del quoziente, il fatto segue dal teorema di corrispondenza.)
+	\item $ \sqrt{I} = \bigcap_{I \subseteq P} P $. \\ (Il radicale è costituito dai nilpotenti del quoziente, il fatto segue dal teorema di corrispondenza.)
 	
 \end{enumerate}
 
 \subsubsection{Prodotto diretto tra anelli} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale \[ (1, 0)(0, 1) = (0, 0) \] non è un dominio.
 
-I nilpotenti nel prodotto
+I nilpotenti nel prodotto sono
 \[ \mathcal{N}_{A \times B} = \mathcal{N}_A \times \mathcal{N}_B \]
 
-Gli invertibili
+Gli invertibili sono
 \[ (A\times B)^\times = A^\times \times B^\times  \]
 
-Fatto piacevole: gli ideali sono tutti e soli i prodotti di ideali. Prendiamo $ I \subseteq A \times B $ e consideriamo le proiezioni $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideali di $ A $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $, perché l'inclusione opposta è un fatto insiemistico. Se $ (a, y), (x, b) \in I $, deve starci anche $ (a, b) $: ma $ (1, 0)(a, y) = (a, 0) \in I $, analogamente $ (0, b) \in I $, dunque
-\[ (a, 0) + (0, b) \in I \]
+\begin{prop}[Fatto Piacevole]
+Gli ideali sono tutti e soli i prodotti di ideali.
+\end{prop}
+\begin{proof}
+	Prendiamo $ I \subseteq A \times B $ e consideriamo le proiezioni $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideali di $ A $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $, perché l'inclusione opposta è un fatto insiemistico. Se $ (a, y), (x, b) \in I $, deve starci anche $ (a, b) $: ma $ (1, 0)(a, y) = (a, 0) \in I $, analogamente $ (0, b) \in I $, dunque
+	\[ (a, 0) + (0, b) \in I \]
+\end{proof}
+ 
 
 \subsubsection{Estensione e Contrazione di Ideali} Dati due anelli, ognuno col proprio ideale $ I \subseteq A $ e $ J  \subseteq B $, e un omomorfismo $ f $ tra i due
 
@@ -288,11 +309,7 @@ A \arrow{r}{f}  & B \\
 I \arrow[swap, hook]{u}{} & J \arrow[swap, hook]{u}{}
 \end{tikzcd} \]
 
-Dalla dimostrazione del teorema di Corrispondenza (\ref{corr}), aappiamo che 
-\begin{enumerate}
-	\item $ f^{-1}(J) $ è sempre un ideale.
-	\item $ f(I) $ è un ideale se e solo se l'omomorfismo è suriettivo.
-\end{enumerate}
+Tenendo a mente la proposizione \ref{immideali}
 
 \begin{definition}
 	Chiamiamo ideale contratto $ J^c $ la sua controimmagine $$  J^c = f^{-1}(J)  $$
@@ -315,9 +332,9 @@ Prendiamo quindi $ A \subseteq B $, abbiamo
 	\item $ I^e = (I) $
 \end{enumerate}
 
-\begin{theorem}
+\begin{prop}
 	La contrazione di un ideale primo è ancora un ideale primo.
-\end{theorem}
+\end{prop}
 \begin{proof}
 	$ J $ è primo se e solo se $ \faktor{B}{J} $ è un dominio. Consideriamo la mappa composizione 
 	\[ \varphi : A \hookrightarrow B \to \faktor{B}{J} \]
@@ -466,9 +483,9 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 	
 \subsubsection{Dominio Euclideo}
 
-\begin{theorem}
+\begin{prop}
 	Gli elementi invertibili sono tutti e soli quelli di grado minimo.
-\end{theorem}
+\end{prop}
 \begin{proof}
 	Osserviamo innanzitutto che ha senso parlare di grado minimo, poiché l'immagine del grado è un sottoinsieme non vuoto dei naturali.
 	
@@ -481,9 +498,9 @@ I seguenti risultati sono la semplice traduzione delle ultime definizioni nel li
 	e, escludendo $ d(r) < d(x) $, dobbiamo avere che $ r = 0 $. Quindi $ x $ divide ogni elemento ed è pertanto invertibile. 
 \end{proof}
 
-\begin{theorem}
+\begin{prop}
 	Esiste il \textsc{mcd} e lo possiamo calcolare con l'algoritmo di Euclide.
-\end{theorem}
+\end{prop}
 	
 \begin{theorem}
 	$ (\textsc{ed})\Rightarrow(\textsc{pid}) $

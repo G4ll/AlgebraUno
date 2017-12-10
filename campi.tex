@@ -87,7 +87,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	\end{enumerate}
 \end{definition}
 
-\begin{theorem}
+\begin{theorem}[$ \exists ! \bar{K} $]
 	Ogni campo $ K $ ammette una chiusura algebrica $ \bar{K} $ e ogni due sue chiusure $ \bar{K}, \bar{\bar{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
 	\[ \varphi : \bar{K} \to \bar{\bar{K}} \]
 	tale che $ \varphi_{|K} = id $.
@@ -108,14 +108,14 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 
 
 \subsection{Separabilità e Normalità}
-
-
 \begin{multicols}{2}
 	
 	\begin{theorem}\label{est}
 		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica.\\ Ogni immersione
 		\[ \varphi: K \hookrightarrow \bar{K} \]
-		ammette esattamente tante estensioni quante le radici di $ \mu_\alpha $.
+		ammette esattamente tante estensioni a un omomorfismo
+		\[ \tilde{\varphi}: K(\alpha) \hookrightarrow \bar{K} \]
+		 quante le radici di $ \mu_\alpha $.
 	\end{theorem}
 	\begin{proof}
 		Consideriamo l'estensione algebrica come quoziente
@@ -182,8 +182,43 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	Le estensioni $ \varphi_i $ del teorema di sopra sono proprio gli omomorfismi di coniugio, che mandano $ \alpha_1 \mapsto \alpha_i $.
 \end{remark}
 
+\begin{theorem}[dell'Elemento primitivo]\label{primitivo}
+	Ogni estensione separabile finita è semplice.
+\end{theorem}
+\begin{proof}
+	Se $ K $ è un campo finito, il suo gruppo moltiplicativo è ciclico, dunque ogni generatore è primitivo.
+	
+	Consideriamo ora il campo in cui $ K $ è infinito.
+	Prendiamo $ E/K $ estensione separabile e finita, dove possiamo assumere che
+	\[ E = K(\alpha, \beta) \]
+	Consideriamo i soliti $ n = [E:K] $ omomorfismi distinti
+	\[ \varphi_1,\, \cdots,\, \varphi_n : E \to \bar{K}  \]
+	e costruiamo il polinomio in $ \bar{K}[\,x\,] $
+	\[ F(x) = \prod_{i < j}{\left(\varphi_i(\alpha + x \beta) - \varphi_j(\alpha + x \beta)\right)} \]
+	Osserviamo che questo polinomio non è identicamente nullo
+	\[ F \equiv 0 \LR \exists i \neq j \text{ tale che }\; \begin{cases}
+	\varphi_i(\alpha) = \varphi_j(\alpha) \\
+	\varphi_i(\beta) = \varphi_j(\beta)
+	\end{cases} \]
+	dunque, essendo di grado finito in un campo infinito, ammette una "non radice" $ t \in K $ tale che
+	$  F(t) \neq 0  $, chiamiamo 
+	\[ \gamma = \alpha + t\beta \]
+	Vogliamo mostrare che $ \gamma $ è primitivo: essendo $ K $ è separabile, il polinomio minimo $ \mu_\gamma $ ha tra le radici tutti i coniugati del nostro elemento
+	\[ \varphi_1{(\gamma)}, \, \cdots, \, \varphi_n{(\gamma)} \]
+	che sono tutti distinti
+	\[ \varphi_i(\gamma) \neq \varphi_j(\gamma) \quad\forall i \neq j \]
+	altrimenti $ \gamma $ sarebbe soluzione del polinomio $ F $. Possiamo allora affermare che $ K(\gamma) $ è un'estensione di grado almeno $ n $
+	\[ [K(\gamma):K] = \deg{\mu_\gamma} \geq n = [K(\alpha, \beta):K] \]
+	e pertanto deve coincidere con $ K(\alpha, \beta) $.
+\end{proof}
 
+\begin{remark}
+	La separabilità si comporta bene sulle torri. 
+\end{remark}
+\end{multicols}
 
+\subsection{Normalità}
+\begin{multicols}{2}
 Introduciamo ora un'altra utile proprietà di alcune estensioni
 
 \begin{definition}[Normalità]
@@ -198,7 +233,7 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	\item $ \faktor{\Q(\sqrt[3]{2})}{\Q} $ non è normale.
 \end{enumerate}
 
-\begin{theorem}
+\begin{theorem}[delle estensioni normali]
 	In un'estensione $ \faktor{F}{K} $ algebrica e normale, ogni polinomio $ f \in K[\,x\,] $ irriducibile con almeno una radice in $ F $, ha tutte le radici in $ F $.
 \end{theorem}
 \begin{proof}
@@ -212,7 +247,7 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	
 \end{proof}
 
-\begin{theorem}\label{carnorm}
+\begin{theorem}[Caratterizzazione delle estensioni normali]\label{carnorm}
 	Sia $ \faktor{F}{K} $ un'estensione (algebrica) finita. Questa è normale se e solo corrisponde al campo di spezzamento di una famiglia di polinomi in $ K[\,x\,] $.
 \end{theorem}
 \begin{proof}
@@ -229,6 +264,34 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	 ma, visto che $ \varphi $ è iniettivo, $ \varphi(F) $ e $ F $ hanno lo stesso grado e pertanto sono la stessa estensione di $ K $
 \end{proof}
 
+ Consideriamo
+\[\begin{tikzcd}[row sep=0.25cm]
+L \arrow [d,-] \\
+F \arrow [d,-] \\
+K
+\end{tikzcd} \]
+
+e chiediamoci:
+\begin{itemize}
+	\item Se L/K è normale, lo è anche L/F?
+	
+	Sì! La normalità passa, perché se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che dunque deve fissare $ \varphi(L)=L $.
+	
+	\item Se L/K è normale, lo è anche F/K? No!
+	\[\begin{tikzcd}[column sep=0.25cm]
+	\Q \arrow [r,-] &
+	\Q(\sqrt[4]{2}) \arrow [r,-] &
+	\Q(\sqrt[4]{2}, i)
+	\end{tikzcd} \]
+	
+	\item Se L/F e F/K sono normali, lo è anche L/K? No!
+	\[\begin{tikzcd}[column sep=0.25cm]
+	\Q \arrow [r,-] &
+	\Q(\sqrt{2}) \arrow [r,-] &
+	\Q(\sqrt[4]{2})
+	\end{tikzcd} \]
+\end{itemize}
+
 \end{multicols}
 
 \subsection{Teoria di Galois}
@@ -238,18 +301,19 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 		Un'estensione $ \faktor{E}{K} $ algebrica si dice \emph{di Galois} se è sia normale che separabile.
 	\end{definition}
 	
-	(Da qui in avanti svilupperemo la Teoria di Galois per estensioni \emph{finite}, pertanto quando diremo che un'estensione ha questa proprietà, sottointenderemo la finitezza. )
+	(Da qui in avanti svilupperemo la Teoria di Galois per estensioni \emph{finite}, pertanto quando diremo che un'estensione ha questa proprietà, sottointenderemo la finitezza.)
+	
 	
 	In questo caso il gruppo degli automorfismi 
 	\[ \text{Aut}_K(E) = \{ \varphi : E \to E \mid \varphi_K = id \} \]
-	per normalità sono proprio le estensioni delle immersioni di $ K $ nella sua chiusura algebrica
+	per normalità è costituito dalle estensioni delle immersioni di $ K $ nella sua chiusura algebrica
 	\[ \text{Aut}_K(E) = \{ \varphi : E \to \bar{K} \mid \varphi_K = id  \} \]
 	che, per separabilità, sono tante quante il grado dell'estensione
 	\[ |\text{Aut}_K(E)| = [E : K] \]
-	e viene chiamato gruppo di Galois dell'estensione
+	e viene chiamato \emph{gruppo di Galois} dell'estensione
 	\[ \Gal{\faktor{E}{K}} := \text{Aut}_K(E) \]
 	
-	Possiamo anche parlare del gruppo di Galois di un polinomio, riferendoci indirettamente al gruppo di Galois dell'estensione del suo campo di spezzamento, le due definizioni sono equivalenti per la proposizione \ref{carnorm}.
+	Possiamo anche parlare del gruppo di Galois di un polinomio, riferendoci indirettamente al gruppo di Galois dell'estensione corrispondente a quella del suo campo di spezzamento, le due definizioni sono equivalenti per la proposizione \ref{carnorm}.
 	
 	Pensarla in quest'ottica ci permette di procede con una piacevole osservazione:
 	\begin{remark}
@@ -267,49 +331,84 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 		\item $ \Gal{\Q(\zeta_7+ \zeta_7^{-1})/\Q} \cong \Z_3 $
 	\end{enumerate}
 	
-	Come si comporta la proprietà di Galois sulle torri? Consideriamo
-	\[\begin{tikzcd}[row sep=0.25cm]
-	L \arrow [d,-] \\
-	F \arrow [d,-] \\
-	K
-	\end{tikzcd} \]
-	
-	e chiediamoci:
-	\begin{itemize}
-		\item Se L/K è di Galois, lo è anche L/F?
-		
-		 Sì! La separabilità passa, perché un polinomio minimo in $ F[\,x\,] $ divide il corrispondente in  $ K[\,x\,] $. La normalità passa, perché se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che dunque deve fissare $ \varphi(L)=L $.
-		
-		\item Se L/K è di Galois, lo è anche F/K? No!
-		\[\begin{tikzcd}[column sep=0.25cm]
-		\Q \arrow [r,-] &
-		\Q(\sqrt[4]{2}) \arrow [r,-] &
-		\Q(\sqrt[4]{2}, i)
-		\end{tikzcd} \]
-		
-		\item Se L/F e F/K sono di Galois, lo è anche L/K? No!
-		\[\begin{tikzcd}[column sep=0.25cm]
-		\Q \arrow [r,-] &
-		\Q(\sqrt{2}) \arrow [r,-] &
-		\Q(\sqrt[4]{2})
-		\end{tikzcd} \]
-	\end{itemize}
+	Come si comporta la proprietà di Galois sulle torri? La separabilità si estende in tutte le direzioni, pertanto si comporta tanto male quanto la normalità. In particolare, l'unica proposizione che vale è: data una torre $ L \subseteq F \subseteq K $, se $ L/K $ è di Galois, allora anche $ L/F $ lo è.
 	
 	\begin{theorem}[di corrispondenza]
 		Sia $ \faktor{L}{K} $ un'estensione di Galois finita. La mappa
-		\fun{f}
+		\fun{\alpha}
 		{\{F \text{ campo} \mid K \subseteq F \subseteq L \}}
 		{\left\{ H < \Gal{\faktor{L}{K}} \right\}}
 		{F}
 		{\Gal{\faktor{L}{F}}}
 		è bigettiva con inversa
-		\[ H \mapsto L^H = \{ \alpha \in L \mid \sigma\alpha = \alpha \;\forall \sigma \in H \} \]
+		\[ \beta: H \mapsto L^H = \{ \alpha \in L \mid \sigma\alpha = \alpha \;\forall \sigma \in H \} \]
 		Inoltre
-		\[ H \lhd G \LR \faktor{L^H}{K} \text{ è di Galois} \]
+		\[ H \lhd \Gal{L/K} \LR \faktor{L^H}{K} \text{ è di Galois} \]
 		e in questo caso
 		\[ \Gal{\faktor{L^H}{K}} \cong \frac{\Gal{\faktor{L}{K}}}{\Gal{\faktor{L}{L^H}}} \]
 	\end{theorem}
+	\begin{proof}
+		Iniziamo con un lemma preliminare
+	\begin{prop}
+		Siano $ E/K $ un'estensione di Galois e $ H < \Gal{E/K} $, allora
+		\[  E^H = K \LR H = \Gal{E/K}  \]
+	\end{prop}
+	\begin{proof}
+		$ \Leftarrow $. Chiaramente 
+		\[ K \subseteq E^{\Gal{\cdot}} \]
+	perché gli elementi del gruppo fissano $ K $ per definizione.
+	Inoltre \[ E^{\Gal{\cdot}} \subseteq K \]
+	infatti, presa un'estensione semplice $ K(\alpha) $ non banale
+	\[ K \subset K(\alpha) \subseteq E \]
+	esiste un omomorfismo che manda $ \alpha $ in un suo coniugato
+	\[ \varphi: K(\alpha) \to E \quad\text{ tale che } \varphi(\alpha)\neq \alpha \]
+	che possiamo estendere a un'immersione (\ref{est})
+	\[ \tilde{\varphi}: E \to \bar{K} \]
+	che fissa $ E $.
+	Quindi troviamo l'automorfismo $ \tilde{\varphi}_{|E} \in \Gal{E/K} $ che non fissa $ \alpha $.
 	
+	$ \Rightarrow $. Per il teorema dell'elemento primitivo \ref{primitivo} possiamo assumere
+	\[ E = K(\alpha) \]
+	Consideriamo il polinomio
+	\[ f(x) = \prod_{\sigma \in H}{(x - \sigma(\alpha))} \]
+	e mostriamo che vive in $ E^H[\, x\,] = K[\, x\,] $: per ogni $ \gamma \in H $ si ha
+	\[ \gamma f = \prod_{\sigma \in H}{(x - \gamma\sigma(\alpha))} = \prod_{\gamma\sigma \in H}{(x - \gamma\sigma(\alpha))} = f \]
+	dunque tutti i suoi coefficienti devono essere fissati da ogni elemento di $ H $.
+	Visto che il polinomio vive in $ K[\, x\,] $ ed ha $ \alpha $ come radice, ricaviamo
+	\[ |\Gal{E/K}| = [E:K] = \deg \mu_\alpha \leq \deg f = |H| \]
+	da cui la tesi.
+	\end{proof}
+
+	Sfruttando il lemma appena dimostrato scopriamo che
+	\[ \alpha(\beta(H)) = \alpha(L^H) = \Gal{L/L^H} = H \]
+	dove usiamo che $ (L)^H = L^H $, per definizione. Analogamente
+	\[ \beta(\alpha(F)) = \beta(\Gal{L/F}) = L^\Gal{L/F} = F \] 
+	
+	Per la seconda parte abbiamo bisogno di un altro lemma:
+	\begin{prop}
+		Siano $ E/K $ un'estensione di Galois, $ H < \Gal{E/K} $ e $ \sigma \in \Gal{E/K} $, allora
+		\[ \sigma L^H = L^{\sigma H \sigma^{-1}} \]
+	\end{prop}
+	\begin{proof}
+		Ci basta osservare le definizioni
+		\[ L^{\sigma H \sigma^{-1}} = \{ \alpha \in L \mid \sigma\tau\sigma^{-1}(\alpha) = \alpha \quad\forall \tau \in H \} \]
+		ossia, essendo $ \sigma $ un isomorfismo di $ L $
+		\[ = \{ \sigma(\beta) \in L \mid \tau(\beta) = \beta \quad\forall \tau \in H \} = \sigma L \]
+		pertanto
+		\[ |\Gal{E/K}| = \deg\mu_\alpha \leq \deg f \]
+	\end{proof}
+	è ora chiaro che
+	\begin{align*}
+		H \lhd \Gal{L/K} &\LR \sigma H \sigma^{-1} \quad \forall\sigma \in \Gal{L/K} \\
+		& \LR \sigma L^H = L^H \quad \forall\sigma \in \Gal{L/K}
+	\end{align*}
+	ovvero se e solo se $ L^H $ è fissato da tutti gli automorfismi di $ L $, ossia è a sua volta un'estensione di Galois.
+	In questo caso ci concentriamo sulla funzione di restrizione
+	\fun{\texttt{res}}{\Gal{L/K}}{\Gal{L^H/K}}{\sigma}{\sigma_{|H}}
+	e osserviamo che è un omomorfismo di nucleo
+	\[ \ker \texttt{res} = \Gal{L/L^H} \]
+	dunque il Primo Teorema di Omomorfismo (tra gruppi!) ci fornisce la tesi.
+	\end{proof}
 	
 	
 \end{multicols}

@@ -38,6 +38,7 @@
 
 % Formato Teoremi, Dimostrazioni, Definizioni
 \newtheorem{theorem}{Teorema}[section]
+\newtheorem{prop}[theorem]{Lemma}
 \theoremstyle{remark}
 \newtheorem*{remark}{Osservazione}
 \theoremstyle{definition}
@@ -94,16 +95,14 @@
 \begin{document}
 \begin{center}
 	\vspace*{0,5 cm}
-	{\Huge \textsc{\Title}} \\
-	\vspace{0,5 cm}
+	{\Huge \textsf{\textbf{\Title}}} \\
+	\vspace{0,75 cm}
 	\textsc{\Author} \hspace{1cm} \textsc{\Date}
 	\thispagestyle{empty}
 	\vspace{0,7 cm}
 \end{center}
-\small
 
-Gli appunti sono in fase di costruzione, potrebbero essere pieni di errori e quant'altro.\\
-Se volete aiutarmi a sistemare qualcosa, fatelo, stanno su GitHub apposta.
+\small
 
 \tableofcontents
 
@@ -114,6 +113,6 @@ Per tutto quello che riguarda gli interi di Gauss, rifarsi a \href{http://www.ma
 \include{anelli}
 \include{campi}
 
-%\newpage
-%\listoftheorems[ignoreall,show={theorem}]
+\newpage
+\listoftheorems[ignoreall,show={theorem},show={prop} ]
 \end{document}

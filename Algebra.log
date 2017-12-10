@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  3 DEC 2017 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  10 DEC 2017 15:32
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1378,22 +1378,22 @@ File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
 ))) (./Algebra.aux (./gruppi.aux) (./anelli.aux) (./campi.aux))
 \openout1 = `Algebra.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Info: Redefining \it@ocap on input line 94.
-LaTeX Info: Redefining \it@ccap on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Info: Redefining \it@ocap on input line 95.
+LaTeX Info: Redefining \it@ccap on input line 95.
 
 
 File italian.ldf warning: 
@@ -1401,7 +1401,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 94.
+italian.ldf    on input line 95.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1472,7 +1472,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 94.
+Package hyperref Info: Link coloring ON on input line 95.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1482,9 +1482,9 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count269
 )
-LaTeX Info: Redefining \ref on input line 94.
-LaTeX Info: Redefining \pageref on input line 94.
-LaTeX Info: Redefining \nameref on input line 94.
+LaTeX Info: Redefining \ref on input line 95.
+LaTeX Info: Redefining \pageref on input line 95.
+LaTeX Info: Redefining \nameref on input line 95.
 
 (./Algebra.out) (./Algebra.out)
 \@outlinefile=\write4
@@ -1521,6 +1521,8 @@ Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 17.
 Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
  line 21.
+Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
+ine 23.
  [2
 
 ] [3
@@ -1570,47 +1572,45 @@ Underfull \hbox (badness 10000) in paragraph at lines 547--548
 
 [9
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 582--584
-
- []
-
-[10
+] [10
 
 ] [11
 
-] [12
-
-] [13]
-Underfull \hbox (badness 10000) in paragraph at lines 879--881
+] [12]
+Underfull \hbox (badness 10000) in paragraph at lines 837--839
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 882--883
+Underfull \hbox (badness 10000) in paragraph at lines 840--841
+
+ []
+
+[13
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 875--877
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 878--879
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 887--889
 
  []
 
 [14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 917--919
+Underfull \hbox (badness 10000) in paragraph at lines 984--986
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 920--921
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 929--931
-
- []
-
-[15
-
-]) [16
+) [15
 
 ]
 \openout2 = `anelli.aux'.
@@ -1635,19 +1635,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 
  []
 
-[17
+[16
 
 
-] [18
+] [17
 
-] [19]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 338.
-
+] [18] [19]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 338.
+(hyperref)                removing `math shift' on input line 355.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 355.
 
 [20
 
@@ -1661,26 +1661,35 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 ] [24
 
-]) [25
+] [25
+
+] [26
+
+]) [27]
+showing theorem
+showing prop
+(./Algebra.loe) [28
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
- (./Algebra.aux (./gruppi.aux)
-(./anelli.aux) (./campi.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+\tf@loe=\write6
+\openout6 = `Algebra.loe'.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 118.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 118.
+ (./Algebra.aux (./gruppi.aux) (./anelli.aux) (./campi.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 118.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 118.
 Package rerunfilecheck Info: File `Algebra.out' has not changed.
-(rerunfilecheck)             Checksum: E2D4E074CCB3D6401040F9570D85EFF6;2579.
+(rerunfilecheck)             Checksum: BD3975AFDC7191054D59CBD6635CBDA3;2579.
  ) 
 Here is how much of TeX's memory you used:
- 30282 strings out of 494934
- 577696 string characters out of 6180556
- 759214 words of memory out of 5000000
- 32669 multiletter control sequences out of 15000+600000
- 19239 words of font info for 73 fonts, out of 8000000 for 9000
+ 30333 strings out of 494934
+ 578477 string characters out of 6180556
+ 759619 words of memory out of 5000000
+ 32700 multiletter control sequences out of 15000+600000
+ 20041 words of font info for 77 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 61i,22n,84p,10396b,1214s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 61i,22n,84p,10396b,1216s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/share/texli
@@ -1701,15 +1710,15 @@ dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmsy9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
-ymbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
-mbols/msbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msbm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/wasy2-ps/wasy9
-.pfb>
-Output written on Algebra.pdf (25 pages, 428771 bytes).
+fonts/cm/cmti9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmtt9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/
+msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/m
+sbm10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/wasy2-ps/wasy9.pfb>
+Output written on Algebra.pdf (28 pages, 448196 bytes).
 PDF statistics:
- 858 PDF objects out of 1000 (max. 8388607)
- 776 compressed objects within 8 object streams
- 401 named destinations out of 1000 (max. 500000)
+ 948 PDF objects out of 1000 (max. 8388607)
+ 861 compressed objects within 9 object streams
+ 415 named destinations out of 1000 (max. 500000)
  285 words of extra memory for PDF output out of 10000 (max. 10000000)
 
