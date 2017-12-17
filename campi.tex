@@ -15,7 +15,7 @@
 \end{definition}
 
 \begin{definition}
-	L'indice di un'estensione $ [L:K] $ è la dimensione di $ L $ visto come $ K $ spazio vettoriale.
+	L'\emph{indice di un'estensione} $$  [L:K]  $$ è la dimensione di $ L $ visto come $ K $ spazio vettoriale.
 \end{definition}
 
 \begin{definition}
@@ -80,16 +80,16 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 \end{definition}
 
 \begin{definition}
-	$ \bar{\Omega} $ è detta \emph{chiusura algebrica} di $ \Omega $ se:
+	$ \overline{\Omega} $ è detta \emph{chiusura algebrica} di $ \Omega $ se:
 	\begin{enumerate}
-		\item $ \bar{\Omega} $ è algebricamente chiuso.
-		\item $ \faktor{\bar{\Omega}}{\Omega} $ è algebrica.
+		\item $ \overline{\Omega} $ è algebricamente chiuso.
+		\item $ \faktor{\overline{\Omega}}{\Omega} $ è algebrica.
 	\end{enumerate}
 \end{definition}
 
-\begin{theorem}[$ \exists ! \bar{K} $]
-	Ogni campo $ K $ ammette una chiusura algebrica $ \bar{K} $ e ogni due sue chiusure $ \bar{K}, \bar{\bar{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
-	\[ \varphi : \bar{K} \to \bar{\bar{K}} \]
+\begin{theorem}[$ \exists ! \overline{K} $]
+	Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
+	\[ \varphi : \overline{K} \to \overline{\overline{K}} \]
 	tale che $ \varphi_{|K} = id $.
 \end{theorem}
 
@@ -107,14 +107,14 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 \end{multicols}
 
 
-\subsection{Separabilità e Normalità}
+\subsection{Separabilità}
 \begin{multicols}{2}
 	
-	\begin{theorem}\label{est}
-		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica.\\ Ogni immersione
-		\[ \varphi: K \hookrightarrow \bar{K} \]
+	\begin{theorem}[di immersione]\label{est}
+		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica. Ogni immersione
+		\[ \varphi: K \hookrightarrow \overline{K} \]
 		ammette esattamente tante estensioni a un omomorfismo
-		\[ \tilde{\varphi}: K(\alpha) \hookrightarrow \bar{K} \]
+		\[ \tilde{\varphi}: K(\alpha) \hookrightarrow \overline{K} \]
 		 quante le radici di $ \mu_\alpha $.
 	\end{theorem}
 	\begin{proof}
@@ -162,7 +162,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	semplicemente scrivendo esplicitamente il polinomio e osservando che tutti i coefficienti che possono non essere nulli sono quelli dei termini $ x^{pk} $.
 \end{proof}
 
-\begin{theorem}
+\begin{theorem}[delle immersioni separabili]
 	Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica, di grado $ n $. Se è separabile, ogni immersione
 	\[ \varphi: K \hookrightarrow \bar{K} \]
 	ammette esattamente n estensioni.
@@ -331,33 +331,36 @@ e chiediamoci:
 		\item $ \Gal{\Q(\zeta_7+ \zeta_7^{-1})/\Q} \cong \Z_3 $
 	\end{enumerate}
 	
-	Come si comporta la proprietà di Galois sulle torri? La separabilità si estende in tutte le direzioni, pertanto si comporta tanto male quanto la normalità. In particolare, l'unica proposizione che vale è: data una torre $ L \subseteq F \subseteq K $, se $ L/K $ è di Galois, allora anche $ L/F $ lo è.
-	
-	\begin{theorem}[di corrispondenza]
+	\begin{remark}
+		Come si comporta la proprietà di Galois sulle torri? La separabilità si estende in tutte le direzioni, pertanto si comporta tanto male quanto la normalità. In particolare, l'unica proposizione che vale è: data una torre $ L \subseteq F \subseteq K $, se $ L/K $ è di Galois, allora anche $ L/F $ lo è.
+	\end{remark}
+	\columnbreak
+	\begin{theorem}[di corrispondenza]\label{corrgall}
 		Sia $ \faktor{L}{K} $ un'estensione di Galois finita. La mappa
 		\fun{\alpha}
 		{\{F \text{ campo} \mid K \subseteq F \subseteq L \}}
 		{\left\{ H < \Gal{\faktor{L}{K}} \right\}}
 		{F}
-		{\Gal{\faktor{L}{F}}}
+		{\Gal{L/F}}
 		è bigettiva con inversa
 		\[ \beta: H \mapsto L^H = \{ \alpha \in L \mid \sigma\alpha = \alpha \;\forall \sigma \in H \} \]
 		Inoltre
-		\[ H \lhd \Gal{L/K} \LR \faktor{L^H}{K} \text{ è di Galois} \]
+		\[ H \lhd \Gal{L/K} \LR L^H/K \text{ è di Galois} \]
 		e in questo caso
-		\[ \Gal{\faktor{L^H}{K}} \cong \frac{\Gal{\faktor{L}{K}}}{\Gal{\faktor{L}{L^H}}} \]
+		\[ \Gal{L^H/K} \cong \dfrac{\Gal{L/K}}{\Gal{L/L^H}} \]
+		
 	\end{theorem}
 	\begin{proof}
 		Iniziamo con un lemma preliminare
-	\begin{prop}
+	\begin{prop}\label{cosetta1}
 		Siano $ E/K $ un'estensione di Galois e $ H < \Gal{E/K} $, allora
 		\[  E^H = K \LR H = \Gal{E/K}  \]
 	\end{prop}
 	\begin{proof}
 		$ \Leftarrow $. Chiaramente 
-		\[ K \subseteq E^{\Gal{\cdot}} \]
+		\[ K \subseteq E^{\Gal{E/K}} \]
 	perché gli elementi del gruppo fissano $ K $ per definizione.
-	Inoltre \[ E^{\Gal{\cdot}} \subseteq K \]
+	Inoltre \[ E^{\Gal{E/K}} \subseteq K \]
 	infatti, presa un'estensione semplice $ K(\alpha) $ non banale
 	\[ K \subset K(\alpha) \subseteq E \]
 	esiste un omomorfismo che manda $ \alpha $ in un suo coniugato
@@ -411,4 +414,173 @@ e chiediamoci:
 	\end{proof}
 	
 	
+\end{multicols}
+
+\subsection{Relazioni tra estensioni e gruppi di Galois}
+\begin{multicols}{2}
+	\begin{prop}
+		Valgono i seguenti:
+		\begin{enumerate}
+			\item  $ H < K \LR L^H \supseteq L^K $
+			\item $ L^{H \cap K} = L^H L^K $
+			\item $ L^{\gen{H, K}} = L^H \cap L^S $
+		\end{enumerate}
+		
+	\end{prop}
+	
+	\begin{theorem}[dell'estensione a caso]\label{galrandom}
+		Se $ L/K $ è un'estensione di Galois e $ F/K $ è un'estensione algebrica (tale che entrambe stiano in una qualche sovraestensione?), allora $ LF/F $ è di Galois. 
+		
+		\[\begin{tikzcd}[row sep=0.25cm, column sep=0.3cm]
+		 & LF \arrow[dl,-] \arrow[dr,-, dashed] &  \\
+		L \arrow[ddr,-] \arrow[dr,-] &  & F \arrow [ddl,-] \\
+		& L\cap F \arrow[ur,-] \arrow[d,-]  & \\
+		& K &
+		\end{tikzcd} \]
+		
+		Inoltre
+		\[ \Gal{LF/F} \cong \Gal{L / L\cap F} \]
+	\end{theorem}
+	
+	\begin{proof}
+		Come sempre, la separabilità non ha davvero bisogno di essere controllata, ci concentriamo quindi sulla normalità. Prendiamo un $ F $-automorfismo $ \varphi $ di $ LF $. Quando consideriamo la restrizione
+		\[ \varphi_{|L} \in \Gal{L/K} \]
+		scopriamo che $ \varphi(L) = \varphi_{|L}(L) = L $. Sapendo per ipotesi che $ \varphi_{|F} = id $: 
+		\[ \varphi(LF) = \varphi(L)\varphi(F) = LF \]
+		come volevamo. Vogliamo ora far vedere che l'omomorfismo di restrizione
+		\fun{\texttt{res}}{\Gal{LF/F}}{\Gal{L/K}}{\varphi}{\varphi_{|L}}
+		è iniettivo; infatti un $ F $-omomorfismo che è agisce come l'identità su $ L $ è necessariamente banale!
+		\[ \ker \texttt{res} = \{ \varphi \in \Gal{LF/F} \mid \varphi_{|L} = id \} = \{ id \} \]
+		Dunque possiamo identificare il gruppo di Galois appena individuato con un sottogruppo di $ \Gal{L/K} $ e pertanto, per il teorema di corrispondenza \ref{corrgall} possiamo associarvi un'estensione di $ K $:
+		\[ L^{\texttt{res}(\Gal{LF/F})} = L \cap F \]
+		è chiaro che se un elemento appartiene ad entrambi i campi, vi rimane, perché i $ \varphi $ fissano tutti gli elementi di $ F $ per definizione! Inoltre, se un elemento $ \alpha $ vive in $ L $ ma non in $ F $, non appartiene sicuramente al campo di partenza $ K \subseteq F $, quindi ha almeno un coniugato in cui viene mandato da almeno un elemento di $ \Gal{LF/F} $. O meglio
+		\[ \alpha \in L^{\texttt{res}(\Gal{LF/F})} \quad\Rightarrow\quad \alpha \in LF^{\Gal{LF/F}} = F \]
+		per il lemma \ref{cosetta1}.
+		
+		Dobbiamo pertanto concludere che
+		\[ \texttt{res}(\Gal{LF/F}) \cong \Gal{L/L\cap F} \]
+	\end{proof}
+	
+	\textsf{\textbf{Achtung.} Per trarre questa conclusione stiamo usando che $ L/L\cap F $ è di Galois, il che segue dalla proprietà delle torri.}
+	
+	\begin{definition}
+		Diciamo che due estensioni $ L_1/K $ e $ L_2/K $ sono \emph{linearmente disgiunte} quando
+		\[ L_1 \cap L_2 = K \]
+	\end{definition}
+
+	\begin{remark}
+		In generale si ha
+		\[\begin{tikzcd}[row sep=0.25cm, column sep=0.3cm]
+		& L_1L_2 \arrow[dl,-] \arrow[dr,-] &  \\
+		L_1 \arrow[ddr,-, "m" left] \arrow[dr,-] &  & L_2 \arrow [ddl,-, "n"] \\
+		& L_1\cap L_2 \arrow[ur,-] \arrow[d,-, "c"]  & \\
+		& K &
+		\end{tikzcd} \]
+		e visto che $ c \mid (m, n) $, se le due estensioni hanno grado coprimo allora devono essere linearmente disgiunte!
+	\end{remark}
+	\begin{remark}
+		$ L_1 $ e $ L_2 $ sono linearmente disgiunte se e solo se \[ [L_1L_2: K] = [L_1: K][L_2: K] \]
+	\end{remark}
+	
+	\begin{theorem}[dei prodotti di Galois]
+		Siano $ L_1/K $ e $ L_2/K $ estensioni di Galois, allora l'estensione $ L_1L_2/K $ è di Galois. 
+		
+		\[\begin{tikzcd}[row sep=0.25cm, column sep=0.2cm]
+		& L_1L_2 \arrow[dl,-] \arrow[dr,-] \arrow[dd, -, dashed] &  \\
+		L_1 \arrow[dr,-] &  & L_2 \arrow [dl,-] \\
+		& K &
+		\end{tikzcd} \]
+		
+		Inoltre \[ \Gal{L_1L_2/K} \hookrightarrow \Gal{L_1/K} \times \Gal{L_2/K} \]
+		e questa immersione è un'isomorfismo se e solo se le estensioni di partenza sono linearmente disgiunte.
+	\end{theorem}
+	
+	\begin{proof}
+		$ L_1L_2/K $ è di Galois: infatti $$  \varphi(L_1L_2) = \varphi(L_1)\varphi(L_2) = L_1L_2  $$ perché le due estensioni sono normali.
+		
+		Consideriamo ora l'omomorfismo di restrizione
+		\fun{\texttt{res}}{\Gal{L_1L_2/K}}{\Gal{L_1/K} \times \Gal{L_2/K}}{\varphi}{(\varphi_{|L_1}, \varphi_{|L_2})}
+		
+		che è iniettivo, perché se un'omomorfismo agisce in modo identico su tutti i generatori del campo, lo farà su tutto il campo.
+	
+	Prendiamo i due sottogruppi $ H_1, H_2 \lhd \Gal{L_1L_2 /K} $ tali che
+	\[ (L_1L_2)^{H_i} = L_i \]
+	Se supponiamo le due estensioni linearmente disgiunte, allora
+	\[ H_1 \cong \Gal{L_1L_2/L_1} \cong \Gal{L_2/L_1 \cap L_2} \cong \Gal{L_2/K}  \]
+	usando in mezzo la proposizione \ref{galrandom}. Inoltre
+	\[ H_1 \cap H_2 = \{ id \} \qquad\text{e}\qquad H_1H_2 = \Gal{L_1L_2 /K} \]
+	quindi possiamo applicare il teorema di struttura \ref{struttura}
+	\[ H_1 \times H_2 \cong \Gal{L_1L_2/K} \]
+	il che è equivalente alla suriettività di $ \texttt{res} $.
+	
+	Viceversa, l'isomorfismo ci dice che
+	$$  \gen{H_1, H_2} = \Gal{L_1L_2/K}  $$
+	e pertanto
+	$$  K = L_1 \cap L_2 = L_1L_2^{H_1} \cap L_1L_2^{H_2} = L_1L_2^{\gen{H_1, H_2}}  $$
+
+\end{proof}
+	
+	\subsubsection{Gruppo di Galois di un ciclotomico}
+	
+	\begin{theorem}
+		Siano $ n $ un intero positivo e $ \xi $ una radice $ n $-esima primitiva dell'unità, allora
+		\[ \Gal{\mu_{\xi}} \cong \Z_n^\times \]
+	\end{theorem}
+	
+	\begin{proof}
+		Iniziamo osservando che tutti i coniugati di $ \xi $ sono radici di
+		\[ f = x^n -1 = \mu_\xi (x)  g(x)\]
+		
+		
+		Tutte le radici di $ \mu_\xi $ hanno ordine moltiplicativo $ n $ in $ \mathbb{C}^\times $: per definizione sono i coniugati di $ \xi $, dunque c'è un isomorfismo che li scambia.\\
+		
+		Mostriamo che tutte le radici primitive sono coniugate di $ \xi $; anzi, più in generale che per ogni primo $ p $ che non divide $ n $, $ \xi^p $ non è una radice di $ g $, mentre chiaramente è una radice di $ f $. Se, per assurdo, avessimo che
+		\[ g(\xi^p) = 0 \]
+		allora potremmo ridurci modulo $ p $ per osservare che $ \bar{g} $ ha radici multiple
+		
+		\[ \overline{g(x^p)} = \left(\overline{g(x)}\right)^p \]
+		mentre
+		\[ f' =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1   \]
+		
+		Possiamo così concludere che $ \mu_\xi $ ha come radici tutte e sole le radici $ n $-esime primitive dell'unità, pertanto
+		\[ \deg\mu_\xi = \phi(n) = |\Gal{\mu_\xi}| \]
+		
+		
+		Infine, verifichiamo che la mappa
+		\fun{\Phi}{\Z_n^\times}{\Gal{\mu_\xi}}{i}{\varphi_i: \xi \mapsto \xi^{i}}
+		è un isomorfismo.
+	\end{proof}
+	
+	
+	
+	\subsubsection{Gruppo di Galois di un campo finito}
+	\begin{theorem}
+	Dato un primo $ p $ e un intero positivo $ n $
+	\[ \Gal{\mathbb{F}_{p^n} /\mathbb{F}_p} \cong \gen{\Phi} \]
+	dove $ \Phi $ è l'automorfismo di Frobenius: \fun{\Phi}{\mathbb{F}_{p^n}}{\mathbb{F}_p}{x}{x^p}
+	\end{theorem}
+	
+	\begin{proof}
+		La mappa $ \Phi $ è un omomorfismo perché
+		\begin{align*}
+		(a + b)^ p &= a^p + b^p \\
+		(ab)^p &= a^p b^p
+		\end{align*}
+		e, fissando l'unità, è non banale. Pertanto dev'essere un automorfismo! Dunque abbiamo, quantomeno,
+		\[ \gen{\Phi} < \Gal{\mathbb{F}_{p^n} /\mathbb{F}_p} \]
+		Inoltre
+		\[ |\gen{\Phi}| = n = |\Gal{\mathbb{F}_{p^n} /\mathbb{F}_p}| \]
+		perché se vale
+		\[ x^{p^m} = x \qquad\forall x \in \mathbb{F}_{p^n} \]
+		dobbiamo avere che il polinomio $ x^{p^m} - x $ ha almeno $ p^n $ radici distinte, quindi ha grado $ p^m \geq p^n $. Inoltre, per costruzione,
+		\[ x^{p^n} = x \qquad\forall x \in \mathbb{F}_{p^n} \]
+		da cui la tesi.
+	\end{proof}
+	
+	\begin{remark}
+		Se volessimo gruppi di galois di estensioni più elaborate, ci basta ricordare che
+		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p^d} < \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p} \cong \gen{\Phi} \]
+		dunque
+		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d}} \cong \gen{\Phi^d} \]
+	\end{remark}
 \end{multicols}

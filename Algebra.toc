@@ -31,6 +31,9 @@
 \contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{21}{subsubsection.1.4.3}
 \contentsline {section}{\numberline {K}Teoria dei Campi e di Galois}{23}{section.11}
 \contentsline {subsection}{\numberline {K.1}Richiami}{23}{subsection.11.1}
-\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a} e Normalit\IeC {\`a}}{24}{subsection.11.2}
+\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a}}{24}{subsection.11.2}
 \contentsline {subsection}{\numberline {K.3}Normalit\IeC {\`a}}{25}{subsection.11.3}
 \contentsline {subsection}{\numberline {K.4}Teoria di Galois}{26}{subsection.11.4}
+\contentsline {subsection}{\numberline {K.5}Relazioni tra estensioni e gruppi di Galois}{28}{subsection.11.5}
+\contentsline {subsubsection}{\numberline {K.5.1}Gruppo di Galois di un ciclotomico}{29}{subsubsection.11.5.1}
+\contentsline {subsubsection}{\numberline {K.5.2}Gruppo di Galois di un campo finito}{29}{subsubsection.11.5.2}

@@ -25,6 +25,7 @@
 \usepackage{multicol}
 \usepackage{setspace}
 \usepackage{mdframed}
+\usepackage{enumitem}
 
 % magia
 \usepackage{hyperref}
@@ -42,7 +43,7 @@
 \theoremstyle{remark}
 \newtheorem*{remark}{Osservazione}
 \theoremstyle{definition}
-\newtheorem{definition}[theorem]{Definizione}
+\newtheorem*{definition}{Definizione}
 \renewcommand\qedsymbol{$\clubsuit$}
 
 % Frontespizio e piè di pagina
@@ -107,12 +108,12 @@
 \tableofcontents
 
 \bigskip
-Per tutto quello che riguarda gli interi di Gauss, rifarsi a \href{http://www.math.uconn.edu/~kconrad/blurbs/ugradnumthy/Zinotes.pdf}{$ \blacksquare $}.
+Per tutto quello che riguarda gli interi di Gauss, rifarsi a \href{http://www.math.uconn.edu/~kconrad/blurbs/ugradnumthy/Zinotes.pdf}{\texttt{kconrad}}.
 
 \include{gruppi}
 \include{anelli}
 \include{campi}
 
 \newpage
-\listoftheorems[ignoreall,show={theorem},show={prop} ]
+\listoftheorems[ignoreall,show={theorem} ]
 \end{document}
