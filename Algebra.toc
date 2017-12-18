@@ -37,3 +37,4 @@
 \contentsline {subsection}{\numberline {K.5}Relazioni tra estensioni e gruppi di Galois}{28}{subsection.11.5}
 \contentsline {subsubsection}{\numberline {K.5.1}Gruppo di Galois di un ciclotomico}{29}{subsubsection.11.5.1}
 \contentsline {subsubsection}{\numberline {K.5.2}Gruppo di Galois di un campo finito}{29}{subsubsection.11.5.2}
+\contentsline {subsection}{\numberline {K.6}Esistenza e unicit\IeC {\`a} della chiusura algebrica}{30}{subsection.11.6}

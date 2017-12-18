@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  17 DEC 2017 12:01
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  18 DEC 2017 22:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1683,15 +1683,21 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 ] [26
 
 ] [27]
-Underfull \hbox (badness 10000) in paragraph at lines 535--536
+Underfull \hbox (badness 10000) in paragraph at lines 536--537
 
  []
 
 [28
 
-]) [29]
+] [29]
+
+LaTeX Warning: Reference `estinf' on page 30 undefined on input line 673.
+
+[30
+
+])
 showing theorem
-(./Algebra.loe) [30
+(./Algebra.loe) [31
 
 ]
 \tf@loe=\write6
@@ -1703,13 +1709,17 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
 Package rerunfilecheck Info: File `Algebra.out' has not changed.
-(rerunfilecheck)             Checksum: 6C14E62B42A1B80CB077526357A54265;2852.
+(rerunfilecheck)             Checksum: AA3C5693389AF782888CEE05406ABF7F;2951.
+
+
+LaTeX Warning: There were undefined references.
+
  ) 
 Here is how much of TeX's memory you used:
- 30735 strings out of 494934
- 586603 string characters out of 6180556
- 767857 words of memory out of 5000000
- 33117 multiletter control sequences out of 15000+600000
+ 30778 strings out of 494934
+ 587495 string characters out of 6180556
+ 766857 words of memory out of 5000000
+ 33149 multiletter control sequences out of 15000+600000
  20641 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,22n,84p,10417b,1219s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1740,10 +1750,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/wasy2-ps/wasy9.pfb>
-Output written on Algebra.pdf (30 pages, 473869 bytes).
+Output written on Algebra.pdf (31 pages, 481930 bytes).
 PDF statistics:
- 939 PDF objects out of 1000 (max. 8388607)
- 848 compressed objects within 9 object streams
- 395 named destinations out of 1000 (max. 500000)
- 309 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 962 PDF objects out of 1000 (max. 8388607)
+ 870 compressed objects within 9 object streams
+ 406 named destinations out of 1000 (max. 500000)
+ 317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -111,7 +111,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 \begin{multicols}{2}
 	
 	\begin{theorem}[di immersione]\label{est}
-		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica. Ogni immersione
+		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica semplice. Ogni immersione
 		\[ \varphi: K \hookrightarrow \overline{K} \]
 		ammette esattamente tante estensioni a un omomorfismo
 		\[ \tilde{\varphi}: K(\alpha) \hookrightarrow \overline{K} \]
@@ -291,6 +291,7 @@ e chiediamoci:
 	\Q(\sqrt[4]{2})
 	\end{tikzcd} \]
 \end{itemize}
+
 
 \end{multicols}
 
@@ -584,3 +585,101 @@ e chiediamoci:
 		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d}} \cong \gen{\Phi^d} \]
 	\end{remark}
 \end{multicols}
+
+\subsection{Esistenza e unicità della chiusura algebrica}
+\begin{multicols}{2}
+	\begin{theorem}[$ \exists ! \overline{K} $]
+		Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
+		\[ \varphi : \overline{K} \to \overline{\overline{K}} \]
+		tale che $ \varphi_{|K} = id $.
+	\end{theorem}
+
+\begin{proof}
+	Concentriamoci sull'esistenza. Prendiamo l'insieme di tutti i polinomi non costanti a coefficienti nel campo in questione e indicizziamoli opportunamente
+	$$  \{ p \in K[\,x\,] \mid \deg p > 0 \} = \{p_\lambda \mid \lambda \in \Lambda\}  $$
+	costruiamo ora l'anello dei polinomi su $ K $ con tante incognite quante i polinomi di $ K[\,x\,] $; ovvero, chiamato
+	\[ X = \{ x_\lambda \}_{\lambda \in \Lambda} \]
+	consideriamo l'anello
+	\[ K[X] \]
+	e in questo anello l'ideale
+	\[ I = (p_{\lambda}(x_{\lambda}))_{\lambda \in \Lambda} \subseteq K[X] \]
+	
+	Osserviamo che $ I $ non è massimale, ovvero
+	\[ I \neq (1) \]
+	se così non fosse avremmo una serie di indici $ \{1, \dots, n\} \subseteq \Lambda $ e coefficienti $ f_1, \dots, f_n \in K[X] $ tali che
+	\[ \sum f_i p_i(x_i) = 1 \]
+	Costruiamo l'estensione 
+	$$  L = K(\alpha_1, \alpha_2, \dots, \alpha_n)  $$
+	dove $ \alpha_i $ è una radice di $ p_i $. Possiamo farlo perché i $ p_i $ sono finiti.
+	Ora abbiamo un bellissimo omomorfismo di valutazione
+	\begin{align*}
+	\psi \colon K[X] &\to L \\
+	1 &\mapsto 1 \\
+	x_\lambda &\mapsto \begin{cases}
+	0 \text{ se } \lambda \notin \{1, \dots, n\}\\
+	\alpha_i \text{ se } \lambda = i \in \{1, \dots, n\}
+	\end{cases} 
+	\end{align*}
+	che annullando tutti i polinomi considerati ci restituisce
+	\[ 1 = \psi(1) = \sum \psi(f_i)\psi(p_i(x_i)) = 0 \]
+	una contraddizione!
+	
+	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (questo fatto è non banale, va dimostrato con Zorn)
+	\[ I \subseteq M \subseteq K[X] \]
+	per cui possiamo porre
+	\[ E_1 = \faktor{K[X]}{M} \]
+	che è
+	\begin{enumerate}
+		\item un campo, perché quoziente di un anello per un ideale massimale;
+		\item contiene $ K $: essendo l'omomorfismo
+		\[ K \hookrightarrow K[X] \to E_1 \]
+		non banale perché
+		\[ 1 \mapsto 1 \mapsto 1 + M \neq M \]
+		dev'essere iniettivo.;
+		\item in cui ogni $ p_\lambda \in K[\,x\,] $ ha almeno una radice, infatti
+		\[ p_\lambda(\overline{x_\lambda}) = \overline{p_\lambda(x_\lambda)} = 0 \]
+	\end{enumerate}
+	
+	Non è però facile dimostrare che $ E_1 $ contiene anche le radici dei suoi polinomi, possiamo ovviare al problema costruendo in modo analogo $$  E_2 \subseteq E_3 \subseteq E_4 \subseteq \dots  $$
+	ogni volta infilandoci le radici di tutti i polinomi a coefficienti nel campo precedente. Consideriamo infine il grande campo
+	\[ \Omega = \bigcup_{n \in \mathbb{N}} E_n \]
+	questo campo sarà algebricamente chiuso perché ogni polinomio di $ \Omega[\,x\,] $ ha finiti monomi e pertanto vive in $ E_{m} $, per un qualche indice $ m $, dunque ha radici in $ E_{m+1} \subseteq \Omega $.
+	
+	Per concludere, possiamo considerare 
+	\[ \overline{K} = \{ \alpha \in \Omega \mid \alpha \text{ è algebrico su } K \} \]
+	e osservare che
+	\begin{enumerate}
+		\item è un campo: infatti presi $ \alpha, \beta \in \overline{K} $, abbiamo che
+		\[ \alpha + \beta,\, \alpha\beta, \, \alpha^{-1} \in K(\alpha, \beta) \subseteq \overline{K} \]
+		\item contiene $ K $: perché stava in $ \Omega $ e tutti i suoi elementi sono banalmente algebrici;
+		\item è un'estensione algebrica di $ K $, per definizione;
+		\item è algebricamente chiuso: preso un qualunque polinomio
+		\[ p(x) \in \overline{K}[\, x \,] \]
+		questo deve vivere in un $ E_m $, ovvero i coefficienti $ c_0, \dots c_n $ vivono in $ E_m $: esiste un'estensione \emph{algebrica}
+		\[ L = K(c_0, \dots, c_n) \subseteq E_m  \]
+		quindi $ p \in L[\,x\,] \subseteq E_m[\,x\,]  $ deve avere almeno una radice $ \alpha $ in $ E_{m+1} $, con cui possiamo estendere $ L $ a $ L(\alpha) $. Per la transitività delle estensioni algebriche sulla torre
+		\[\begin{tikzcd}[column sep=0.25cm]
+		K \arrow [r,-] &
+		L \arrow [r,-] &
+		L(\alpha)
+		\end{tikzcd} \]
+		scopriamo che $ \alpha \in \Omega $ è algebrico su $ K $ e pertanto appartiene a $ \overline{K} $
+		
+	\end{enumerate}
+che dunque è una chiusura algebrica di $ K $.
+
+Dimostriamo che è unica. Supponiamo di averne un'altra, $\overline{\overline{K}} $. Possiamo immergere il campo $ K $ in una delle sue chiusure
+\[ \sigma :  K \hookrightarrow \overline{K} \]
+ed estendere l'immersione all'altra chiusura, grazie alla versione infinita del teorema (\ref{estinf}), dato che $ \overline{\overline{K}}/K $ è algebrica:
+\[ \tilde{\sigma} : \overline{\overline{K}} \to \overline{K} \]
+Essendo però $ \tilde{\sigma}\left(\overline{\overline{K}}\right) $ algebricamente chiusa
+\[ p(\alpha) = 0 \text{ in } \overline{\overline{K}} \quad\Rightarrow\quad \tilde{\sigma}p(\tilde{\sigma}\alpha) = 0 \text{ in } {\overline{K}} \]
+ogni elemento di $ \overline{K} $, essendo algebrico su $ K $, è anche un elemento della seconda chiusura $ \overline{\overline{K}} $; pertanto $ \tilde{\sigma} $ è un isomorfismo.
+
+\end{proof}
+	
+	
+	
+\end{multicols}
+
+
