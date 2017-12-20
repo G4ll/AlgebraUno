@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  18 DEC 2017 22:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.5.12)  20 DEC 2017 15:51
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1386,22 +1386,22 @@ File: pgflibraryarrows.meta.code.tex 2015/05/13 v3.0.1a (rcs-revision 1.13)
 ))) (./Algebra.aux (./gruppi.aux) (./anelli.aux) (./campi.aux))
 \openout1 = `Algebra.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
-LaTeX Font Info:    ... okay on input line 96.
-LaTeX Info: Redefining \it@ocap on input line 96.
-LaTeX Info: Redefining \it@ccap on input line 96.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Info: Redefining \it@ocap on input line 103.
+LaTeX Info: Redefining \it@ccap on input line 103.
 
 
 File italian.ldf warning: 
@@ -1409,7 +1409,7 @@ italian.ldf    With OT1 encoding guillemets are poorly faked
 italian.ldf    Use T1 encoding
 italian.ldf    or specify a font with command \CaporaliFrom
 italian.ldf    See the documentation concerning the babel-italian typesetting 
-italian.ldf    on input line 96.
+italian.ldf    on input line 103.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1480,7 +1480,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 96.
+Package hyperref Info: Link coloring ON on input line 103.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -1490,15 +1490,48 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count270
 )
-LaTeX Info: Redefining \ref on input line 96.
-LaTeX Info: Redefining \pageref on input line 96.
-LaTeX Info: Redefining \nameref on input line 96.
+LaTeX Info: Redefining \ref on input line 103.
+LaTeX Info: Redefining \pageref on input line 103.
+LaTeX Info: Redefining \nameref on input line 103.
 
 (./Algebra.out) (./Algebra.out)
 \@outlinefile=\write4
 \openout4 = `Algebra.out'.
 
  ABD: EveryShipout initializing macros
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(85.35826pt, 422.52252pt, 89.62709pt)
+* v-part:(T,H,B)=(101.40665pt, 715.18745pt, 28.45274pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=422.52252pt
+* \textheight=715.18745pt
+* \oddsidemargin=13.08827pt
+* \evensidemargin=13.08827pt
+* \topmargin=-7.86334pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=57.0pt
+* \marginparsep=11.0pt
+* \columnsep=20.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
 (./Algebra.toc
 LaTeX Font Info:    Try loading font information for U+msa on input line 4.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -1519,6 +1552,7 @@ File: uwasy.fd 2003/10/30 v2.0 Wasy-2 symbol font definitions
 
  [1
 
+
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 \openout2 = `gruppi.aux'.
 
@@ -1527,53 +1561,82 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on inpu
 t line 6.
 Package hyperref Info: bookmark level for unknown definition defaults to 0 on i
 nput line 17.
-Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
- line 21.
 Package hyperref Info: bookmark level for unknown prop defaults to 0 on input l
 ine 23.
- [2
+Package hyperref Info: bookmark level for unknown remark defaults to 0 on input
+ line 31.
 
-] [3
+Overfull \vbox (11.1304pt too high) has occurred while \output is active []
+
+
+[2
+
+
+]
+Overfull \hbox (1.47008pt too wide) detected at line 140
+\OML/cmm/m/it/9 xy \OT1/cmr/m/n/9 = (\OML/cmm/m/it/9 g[]a\OT1/cmr/m/n/9 )(\OML/
+cmm/m/it/9 g[]b\OT1/cmr/m/n/9 ) = \OML/cmm/m/it/9 g[]ab \OT1/cmr/m/n/9 = \OML/c
+mm/m/it/9 g[]ba \OT1/cmr/m/n/9 = (\OML/cmm/m/it/9 g[]b\OT1/cmr/m/n/9 )(\OML/cmm
+/m/it/9 g[]a\OT1/cmr/m/n/9 ) = \OML/cmm/m/it/9 yx
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 150--151
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--153
+
+ []
+
+[3
 
 ] [4]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 220.
+(hyperref)                removing `math shift' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 220.
+(hyperref)                removing `subscript' on input line 211.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 220.
+(hyperref)                removing `math shift' on input line 211.
 
 [5
 
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 295.
+(hyperref)                removing `math shift' on input line 286.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 295.
+(hyperref)                removing `subscript' on input line 286.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 295.
-
-
-Package amsmath Warning: Foreign command \atopwithdelims;
-(amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 402.
+(hyperref)                removing `math shift' on input line 286.
 
 [6
 
-] [7] [8
+]
+
+Package amsmath Warning: Foreign command \atopwithdelims;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 407.
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 471--472
+
+ []
+
+[8
 
 ]
-Overfull \hbox (6.52135pt too wide) in paragraph at lines 547--548
+Overfull \hbox (6.52135pt too wide) in paragraph at lines 577--578
 []\OT1/cmr/bx/n/9 Definizione \OT1/cmr/m/n/9 (Qua-ter-nio-ni)\OT1/cmr/bx/n/9 . 
 []\OT1/cmr/m/n/9 Sia $\OML/cmm/m/it/9 Q[]$ \OT1/cmr/m/n/9 l'in-sie-me $\OMS/cms
 y/m/n/9 f^^F\OT1/cmr/m/n/9 1\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 ^^F\OML/cmm/m/it/
@@ -1583,41 +1646,50 @@ y/m/n/9 f^^F\OT1/cmr/m/n/9 1\OML/cmm/m/it/9 ; \OMS/cmsy/m/n/9 ^^F\OML/cmm/m/it/
 
 [9
 
-] [10
+]
+Overfull \vbox (9.11133pt too high) has occurred while \output is active []
+
+
+[10
 
 ] [11
 
-] [12]
-Underfull \hbox (badness 10000) in paragraph at lines 837--839
+]
+Underfull \hbox (badness 10000) in paragraph at lines 773--775
+
+ []
+
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 866--868
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 840--841
+Underfull \hbox (badness 10000) in paragraph at lines 869--870
 
  []
 
 [13
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 875--877
+Underfull \hbox (badness 10000) in paragraph at lines 904--906
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 878--879
+Underfull \hbox (badness 10000) in paragraph at lines 907--908
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 887--889
+Underfull \hbox (badness 10000) in paragraph at lines 916--918
 
  []
 
 [14
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 984--986
+Underfull \hbox (badness 10000) in paragraph at lines 1013--1015
 
  []
 
@@ -1649,7 +1721,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 79--80
 [16
 
 
-] [17
+] [17] [18
 
 ]
 Underfull \hbox (badness 5924) in paragraph at lines 315--315
@@ -1657,7 +1729,7 @@ Underfull \hbox (badness 5924) in paragraph at lines 315--315
  $\OML/cmm/m/it/9 J[]$ \OT1/cmr/m/n/9 la sua
  []
 
-[18] [19]
+[19] [20]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 355.
@@ -1666,48 +1738,52 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 (hyperref)                removing `math shift' on input line 355.
 
-[20
+[21
 
-] [21
+] [22
 
-] [22])
+] [23]) [24]
 \openout2 = `campi.aux'.
 
- (./campi.tex [23
+ (./campi.tex [25
 
 
-] [24
+]
+Overfull \vbox (22.32874pt too high) has occurred while \output is active []
 
-] [25
 
-] [26
+[26
 
-] [27]
+] [27
+
+] [28
+
+] [29] [30
+
+]
 Underfull \hbox (badness 10000) in paragraph at lines 536--537
 
  []
 
-[28
+[31]
 
-] [29]
+LaTeX Warning: Reference `estinf' on page 32 undefined on input line 673.
 
-LaTeX Warning: Reference `estinf' on page 30 undefined on input line 673.
-
-[30
+[32
 
 ])
 showing theorem
-(./Algebra.loe) [31
+(./Algebra.loe) [33
 
 ]
 \tf@loe=\write6
 \openout6 = `Algebra.loe'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 119.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 119.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 130.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 130.
  (./Algebra.aux (./gruppi.aux) (./anelli.aux) (./campi.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 119.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 119.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 130.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 130.
 Package rerunfilecheck Info: File `Algebra.out' has not changed.
 (rerunfilecheck)             Checksum: AA3C5693389AF782888CEE05406ABF7F;2951.
 
@@ -1716,10 +1792,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 30778 strings out of 494934
- 587495 string characters out of 6180556
- 766857 words of memory out of 5000000
- 33149 multiletter control sequences out of 15000+600000
+ 30785 strings out of 494934
+ 587546 string characters out of 6180556
+ 769882 words of memory out of 5000000
+ 33150 multiletter control sequences out of 15000+600000
  20641 words of font info for 79 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  61i,22n,84p,10417b,1219s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1750,10 +1826,10 @@ usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/wasy2-ps/wasy9.pfb>
-Output written on Algebra.pdf (31 pages, 481930 bytes).
+Output written on Algebra.pdf (33 pages, 484978 bytes).
 PDF statistics:
- 962 PDF objects out of 1000 (max. 8388607)
- 870 compressed objects within 9 object streams
- 406 named destinations out of 1000 (max. 500000)
+ 975 PDF objects out of 1000 (max. 8388607)
+ 881 compressed objects within 9 object streams
+ 412 named destinations out of 1000 (max. 500000)
  317 words of extra memory for PDF output out of 10000 (max. 10000000)
 

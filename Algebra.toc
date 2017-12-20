@@ -18,23 +18,23 @@
 \contentsline {section}{\numberline {A}Anelli}{16}{section.1}
 \contentsline {subsection}{\numberline {A.1}Prime definizioni}{16}{subsection.1.1}
 \contentsline {subsubsection}{\numberline {A.1.1}Anelli di polinomi}{16}{subsubsection.1.1.1}
-\contentsline {subsection}{\numberline {A.2}Ideali}{17}{subsection.1.2}
-\contentsline {subsubsection}{\numberline {A.2.1}Fatti sul radicale}{18}{subsubsection.1.2.1}
-\contentsline {subsubsection}{\numberline {A.2.2}Prodotto diretto tra anelli}{18}{subsubsection.1.2.2}
-\contentsline {subsubsection}{\numberline {A.2.3}Estensione e Contrazione di Ideali}{19}{subsubsection.1.2.3}
-\contentsline {subsection}{\numberline {A.3}Domini}{20}{subsection.1.3}
-\contentsline {subsubsection}{\numberline {A.3.1}Campo dei quozienti. $ \mathbb {Q}(A) $}{20}{subsubsection.1.3.1}
-\contentsline {subsubsection}{\numberline {A.3.2}Divisibilit\IeC {\`a}.}{20}{subsubsection.1.3.2}
-\contentsline {subsection}{\numberline {A.4}Domini Speciali}{21}{subsection.1.4}
-\contentsline {subsubsection}{\numberline {A.4.1}Dominio Euclideo}{21}{subsubsection.1.4.1}
-\contentsline {subsubsection}{\numberline {A.4.2}Dominio a Ideali Principali}{21}{subsubsection.1.4.2}
-\contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{21}{subsubsection.1.4.3}
-\contentsline {section}{\numberline {K}Teoria dei Campi e di Galois}{23}{section.11}
-\contentsline {subsection}{\numberline {K.1}Richiami}{23}{subsection.11.1}
-\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a}}{24}{subsection.11.2}
-\contentsline {subsection}{\numberline {K.3}Normalit\IeC {\`a}}{25}{subsection.11.3}
-\contentsline {subsection}{\numberline {K.4}Teoria di Galois}{26}{subsection.11.4}
-\contentsline {subsection}{\numberline {K.5}Relazioni tra estensioni e gruppi di Galois}{28}{subsection.11.5}
-\contentsline {subsubsection}{\numberline {K.5.1}Gruppo di Galois di un ciclotomico}{29}{subsubsection.11.5.1}
-\contentsline {subsubsection}{\numberline {K.5.2}Gruppo di Galois di un campo finito}{29}{subsubsection.11.5.2}
-\contentsline {subsection}{\numberline {K.6}Esistenza e unicit\IeC {\`a} della chiusura algebrica}{30}{subsection.11.6}
+\contentsline {subsection}{\numberline {A.2}Ideali}{18}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {A.2.1}Fatti sul radicale}{19}{subsubsection.1.2.1}
+\contentsline {subsubsection}{\numberline {A.2.2}Prodotto diretto tra anelli}{19}{subsubsection.1.2.2}
+\contentsline {subsubsection}{\numberline {A.2.3}Estensione e Contrazione di Ideali}{20}{subsubsection.1.2.3}
+\contentsline {subsection}{\numberline {A.3}Domini}{21}{subsection.1.3}
+\contentsline {subsubsection}{\numberline {A.3.1}Campo dei quozienti. $ \mathbb {Q}(A) $}{21}{subsubsection.1.3.1}
+\contentsline {subsubsection}{\numberline {A.3.2}Divisibilit\IeC {\`a}.}{21}{subsubsection.1.3.2}
+\contentsline {subsection}{\numberline {A.4}Domini Speciali}{22}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {A.4.1}Dominio Euclideo}{22}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {A.4.2}Dominio a Ideali Principali}{22}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{22}{subsubsection.1.4.3}
+\contentsline {section}{\numberline {K}Teoria dei Campi e di Galois}{25}{section.11}
+\contentsline {subsection}{\numberline {K.1}Richiami}{25}{subsection.11.1}
+\contentsline {subsection}{\numberline {K.2}Separabilit\IeC {\`a}}{26}{subsection.11.2}
+\contentsline {subsection}{\numberline {K.3}Normalit\IeC {\`a}}{27}{subsection.11.3}
+\contentsline {subsection}{\numberline {K.4}Teoria di Galois}{28}{subsection.11.4}
+\contentsline {subsection}{\numberline {K.5}Relazioni tra estensioni e gruppi di Galois}{30}{subsection.11.5}
+\contentsline {subsubsection}{\numberline {K.5.1}Gruppo di Galois di un ciclotomico}{31}{subsubsection.11.5.1}
+\contentsline {subsubsection}{\numberline {K.5.2}Gruppo di Galois di un campo finito}{31}{subsubsection.11.5.2}
+\contentsline {subsection}{\numberline {K.6}Esistenza e unicit\IeC {\`a} della chiusura algebrica}{32}{subsection.11.6}

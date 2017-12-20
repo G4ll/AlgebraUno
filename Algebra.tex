@@ -60,17 +60,24 @@
 \renewcommand{\thesection}{\Alph{section}}
 
 %Comandi specifici
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\K}{\mathbb{K}}
+\newcommand{\F}{\mathbb{F}}
+
+\renewcommand{\S}{\mathcal{S}}
+
 \newcommand{\Aut}[1]{\mathrm{Aut}\left( #1 \right)}
 \newcommand{\Int}[1]{\mathrm{Int}\left( #1 \right)}
 \newcommand{\Orb}[1]{\mathcal{O}rb\left( #1 \right)}
 \newcommand{\Stab}[1]{\mathcal{S}tab\left( #1 \right)}
 \newcommand{\gen}[1]{\langle #1 \rangle}
-\newcommand{\Z}{\mathbb{Z}}
-\renewcommand{\S}{\mathcal{S}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\K}{\mathbb{K}}
-\newcommand{\LR}{\quad\Leftrightarrow\quad}
 \newcommand{\Gal}[1]{\mathcal{G}al\left( #1 \right)}
+
+\newcommand{\LR}{\quad\Leftrightarrow\quad}
+\newcommand{\RR}{\quad\Rightarrow\quad}
 
 \newcommand{\fun}[5]{
 	\begin{align*}
@@ -94,6 +101,9 @@
 \renewcommand\labelitemi{$ \blacktriangleright $}
 
 \begin{document}
+
+\newgeometry{left=3cm,bottom=1cm}
+
 \begin{center}
 	\vspace*{0,5 cm}
 	{\Huge \textsf{\textbf{\Title}}} \\
@@ -110,6 +120,7 @@
 \bigskip
 Per tutto quello che riguarda gli interi di Gauss, rifarsi a \href{http://www.math.uconn.edu/~kconrad/blurbs/ugradnumthy/Zinotes.pdf}{\texttt{kconrad}}.
 
+\restoregeometry
 \include{gruppi}
 \include{anelli}
 \include{campi}
