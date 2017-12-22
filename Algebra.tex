@@ -17,7 +17,7 @@
 
 \usepackage[margin=1.5cm]{geometry}
 \usepackage{fancyhdr}
-\usepackage{subfig}
+\usepackage[position=top]{subfig}
 \usepackage{multirow}
 
 \usepackage{lipsum}
@@ -52,6 +52,7 @@
 \rhead{\textsf{\Author}}
 \chead{\textbf{\textsf{\Title}}}
 \lhead{\textsf{\today}}
+\cfoot{\thepage}
 
 % Crea una nuova pagina per ogni sottosezione
 \newcommand{\subsectionbreak}{\clearpage}
@@ -96,6 +97,8 @@
 
 % Per disegnare diagrammi commuatativi
 \usepackage{tikz-cd}
+\usepackage{tikz}
+
 
 % Bullet delle liste puntate
 \renewcommand\labelitemi{$ \blacktriangleright $}
@@ -121,6 +124,7 @@
 Per tutto quello che riguarda gli interi di Gauss, rifarsi a \href{http://www.math.uconn.edu/~kconrad/blurbs/ugradnumthy/Zinotes.pdf}{\texttt{kconrad}}.
 
 \restoregeometry
+
 \include{gruppi}
 \include{anelli}
 \include{campi}

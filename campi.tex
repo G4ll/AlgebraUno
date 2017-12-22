@@ -29,7 +29,7 @@ l'immagine $ K[\alpha] $ è un sottoanello di un campo ed è quindi un dominio, 
 \[ \Q(K[\,\alpha\,]) = K(\alpha) \]
 Possiamo però mostrare che, se $ \alpha $ è algebrico, questa operazione non è necessaria. Infatti, il nucleo dell'omomorfismo di valutazione è costituito da tutti quei polinomi che si annullano in $ \alpha $, i quali costituiscono un ideale principale (perché $ K[\,x\,] $ è \textsc{ed}, dunque \textsc{pid}):
 \[ \ker\varphi_\alpha = (\mu(x)) \]
-Abbiamo già osservato che  l'immagine è un dominio, dunque $ (\mu(x)) $ è un'ideale primo (\ref{idealequoziente}).
+Abbiamo già osservato che  l'immagine è un dominio, dunque $ (\mu(x)) $ è un'ideale primo (\ref{idealequoziente}). Abbiamo
 \[ K[\,\alpha\,] \cong \frac{K[\,x\,]}{(\mu(x))} \]
 Ma, poiché ci troviamo in un \textsc{pid}, $ (\mu(x)) $ è anche un ideale massimale (\ref{primossemassimale}) e dunque $ K[\,\alpha\,] $ è un campo, che coincide con il proprio campo dei quozienti:
 \[ K[\,\alpha\,] = \Q(K[\,\alpha\,]) = K(\alpha) \]
@@ -60,20 +60,66 @@ In questo caso, dobbiamo avere anche che $ \mu(x) $ è un polinomio irriducibile
 
 Elenchiamo ora una serie di proprietà delle torri di estensioni:
 
-\begin{itemize}
-	\item $ L/K $ è finita $ \Leftrightarrow $ $ L/F $ e $ F/K $ sono finite
+\begin{prop}\label{1}
+	$ L/K $ è finita $ \Leftrightarrow $ $ L/F $ e $ F/K $ sono finite
 	\[ \text{e in tal caso } [L : K] = [L : F][F : K] \]
+\end{prop}
+\begin{proof}
+	è un conto sulle dimensioni come spazi vettoriali.
+\end{proof}
+
+\begin{prop}\label{2}
+	$ L/K $ è finita $ \Rightarrow $ $ L/K $ è algebrica.
+\end{prop}
+\begin{proof}
+	Diciamo $ [L:K] = n $. Preso un elemento $ \alpha \in L $, le sue potenze
+	\[ 1,\, \alpha,\, \alpha^2,\, \alpha^3 ,\,\dots,\, \alpha^n \]
+	sono troppe per essere linearmente indipendenti, quindi esistono $ a_0,\, \dots,\, a_n \in K $ tali che
+	\[ a_0 + a_1 \alpha + \dots + a_n \alpha^n = 0 \]
+	che possiamo leggere come l'annullarsi del polinomio
+	\[ a_0 + a_1 x + \dots + a_n x^n \in K[\,x\,] \]
+	nel nostro elemento $ \alpha $.
+\end{proof}
+\begin{remark}
+	Il viceversa è falso! L'estensione $ [\bar{\Q} : \Q] $ ha dimensione infinita, perché devono starci, per dire, tutte le radici dell'unità.
+\end{remark}
+
+Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
+
+\begin{prop}\label{3}
+	$ L/K $ algebrica e finitamente generata $ \Rightarrow $ finita.
+\end{prop}
+\begin{proof}
+	Aggiungendo un elemento per volta,
+	\[\begin{tikzcd}[column sep=0.25cm]
+	K \arrow [r,-] &
+	K(\alpha_1) \arrow[r,-] &
+	K(\alpha_1, \alpha_2) \arrow[r,-] &
+	\cdots \arrow[r,-] &
+	K(\alpha_1, \cdots, \alpha_n) = L
+	\end{tikzcd} \]
+	 l'estensione ottenuta è sempre finita per il lemma \ref{1}.
+\end{proof}
+
+\begin{prop}\label{4}
+	$ L/K $ algebrica $ \Leftrightarrow $ $ L/F $ e $ F/K $ algebriche.
+\end{prop}
+\begin{proof}
+	$ \Rightarrow $. Un polinomio a coefficienti in $ K $ ha, a maggior ragione, coefficienti in $ F $, quindi $ L/F $ è automaticamente algebrica. Analogamente, ogni elemento in $ F $ è anche un elemento di $ L $, quindi è algebrico su $ K $.
 	
-	\item $ L/K $ è finita $ \Rightarrow $ $ L/K $ è algebrica.
-	
-	\item Il viceversa è falso, si pensi a $ [\bar{\Q} : \Q] $.
-	
-	\item $ L/K $ algebrica e finitamente generata $ \Rightarrow $ finita.
-	
-	\item $ L/K $ algebrica $ \Leftrightarrow $ $ L/F $ e $ F/K $ algebriche.
-	
-	
-\end{itemize}
+	$ \Leftarrow $. Preso un elemento $ \alpha $ di $ L $, troviamo un polinomio a coefficienti in $ F $
+	\[ \mu = a_0 + a_1 x + \dots + a_n x^n \]
+	su cui si annulla. A questo punto, possiamo costruire la sottoestensione
+	\[ F_0 = K(a_0,\, \dots,\, a_n) \subseteq F \]
+	che, essendo finitamente generata, ci permette di invocare il lemma \ref{3} per concludere che è algebrica! Infine, possiamo aggiungere ad $ F_0 $ la radice di $ \mu $ da cui siamo partiti, producendo un'altra estensione finita
+	\[\begin{tikzcd}[column sep=0.25cm]
+	K \arrow [r,-] &
+	F_0 \arrow[r,-] &
+	F_0(\alpha) \arrow[r,-] &
+	L
+	\end{tikzcd} \]
+	e dunque algebrica. Pertanto, ogni $ \alpha \in L $ è algebrico su $ K $.
+\end{proof}
 
 \begin{definition}
 	Un campo $ \Omega $ è detto \emph{algebricamente chiuso} quando ogni polinomio $ f \in \Omega[\, x\,] $ ammette almeno una radice in $ \Omega $.
@@ -94,14 +140,14 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 \end{theorem}
 
 \textbf{Esercizi.}
-\begin{itemize}
+\begin{enumerate}
 	\item Se $ \alpha_1,\, \cdots,\, \alpha_m $ sono le radici di $ f \in K[\,x\,] $, allora
 	 \[ K(\alpha_1,\, \cdots,\, \alpha_m) \leq (\deg f)! \]
 	 
 	 \item Quante sono le $ K $-immersioni di $ K(\alpha) $ in $ \bar{K} $?
 	 
 	 \item Quante sono le radici distinte di un polinomio irriducibile?
-\end{itemize}
+\end{enumerate}
 
 
 \end{multicols}
@@ -135,7 +181,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 		\[ (\mu_\alpha) = \ker{\Phi} \]
 	\end{proof}
 	\begin{remark}
-		Il teorema si generalizza facilmente per induzione ad estensioni finite. Vale inoltre un risultato analogo per estensioni infinite, che garantisce quantomeno l'esistenza dell'estensione.
+		Il teorema si generalizza facilmente per induzione ad estensioni finite. Vale inoltre un risultato analogo per estensioni infinite, che garantisce l'esistenza dell'estensione. La dimostrazione è appena più tecnica: è un'applicazione del Lemma di Zorn sull'insieme delle sottoestensioni per cui riusciamo ad estendere l'immersione. 
 	\end{remark}
 
 
@@ -149,20 +195,18 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	Se siamo in caratteristica $ 0 $ o su un campo finito, allora tutti i polinomi irriducibili sono separabili.
 \end{theorem}
 \begin{proof}
-	Consideriamo $ f $ assieme alla sua derivata formale $ f' $. E' chiaro, per come è definita la derivata, che $ f $ ha radici multiple se e solo se ha radici in comune con $ f' $. Consideriamo
+	Consideriamo $ f $ assieme alla sua derivata formale $ f' $. \`{E} chiaro, per come è definita la derivata, che $ f $ ha radici multiple se e solo se ha radici in comune con $ f' $. Consideriamo
 	$$  \textsc{mcd}(f, f')  $$
 	che, poiché $ f $ è irriducibile, può essere solo $ 1 $ o $ f $.
 	
 	Osserviamo che l'\textsc{mcd} di due polinomi appartiene all'anello di definizione di questi, dunque se sono coprimi
 	\[ \exists g, h  \qquad fg +f'h = 1 \]
-	pertanto lo sono a maggior ragione nell'anello costruito sulla chiusura algebrica. Così, se $  \textsc{mcd}(f, f') = 1  $, abbiamo finito. Altrimenti dobbiamo avere che $ f'=0 $, ma è chiaro che questo non può succedere in caratteristica zero.
-	
-	Se ci mettiamo su $ \mathbb{F}_p[X] $, possiamo mostrare che
+	pertanto lo sono a maggior ragione nell'anello costruito sulla chiusura algebrica. Così, se $  \textsc{mcd}(f, f') = 1  $, abbiamo finito. Altrimenti dobbiamo avere che $ f'=0 $, ma è chiaro che, in caratteristica zero, questo non può succedere e, se ci mettiamo in $ \mathbb{F}_p[X] $, possiamo mostrare che
 	\[ f' = 0 \quad\Rightarrow\quad f = g^p \]
-	semplicemente scrivendo esplicitamente il polinomio e osservando che tutti i coefficienti che possono non essere nulli sono quelli dei termini $ x^{pk} $.
+	semplicemente scrivendo esplicitamente il polinomio e osservando che tutti i coefficienti che hanno una speranza di essere non-nulli sono quelli dei termini $ x^{pk} $.
 \end{proof}
 
-\begin{theorem}[delle immersioni separabili]
+\begin{theorem}[delle immersioni separabili]\label{immsep}
 	Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica, di grado $ n $. Se è separabile, ogni immersione
 	\[ \varphi: K \hookrightarrow \bar{K} \]
 	ammette esattamente n estensioni.
@@ -179,7 +223,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 \end{definition}
 
 \begin{remark}
-	Le estensioni $ \varphi_i $ del teorema di sopra sono proprio gli omomorfismi di coniugio, che mandano $ \alpha_1 \mapsto \alpha_i $.
+	Le estensioni dell'immersione del teorema di sopra (\ref{immsep}) sono proprio gli omomorfismi di coniugio $ \varphi_i $, che mandano $ \alpha_1 \mapsto \alpha_i $.
 \end{remark}
 
 \begin{theorem}[dell'Elemento primitivo]\label{primitivo}
@@ -191,7 +235,7 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	Consideriamo ora il campo in cui $ K $ è infinito.
 	Prendiamo $ E/K $ estensione separabile e finita, dove possiamo assumere che
 	\[ E = K(\alpha, \beta) \]
-	Consideriamo i soliti $ n = [E:K] $ omomorfismi distinti
+	Consideriamo gli $ n = [E:K] $ omomorfismi di coniugio che ci garantisce il teorema \ref{immsep}
 	\[ \varphi_1,\, \cdots,\, \varphi_n : E \to \bar{K}  \]
 	e costruiamo il polinomio in $ \bar{K}[\,x\,] $
 	\[ F(x) = \prod_{i < j}{\left(\varphi_i(\alpha + x \beta) - \varphi_j(\alpha + x \beta)\right)} \]
@@ -200,16 +244,16 @@ Elenchiamo ora una serie di proprietà delle torri di estensioni:
 	\varphi_i(\alpha) = \varphi_j(\alpha) \\
 	\varphi_i(\beta) = \varphi_j(\beta)
 	\end{cases} \]
-	dunque, essendo di grado finito in un campo infinito, ammette una "non radice" $ t \in K $ tale che
+	dunque, essendo di grado finito in un campo infinito, ammette una \textquotedblleft non radice" $ t \in K $ tale che
 	$  F(t) \neq 0  $, chiamiamo 
 	\[ \gamma = \alpha + t\beta \]
-	Vogliamo mostrare che $ \gamma $ è primitivo: essendo $ K $ è separabile, il polinomio minimo $ \mu_\gamma $ ha tra le radici tutti i coniugati del nostro elemento
+	Vogliamo mostrare che $ \gamma $ è primitivo: essendo $ K $ separabile, il polinomio minimo $ \mu_\gamma $ ha tra le radici tutti i coniugati del nostro elemento
 	\[ \varphi_1{(\gamma)}, \, \cdots, \, \varphi_n{(\gamma)} \]
 	che sono tutti distinti
 	\[ \varphi_i(\gamma) \neq \varphi_j(\gamma) \quad\forall i \neq j \]
 	altrimenti $ \gamma $ sarebbe soluzione del polinomio $ F $. Possiamo allora affermare che $ K(\gamma) $ è un'estensione di grado almeno $ n $
-	\[ [K(\gamma):K] = \deg{\mu_\gamma} \geq n = [K(\alpha, \beta):K] \]
-	e pertanto deve coincidere con $ K(\alpha, \beta) $.
+	\[ [K(\gamma):K] = \deg{\mu_\gamma} \geq n = [K(\alpha, \beta):K], \]
+	che contiene $ \alpha $ e $ \beta $, pertanto coincide con $ K(\alpha, \beta) $.
 \end{proof}
 
 \begin{remark}
@@ -224,20 +268,20 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 \begin{definition}[Normalità]
 	Un'estensione algebrica $ \faktor{F}{K} $ si dice \emph{normale} se, preso comunque un $ K $-omomorfismo
 	\[ \varphi \colon F \to \bar{K} \qquad\text{tale che } \varphi_{|K} = id \]
-	si ha che $ \varphi(F) = F $.
+	questo rispetta l'estensione: $ \varphi(F) = F $.
 \end{definition}
 
 \textbf{Esempi.}
 \begin{enumerate}
 	\item Tutte le estensioni di grado $ 2 $ sono normali.
-	\item $ \faktor{\Q(\sqrt[3]{2})}{\Q} $ non è normale.
+	\item $ {\Q(\sqrt[3]{2})}/{\Q} $ non è normale.
 \end{enumerate}
 
-\begin{theorem}[delle estensioni normali]
-	In un'estensione $ \faktor{F}{K} $ algebrica e normale, ogni polinomio $ f \in K[\,x\,] $ irriducibile con almeno una radice in $ F $, ha tutte le radici in $ F $.
+\begin{theorem}[normale]
+	In un'estensione $ \faktor{F}{K} $ algebrica e normale, ogni polinomio $ f \in K[\,x\,] $ irriducibile e con almeno una radice in $ F $, ha tutte le radici in $ F $.
 \end{theorem}
 \begin{proof}
-	Consideriamo tutte le radici che $ f $ ammette in $ \bar{K} $: $ \alpha_1, \dots, \alpha_n $. Possiamo assumere \textsc{wlog} che $ \alpha_1 \in F $. Definiamo i $ K $-omomorfismi $ \varphi_1,\, \dots,\, \varphi_n $ in modo che
+	Consideriamo tutte le radici che $ f $ ammette in $ \bar{K} $: $ \alpha_1, \dots, \alpha_n $. Possiamo assumere senza perdita di generalità che $ \alpha_1 \in F $. Definiamo i $ K $-omomorfismi $ \varphi_1,\, \dots,\, \varphi_n $ in modo che
 	\fun{\varphi_i}{K(\alpha_1)}{\bar{K}}{\alpha_1}{\alpha_i}
 	Possiamo estenderli grazie al teorema \ref{est} a $ K $-omomorfismi
 	\[ \tilde{\varphi}_i \colon F \to K \] 
@@ -247,7 +291,7 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	
 \end{proof}
 
-\begin{theorem}[Caratterizzazione delle estensioni normali]\label{carnorm}
+\begin{theorem}[Caratterizzazione della normalità]\label{carnorm}
 	Sia $ \faktor{F}{K} $ un'estensione (algebrica) finita. Questa è normale se e solo corrisponde al campo di spezzamento di una famiglia di polinomi in $ K[\,x\,] $.
 \end{theorem}
 \begin{proof}
@@ -259,12 +303,12 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	\[F = K(\{\alpha_{i, j}\})\]
 	 Preso un $ K $-automorfismo
 	 \[ \varphi \colon F \to \bar{K} \]
-	 abbiamo già osservato nella dimostrazione del teorema \ref{est} che questo deve necessariamente permutare i coniugati, dunque sicuramente
+	 abbiamo già osservato che questo deve necessariamente permutare i coniugati, dunque sicuramente
 	 \[ \varphi(F) \subseteq F \]
-	 ma, visto che $ \varphi $ è iniettivo, $ \varphi(F) $ e $ F $ hanno lo stesso grado e pertanto sono la stessa estensione di $ K $
+	 ma, visto che $ \varphi $ è iniettivo, $ \varphi(F) $ e $ F $ hanno lo stesso grado e pertanto sono la stessa estensione di $ K $.
 \end{proof}
 
- Consideriamo
+ Consideriamo ora il problema del comportamento della normalità attraverso le torri di estensioni
 \[\begin{tikzcd}[row sep=0.25cm]
 L \arrow [d,-] \\
 F \arrow [d,-] \\
@@ -275,7 +319,7 @@ e chiediamoci:
 \begin{itemize}
 	\item Se L/K è normale, lo è anche L/F?
 	
-	Sì! La normalità passa, perché se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che dunque deve fissare $ \varphi(L)=L $.
+	Sì! Se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che già rispettava l'estensione $$  \varphi(L)=L  $$
 	
 	\item Se L/K è normale, lo è anche F/K? No!
 	\[\begin{tikzcd}[column sep=0.25cm]
@@ -284,12 +328,16 @@ e chiediamoci:
 	\Q(\sqrt[4]{2}, i)
 	\end{tikzcd} \]
 	
+	L'ultimo campo a destra è il luogo in cui $ x^4-2 $ si spezza, pertanto è normale. Possiamo però costruire un $ K $-omomorfismo che manda $ \sqrt[4]{2} $ in $ i\sqrt[4]{2} $.
+	
 	\item Se L/F e F/K sono normali, lo è anche L/K? No!
 	\[\begin{tikzcd}[column sep=0.25cm]
 	\Q \arrow [r,-] &
 	\Q(\sqrt{2}) \arrow [r,-] &
 	\Q(\sqrt[4]{2})
 	\end{tikzcd} \]
+	
+	Abbiamo già osservato che le estensioni di grado due sono normali, purtroppo $ \Q(\sqrt[4]{2}) $ non spezza il polinomio minimo $ x^4-2 $.
 \end{itemize}
 
 
@@ -333,8 +381,16 @@ e chiediamoci:
 	\end{enumerate}
 	
 	\begin{remark}
-		Come si comporta la proprietà di Galois sulle torri? La separabilità si estende in tutte le direzioni, pertanto si comporta tanto male quanto la normalità. In particolare, l'unica proposizione che vale è: data una torre $ L \subseteq F \subseteq K $, se $ L/K $ è di Galois, allora anche $ L/F $ lo è.
+		Come si comporta la proprietà di Galois sulle torri? La separabilità si estende in tutte le direzioni, pertanto si comporta tanto male quanto la normalità. In particolare, l'unica proposizione che vale è:	 
 	\end{remark}
+\begin{prop}
+	Data una torre 
+	\[\begin{tikzcd}[column sep=0.25cm]
+	K \arrow [r,-] &
+	F \arrow [r,-] &
+	L
+	\end{tikzcd} \] se $ L/K $ è di Galois, allora anche $ L/F $ è di Galois.
+\end{prop}
 	\columnbreak
 	\begin{theorem}[di corrispondenza]\label{corrgall}
 		Sia $ \faktor{L}{K} $ un'estensione di Galois finita. La mappa
@@ -354,7 +410,7 @@ e chiediamoci:
 	\begin{proof}
 		Iniziamo con un lemma preliminare
 	\begin{prop}\label{cosetta1}
-		Siano $ E/K $ un'estensione di Galois e $ H < \Gal{E/K} $, allora
+		Siano $ E/K $ un'estensione di Galois e\\ $ H < \Gal{E/K} $, allora
 		\[  E^H = K \LR H = \Gal{E/K}  \]
 	\end{prop}
 	\begin{proof}
@@ -401,7 +457,7 @@ e chiediamoci:
 		pertanto
 		\[ |\Gal{E/K}| = \deg\mu_\alpha \leq \deg f \]
 	\end{proof}
-	è ora chiaro che
+	\`{E} ora chiaro che
 	\begin{align*}
 		H \lhd \Gal{L/K} &\LR \sigma H \sigma^{-1} \quad \forall\sigma \in \Gal{L/K} \\
 		& \LR \sigma L^H = L^H \quad \forall\sigma \in \Gal{L/K}
@@ -624,7 +680,7 @@ e chiediamoci:
 	\[ 1 = \psi(1) = \sum \psi(f_i)\psi(p_i(x_i)) = 0 \]
 	una contraddizione!
 	
-	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (questo fatto è non banale, va dimostrato con Zorn)
+	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (questo non è banale, abbiamo usato il lemma di Zorn per dimostrare questo lemma \ref{idmax})
 	\[ I \subseteq M \subseteq K[X] \]
 	per cui possiamo porre
 	\[ E_1 = \faktor{K[X]}{M} \]
