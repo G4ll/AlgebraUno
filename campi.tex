@@ -6,7 +6,7 @@
 
 \begin{definition}
 	Data un'estensione di campi $ K \subseteq L $ (o anche $ \faktor{L}{K} $), un elemento $ \alpha \in L $ si dice \emph{algebrico} su $ K $ quando 
-	\[ \exists f \in K[x] \quad \text{tale che} \quad f(\alpha) = 0 \]
+	\[ \exists f \in K[\,x\,] \quad \text{tale che} \quad f(\alpha) = 0 \]
 	Un elemento si dice \emph{trascendente} se non è algebrico.
 \end{definition}
 
@@ -100,7 +100,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	\end{tikzcd} \]
 	 l'estensione ottenuta è sempre finita per il lemma \ref{1}.
 \end{proof}
-
+\columnbreak
 \begin{prop}\label{4}
 	$ L/K $ algebrica $ \Leftrightarrow $ $ L/F $ e $ F/K $ algebriche.
 \end{prop}
@@ -118,7 +118,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	F_0(\alpha) \arrow[r,-] &
 	L
 	\end{tikzcd} \]
-	e dunque algebrica. Pertanto, ogni $ \alpha \in L $ è algebrico su $ K $.
+	e dunque algebrica. Così, ogni $ \alpha \in L $ è algebrico su $ K $.
 \end{proof}
 
 \begin{definition}
@@ -134,20 +134,10 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 \end{definition}
 
 \begin{theorem}[$ \exists ! \overline{K} $]
-	Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
+	Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $-isomorfe, ovvero esiste un isomorfismo
 	\[ \varphi : \overline{K} \to \overline{\overline{K}} \]
 	tale che $ \varphi_{|K} = id $.
 \end{theorem}
-
-\textbf{Esercizi.}
-\begin{enumerate}
-	\item Se $ \alpha_1,\, \cdots,\, \alpha_m $ sono le radici di $ f \in K[\,x\,] $, allora
-	 \[ K(\alpha_1,\, \cdots,\, \alpha_m) \leq (\deg f)! \]
-	 
-	 \item Quante sono le $ K $-immersioni di $ K(\alpha) $ in $ \bar{K} $?
-	 
-	 \item Quante sono le radici distinte di un polinomio irriducibile?
-\end{enumerate}
 
 
 \end{multicols}
@@ -161,7 +151,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 		\[ \varphi: K \hookrightarrow \overline{K} \]
 		ammette esattamente tante estensioni a un omomorfismo
 		\[ \tilde{\varphi}: K(\alpha) \hookrightarrow \overline{K} \]
-		 quante le radici di $ \mu_\alpha $.
+		 quante le radici di $ \varphi(\mu_\alpha) $.
 	\end{theorem}
 	\begin{proof}
 		Consideriamo l'estensione algebrica come quoziente
@@ -178,15 +168,15 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 		Dobbiamo pertanto scegliere $ \beta $ tra le radici di $ \varphi(\mu_\alpha) $; facendolo siamo sicuri che
 		\[ (\mu_\alpha) \subseteq \ker{\Phi} \]
 		ed essendo $ (\mu_\alpha) $ massimale e l'immagine non banale (perché stiamo quantomeno immergendo il campo), otteniamo
-		\[ (\mu_\alpha) = \ker{\Phi} \]
+		\[ (\mu_\alpha) = \ker{\Phi} .\]
 	\end{proof}
 	\begin{remark}
-		Il teorema si generalizza facilmente per induzione ad estensioni finite. Vale inoltre un risultato analogo per estensioni infinite, che garantisce l'esistenza dell'estensione. La dimostrazione è appena più tecnica: è un'applicazione del Lemma di Zorn sull'insieme delle sottoestensioni per cui riusciamo ad estendere l'immersione. 
+		Il teorema si generalizza facilmente per induzione ad estensioni finite. Vale inoltre un risultato analogo per estensioni infinite, che garantisce l'esistenza dell'estensione. La dimostrazione è appena più tecnica; è un'applicazione del Lemma di Zorn sull'insieme delle sottoestensioni per cui riusciamo ad estendere l'immersione. 
 	\end{remark}
 
 
 	\begin{definition}[Separabile]
-		Un polinomio $ f \in K[x] $ si dice \emph{separabile} se ha tutte le radici distinte in $ \bar{K} $.
+		Un polinomio $ f \in K[\,x\,] $ si dice \emph{separabile} se ha tutte le radici distinte in $ \bar{K} $.
 		
 		Un'estensione algebrica $ \faktor{L}{K} $ si dice \emph{separabile} se, comunque scegliamo $\alpha \in L  $, il corrispondente polinomio minimo $ \mu_\alpha $ è separabile.
 	\end{definition}
@@ -199,9 +189,9 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	$$  \textsc{mcd}(f, f')  $$
 	che, poiché $ f $ è irriducibile, può essere solo $ 1 $ o $ f $.
 	
-	Osserviamo che l'\textsc{mcd} di due polinomi appartiene all'anello di definizione di questi, dunque se sono coprimi
+	Osserviamo che l'\textsc{mcd} di due polinomi appartiene all'anello di definizione di questi, dunque, se sono coprimi, trovandoci in un \textsc{ed}
 	\[ \exists g, h  \qquad fg +f'h = 1 \]
-	pertanto lo sono a maggior ragione nell'anello costruito sulla chiusura algebrica. Così, se $  \textsc{mcd}(f, f') = 1  $, abbiamo finito. Altrimenti dobbiamo avere che $ f'=0 $, ma è chiaro che, in caratteristica zero, questo non può succedere e, se ci mettiamo in $ \mathbb{F}_p[X] $, possiamo mostrare che
+	lo sono a maggior ragione nell'anello costruito sulla chiusura algebrica. Così, se $  \textsc{mcd}(f, f') = 1  $, abbiamo finito. Altrimenti dobbiamo avere che $ f'=0 $, ma è chiaro che, in caratteristica zero, questo non può succedere e, se ci mettiamo in $ \mathbb{F}_p[\,x\,] $, possiamo mostrare che
 	\[ f' = 0 \quad\Rightarrow\quad f = g^p \]
 	semplicemente scrivendo esplicitamente il polinomio e osservando che tutti i coefficienti che hanno una speranza di essere non-nulli sono quelli dei termini $ x^{pk} $.
 \end{proof}
@@ -212,7 +202,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	ammette esattamente n estensioni.
 \end{theorem}
 \begin{proof}
-	Il grado di $ \mu_\alpha $ è $ n $, dunque ammette $ n $ radici distinte.
+	Il grado di $ \mu_\alpha $ è $ n $, che dunque ammette esattamente $ n $ radici distinte. Il teorema \ref{est} conclude.
 \end{proof}
 \begin{remark}
 	Il teorema precedente si generalizza per induzione al caso di estensioni finite.
@@ -232,13 +222,13 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 \begin{proof}
 	Se $ K $ è un campo finito, il suo gruppo moltiplicativo è ciclico, dunque ogni generatore è primitivo.
 	
-	Consideriamo ora il campo in cui $ K $ è infinito.
+	Rimane il caso in cui $ K $ è infinito.
 	Prendiamo $ E/K $ estensione separabile e finita, dove possiamo assumere che
 	\[ E = K(\alpha, \beta) \]
 	Consideriamo gli $ n = [E:K] $ omomorfismi di coniugio che ci garantisce il teorema \ref{immsep}
-	\[ \varphi_1,\, \cdots,\, \varphi_n : E \to \bar{K}  \]
-	e costruiamo il polinomio in $ \bar{K}[\,x\,] $
-	\[ F(x) = \prod_{i < j}{\left(\varphi_i(\alpha + x \beta) - \varphi_j(\alpha + x \beta)\right)} \]
+	\[ \varphi_1,\, \dots,\, \varphi_n : E \to \bar{K}  \]
+	e costruiamo il polinomio a coefficienti in $ \bar{K}[\,x\,] $
+	\[ F(x) = \prod_{i < j}{\left(\varphi_i(\alpha + x \beta) - \varphi_j(\alpha + x \beta)\right)}. \]
 	Osserviamo che questo polinomio non è identicamente nullo
 	\[ F \equiv 0 \LR \exists i \neq j \text{ tale che }\; \begin{cases}
 	\varphi_i(\alpha) = \varphi_j(\alpha) \\
@@ -247,17 +237,17 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	dunque, essendo di grado finito in un campo infinito, ammette una \textquotedblleft non radice" $ t \in K $ tale che
 	$  F(t) \neq 0  $, chiamiamo 
 	\[ \gamma = \alpha + t\beta \]
-	Vogliamo mostrare che $ \gamma $ è primitivo: essendo $ K $ separabile, il polinomio minimo $ \mu_\gamma $ ha tra le radici tutti i coniugati del nostro elemento
-	\[ \varphi_1{(\gamma)}, \, \cdots, \, \varphi_n{(\gamma)} \]
+	Vogliamo mostrare che $ K(\gamma) = K(\alpha, \beta) $. Il polinomio minimo $ \mu_\gamma $ ha tra le radici almeno
+	\[ \varphi_1{(\gamma)}, \, \dots, \, \varphi_n{(\gamma)} \]
 	che sono tutti distinti
 	\[ \varphi_i(\gamma) \neq \varphi_j(\gamma) \quad\forall i \neq j \]
-	altrimenti $ \gamma $ sarebbe soluzione del polinomio $ F $. Possiamo allora affermare che $ K(\gamma) $ è un'estensione di grado almeno $ n $
+	altrimenti $ \gamma $ sarebbe soluzione del polinomio $ F $. Possiamo allora affermare che
 	\[ [K(\gamma):K] = \deg{\mu_\gamma} \geq n = [K(\alpha, \beta):K], \]
-	che contiene $ \alpha $ e $ \beta $, pertanto coincide con $ K(\alpha, \beta) $.
+	e che, avendo $K(\gamma) \subseteq E $ per costruzione, $ K(\gamma) = E $.
 \end{proof}
 
 \begin{remark}
-	La separabilità si comporta bene sulle torri. 
+	La separabilità si distribuisce in tutte le direzioni lungo le torri di estensioni.
 \end{remark}
 \end{multicols}
 
@@ -368,7 +358,7 @@ e chiediamoci:
 	\begin{remark}
 		Il gruppo di Galois è composto da tutti e soli quegli omomorfismi che coniugano le radici di $ f $, pertanto
 		\[ \Gal{f} \hookrightarrow \S_n \]
-		Inoltre l'azione del gruppo su queste radici è \emph{transitiva}, nel senso che appartengono tutte alla stessa orbita.
+		Inoltre, se $ f $ è irriducibile, l'azione del gruppo su queste radici è \emph{transitiva}, nel senso che appartengono tutte alla stessa orbita.
 	\end{remark}
 	
 	\textbf{Esempi.}
@@ -385,13 +375,55 @@ e chiediamoci:
 	\end{remark}
 \begin{prop}
 	Data una torre 
-	\[\begin{tikzcd}[column sep=0.25cm]
+	\[\begin{tikzcd}[column sep=0.30cm]
 	K \arrow [r,-] &
 	F \arrow [r,-] &
 	L
 	\end{tikzcd} \] se $ L/K $ è di Galois, allora anche $ L/F $ è di Galois.
 \end{prop}
 	\columnbreak
+	Introduciamo ora due lemmi fondamentali.
+	\begin{prop}[del gruppo all'esponente]\label{cosetta1}
+		Siano $ E/K $ un'estensione di Galois e $ H < \Gal{E/K} $, allora
+		\[  E^H = K \LR H = \Gal{E/K}  \]
+	\end{prop}
+	\begin{proof} Dimostriamo un'implicazione alla volta. \\
+		$ \Leftarrow $. Gli elementi di $ H $ fissano $ K $ per definizione, è quindi chiara la prima inclusione
+		\[ K \subseteq E^{\Gal{E/K}}. \]
+		Inoltre presa un'estensione semplice $ K(\alpha) $ non banale
+		\[ K \subset K(\alpha) \subseteq E \]
+		esiste un omomorfismo che manda $ \alpha $ in un suo coniugato
+		\[ \varphi: K(\alpha) \to E \quad\text{ tale che } \varphi(\alpha)\neq \alpha \]
+		che possiamo estendere a un'immersione (\ref{est})
+		\[ \tilde{\varphi}: E \to \bar{K} \quad\text{ che fissa $ E $.} \]
+		Abbiamo pertanto scovato un automorfismo $ \tilde{\varphi}_{|E} \in \Gal{E/K} $ che non fissa $ \alpha $, che ci costringe ad accettare che
+		\[ E^{\Gal{E/K}} \subseteq K. \]
+		
+		$ \Rightarrow $. Per il teorema dell'elemento primitivo \ref{primitivo} possiamo assumere che
+		\[ E = K(\alpha). \]
+		Consideriamo il polinomio che ha per radici tutti i suoi coniugati
+		\[ f(x) = \prod_{\sigma \in H}{(x - \sigma(\alpha))} \]
+		e osserviamo che per ogni $ \gamma \in H $ si ha
+		\[ \gamma f = \prod_{\sigma \in H}{(x - \gamma\sigma(\alpha))} = \prod_{\gamma\sigma \in H}{(x - \gamma\sigma(\alpha))} = f \]
+		dunque tutti i suoi coefficienti devono essere fissati da ogni elemento di $ H $, che pertanto vive in $ E^H[\, x\,] = K[\, x\,] $.
+		Avendo $ \alpha $ come radice, cade nell'ideale $ (\mu_\alpha) $, quindi
+		\[ |\Gal{E/K}| = \deg \mu_\alpha \leq \deg f = |H| \]
+		da cui la tesi.
+	\end{proof}
+	
+	\begin{prop}[che coniuga l'esponente]
+		Siano $ E/K $ un'estensione di Galois, $ H < \Gal{E/K} $ e $ \sigma \in \Gal{E/K} $, allora
+		\[ \sigma (E^H) = E^{\sigma H \sigma^{-1}} \]
+	\end{prop}
+	\begin{proof}
+		Ci basta scrivere le definizioni
+		\[ E^{\sigma H \sigma^{-1}} = \{ \alpha \in E \mid \sigma\tau\sigma^{-1}(\alpha) = \alpha \quad\forall \tau \in H \} \]
+		ossia, chiamando $ \beta = \sigma^{-1}(\alpha) $,
+		\[ = \{ \sigma(\beta) \in E \mid \tau(\beta) = \beta \quad\forall \tau \in H \} \]
+		ma $ \sigma $ è un automorfismo di $ E $, pertanto "$ \sigma(\beta) \in E $" mi elenca tutti gli elementi di $ E $, così che
+		\[ = \sigma(E^H). \]
+	\end{proof}
+	
 	\begin{theorem}[di corrispondenza]\label{corrgall}
 		Sia $ \faktor{L}{K} $ un'estensione di Galois finita. La mappa
 		\fun{\alpha}
@@ -400,74 +432,34 @@ e chiediamoci:
 		{F}
 		{\Gal{L/F}}
 		è bigettiva con inversa
-		\[ \beta: H \mapsto L^H = \{ \alpha \in L \mid \sigma\alpha = \alpha \;\forall \sigma \in H \} \]
+		\[ \beta: H \mapsto L^H = \{ \alpha \in L \mid \sigma(\alpha) = \alpha \;\forall \sigma \in H \} \]
 		Inoltre
-		\[ H \lhd \Gal{L/K} \LR L^H/K \text{ è di Galois} \]
+		\[ H \lhd\; \Gal{L/K} \LR L^H/K \text{ è di Galois} \]
 		e in questo caso
 		\[ \Gal{L^H/K} \cong \dfrac{\Gal{L/K}}{\Gal{L/L^H}} \]
 		
 	\end{theorem}
 	\begin{proof}
-		Iniziamo con un lemma preliminare
-	\begin{prop}\label{cosetta1}
-		Siano $ E/K $ un'estensione di Galois e\\ $ H < \Gal{E/K} $, allora
-		\[  E^H = K \LR H = \Gal{E/K}  \]
-	\end{prop}
-	\begin{proof}
-		$ \Leftarrow $. Chiaramente 
-		\[ K \subseteq E^{\Gal{E/K}} \]
-	perché gli elementi del gruppo fissano $ K $ per definizione.
-	Inoltre \[ E^{\Gal{E/K}} \subseteq K \]
-	infatti, presa un'estensione semplice $ K(\alpha) $ non banale
-	\[ K \subset K(\alpha) \subseteq E \]
-	esiste un omomorfismo che manda $ \alpha $ in un suo coniugato
-	\[ \varphi: K(\alpha) \to E \quad\text{ tale che } \varphi(\alpha)\neq \alpha \]
-	che possiamo estendere a un'immersione (\ref{est})
-	\[ \tilde{\varphi}: E \to \bar{K} \]
-	che fissa $ E $.
-	Quindi troviamo l'automorfismo $ \tilde{\varphi}_{|E} \in \Gal{E/K} $ che non fissa $ \alpha $.
+	Applicando la definizione
+	\[ \alpha(\beta(H)) = \alpha(L^H) = \Gal{L/L^H} \]
+	e usando il lemma \ref{cosetta1} appena dimostrato, abbiamo che
+	\[ (L)^H = L^H \RR \Gal{L/L^H} = H \]
 	
-	$ \Rightarrow $. Per il teorema dell'elemento primitivo \ref{primitivo} possiamo assumere
-	\[ E = K(\alpha) \]
-	Consideriamo il polinomio
-	\[ f(x) = \prod_{\sigma \in H}{(x - \sigma(\alpha))} \]
-	e mostriamo che vive in $ E^H[\, x\,] = K[\, x\,] $: per ogni $ \gamma \in H $ si ha
-	\[ \gamma f = \prod_{\sigma \in H}{(x - \gamma\sigma(\alpha))} = \prod_{\gamma\sigma \in H}{(x - \gamma\sigma(\alpha))} = f \]
-	dunque tutti i suoi coefficienti devono essere fissati da ogni elemento di $ H $.
-	Visto che il polinomio vive in $ K[\, x\,] $ ed ha $ \alpha $ come radice, ricaviamo
-	\[ |\Gal{E/K}| = [E:K] = \deg \mu_\alpha \leq \deg f = |H| \]
-	da cui la tesi.
-	\end{proof}
-
-	Sfruttando il lemma appena dimostrato scopriamo che
-	\[ \alpha(\beta(H)) = \alpha(L^H) = \Gal{L/L^H} = H \]
-	dove usiamo che $ (L)^H = L^H $, per definizione. Analogamente
-	\[ \beta(\alpha(F)) = \beta(\Gal{L/F}) = L^\Gal{L/F} = F \] 
+	Analogamente
+	\[ \beta(\alpha(F)) = \beta(\Gal{L/F}) = L^{\Gal{L/F}} = F \]
+	dove abbiamo il lemma nel senso più naturale.
 	
-	Per la seconda parte abbiamo bisogno di un altro lemma:
-	\begin{prop}
-		Siano $ E/K $ un'estensione di Galois, $ H < \Gal{E/K} $ e $ \sigma \in \Gal{E/K} $, allora
-		\[ \sigma L^H = L^{\sigma H \sigma^{-1}} \]
-	\end{prop}
-	\begin{proof}
-		Ci basta osservare le definizioni
-		\[ L^{\sigma H \sigma^{-1}} = \{ \alpha \in L \mid \sigma\tau\sigma^{-1}(\alpha) = \alpha \quad\forall \tau \in H \} \]
-		ossia, essendo $ \sigma $ un isomorfismo di $ L $
-		\[ = \{ \sigma(\beta) \in L \mid \tau(\beta) = \beta \quad\forall \tau \in H \} = \sigma L \]
-		pertanto
-		\[ |\Gal{E/K}| = \deg\mu_\alpha \leq \deg f \]
-	\end{proof}
-	\`{E} ora chiaro che
+	
+	Per la seconda parte, applichiamo il secondo lemma:
 	\begin{align*}
-		H \lhd \Gal{L/K} &\LR \sigma H \sigma^{-1} \quad \forall\sigma \in \Gal{L/K} \\
-		& \LR \sigma L^H = L^H \quad \forall\sigma \in \Gal{L/K}
+		H \lhd\; \Gal{L/K} &\LR \sigma H \sigma^{-1} = H & \forall\sigma \in \Gal{L/K} \\
+		& \LR \sigma( L^H) = L^H & \forall\sigma \in \Gal{L/K}
 	\end{align*}
-	ovvero se e solo se $ L^H $ è fissato da tutti gli automorfismi di $ L $, ossia è a sua volta un'estensione di Galois.
-	In questo caso ci concentriamo sulla funzione di restrizione
+	ovvero se e solo se $ L^H $ viene rispettato da tutti i $ K $-automorfismi di $ L $, ossia se e soltanto se è a sua volta un'estensione di Galois. In tal caso, ci concentriamo sulla funzione di restrizione
 	\fun{\texttt{res}}{\Gal{L/K}}{\Gal{L^H/K}}{\sigma}{\sigma_{|H}}
-	e osserviamo che è un omomorfismo di nucleo
+	che è un omomorfismo di nucleo
 	\[ \ker \texttt{res} = \Gal{L/L^H} \]
-	dunque il Primo Teorema di Omomorfismo (tra gruppi!) ci fornisce la tesi.
+	dunque il Primo Teorema di Omomorfismo (tra gruppi!) ci serve la tesi.
 	\end{proof}
 	
 	
@@ -476,7 +468,7 @@ e chiediamoci:
 \subsection{Relazioni tra estensioni e gruppi di Galois}
 \begin{multicols}{2}
 	\begin{prop}
-		Valgono i seguenti:
+		Valgono i seguenti fatti:
 		\begin{enumerate}
 			\item  $ H < K \LR L^H \supseteq L^K $
 			\item $ L^{H \cap K} = L^H L^K $
@@ -500,9 +492,7 @@ e chiediamoci:
 	\end{theorem}
 	
 	\begin{proof}
-		Come sempre, la separabilità non ha davvero bisogno di essere controllata, ci concentriamo quindi sulla normalità. Prendiamo un $ F $-automorfismo $ \varphi $ di $ LF $. Quando consideriamo la restrizione
-		\[ \varphi_{|L} \in \Gal{L/K} \]
-		scopriamo che $ \varphi(L) = \varphi_{|L}(L) = L $. Sapendo per ipotesi che $ \varphi_{|F} = id $: 
+		Come sempre, la separabilità non ha davvero bisogno di essere controllata, ci concentriamo quindi sulla normalità. Prendiamo un $ F $-automorfismo $ \varphi $ di $ LF $. Per la normalità dell'estensione $$  \varphi(L) = L.  $$ Sapendo per ipotesi che $ \varphi_{|F} = id $: 
 		\[ \varphi(LF) = \varphi(L)\varphi(F) = LF \]
 		come volevamo. Vogliamo ora far vedere che l'omomorfismo di restrizione
 		\fun{\texttt{res}}{\Gal{LF/F}}{\Gal{L/K}}{\varphi}{\varphi_{|L}}
@@ -512,9 +502,7 @@ e chiediamoci:
 		\[ L^{\texttt{res}(\Gal{LF/F})} = L \cap F \]
 		è chiaro che se un elemento appartiene ad entrambi i campi, vi rimane, perché i $ \varphi $ fissano tutti gli elementi di $ F $ per definizione! Inoltre, se un elemento $ \alpha $ vive in $ L $ ma non in $ F $, non appartiene sicuramente al campo di partenza $ K \subseteq F $, quindi ha almeno un coniugato in cui viene mandato da almeno un elemento di $ \Gal{LF/F} $. O meglio
 		\[ \alpha \in L^{\texttt{res}(\Gal{LF/F})} \quad\Rightarrow\quad \alpha \in LF^{\Gal{LF/F}} = F \]
-		per il lemma \ref{cosetta1}.
-		
-		Dobbiamo pertanto concludere che
+		per il lemma \ref{cosetta1}. Dobbiamo pertanto concludere che
 		\[ \texttt{res}(\Gal{LF/F}) \cong \Gal{L/L\cap F} \]
 	\end{proof}
 	
@@ -573,7 +561,7 @@ e chiediamoci:
 	Viceversa, l'isomorfismo ci dice che
 	$$  \gen{H_1, H_2} = \Gal{L_1L_2/K}  $$
 	e pertanto
-	$$  K = L_1 \cap L_2 = L_1L_2^{H_1} \cap L_1L_2^{H_2} = L_1L_2^{\gen{H_1, H_2}}  $$
+	$$ L_1 \cap L_2 = L_1L_2^{H_1} \cap L_1L_2^{H_2} = L_1L_2^{\gen{H_1, H_2}} = K. $$
 
 \end{proof}
 	
@@ -597,7 +585,7 @@ e chiediamoci:
 		
 		\[ \overline{g(x^p)} = \left(\overline{g(x)}\right)^p \]
 		mentre
-		\[ f' =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1   \]
+		\[ \overline{f'} =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1   \]
 		
 		Possiamo così concludere che $ \mu_\xi $ ha come radici tutte e sole le radici $ n $-esime primitive dell'unità, pertanto
 		\[ \deg\mu_\xi = \phi(n) = |\Gal{\mu_\xi}| \]
@@ -636,7 +624,7 @@ e chiediamoci:
 	
 	\begin{remark}
 		Se volessimo gruppi di galois di estensioni più elaborate, ci basta ricordare che
-		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p^d} < \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p} \cong \gen{\Phi} \]
+		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d} } < \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p} \cong \gen{\Phi} \]
 		dunque
 		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d}} \cong \gen{\Phi^d} \]
 	\end{remark}
