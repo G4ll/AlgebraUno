@@ -162,8 +162,7 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 \end{theorem}
 \begin{proof}
 	La controimmagine di un ideale del quoziente, per il lemma precedente (\ref{immideali}), è ancora un ideale.
-	Inoltre, essendo un ideale, contiene lo $ 0 $, dunque la sua controimmagine contiene $ \ker f = I $. Osserviamo ora che, essendo la proiezione una mappa suriettiva, l'immagine di ogni ideale è ancora un ideale! Pertanto è sufficiente mostrare che ideali diversi, contenenti $ I $, vengono mandati dalla proiezione in ideali diversi. Questo accade perché se un elemento $ a $ di una classe laterale di $ I $ sta in un ideale $ J $, vi appartiene tutta la classe laterale:
-	\[ b \in a + I \quad\Rightarrow\quad \exists i \in I \mid b = a + i \quad\Rightarrow\quad b \in J \]
+	Inoltre, essendo un ideale, contiene lo $ 0 $, dunque la sua controimmagine contiene $ \ker f = I $. Osserviamo ora che, essendo la proiezione una mappa suriettiva, l'immagine di ogni ideale è ancora un ideale! Pertanto è sufficiente mostrare che ideali diversi, contenenti $ I $, vengono mandati dalla proiezione in ideali diversi: difatti i rispettivi gruppi additivi vengono mandati, per l'analogo teorema sui gruppi, in gruppi distinti.
 \end{proof}
 \begin{remark}
 	Vale sempre che
@@ -249,7 +248,7 @@ I \text{ primo} \arrow{r}  &  \faktor{A}{I} \text{ dominio} \arrow{l}
 	\[ \mathcal{M} = \{ J \subseteq A \text{ ideale proprio} \mid I \subseteq J \} \]
 	Questa famiglia non è vuota, visto che $ I \in \mathcal{M} $, e ogni catena $ C $ di ideali ha 
 	\[ X = \bigcup C \]
-	come massimale: $ X $ è un ideale perché possiamo testare somme e prodotti tra due elementi nel primo ideale in $ C $ che contiene gli elementi in questione, è un ideale proprio perché se $ 1 \in  X $, allora già sarebbe appartenuto a un ideale di $ C $. La tesi segue per il Lemma di Zorn.
+	come massimale: $ X $ è un ideale perché possiamo testare somme e prodotti tra due elementi nel primo ideale in $ C $ che contiene gli elementi in questione, è un ideale proprio perché se $ 1 \in  X $, allora già sarebbe appartenuto a un ideale di $ C $. La tesi segue dal Lemma di Zorn.
 \end{proof}
 	
 
@@ -660,7 +659,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	\begin{enumerate}
 	\item Il prodotto di polinomi primitivi è primitivo.
 	\item La funzione contenuto è completamente moltiplicativa.
-	\item Se $ f \in A[\,x\,] $ e $ f = hg $ in $ \Q(A)[\,x\,] $,\\ esistono $ h_1, g_1 \in A[\,x\,] $ tali che $ f = h_1g_1 $.
+	\item Se $ f \in A[\,x\,] $ e $ f = hg $ in $ \Q(A)[\,x\,] $, esistono $ h_1, g_1 \in A[\,x\,] $, con lo stesso grado di $ h $ e $ g $, tali che $ f = h_1g_1 $.
 	\end{enumerate}
 	
 \end{theorem}
@@ -680,7 +679,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	 \[ g = \frac{\tilde{g}}{d}, \quad h = \frac{\tilde{h}}{d'} \quad \text{ con } d, d' \in A \text{ e } \tilde{g}, \tilde{h} \in A[\,x\,]   \]
 	 sapendo che
 	 \[ \tilde{g}\tilde{h} = dd'f \]
-	 visto $ \tilde{g} $ e $ \tilde{h} $ sono primitivi, anche $ dd'f $ lo deve essere e, pertanto, $ dd' \in A^{\times} $. In questo modo i polinomi tildati devono avere coefficienti in $ A $.
+	 visto $ \tilde{g} $ e $ \tilde{h} $ sono primitivi, anche $ dd'f $ lo deve essere e, pertanto, $ dd' \in A^{\times} $. In questo modo i polinomi tildati devono avere coefficienti in $ A $. \textsf{temo che questo punto abbia bisogni di più attenzioni.}
 \end{proof}
 \columnbreak
 \begin{theorem}

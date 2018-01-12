@@ -161,7 +161,9 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\end{enumerate}
 \end{proof}
 \begin{proof}[Dimostrazione Magica]
-	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ (p-1) $ l'ultimo è univocamente determinato come il suo unico inverso. Se una $ p $-upla non è composta da un solo elemento ripetuto, allora possiamo ciclare i suoi termini per ottenere altre $ (p-1) $ $ p $-uple in $ X $. Dunque, detto $ n $ il numero di $ g $ tali che $ g^p = 1 $ \[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \] e poiché $ e^p = e $ ci sono almeno $ p $ elementi di ordine $ p $.
+	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ p-1 $ l'ultimo dev'essere il suo unico inverso.
+	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple, e osserviamo che ogni stabilizzatore può essere banale, nel caso di $ p $ elementi ripetuti, o tutto il gruppo. Osserviamo che ci interessa contare il numero di stabilizzatori banali!
+	Detto $ n $ il numero di $ g $ tali che $ g^p = 1 $ \[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \] e poiché $ e^p = e $ ci sono almeno $ p - 1 $ elementi di ordine $ p $.
 \end{proof}
 
 
@@ -169,13 +171,13 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \textbf{Esercizio.} Classificare i gruppi $ G $ di ordine $ 6 $.
 
 \begin{definition}[Sottogruppo generato]
-	Sia $ S \subset G $ un \emph{sottoinsieme} di $ G $. Chiamiamo $ \langle S \rangle $ il più sottogruppo contenente $ S $, sottogruppo generato da $ S $. \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
+	Sia $ S \subset G $ un \emph{sottoinsieme} di $ G $. Chiamiamo $ \langle S \rangle $ il più piccolo sottogruppo contenente $ S $, sottogruppo generato da $ S $. \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
 \end{definition}
 \begin{prop}[Caratterizzazione dei sottogruppi generati]
 	\[ \langle S \rangle = \{ s_1 \cdots s_k \mid k \in \mathbb{N}, \; s_i \in S \cup S^{-1} \} \]
 \end{prop}
 \begin{proof}
-	Chiamiamo $ X $ il magico insieme nel RHS. Chiaramente $ S \subseteq X $ e pertanto $ X $, che è facile verificare essere un gruppo, è parte della famiglia sotto intersezione: $ X \subseteq \bigcap \mathcal{F} $. Inoltre se $S \subseteq H < G $ sicuramente in $ H $ compaiono tutte le $ k $-uple di $ X $ e quindi $ X < H $ per ogni sottogruppo di $ \mathcal{F} $. Dunque $ X \subseteq \bigcap\mathcal{F} $.
+	\`{E} sufficiente osservare che tutti gli elementi di $ S $ devono comparire in tutti i gruppi che contengono $ S $ e che l'insieme proposto è un sottoinsieme chiuso per le operazioni di gruppo, pertanto è un sottogruppo.
 \end{proof}
 
 \textbf{Proprietà.}
@@ -294,7 +296,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{definition}
 
 \begin{theorem}[Cayley]\label{Cayley}
-	Possiamo immergere ogni gruppo $ G $ in $ \mathcal{S}(G) $.
+	Possiamo immergere ogni gruppo $ G $ finito in un gruppo di permutazioni, in $ \mathcal{S}(G) $.
 \end{theorem}
 \begin{proof}
 	L'azione di moltiplicazione a sinistra è fedele
@@ -376,23 +378,22 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \begin{proof}
 	Iniziamo a dimostrare che $ \mathcal{A}_5 $ è semplice. Le classi di coniugio di questo gruppo hanno dimensione \[1,\, 12,\, 12,\, 15,\, 20\] Un sottogruppo normale dovrebbe essere unione di un certo numero di queste orbite, ma sommando le loro cardinalità non ottengo mai divisori di 60. Allo stesso modo, $ A_6 $ è semplice: le sue classi coniugio hanno dimensione
 	\[ 1,\, 40,\, 40,\, 45,\, 72,\, 72,\, 90 \]
-	Dimostriamo ora la tesi per $ n \geq 7 $. Prendiamo un sottogruppo normale
-	\[ N \lhd A_n \]
-	non banale e mostriamo che contiene un 3-ciclo. Non essendo banale, prendiamo una permutazione non identica $ \sigma $, che possiamo supporre, senza perdita di generalità, non fissare l'1:
+	Dimostriamo ora la tesi per $ n \geq 7 $. Supponiamo che esista un sottogruppo normale
+	\[ \{e\} \neq N \lhd A_n \]
+	e mostriamo che contiene un 3-ciclo. Non essendo banale, prendiamo una permutazione non identica $ \sigma $, che possiamo supporre, senza perdita di generalità, non fissare l'1:
 	$$  \sigma(1) \neq 1  $$ 
-	e $ \tau = (i,\, j,\, k) $ una permutazione di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno che il gruppo contenga almeno 4 elementi! Inoltre
+	e $ \tau = (i\; j\; k) $ una permutazione di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno che il gruppo contenga almeno 4 elementi! Inoltre
 	\[ \tau\sigma\tau^{-1}(1) = \tau(\sigma(1)) \neq \sigma(1) \]
 	dunque $ \tau\sigma\tau^{-1} \neq \sigma $ e siamo sicuri che la permutazione
 	\[ \phi = \tau\sigma\tau^{-1}\sigma^{-1} \]
-	non sia l'identità. Inoltre
+	non sia l'identità. Inoltre questa è sia il prodotto tra un coniugato di un elemento nel nostro sottogruppo normale per il suo inverso 
 	\[ \phi = (\tau\sigma\tau^{-1})\sigma^{-1} \in N  \]
-	ed è prodotto di due 3-cicli
+	che prodotto di un 3-ciclo e di un suo coniugato
 	\[ \phi = \tau(\sigma\tau^{-1}\sigma^{-1}) \]
-	quindi permuta al più $ 6 $ numeri. Aggiungiamo, se necessario, numeri a caso fino ad averne esattamente 6 e chiamiamo $ H $ il sottogruppo di $ A_n $ che li permuta. Necessariamente 
+	quindi permuta al più $ 6 $ numeri. Aggiungiamo, se necessario, numeri a caso fino ad averne esattamente 6 e chiamiamo $ H $ il sottogruppo di $ A_n $ che li permuta. Abbiamo mostrato che
 	\[ \phi \in N \cap H \]
-	essendo $ H \cong A_6 $, questo vive interamente nell'intersezione: \[ H < N \] 
-	Però, $ H $ contiene tutti i 3-cicli di cui abbiamo bisogno!
-	
+	dunque l'intersezione è non vuota, ma essendo $ H \cong A_6 $ semplice, questo, non potendosi spezzare, vive interamente nell'intersezione: \[ H < N \] 
+	$ A_6 $ contiene tutti i 3-cicli di cui abbiamo bisogno!
 \end{proof}
 
 \begin{theorem}[del ribelle]
@@ -701,20 +702,18 @@ pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abe
 	\begin{itemize}
 
 		\item[$ \exists $.] Fissiamo $ 0 \leq \alpha \leq n $. Sia $ \mathcal{M}_\alpha $ l'insieme di tutti i sottoinsiemi di $ G $ di cardinalità $ p^\alpha $ \[ \mathcal{M}_\alpha = \{ M < G \mid |M| = p^\alpha \} \] possiamo allora calcolarci
-		\[ |\mathcal{M}_\alpha| = {p^nm \choose p^\alpha} = p^{n-\alpha}m \prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1} \]
-		e poiché $ v_p({p^nm-i}) = v_p(i) =  v_p({p^\alpha -i}) $, allora
-		$$  v_p\left(\prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -1}\right) =  0  $$
-		concludiamo che
-		\[ p^{n-\alpha} \mid\mid \mathcal{M}_\alpha \]
-		Consideriamo l'azione di $ G $ su $ \mathcal{M}_\alpha $ data dalla moltiplicazione a sinistra
-		\fun{\Phi}{G}{\mathcal{S}(\mathcal{M}_\alpha)}{g}{\psi_g: M \mapsto gM}
-		Vogliamo ora mostrare che esiste uno stabilizzatore della cardinalità giusta. Per la solita decomposizione in orbite abbiamo
-		\[ |\mathcal{M}_\alpha| = \sum \frac{|G|}{|\Stab{M_i}|} \]
-		Per le osservazione sulla cardinalità, deve esistere un'orbita di cardinalità non divisibile per $ p^{n-\alpha +1} $
-		\[ \exists i \text{ tale che }  p^{n-\alpha +1}\nmid |\Orb{M_i}| \]
-		 Il corrispondente stabilizzatore avrà pertanto cardinalità divisibile almeno per $ p^\alpha $.
-		 Ma se fissiamo un elemento $ x \in M_i $ e consideriamo la funzione iniettiva
-		 \fun{f}{\Stab{M_i}}{M_i}{y}{xy}
+		\[ |\mathcal{M}_\alpha| = {p^nm \choose p^\alpha} = p^{n-\alpha}m \prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -i} \]
+		e in particolare
+		\[  v_p\left(\left|\mathcal{M}_\alpha\right|\right) = n - \alpha \]
+		Consideriamo ora l'azione di $ G $ su $ \mathcal{M}_\alpha $ per moltiplicazione a sinistra
+		\fun{\Psi}{G}{\mathcal{S}(\mathcal{M}_\alpha)}{g}{\psi_g: M \mapsto gM}
+		Cerchiamo il sottoinsieme richiesto tra gli stabilizzatori di $ \Psi $. Dato il solito partizionamento in orbite
+		\[ |\mathcal{M}_\alpha| = \sum |\Orb{M_i}|, \]
+		scopriamo che non tutte le orbite posso essere divisibili per potenze di $ p $ troppo grandi, in particolare
+		\[ \exists i \text{ tale che }  p^{n-\alpha +1}\nmid |\Orb{M_i}|. \]
+		 Il corrispondente stabilizzatore avrà pertanto cardinalità divisibile per $ p^\alpha $;
+		 se fissiamo un elemento $ x \in M_i $ e consideriamo la funzione iniettiva
+		 \fun{f}{\Stab{M_i}}{M_i}{g}{gx}
 		 scopriamo che lo stabilizzatore non può avere una cardinalità maggiore dell'insieme che stabilizza
 		 \[ p^\alpha \mid |\Stab{M_i}| \leq |M_i| = p^\alpha \]
 		 ed è dunque il sottogruppo che cercavamo.
@@ -730,7 +729,7 @@ pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abe
 		\item[$ \varphi_g $.] Siano $ A, B $ $ p $-sylow. Per il punto precedente  \[ \exists g \in G \text{ tale che } A < gBg^{-1} \]
 		dunque $ A $ e $ B $, avendo la stessa cardinalità, coincidono.
 		\item[$ n_p $.] Consideriamo l'azione di coniugio di un $ p $-sylow $ S $ sull'insieme $ Y $ dei suoi coniugati
-		\fun{\Psi}{S}{\mathcal{S}(Y)}{g}{\varphi_g: H \mapsto gHg^{-1}}
+		\fun{\Phi}{S}{\mathcal{S}(Y)}{g}{\varphi_g: H \mapsto gHg^{-1}}
 		Mostriamo che l'orbita di $ S $ è l'unica banale. Infatti se $ H \in Y $ ha orbita banale significa che è stabilizzato da $ S $, dunque che i due commutano e pertanto il loro prodotto è un sottogruppo di $ G $. \[ |HS| = \frac{|H||S|}{|H \cap S|} = \frac{p^{2n}}{|H \cap S|} \mid p^nm \] Necessariamente $ |H \cap S| = p^n $ e dunque $ H = S $. Per una formula ancora mai usata
 		\[ n_p = |Y| = \Orb{S} + \sum_{H \neq S}\frac{|S|}{\Stab{H}} \equiv 1 \mod{p} \]
 		Per concludere è sufficiente osservare che se $$  \Stab{H} \lneq S  $$ allora l'orbita corrispondente ha cardinalità divisibile per $ p $.
@@ -981,17 +980,17 @@ e ognuna di questa azioni induce un prodotto semidiretto isomorfo a uno dei grup
 	\end{proof}
 	
 	\begin{prop}
-		Sia $ G $ un gruppo di ordine $ 2d $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.
+		Sia $ G $ un gruppo di ordine $ 2^kd $, dove $ d $ è dispari. Allora esiste un sottogruppo di indice 2.
 	\end{prop}
 	\begin{proof}
-		Il Teorema di Cayley ci fornisce l'immersione seguente, per prodotto sinistro
+		Il Teorema di Cayley ci fornisce l'immersione seguente, per moltiplicazione sinistra
 		\begin{align*}
 		\Phi \colon & G \hookrightarrow \S_{2d} \\
 		& g \mapsto \varphi_g \colon x \mapsto gx
 		\end{align*}
-		Dato un elemento $ g $, conosciamo la decomposizione in cicli $ \varphi_g $, questa dev'essere prodotto di cicli del tipo
+		Dato un elemento $ g $, conosciamo la decomposizione in cicli di $ \varphi_g $, questa dev'essere prodotto di cicli del tipo
 		$$  (x \; gx \; \cdots \; g^{m-1}x)  $$
-		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà come immagine il prodotto di $ d $ 2-cicli (\textsf{al momento, non mi sembra ovvio. Però quando l'ho scritto ero molto convinto di questa cosa}). Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G : G \cap \mathcal{A}_{2d}] = 2  $$
+		al variare di $ x $ in un opportuno sistema di rappresentanti e dove $ m $ è l'ordine di $ g $. Per il Teorema di Cauchy esiste un elemento di ordine $ 2 $, che avrà dunque come immagine il prodotto di $ d $ $2^k $-cicli, perché nessun elemento è fissato dalla moltiplicazione sinistra. Pertanto $ G \nless \mathcal{A}_{2d} $ e quindi $$  [G : G \cap \mathcal{A}_{2d}] = 2  $$
 	\end{proof}
 	\columnbreak
 	\begin{prop}

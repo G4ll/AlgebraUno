@@ -383,7 +383,7 @@ e chiediamoci:
 \end{prop}
 	\columnbreak
 	Introduciamo ora due lemmi fondamentali.
-	\begin{prop}[del gruppo all'esponente]\label{cosetta1}
+	\begin{prop}[del gruppo logaritmo]\label{cosetta1}
 		Siano $ E/K $ un'estensione di Galois e $ H < \Gal{E/K} $, allora
 		\[  E^H = K \LR H = \Gal{E/K}  \]
 	\end{prop}
@@ -411,7 +411,7 @@ e chiediamoci:
 		da cui la tesi.
 	\end{proof}
 	
-	\begin{prop}[che coniuga l'esponente]
+	\begin{prop}[del gruppo all'esponente]
 		Siano $ E/K $ un'estensione di Galois, $ H < \Gal{E/K} $ e $ \sigma \in \Gal{E/K} $, allora
 		\[ \sigma (E^H) = E^{\sigma H \sigma^{-1}} \]
 	\end{prop}
@@ -420,7 +420,7 @@ e chiediamoci:
 		\[ E^{\sigma H \sigma^{-1}} = \{ \alpha \in E \mid \sigma\tau\sigma^{-1}(\alpha) = \alpha \quad\forall \tau \in H \} \]
 		ossia, chiamando $ \beta = \sigma^{-1}(\alpha) $,
 		\[ = \{ \sigma(\beta) \in E \mid \tau(\beta) = \beta \quad\forall \tau \in H \} \]
-		ma $ \sigma $ è un automorfismo di $ E $, pertanto "$ \sigma(\beta) \in E $" mi elenca tutti gli elementi di $ E $, così che
+		ma $ \sigma $ è un automorfismo di $ E $, pertanto \textquotedblleft$ \sigma(\beta) \in E $" mi elenca tutti gli elementi di $ E $, così che
 		\[ = \sigma(E^H). \]
 	\end{proof}
 	
@@ -459,7 +459,7 @@ e chiediamoci:
 	\fun{\texttt{res}}{\Gal{L/K}}{\Gal{L^H/K}}{\sigma}{\sigma_{|H}}
 	che è un omomorfismo di nucleo
 	\[ \ker \texttt{res} = \Gal{L/L^H} \]
-	dunque il Primo Teorema di Omomorfismo (tra gruppi!) ci serve la tesi.
+	dunque il Primo Teorema di Omomorfismo ci serve la tesi.
 	\end{proof}
 	
 	
@@ -506,8 +506,6 @@ e chiediamoci:
 		\[ \texttt{res}(\Gal{LF/F}) \cong \Gal{L/L\cap F} \]
 	\end{proof}
 	
-	\textsf{\textbf{Achtung.} Per trarre questa conclusione stiamo usando che $ L/L\cap F $ è di Galois, il che segue dalla proprietà delle torri.}
-	
 	\begin{definition}
 		Diciamo che due estensioni $ L_1/K $ e $ L_2/K $ sono \emph{linearmente disgiunte} quando
 		\[ L_1 \cap L_2 = K \]
@@ -524,7 +522,7 @@ e chiediamoci:
 		e visto che $ c \mid (m, n) $, se le due estensioni hanno grado coprimo allora devono essere linearmente disgiunte!
 	\end{remark}
 	\begin{remark}
-		$ L_1 $ e $ L_2 $ sono linearmente disgiunte se e solo se \[ [L_1L_2: K] = [L_1: K][L_2: K] \]
+		$ L_1 $ e $ L_2 $, estensioni di Galois, sono linearmente disgiunte se e solo se \[ [L_1L_2: K] = [L_1: K][L_2: K] \]
 	\end{remark}
 	
 	\begin{theorem}[dei prodotti di Galois]
@@ -567,7 +565,7 @@ e chiediamoci:
 	
 	\subsubsection{Gruppo di Galois di un ciclotomico}
 	
-	\begin{theorem}
+	\begin{theorem}[dei ciclotomici]
 		Siano $ n $ un intero positivo e $ \xi $ una radice $ n $-esima primitiva dell'unità, allora
 		\[ \Gal{\mu_{\xi}} \cong \Z_n^\times \]
 	\end{theorem}
@@ -581,10 +579,10 @@ e chiediamoci:
 		
 		Mostriamo che tutte le radici primitive sono coniugate di $ \xi $; anzi, più in generale che per ogni primo $ p $ che non divide $ n $, $ \xi^p $ non è una radice di $ g $, mentre chiaramente è una radice di $ f $. Se, per assurdo, avessimo che
 		\[ g(\xi^p) = 0 \]
-		allora potremmo ridurci modulo $ p $ per osservare che $ \bar{g} $ ha radici multiple
+		allora potremmo ridurci modulo $ p $ per osservare che $ \bar{g} $ ha radici multiple e in comune con $ \overline{\mu_\xi} $
 		
 		\[ \overline{g(x^p)} = \left(\overline{g(x)}\right)^p \]
-		mentre
+		mentre $ \overline{f} $ non ne ha
 		\[ \overline{f'} =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1   \]
 		
 		Possiamo così concludere che $ \mu_\xi $ ha come radici tutte e sole le radici $ n $-esime primitive dell'unità, pertanto
@@ -599,7 +597,7 @@ e chiediamoci:
 	
 	
 	\subsubsection{Gruppo di Galois di un campo finito}
-	\begin{theorem}
+	\begin{theorem}[Frobenius]
 	Dato un primo $ p $ e un intero positivo $ n $
 	\[ \Gal{\mathbb{F}_{p^n} /\mathbb{F}_p} \cong \gen{\Phi} \]
 	dove $ \Phi $ è l'automorfismo di Frobenius: \fun{\Phi}{\mathbb{F}_{p^n}}{\mathbb{F}_p}{x}{x^p}
@@ -714,7 +712,7 @@ che dunque è una chiusura algebrica di $ K $.
 
 Dimostriamo che è unica. Supponiamo di averne un'altra, $\overline{\overline{K}} $. Possiamo immergere il campo $ K $ in una delle sue chiusure
 \[ \sigma :  K \hookrightarrow \overline{K} \]
-ed estendere l'immersione all'altra chiusura, grazie alla versione infinita del teorema (\ref{estinf}), dato che $ \overline{\overline{K}}/K $ è algebrica:
+ed estendere l'immersione all'altra chiusura, grazie alla versione infinita del teorema (\ref{est}), dato che $ \overline{\overline{K}}/K $ è algebrica:
 \[ \tilde{\sigma} : \overline{\overline{K}} \to \overline{K} \]
 Essendo però $ \tilde{\sigma}\left(\overline{\overline{K}}\right) $ algebricamente chiusa
 \[ p(\alpha) = 0 \text{ in } \overline{\overline{K}} \quad\Rightarrow\quad \tilde{\sigma}p(\tilde{\sigma}\alpha) = 0 \text{ in } {\overline{K}} \]
