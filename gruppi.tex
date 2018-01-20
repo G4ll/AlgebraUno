@@ -185,7 +185,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\item $ \langle S \rangle $ è abeliano se e solo se tutti gli elementi di $ S $ commutano fra loro.
 	\item $ \langle S \rangle $ è normale se e solo se ogni ogni elemento di $ S $ rimane in $ \langle S \rangle $ per coniugio.
 	\item $ \langle S \rangle $ è caratteristico se e solo se ogni elemento di $ S $ viene mandato in $ \langle S \rangle $ da ogni automorfismo di $ G $.
-	\item $ G' = \langle ghg^{-1}h^{-1} \mid g, h \in G \rangle $ è detto \emph{Gruppo dei Commuatatori o Gruppo Derviato di $ G $}. Questo gruppo gode di alcune proprietà fondamentali
+	\item $ G' = \langle ghg^{-1}h^{-1} \mid g, h \in G \rangle $ è detto \emph{Gruppo dei Commutatori o Gruppo Derivato di $ G $}. Questo gruppo gode di alcune proprietà fondamentali
 	
 	\begin{enumerate}
 		\item $ G' = \{ e \} \;\Leftrightarrow\; G $ abeliano.
@@ -574,7 +574,7 @@ ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché 
 	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^{-1} $, quindi per la nostra caratterizzazione dei gruppi diedrali \[ G \cong D_4 \]
 	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
 	\[ e = ghgh = ghgh^{-1}hh = hh \neq e \]
-	Dunque abbiamo trovato l'ordine di tutti gli elementi, possiamo costruire un'isomorfismo esplicito con $ Q_8 $.
+	Dunque abbiamo trovato l'ordine di tutti gli elementi, possiamo costruire un isomorfismo esplicito con $ Q_8 $.
 \end{itemize}
 \begin{definition}[Quaternioni]
 	Sia $ Q_8 $ l'insieme $ \{ \pm 1, \pm i, \pm j, \pm, k \} $ con l'operazione che soddisfa
@@ -587,7 +587,7 @@ ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché 
 \subsection{Prodotto Semidiretto}
 \begin{multicols}{2}
 	\begin{definition}[Prodotto semidiretto]
-		Siano $ H, K $ due gruppi e $ \varphi: K \rightarrow \Aut{H} $ un'omomorfismo. Si dice prodotto semidiretto
+		Siano $ H, K $ due gruppi e $ \varphi: K \rightarrow \Aut{H} $ un omomorfismo Si dice prodotto semidiretto
 		\[ H \rtimes_\varphi K \]
 		l'insieme dato dal prodotto cartesiano, dotato dell'operazione
 		\[ (h, k) \cdot (h', k') = (h \varphi_k(h'), kk') \]
@@ -669,7 +669,7 @@ Osserviamo dunque che
 
 e possiamo dunque costruire la funzione
 \fun{\Phi}{\Z_q \rtimes_{\psi^m} \Z_p}{\Z_q \rtimes_{\psi^1} \Z_p}{(x, y)}{(x, my)}
-e verificare che è un'isomorfismo:
+e verificare che è un isomorfismo:
 \begin{itemize}
 	\item è un omomorfismo
 	\begin{align*} \Phi(x,\, y)\,\Phi(x',\, y') &= (x,\, my)(x',\, my') \\&= (x + \psi_{my}^1(x'), \,my + my')
@@ -749,7 +749,7 @@ pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abe
 	\[ G_d = \ker\psi_d = \{ g \in G \mid dg = 0 \} \]
 	Ci è sufficiente mostrare che
 	\[ G \cong G_{p^n} \times G_m \]
-	Osserviamo innanzitutto che $ G_{p^n} $ è un p-sylow. Dev'essere un $ p $-gruppo perché se $ |G_{p^n}| $ fosse divisibile per un primo $ q $, allora per il Teorema di Cauhcy \ref{cauchy} conterrebbe almeno un elemento di ordine $ q $, contro la sua definizione. A questo punto, dovendo contenere l'unico $ p $-sylow di $ G $  (il coniugio è banale negli abeliani) non può che esserlo.
+	Osserviamo innanzitutto che $ G_{p^n} $ è un p-sylow. Dev'essere un $ p $-gruppo perché se $ |G_{p^n}| $ fosse divisibile per un primo $ q $, allora per il Teorema di Cauchy \ref{cauchy} conterrebbe almeno un elemento di ordine $ q $, contro la sua definizione. A questo punto, dovendo contenere l'unico $ p $-sylow di $ G $  (il coniugio è banale negli abeliani) non può che esserlo.
 	Verifichiamo che
 	\begin{enumerate}
 		\item I due sottogruppi sono normali in $ G $, perché è abeliano.
@@ -836,7 +836,7 @@ Quindi almeno uno tra un 2-sylow e un 3-sylow sarà normale. Inoltre devono aver
 	 	\item [$ \gamma $.] Consideriamo le possibili immagini, per dimensione:
 	 	\begin{itemize}
 	 		\item [$\{e\}  $.][$ \checkmark $] Ovviamente abbiamo un omomorfismo banale.
-	 		\item [$ \mathbb{Z}_2 $.][$ \checkmark $] Il nucleo dev'essere un sottogruppo di indice 2 e i quaterionioni ne hanno tre: $ \langle i \rangle, \langle j \rangle, \langle k \rangle $.
+	 		\item [$ \mathbb{Z}_2 $.][$ \checkmark $] Il nucleo dev'essere un sottogruppo di indice 2 e i quaternioni ne hanno tre: $ \langle i \rangle, \langle j \rangle, \langle k \rangle $.
 	 		\item [$ \mathbb{Z}_4 $.] L'unico sottogruppo di indice $ 4 $ dei quaternioni è $ \{\pm 1\} $ ed è il nucleo di un omomorfismo che uccide i termini di ordine $ 4 $.
 	 		\item [$ \mathbb{Z}_2\times\mathbb{Z}_2 $.] Possiamo mandare i quaternioni in $ \left(\mathbb{Z}_2\right)^3 $ usando i tre omomorfismi con immagine $ \mathbb{Z}_2 $, questo omomorfismo non sarà suriettivo, altrimenti sarebbe un isomorfismo, e ha almeno $ 4 $ elementi nell'immagine, visto che gli omomorfismi di sopra sono distinti. Quindi, permutando le componenti opportunamente, otteniamo $ 6 $ omomorfismi.
 	 		\item [$ D_4 $.] Non è possibile, sarebbe un isomorfismo!
@@ -859,7 +859,7 @@ Quindi almeno uno tra un 2-sylow e un 3-sylow sarà normale. Inoltre devono aver
 	 quindi necessariamente il centralizzatore di $ Z(\gamma(i)) \cong D_4 $ e pertanto $ \gamma(i) $ è un elemento del centro di $ D_4 $, che ha solo due elementi. Quindi gli omomorfismi $ \gamma $ accettabili sono solo quello banale e i tre che hanno immagine in $ \mathbb{Z}_2 $. Dunque sembrano accettabili tutti gli omomorfismi
 	 \[ \boxed{\gamma: Q_8 \to Z(D_4)} \]
 	 
-	 \item [$ \alpha $.] Dev'essere un \underline{isomorfismo}. Se non fosse un'isomorfismo l'immagine non potrebbe avere dimensione $ 4 $, perché come già visto i sottogruppi di indice adatto eliminano gli elementi di ordine $ 4 $, e non potrebbe avere dimensione più piccola, perché altrimenti il primo termine dell'immagine di $ \varphi $ apparterrebbe sempre al centro di $ G $.
+	 \item [$ \alpha $.] Dev'essere un \underline{isomorfismo}. Se non fosse un isomorfismo l'immagine non potrebbe avere dimensione $ 4 $, perché come già visto i sottogruppi di indice adatto eliminano gli elementi di ordine $ 4 $, e non potrebbe avere dimensione più piccola, perché altrimenti il primo termine dell'immagine di $ \varphi $ apparterrebbe sempre al centro di $ G $.
 	 
 	 \item [$ \delta $.] Analogamente dev'essere un \underline{isomorfismo}. 
 	\end{itemize}
@@ -871,7 +871,7 @@ Conosciamo già $ \Aut{D_4} $, cerchiamo, per concludere, di capire chi sia{\tin
 
 Ogni automorfismo $ \alpha $ di $ Q_8 $ deve mandare $ \alpha(-x) = -\alpha(x) $, quindi le coppie 
 \[ (i, -i) \quad (j, -j) \quad (k, -k) \]
-non vengono scisse, ma solo permutate fra loro. Possiamo quindi far agire $ \Aut{Q_8} $ sull'insieme di queste tre coppie, costruendo così un'omomorfismo
+non vengono scisse, ma solo permutate fra loro. Possiamo quindi far agire $ \Aut{Q_8} $ sull'insieme di queste tre coppie, costruendo così un omomorfismo
 \[ \xi : \Aut{Q_8} \to \mathcal{S}_3 \]
 Il nucleo di $ \xi $ è costituito dagli automorfismi che non scambiano nessuna coppia, dunque quello identico e i tre che cambiano segni a due delle coppie, ed è dunque isomorfo a $ \Z_2 \times \Z_2 $.
 
@@ -1022,7 +1022,7 @@ e ognuna di questa azioni induce un prodotto semidiretto isomorfo a uno dei grup
 		\item Trova $ \Aut{\mathbb{Z}_2\times\mathbb{Z}_4\times\mathbb{Z}_4} $.
 		\item Trova $ \Aut{Q_8 \times D_4} $.
 		\item Sia $ G $ un gruppo abeliano finito. Se $ H \lhd G $ è ciclico e lo è anche il loro quoziente, allora anche $ G $ è ciclico.
-		\item Dati $$  H \lhd K \lhd G  $$ quali inclusioni devono essere caratteristiche per far si che $ H $ sia normale o carattertico in $ G $?
+		\item Dati $$  H \lhd K \lhd G  $$ quali inclusioni devono essere caratteristiche per far si che $ H $ sia normale o caratteristico in $ G $?
 		
 		\item Sia $ G $ un gruppo finito. Se esiste un sottogruppo $ H < G $ di indice $ n $, allora esiste un sottogruppo normale $ N \lhd G $ di indice divisore di $ n! $.
 		

@@ -202,7 +202,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	ammette esattamente n estensioni.
 \end{theorem}
 \begin{proof}
-	Il grado di $ \mu_\alpha $ è $ n $, che dunque ammette esattamente $ n $ radici distinte. Il teorema \ref{est} conclude.
+	Il grado di $ \varphi\mu_\alpha $ è $ n $, che ammette esattamente $ n $ radici distinte. Il teorema \ref{est} conclude.
 \end{proof}
 \begin{remark}
 	Il teorema precedente si generalizza per induzione al caso di estensioni finite.
@@ -340,7 +340,7 @@ e chiediamoci:
 		Un'estensione $ \faktor{E}{K} $ algebrica si dice \emph{di Galois} se è sia normale che separabile.
 	\end{definition}
 	
-	(Da qui in avanti svilupperemo la Teoria di Galois per estensioni \emph{finite}, pertanto quando diremo che un'estensione ha questa proprietà, sottointenderemo la finitezza.)
+	(Da qui in avanti svilupperemo la Teoria di Galois per estensioni \emph{finite}, pertanto quando diremo che un'estensione ha questa proprietà, sottintenderemo la finitezza.)
 	
 	
 	In questo caso il gruppo degli automorfismi 
@@ -431,7 +431,7 @@ e chiediamoci:
 		{\left\{ H < \Gal{\faktor{L}{K}} \right\}}
 		{F}
 		{\Gal{L/F}}
-		è bigettiva con inversa
+		è biettiva con inversa
 		\[ \beta: H \mapsto L^H = \{ \alpha \in L \mid \sigma(\alpha) = \alpha \;\forall \sigma \in H \} \]
 		Inoltre
 		\[ H \lhd\; \Gal{L/K} \LR L^H/K \text{ è di Galois} \]
@@ -472,13 +472,13 @@ e chiediamoci:
 		\begin{enumerate}
 			\item  $ H < K \LR L^H \supseteq L^K $
 			\item $ L^{H \cap K} = L^H L^K $
-			\item $ L^{\gen{H, K}} = L^H \cap L^S $
+			\item $ L^{\gen{H, K}} = L^H \cap L^K $
 		\end{enumerate}
 		
 	\end{prop}
 	
 	\begin{theorem}[dell'estensione a caso]\label{galrandom}
-		Se $ L/K $ è un'estensione di Galois e $ F/K $ è un'estensione algebrica (tale che entrambe stiano in una qualche sovraestensione?), allora $ LF/F $ è di Galois. 
+		Se $ L/K $ è un'estensione di Galois e $ F/K $ è un'estensione algebrica (tale che entrambe stiano in una qualche sovra-estensione?), allora $ LF/F $ è di Galois. 
 		
 		\[\begin{tikzcd}[row sep=0.25cm, column sep=0.3cm]
 		 & LF \arrow[dl,-] \arrow[dr,-, dashed] &  \\
@@ -535,7 +535,7 @@ e chiediamoci:
 		\end{tikzcd} \]
 		
 		Inoltre \[ \Gal{L_1L_2/K} \hookrightarrow \Gal{L_1/K} \times \Gal{L_2/K} \]
-		e questa immersione è un'isomorfismo se e solo se le estensioni di partenza sono linearmente disgiunte.
+		e questa immersione è un isomorfismo se e solo se le estensioni di partenza sono linearmente disgiunte.
 	\end{theorem}
 	
 	\begin{proof}
@@ -544,7 +544,7 @@ e chiediamoci:
 		Consideriamo ora l'omomorfismo di restrizione
 		\fun{\texttt{res}}{\Gal{L_1L_2/K}}{\Gal{L_1/K} \times \Gal{L_2/K}}{\varphi}{(\varphi_{|L_1}, \varphi_{|L_2})}
 		
-		che è iniettivo, perché se un'omomorfismo agisce in modo identico su tutti i generatori del campo, lo farà su tutto il campo.
+		che è iniettivo, perché se un omomorfismo agisce in modo identico su tutti i generatori del campo, lo farà su tutto il campo.
 	
 	Prendiamo i due sottogruppi $ H_1, H_2 \lhd \Gal{L_1L_2 /K} $ tali che
 	\[ (L_1L_2)^{H_i} = L_i \]
@@ -600,7 +600,7 @@ e chiediamoci:
 	\begin{theorem}[Frobenius]
 	Dato un primo $ p $ e un intero positivo $ n $
 	\[ \Gal{\mathbb{F}_{p^n} /\mathbb{F}_p} \cong \gen{\Phi} \]
-	dove $ \Phi $ è l'automorfismo di Frobenius: \fun{\Phi}{\mathbb{F}_{p^n}}{\mathbb{F}_p}{x}{x^p}
+	dove $ \Phi $ è l'automorfismo di Frobenius: \fun{\Phi}{\mathbb{F}_{p^n}}{\mathbb{F}_{p^n}}{x}{x^p}
 	\end{theorem}
 	
 	\begin{proof}
@@ -622,7 +622,7 @@ e chiediamoci:
 	
 	\begin{remark}
 		Se volessimo gruppi di galois di estensioni più elaborate, ci basta ricordare che
-		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d} } < \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p} \cong \gen{\Phi} \]
+		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d} } \;<\; \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_p} \cong \gen{\Phi} \]
 		dunque
 		\[ \Gal{\mathbb{F}_{p^{dn}} /\mathbb{F}_{p^d}} \cong \gen{\Phi^d} \]
 	\end{remark}
