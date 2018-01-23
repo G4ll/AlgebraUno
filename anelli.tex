@@ -659,7 +659,7 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	\begin{enumerate}
 	\item Il prodotto di polinomi primitivi è primitivo.
 	\item La funzione contenuto è completamente moltiplicativa.
-	\item Se $ f \in A[\,x\,] $ e $ f = hg $ in $ \Q(A)[\,x\,] $, esistono $ h_1, g_1 \in A[\,x\,] $, con lo stesso grado di $ h $ e $ g $, tali che $ f = h_1g_1 $.
+	\item Se $ f \in A[\,x\,] $ è riducibile in $ \Q(A)[\,x\,] $,\\ è riducibile anche in $ A[\,x\,] $.
 	\end{enumerate}
 	
 \end{theorem}
@@ -675,11 +675,13 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	 Il secondo punto segue subito dal primo, separando ogni polinomio $ f $ in parte primitiva e contenuto:
 	 \[ f = c(f) \tilde{f} \]
 	 
-	 Per il terzo punto, riscriviamo $ g $ e $ h $ facendo minimo comune multiplo, in modo che
-	 \[ g = \frac{\tilde{g}}{d}, \quad h = \frac{\tilde{h}}{d'} \quad \text{ con } d, d' \in A \text{ e } \tilde{g}, \tilde{h} \in A[\,x\,]   \]
-	 sapendo che
-	 \[ \tilde{g}\tilde{h} = dd'f \]
-	 visto $ \tilde{g} $ e $ \tilde{h} $ sono primitivi, anche $ dd'f $ lo deve essere e, pertanto, $ dd' \in A^{\times} $. In questo modo i polinomi tildati devono avere coefficienti in $ A $. \textsf{temo che questo punto abbia bisogni di più attenzioni.}
+	 Supponendo $ f = hg $ nell'anello sui quozienti, possiamo scrivere
+	 \[ g = \frac{a}{b}\,\tilde{g}, \quad h = \frac{c}{d}\,\tilde{h} \quad \text{ con } a, b, c, d \in A \text{ e } \tilde{g}, \tilde{h} \in A[\,x\,]   \]
+	 osservando che
+	 \[ ac \cdot \tilde{g}\tilde{h} = bd \cdot f \]
+	 possiamo ora dedurre l'uguaglianza tra i contenuti
+	 \[ ac = bd \cdot c(f) \]
+	 che ci permette di dividere il fattore di sinistra per $ bd $ senza paura di uscire da $ A $, ottenendo così i due fattori richiesti: $$  c(f) \tilde{h} \quad\text{ e }\quad \tilde{g}.  $$
 \end{proof}
 \columnbreak
 \begin{theorem}
@@ -728,9 +730,9 @@ infatti valutando l'espressione in $ 0 $ otteniamo $ 1 = 2f(0) $.
 	\[ f = gh \]
 	guardando questa relazione in $ \faktor{A}{(p)}[\,x\,] $ scopriamo che
 	\[ a_nx^n = \bar{f} = \overline{hg} = \bar{h}\bar{g} \]
-	e dunque $ \bar{0} = \overline{h_0g_0} = \bar{h_0}\bar{g_0} $, che significa
+	e dunque $ \bar{0} = \overline{h_ig_j} = \overline{h_i}\overline{g_j} $ per ogni $ i+j < n $, da cui deduciamo che sia $ \overline{h} $ che $ \overline{g} $ devono essere monomi; in particolare
 	\[ p \mid h_0 \text{ e } p \mid g_0 \RR p^2 \mid h_0g_0 = a_0 \]
-	il che contraddice le ipotesi!
+	contraddice le ipotesi.
 \end{proof}
 
 \textbf{Esempi.}
