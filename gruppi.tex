@@ -24,18 +24,19 @@
 	\[ \Int{G} \cong \faktor{G}{Z(G)} \]
 \end{prop}
 \begin{proof}
-	La funzione \fun{\Phi}{G}{\Int{G}}{g}{\varphi_g} è un omomorfismo con kernel $ Z(G) $. La tesi segue dal Primo Teorema di Omomorfismo.
+	La funzione \fun{\Phi}{G}{\Int{G}}{g}{\varphi_g} è un omomorfismo con kernel $ Z(G) $.
 \end{proof}
 
 \begin{remark}
-	\[ H \lhd G \;\Leftrightarrow\; \varphi_g\left(H\right) = H \quad \forall \varphi_g \in \Int{G} \]
+	Un sottogruppo è normale se e solo se viene rispettato da tutti gli automorfismi interni:
+	\[ H \lhd\, G \LR \varphi_g\left(H\right) = H \quad \forall \varphi_g \in \Int{G} \]
 \end{remark}
 
 \begin{definition}[Sottogruppo caratteristico]
 	Un sottogruppo $ H < G $ si dice \emph{caratteristico} se è fissato da tutto $ \Aut{G} $, i.e. $$ \varphi\left(H\right) = H \quad \forall \varphi \in \Aut{G} $$
 \end{definition}
 \begin{remark}
-	Un sottogruppo caratteristico è anche normale, ma non è sempre vero il viceversa: $ \langle (0, 1) \rangle \lhd \mathbb{Z}_2 \times \mathbb{Z}_2 $.
+	Un sottogruppo caratteristico è anche normale, ma non è sempre vero il viceversa: $ \langle (0, 1) \rangle \lhd\, \mathbb{Z}_2 \times \mathbb{Z}_2 $.
 \end{remark}
 
 \begin{definition}[Azione]
@@ -51,17 +52,17 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{align*}
 
 \begin{remark}
-	Un'azione induce naturalmente una relazione di equivalenza su $ X $: $ x \sim y \Leftrightarrow \exists g \in G \; t.c.\; g \cdot x = y $. Viene quindi spontaneo prendere in considerazione gli elementi della partizione così ottenuta. 
+	Un'azione induce naturalmente una relazione di equivalenza su $ X $: $ x \sim y \Leftrightarrow \exists g \in G $ tale che $ g \cdot x = y $. Viene quindi spontaneo prendere in considerazione gli elementi della partizione così ottenuta. 
 \end{remark}
 \begin{definition}[Orbita]
-	Si dice \emph{orbita} di un elemento $ x \in X $ l'insieme di tutti gli elementi che posso essere raggiunti da $ x $ tramite l'azione: \[ \Orb{x} = \{ g \cdot x \mid \forall g \in G \} \]
+	Si dice \emph{orbita} di un elemento $ x \in X $ l'insieme di tutti gli elementi che posso essere raggiunti da $ x $ tramite l'azione: \[ \Orb{x} = \{ g \cdot x \mid \forall g \in G \}. \]
 \end{definition}
 \begin{remark}
 	Detto $ R $ un insieme di rappresentanti delle varie orbite, visto che queste formano una partizione: \[ X = \bigcup_{x \in R} \Orb{x} \quad\Rightarrow\quad |X| = \sum_{x \in R} |\Orb{x}| \]
 \end{remark}
 
 \begin{definition}[Stabilizzatore]
-	Si dice \emph{stabilizzatore} di un elemento $ x \in X $ l'insieme di tutti gli elementi di $ G $ che agiscono in modo banale su $ x $: \[ \Stab{x} = \{ g \in G \mid g \cdot x = x \} \]
+	Si dice \emph{stabilizzatore} di un elemento $ x \in X $ l'insieme di tutti gli elementi di $ G $ che agiscono in modo banale su $ x $: \[ \Stab{x} = \{ g \in G \mid g \cdot x = x \}. \]
 \end{definition}
 \begin{remark}
 	Lo stabilizzatore è un sottogruppo $$ \Stab{x} < G $$ ma non è necessariamente normale. $$  Z_{\mathcal{A}_{5}}(1 \; 2 \; 3) < \mathcal{A}_{5}$$
@@ -99,7 +100,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\item $ [G,\; X = \{ H \mid H < G \} ] $ e l'azione di coniugio. Le orbite non sono particolarmente interessanti, mentre lo stabilizzatore di un sottogruppo è detto \emph{Normalizzatore} di $ H $, $ N(H) $ ed è il più grande sottogruppo di $ G $ in cui $ H $ è normale.
 \end{enumerate}
 \begin{remark}
-	$ H \lhd G \;\Leftrightarrow\; N(H) = G $
+	$ H \lhd\, G \;\Leftrightarrow\; N(H) = G $
 \end{remark}
 \begin{remark}[euristica]
 	Le azioni più comuni sono quelle naturali: il coniugio, la moltiplicazione a sinistra e, talvolta, la moltiplicazione a destra per l'inverso.
@@ -118,7 +119,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	
 	\[ |X| = \sum_{\substack{x \in R \\ \Orb{x} = \{x\} }} 1 + \sum_{\substack{x \in R \\ \Orb{x} \neq \{x\} }} \frac{|G|}{|\Stab{x}|} \]
 	
-	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x $, $ \forall g \in G $, ovvero solo nel caso in cui $ x $ commuta con tutti gli elementi di $ G $ o, meglio, quando vive nel centro di $ G $.
+	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x $, $ \forall g \in G $, ovvero solo nel caso in cui $ x $ commuta con tutti gli elementi di $ G $ o, meglio, quando vive nel centro $ Z(G) $.
 \end{proof}
 
 \begin{definition}[$ p $-gruppo]
@@ -162,13 +163,9 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{proof}
 \begin{proof}[Dimostrazione Magica]
 	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ p-1 $ l'ultimo dev'essere il suo unico inverso.
-	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple, e osserviamo che ogni stabilizzatore può essere banale, nel caso di $ p $ elementi ripetuti, o tutto il gruppo. Osserviamo che ci interessa contare il numero di stabilizzatori banali!
+	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple, e osserviamo che ogni stabilizzatore può essere banale, nel caso di $ p $ elementi ripetuti, o tutto il gruppo. Ci interessa contare il numero di stabilizzatori banali!
 	Detto $ n $ il numero di $ g $ tali che $ g^p = 1 $ \[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \] e poiché $ e^p = e $ ci sono almeno $ p - 1 $ elementi di ordine $ p $.
 \end{proof}
-
-
-
-\textbf{Esercizio.} Classificare i gruppi $ G $ di ordine $ 6 $.
 
 \begin{definition}[Sottogruppo generato]
 	Sia $ S \subset G $ un \emph{sottoinsieme} di $ G $. Chiamiamo $ \langle S \rangle $ il più piccolo sottogruppo contenente $ S $, sottogruppo generato da $ S $. \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
@@ -237,7 +234,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	Conosciamo già un gruppo diedrale: $ D_3 \cong \mathcal{S}_3 $.
 \end{remark}
 \begin{remark}
-	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $. $$ \langle \rho \rangle = C_n \lhd D_n $$
+	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $. $$ \langle \rho \rangle = C_n \lhd\, D_n $$
 \end{remark}
 
 \begin{prop}[Ordine degli elementi di $ D_n $]
@@ -275,7 +272,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	Infine, dato che il nucleo è contenuto nel sottogruppo ciclico $ (H \cap C_n) < C_n $, possiamo pensarlo come il sottogruppo generato da una potenza della rotazione elementare \[ H \cap C_n = \langle \rho^d \colon d \mid n \rangle \] Il suo unico laterale sarà allora composto dagli $ d $ elementi della forma  \begin{align*}\tau(H\cap C_n) &=  \{\tau\rho^d, \tau\rho^{2d}, \dots, \tau\rho^{n-d} \} \\ &= \{\sigma\rho^{d+i}, \sigma\rho^{2d+i}, \dots, \sigma\rho^{n-d +i} \}\end{align*}  che è facile convincersi dipendere solamente dalla classe di $ i \mod d $.
 \end{proof}
 
-\textbf{Esercizi.}
+\textbf{Esercizi importanti.}
 \begin{enumerate}
 	\item Quali sottogruppi di $ D_n $ sono normali?
 	\item Quali sottogruppi di $ D_n $ sono caratteristici?
@@ -289,14 +286,14 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \begin{multicols}{2}
 \begin{definition}[Gruppi di Permutazioni]
 	Dato un insieme $ X $, chiamiamo
-	\[  \mathcal{S}(X) = \{ f: X \to X \mid f  \text{ è bigettiva}  \}  \]
-	con l'operazione di composizione, il gruppo delle permutazioni di $ X $. Se l'insieme è finito $ |X| = n $, allora
+	\[  \mathcal{S}(X) = \{ f: X \to X \mid f  \text{ è bigettiva}  \},  \]
+	con l'operazione di composizione, \emph{gruppo delle permutazioni} di $ X $. Se l'insieme è finito $ |X| = n $, allora
 	\[  \mathcal{S}(X) \cong S(\{ 1 ,2, \dots, n \})  \]
-	lo chiamiamo $ \mathcal{S}_n $.
+	e lo chiamiamo $ \mathcal{S}_n $.
 \end{definition}
 
 \begin{theorem}[Cayley]\label{Cayley}
-	Possiamo immergere ogni gruppo $ G $ finito in un gruppo di permutazioni, in $ \mathcal{S}(G) $.
+	Possiamo immergere ogni gruppo $ G $ finito in un gruppo di permutazioni.
 \end{theorem}
 \begin{proof}
 	L'azione di moltiplicazione a sinistra è fedele
@@ -304,7 +301,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	ovvero, iniettiva.
 \end{proof}
 
-\begin{prop}
+\begin{prop}[di decomposizione]
 	Ogni permutazione $ \sigma \in \mathcal{S}_n $ si scrive in modo unico come prodotto di cicli disgiunti.
 \end{prop}
 \begin{remark}
@@ -319,7 +316,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	$ \mathcal{S}_n $ è generato dai suoi cicli.
 \end{remark}
 \begin{prop}[delle permutazioni coniugate]
-	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli.
+	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti.
 \end{prop}
 \begin{proof}
 	E' più che sufficiente osservare che dato un ciclo $$  \sigma = (a_1 \; \cdots \; a_k)  $$ e una permutazione tale che $ \tau : a_i \mapsto b_i $ si ha
@@ -353,14 +350,14 @@ z &\mapsto \mathcal{R}(O, \arg z)
 
 \begin{definition}[Gruppo Alterno]
 	Chiamiamo $ \mathcal{A}_n $ o \emph{gruppo alterno} il sottogruppo delle permutazioni pari
-	\[ \ker(\text{sgn}) = \mathcal{A}_n \lhd \mathcal{S}_n \]
+	\[ \ker(\text{sgn}) = \mathcal{A}_n \lhd\, \mathcal{S}_n. \]
 \end{definition}
 \begin{remark}
-	Ogni sottogruppo $ H < \mathcal{S}_n $ è contenuto interamente in $ \mathcal{A}_n $ o viene spezzato a metà dal gruppo alterno. Questo perché possiamo restringere il determinante al solo $ H $, che dunque può spezzarsi in nucleo e laterale, o immergersi interamente nel nucleo.
+	Ogni sottogruppo $ H < \mathcal{S}_n $ è contenuto interamente in $ \mathcal{A}_n $ o viene spezzato a metà dal gruppo alterno. Questo perché possiamo restringere il segno al solo $ H $, che dunque può solo spezzarsi in nucleo e laterale, o immergersi interamente nel nucleo.
 \end{remark}
 
-\begin{prop}[si spezzamento]
-	L classe di coniugio di $ \sigma $ in $ \S_n $ si spezza in $ \mathcal{A}_n $ se e solo se $ \sigma $ è composto da cicli di lunghezze dispari e distinte.
+\begin{prop}[di spezzamento]
+	La classe di coniugio di $ \sigma $ in $ \S_n $ si spezza in $ \mathcal{A}_n $ se e solo se $ \sigma $ è composto da cicli di lunghezze dispari e distinte.
 \end{prop}
 
 
@@ -380,20 +377,21 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\[ 1,\, 40,\, 40,\, 45,\, 72,\, 72,\, 90 \]
 	Dimostriamo ora la tesi per $ n \geq 7 $. Supponiamo che esista un sottogruppo normale
 	\[ \{e\} \neq N \lhd A_n \]
-	e mostriamo che contiene un 3-ciclo. Non essendo banale, prendiamo una permutazione non identica $ \sigma $, che possiamo supporre, senza perdita di generalità, non fissare l'1:
+	e mostriamo che contiene un 3-ciclo. Essendo non banale, possiamo prenderne una permutazione non identica $ \sigma $ che possiamo supporre, senza perdita di generalità, non fissare l'1:
 	$$  \sigma(1) \neq 1  $$ 
-	e $ \tau = (i\; j\; k) $ una permutazione di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno che il gruppo contenga almeno 4 elementi! Inoltre
+	e $ \tau = (i\; j\; k) $ una permutazione di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno $ n \geq 4 $. Inoltre
 	\[ \tau\sigma\tau^{-1}(1) = \tau(\sigma(1)) \neq \sigma(1) \]
 	dunque $ \tau\sigma\tau^{-1} \neq \sigma $ e siamo sicuri che la permutazione
 	\[ \phi = \tau\sigma\tau^{-1}\sigma^{-1} \]
-	non sia l'identità. Inoltre questa è sia il prodotto tra un coniugato di un elemento nel nostro sottogruppo normale per il suo inverso 
+	non è l'identità. Inoltre quest'ultima è sia il prodotto tra un coniugato di un elemento nel nostro sottogruppo normale per il suo inverso 
 	\[ \phi = (\tau\sigma\tau^{-1})\sigma^{-1} \in N  \]
 	che prodotto di un 3-ciclo e di un suo coniugato
 	\[ \phi = \tau(\sigma\tau^{-1}\sigma^{-1}) \]
-	quindi permuta al più $ 6 $ numeri. Aggiungiamo, se necessario, numeri a caso fino ad averne esattamente 6 e chiamiamo $ H $ il sottogruppo di $ A_n $ che li permuta. Abbiamo mostrato che
+	quindi permuta al più $ 6 $ numeri. Aggiungiamo, se necessario, numeri a caso, fino ad averne esattamente 6 e chiamiamo $ H $ il sottogruppo di $ A_n $, isomorfo ad $ A_6 $, che li permuta. Abbiamo mostrato che
 	\[ \phi \in N \cap H \]
-	dunque l'intersezione è non vuota, ma essendo $ H \cong A_6 $ semplice, questo, non potendosi spezzare, vive interamente nell'intersezione: \[ H < N \] 
-	$ A_6 $ contiene tutti i 3-cicli di cui abbiamo bisogno!
+	dunque l'intersezione è non banale, nonché un sottogruppo normale di $ H $! Deve pertanto coincidere con tutto il gruppo. Allora
+	 \[ H < N \] 
+	e $ A_6 $ contiene tutti i 3-cicli di cui abbiamo bisogno.
 \end{proof}
 
 \begin{theorem}[del ribelle]
@@ -411,7 +409,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 		\begin{itemize}
 			\item Per $ \boxed{k = 2} $ abbiamo
 			\[ 4 = (n-2)(n-3) \]
-			che non ha soluzione, perché i due fattori a destra sono interi consecutivi, quindi uno di loro sarà dispari.
+			che non ha soluzione, perché i due fattori a destra sono interi consecutivi, quindi uno di loro conterrà un primo dispari.
 			\item Per $ \boxed{k = 3} $ abbiamo
 			\[ 4 = (n-2) {n-3 \choose 3} \]
 			che ammette $ n = 6 $ come unica soluzione (il caso famigerato!), visto che $ n-2 \mid 4 $ limita la ricerca delle soluzioni ai soli $ n = 3, 4, 6 $.
