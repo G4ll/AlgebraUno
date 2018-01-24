@@ -563,14 +563,14 @@ Q_8
 	Così facendo possiamo continuare ad aggiungere elementi fino alla saturazione.
 \end{proof}
 Se $ G $ non ha elementi di ordine $ 8 $ e non hanno tutti ordine $ 2 $, allora esiste un $ g \in G $ di ordine 4 e sia $ C_4 = \langle g \rangle $. Sia $ h \notin C_4 $ e consideriamo l'azione di coniugio di $ h $ su $ C_4 $
-\fun{\varphi_g}{C_4}{C_4}{x}{hxh^{-1}}
+\fun{\varphi_h}{C_4}{C_4}{x}{hxh^{-1}}
 ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché $ \Aut{\mathbb{Z}_4} \cong \mathbb{Z}_2 $, abbiamo solo due possibilità: $$  \varphi_g =  id^{\pm 1}  $$
 
 \begin{itemize}
-	\item $ \left[\varphi_g =  id, \, \text{ord}(h) =2\right] $. Dunque gli elementi di $ C_4 $ commutano con $ h $, l'intersezione tra $ C_4 $ e $ \langle h \rangle $ è banale e il loro prodotto genera $ G $ per ragioni di cardinalità, pertanto \[ G \cong  \langle h \rangle\times C_4  \cong  \mathbb{Z}_2\times\mathbb{Z}_4 \]
-	\item $ \left[\varphi_g =  id, \, \text{ord}(h) =4\right] $. Possiamo considerare $ h^2 $ e ricondurci al caso precedente.
-	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^{-1} $, quindi per la nostra caratterizzazione dei gruppi diedrali \[ G \cong D_4 \]
-	\item $ \left[\varphi_g =  id^{-1}, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
+	\item $ \left[\varphi_h =  id, \, \text{ord}(h) =2\right] $. Dunque gli elementi di $ C_4 $ commutano con $ h $, l'intersezione tra $ C_4 $ e $ \langle h \rangle $ è banale e il loro prodotto genera $ G $ per ragioni di cardinalità, pertanto \[ G \cong  \langle h \rangle\times C_4  \cong  \mathbb{Z}_2\times\mathbb{Z}_4 \]
+	\item $ \left[\varphi_h =  id, \, \text{ord}(h) =4\right] $. Abbiamo che $ gh $ è non vive qua dentro e il gruppo è abeliano.
+	\item $ \left[\varphi_h =  id^{-1}, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^{-1} $, quindi per la nostra caratterizzazione dei gruppi diedrali \[ G \cong D_4 \]
+	\item $ \left[\varphi_h =  id^{-1}, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
 	\[ e = ghgh = ghgh^{-1}hh = hh \neq e \]
 	Dunque abbiamo trovato l'ordine di tutti gli elementi, possiamo costruire un isomorfismo esplicito con $ Q_8 $.
 \end{itemize}
