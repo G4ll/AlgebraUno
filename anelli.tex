@@ -79,15 +79,15 @@ e un polinomio
 \[ g = b_0 + \dots + b_mx^m \quad \text{tale che } fg = 0 \]
 di grado minimo possibile.
 Consideriamo, al variare di $ 0 \leq k \leq n $, i prodotti
- $ a_k q $.
-Se questi non sono tutti nulli, consideriamo il più grande $ k $ tale che \[  a_kq \neq 0 \]
+ $ a_k g $.
+Se questi non sono tutti nulli, consideriamo il più grande $ k $ tale che \[  a_kg \neq 0 \]
 Allora
 \[ 0 = fg = (a_0 + \dots a_kx^k) (b_0 + \dots + b_mx^m) \]
 osserviamo che il coefficienti del termine di grado massimo è
 \[ a_kb_m = 0 \]
 e quindi
-\[ p \cdot (a_k q) = 0 \]
-ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq = 0 \;\forall k $, quindi che $ a_kb_0 = 0 \;\forall k $, ossia
+\[ f \cdot (a_k g) = 0 \]
+ma $ \deg{a_k g} < \deg{g} $, quindi dobbiamo avere necessariamente che $ a_k g = 0 \;\forall k $, quindi
 \[ \boxed{f \in \mathcal{D}(A[\,x\,]) \LR \exists b \neq 0 \in A \mid b a_k = 0 \;\;\forall k} \] 
 
 
@@ -141,12 +141,12 @@ ma $ \deg{a_k q} < \deg{q} $, quindi dobbiamo avere necessariamente che $ a_kq =
 \end{prop}
 \begin{proof}
 	Preso $ J \subseteq B $, osserviamo che la sua controimmagine $ f^{-1}(J) $ assorbe per prodotto
-	\[ f(af^{-1}(J)) = f(a)J = J \quad\Rightarrow\quad af^{-1}(J) = f^{-1}(J)  \]
+	\[ f(af^{-1}(J)) = f(a)J \subseteq J \quad\Rightarrow\quad af^{-1}(J) \subseteq f^{-1}(J)  \]
 	ed è additivamente chiusa
 	\[ f(i + j) = f(i) + f(j) \in J \qquad \forall i, \, j \in f^{-1}(J) \]
 	
 	Assumendo $ f $ suriettiva, per ogni $ b \in B $ peschiamo un elemento $ a $ della controimmagine, allora
-	\[ f(aI) = f(a)f(I) = af(I) = f(I) \]
+	\[ f(aI) = f(a)f(I) = bf(I) \subseteq f(I) \]
 	e la chiusura additiva è analoga.
 \end{proof}
 
@@ -355,7 +355,7 @@ Inoltre, ovviamente, contiene l'ideale di partenza: $ I \subseteq \sqrt{I} $.
 	appartenesse alla famiglia $ \mathcal{F} $, allora sarebbe sottoinsieme di $ P $ (e dunque $ a \in P $). Se nessuno dei due appartenesse alla famiglia, allora
 	\[ x^n \in P + (a) \qquad x^m \in P + (b) \]
 	ma
-	\[ x^{n + m} \in (P + (a))(P + (b)) = P \]
+	\[ x^{n + m} \in (P + (a))(P + (b)) \subseteq P \]
 	che dunque dev'essere primo.
 \end{proof}
 \begin{theorem}
