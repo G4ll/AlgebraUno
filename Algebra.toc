@@ -22,10 +22,10 @@
 \contentsline {subsubsection}{\numberline {A.2.1}Prodotto diretto tra anelli}{18}{subsubsection.1.2.1}
 \contentsline {subsubsection}{\numberline {A.2.2}Estensione e Contrazione di Ideali}{18}{subsubsection.1.2.2}
 \contentsline {subsubsection}{\numberline {A.2.3}Fatti sul radicale}{19}{subsubsection.1.2.3}
-\contentsline {subsection}{\numberline {A.3}Domini}{20}{subsection.1.3}
+\contentsline {subsection}{\numberline {A.3}Dominii}{20}{subsection.1.3}
 \contentsline {subsubsection}{\numberline {A.3.1}Campo dei quozienti. $ \mathbb {Q}(A) $}{20}{subsubsection.1.3.1}
 \contentsline {subsubsection}{\numberline {A.3.2}Divisibilit\IeC {\`a}.}{20}{subsubsection.1.3.2}
-\contentsline {subsection}{\numberline {A.4}Domini Speciali}{21}{subsection.1.4}
+\contentsline {subsection}{\numberline {A.4}Dominii Speciali}{21}{subsection.1.4}
 \contentsline {subsubsection}{\numberline {A.4.1}Dominio Euclideo}{21}{subsubsection.1.4.1}
 \contentsline {subsubsection}{\numberline {A.4.2}Dominio a Ideali Principali}{21}{subsubsection.1.4.2}
 \contentsline {subsubsection}{\numberline {A.4.3}Dominio a Fattorizzazione Unica}{21}{subsubsection.1.4.3}
