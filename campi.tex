@@ -570,8 +570,7 @@ e chiediamoci:
 		\[ \Gal{\mu_{\xi}} \cong \Z_n^\times \]
 	\end{theorem}
 	
-	\begin{proof}
-		Iniziamo osservando che tutti i coniugati di $ \xi $ sono radici di
+	\begin{proof} Iniziamo osservando che tutti i coniugati di $ \xi $ sono radici di
 		\[ f = x^n -1 = \mu_\xi (x)  g(x)\]
 		
 		
@@ -579,15 +578,14 @@ e chiediamoci:
 		
 		Mostriamo che tutte le radici primitive sono coniugate di $ \xi $; anzi, più in generale che per ogni primo $ p $ che non divide $ n $, $ \xi^p $ non è una radice di $ g $, mentre chiaramente è una radice di $ f $. Se, per assurdo, avessimo che
 		\[ g(\xi^p) = 0 \]
-		allora potremmo ridurci modulo $ p $ per osservare che $ \bar{g} $ ha radici multiple e in comune con $ \overline{\mu_\xi} $
+		allora avremmo che $ \mu_\xi \mid g(x^p) $. Questo deve valere anche modulo $ p $, dove
 		
 		\[ \overline{g(x^p)} = \left(\overline{g(x)}\right)^p \]
-		mentre $ \overline{f} $ non ne ha
-		\[ \overline{f'} =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1   \]
+		dunque $ \overline{\mu_\xi} $ e $ \overline{g} $ hanno almeno una radice in comune, mentre $ \overline{f} $ non ha radici doppie:
+		\[ \overline{f'} =  nx^{n-1} \neq 0 \quad\Rightarrow\quad (\overline{f}, \overline{f'}) = 1.   \]
 		
 		Possiamo così concludere che $ \mu_\xi $ ha come radici tutte e sole le radici $ n $-esime primitive dell'unità, pertanto
 		\[ \deg\mu_\xi = \phi(n) = |\Gal{\mu_\xi}| \]
-		
 		
 		Infine, verifichiamo che la mappa
 		\fun{\Phi}{\Z_n^\times}{\Gal{\mu_\xi}}{i}{\varphi_i: \xi \mapsto \xi^{i}}
@@ -630,46 +628,47 @@ e chiediamoci:
 
 \subsection{Esistenza e unicità della chiusura algebrica}
 \begin{multicols}{2}
+	\setcounter{theorem}{4}
 	\begin{theorem}[$ \exists ! \overline{K} $]
-		Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $ isomorfe, ovvero esiste un isomorfismo
+		Ogni campo $ K $ ammette una chiusura algebrica $ \overline{K} $ e ogni due sue chiusure $ \overline{K}, \overline{\overline{K}} $ sono $ K $-isomorfe, ovvero esiste un isomorfismo
 		\[ \varphi : \overline{K} \to \overline{\overline{K}} \]
 		tale che $ \varphi_{|K} = id $.
 	\end{theorem}
 
 \begin{proof}
 	Concentriamoci sull'esistenza. Prendiamo l'insieme di tutti i polinomi non costanti a coefficienti nel campo in questione e indicizziamoli opportunamente
-	$$  \{ p \in K[\,x\,] \mid \deg p > 0 \} = \{p_\lambda \mid \lambda \in \Lambda\}  $$
-	costruiamo ora l'anello dei polinomi su $ K $ con tante incognite quante i polinomi di $ K[\,x\,] $; ovvero, chiamato
-	\[ X = \{ x_\lambda \}_{\lambda \in \Lambda} \]
+	$$  \{ p \in K[\,x\,] \mid \deg p > 0 \} = \{p_\lambda \mid \lambda \in \Lambda\};  $$
+	costruiamo ora l'anello dei polinomi su $ K $ con tante incognite quante i polinomi di $ K[\,x\,] $: ovvero, chiamato
+	\[ X = \{ x_\lambda \}_{\lambda \in \Lambda}, \]
 	consideriamo l'anello
 	\[ K[X] \]
 	e in questo anello l'ideale
-	\[ I = (p_{\lambda}(x_{\lambda}))_{\lambda \in \Lambda} \subseteq K[X] \]
+	\[ I = (p_{\lambda}(x_{\lambda}))_{\lambda \in \Lambda} \subseteq K[X]. \]
 	
-	Osserviamo che $ I $ non è massimale, ovvero
-	\[ I \neq (1) \]
-	se così non fosse avremmo una serie di indici $ \{1, \dots, n\} \subseteq \Lambda $ e coefficienti $ f_1, \dots, f_n \in K[X] $ tali che
-	\[ \sum f_i p_i(x_i) = 1 \]
-	Costruiamo l'estensione 
-	$$  L = K(\alpha_1, \alpha_2, \dots, \alpha_n)  $$
-	dove $ \alpha_i $ è una radice di $ p_i $. Possiamo farlo perché i $ p_i $ sono finiti.
-	Ora abbiamo un bellissimo omomorfismo di valutazione
+	Osserviamo che $ I $ non è massimale, vale a dire
+	\[ I \neq (1). \]
+	Se così non fosse avremmo una serie di indici $ \{1, \dots, n\} \subseteq \Lambda $ e coefficienti $ f_1, \dots, f_n \in K[X] $ tali che
+	\[ \sum f_i p_i(x_i) = 1, \]
+	ma, essendo i $ p_i $ in questione finiti, possiamo costruire l'estensione 
+	$$  L = K(\alpha_1, \alpha_2, \dots, \alpha_n),  $$
+	dove $ \alpha_i $ è una radice di $ p_i $.
+	Da questa estensione esce un bellissimo omomorfismo di valutazione
 	\begin{align*}
 	\psi \colon K[X] &\to L \\
-	1 &\mapsto 1 \\
+	k &\mapsto k \\
 	x_\lambda &\mapsto \begin{cases}
 	0 \text{ se } \lambda \notin \{1, \dots, n\}\\
 	\alpha_i \text{ se } \lambda = i \in \{1, \dots, n\}
 	\end{cases} 
 	\end{align*}
-	che annullando tutti i polinomi considerati ci restituisce
-	\[ 1 = \psi(1) = \sum \psi(f_i)\psi(p_i(x_i)) = 0 \]
-	una contraddizione!
+	che, annullando tutti i polinomi considerati, ci restituisce
+	\[ 1 = \psi(1) = \sum \psi(f_i)\psi(p_i(x_i)) = 0, \]
+	ovvero, una contraddizione!
 	
-	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (questo non è banale, abbiamo usato il lemma di Zorn per dimostrare questo lemma \ref{idmax})
-	\[ I \subseteq M \subseteq K[X] \]
-	per cui possiamo porre
-	\[ E_1 = \faktor{K[X]}{M} \]
+	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (abbiamo usato il lemma di Zorn per dimostrare questo lemma \ref{idmax}):
+	\[ I \subseteq M \subseteq K[X]. \]
+	Ci è quindi concesso porre
+	\[ E_1 = \faktor{K[X]}{M}, \]
 	che è
 	\begin{enumerate}
 		\item un campo, perché quoziente di un anello per un ideale massimale;
@@ -677,15 +676,15 @@ e chiediamoci:
 		\[ K \hookrightarrow K[X] \to E_1 \]
 		non banale perché
 		\[ 1 \mapsto 1 \mapsto 1 + M \neq M \]
-		dev'essere iniettivo.;
+		dev'essere iniettivo;
 		\item in cui ogni $ p_\lambda \in K[\,x\,] $ ha almeno una radice, infatti
 		\[ p_\lambda(\overline{x_\lambda}) = \overline{p_\lambda(x_\lambda)} = 0 \]
 	\end{enumerate}
 	
-	Non è però facile dimostrare che $ E_1 $ contiene anche le radici dei suoi polinomi, possiamo ovviare al problema costruendo in modo analogo $$  E_2 \subseteq E_3 \subseteq E_4 \subseteq \dots  $$
+	Non è però facile dimostrare che $ E_1 $ contiene anche le radici dei suoi polinomi, possiamo ovviare al problema costruendo in modo analogo $$ E_1 \subseteq E_2 \subseteq E_3 \subseteq E_4 \subseteq \dots  $$
 	ogni volta infilandoci le radici di tutti i polinomi a coefficienti nel campo precedente. Consideriamo infine il grande campo
-	\[ \Omega = \bigcup_{n \in \mathbb{N}} E_n \]
-	questo campo sarà algebricamente chiuso perché ogni polinomio di $ \Omega[\,x\,] $ ha finiti monomi e pertanto vive in $ E_{m} $, per un qualche indice $ m $, dunque ha radici in $ E_{m+1} \subseteq \Omega $.
+	\[ \Omega = \bigcup_{n \in \mathbb{N}} E_n. \]
+	Quest'oggetto sarà algebricamente chiuso: ogni polinomio di $ \Omega[\,x\,] $ ha finiti monomi e pertanto vive in $ E_{m} $, per un qualche indice $ m $, dunque ha radici in $ E_{m+1} \subseteq \Omega $.
 	
 	Per concludere, possiamo considerare 
 	\[ \overline{K} = \{ \alpha \in \Omega \mid \alpha \text{ è algebrico su } K \} \]
