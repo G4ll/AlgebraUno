@@ -638,14 +638,14 @@ e chiediamoci:
 \begin{proof}
 	Concentriamoci sull'esistenza. Prendiamo l'insieme di tutti i polinomi non costanti a coefficienti nel campo in questione e indicizziamoli opportunamente
 	$$  \{ p \in K[\,x\,] \mid \deg p > 0 \} = \{p_\lambda \mid \lambda \in \Lambda\};  $$
-	costruiamo ora l'anello dei polinomi su $ K $ con tante incognite quante i polinomi di $ K[\,x\,] $: ovvero, chiamato
+	costruiamo ora l'anello dei polinomi su $ K $ con tante incognite quante i polinomi di $ K[\,x\,] $: detto
 	\[ X = \{ x_\lambda \}_{\lambda \in \Lambda}, \]
 	consideriamo l'anello
 	\[ K[X] \]
 	e in questo anello l'ideale
 	\[ I = (p_{\lambda}(x_{\lambda}))_{\lambda \in \Lambda} \subseteq K[X]. \]
 	
-	Osserviamo che $ I $ non è massimale, vale a dire
+	Osserviamo che $ I $ è un ideale proprio, vale a dire
 	\[ I \neq (1). \]
 	Se così non fosse avremmo una serie di indici $ \{1, \dots, n\} \subseteq \Lambda $ e coefficienti $ f_1, \dots, f_n \in K[X] $ tali che
 	\[ \sum f_i p_i(x_i) = 1, \]
@@ -665,7 +665,7 @@ e chiediamoci:
 	\[ 1 = \psi(1) = \sum \psi(f_i)\psi(p_i(x_i)) = 0, \]
 	ovvero, una contraddizione!
 	
-	Pertanto $ I $ non è massimale, dunque è contenuto in un qualche ideale massimale $ M $ (abbiamo usato il lemma di Zorn per dimostrare questo lemma \ref{idmax}):
+	Pertanto $ I $ è proprio, dunque è contenuto in un qualche ideale massimale $ M $ (\ref{idmax}):
 	\[ I \subseteq M \subseteq K[X]. \]
 	Ci è quindi concesso porre
 	\[ E_1 = \faktor{K[X]}{M}, \]
@@ -687,7 +687,7 @@ e chiediamoci:
 	Quest'oggetto sarà algebricamente chiuso: ogni polinomio di $ \Omega[\,x\,] $ ha finiti monomi e pertanto vive in $ E_{m} $, per un qualche indice $ m $, dunque ha radici in $ E_{m+1} \subseteq \Omega $.
 	
 	Per concludere, possiamo considerare 
-	\[ \overline{K} = \{ \alpha \in \Omega \mid \alpha \text{ è algebrico su } K \} \]
+	\[ \boxed{\overline{K} = \{ \alpha \in \Omega \mid \alpha \text{ è algebrico su } K \}} \]
 	e osservare che
 	\begin{enumerate}
 		\item è un campo: infatti presi $ \alpha, \beta \in \overline{K} $, abbiamo che
