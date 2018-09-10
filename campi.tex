@@ -146,6 +146,8 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 \subsection{Separabilità}
 \begin{multicols}{2}
 	
+	\textsf{Questa pagina ha accumulato nel tempo una quantità tale di problemi che l'autore ha infine deciso di abbandonarla, questi si sono stratificati nel tempo e si presentano ora nella loro forma più temibile: l'omissione. Si consiglia cautela.}
+	
 	\begin{theorem}[di immersione]\label{est}
 		Sia $ \faktor{K(\alpha)}{K} $ un'estensione algebrica semplice. Ogni immersione
 		\[ \varphi: K \hookrightarrow \overline{K} \]
@@ -167,8 +169,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 		otteniamo una mappa iniettiva, come cercato.
 		Dobbiamo pertanto scegliere $ \beta $ tra le radici di $ \varphi(\mu_\alpha) $; facendolo siamo sicuri che
 		\[ (\mu_\alpha) \subseteq \ker{\Phi} \]
-		ed essendo $ (\mu_\alpha) $ massimale e l'immagine non banale (perché stiamo quantomeno immergendo il campo), otteniamo
-		\[ (\mu_\alpha) = \ker{\Phi} .\]
+		ed essendo $ (\mu_\alpha) $ massimale e l'immagine non banale (perché stiamo quantomeno immergendo il campo), otteniamo $ (\mu_\alpha) = \ker{\Phi} $.
 	\end{proof}
 
 
@@ -199,7 +200,7 @@ Tuttavia, aggiungendo un'ipotesi riusciamo a invertire il risultato:
 	ammette esattamente n estensioni.
 \end{theorem}
 \begin{proof}
-	Il grado di $ \varphi\mu_\alpha $ è $ n $, che ammette esattamente $ n $ radici distinte. Il teorema \ref{est} conclude.
+	 Il teorema \ref{est} ci dice che abbiamo tante estensioni quante le radici di $ \varphi\mu_\alpha $, ovvero $ n $.
 \end{proof}
 \begin{remark}
 	Il teorema precedente si generalizza per induzione al caso di estensioni finite.
@@ -295,7 +296,7 @@ Introduciamo ora un'altra utile proprietà di alcune estensioni
 	 ma, visto che $ \varphi $ è iniettivo, $ \varphi(F) $ e $ F $ hanno lo stesso grado e pertanto sono la stessa estensione di $ K $.
 \end{proof}
 
- Consideriamo ora il problema del comportamento della normalità attraverso le torri di estensioni
+ Chiediamoci ora come si comporta la normalità lungo le torri, prendiamone una
 \[\begin{tikzcd}[row sep=0.25cm]
 L \arrow [d,-] \\
 F \arrow [d,-] \\
@@ -304,9 +305,9 @@ K
 
 e chiediamoci:
 \begin{itemize}
-	\item Se L/K è normale, lo è anche L/F?
+	\item Se L/K è normale, lo è anche L/F? 	Sì!
 	
-	Sì! Se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che già rispettava l'estensione $$  \varphi(L)=L  $$
+ Se $ \varphi $ è un $ F $-omomorfismo è anche un $ K $-omomorfismo, che già rispettava l'estensione $$  \varphi(L)=L  $$
 	
 	\item Se L/K è normale, lo è anche F/K? No!
 	\[\begin{tikzcd}[column sep=0.25cm]
@@ -343,11 +344,11 @@ e chiediamoci:
 	In questo caso il gruppo degli automorfismi 
 	\[ \text{Aut}_K(E) = \{ \varphi : E \to E \mid \varphi_K = id \} \]
 	per normalità è costituito dalle estensioni delle immersioni di $ K $ nella sua chiusura algebrica
-	\[ \text{Aut}_K(E) = \{ \varphi : E \to \bar{K} \mid \varphi_K = id  \} \]
-	che, per separabilità, sono tante quante il grado dell'estensione
-	\[ |\text{Aut}_K(E)| = [E : K] \]
-	e viene chiamato \emph{gruppo di Galois} dell'estensione
-	\[ \Gal{\faktor{E}{K}} := \text{Aut}_K(E) \]
+	\[ \text{Aut}_K(E) = \{ \varphi : E \to \bar{K} \mid \varphi_K = id,  \} \]
+	le quali, per separabilità, sono tante quante il grado dell'estensione
+	\[ |\text{Aut}_K(E)| = [E : K]. \]
+	Questo viene chiamato \emph{gruppo di Galois} dell'estensione
+	\[ \Gal{\faktor{E}{K}} := \text{Aut}_K(E). \]
 	
 	Possiamo anche parlare del gruppo di Galois di un polinomio, riferendoci indirettamente al gruppo di Galois dell'estensione corrispondente a quella del suo campo di spezzamento, le due definizioni sono equivalenti per la proposizione \ref{carnorm}.
 	
