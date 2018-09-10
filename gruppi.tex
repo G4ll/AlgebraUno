@@ -18,7 +18,7 @@
 	Chiamiamo $$  \Int{G} = \{ \varphi_g \mid g \in G \}  $$ il sottogruppo degli automorfismi interni, ovvero degli automorfismi di $ G $ che sono dati dal coniugio per un elemento del gruppo stesso: \[ \varphi_g(x) = gxg^{-1} \quad\forall x \in G.\]
 \end{definition}
 
-\`{E} immediato osservare che $ \Int{G} \lhd \Aut{G} $.
+Si osserva che $ \Int{G} \lhd \Aut{G} $.
 
 \begin{prop}[degli Automorfismi Interni]
 	\[ \Int{G} \cong \faktor{G}{Z(G)} \]
@@ -97,12 +97,12 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\item $ [G = C,\; X = \mathbb{R}^2 ] $ e l'azione dell'ultimo esempio. Questa ruota ogni punto attorno all'origine, pertanto le orbite sono circonferenze centrate nell'origine e gli stabilizzatori sono tutti banali, tranne quello dell'origine che coincide con $ G $.
 	\item $ [G = \mathbb{R},\; X = \mathbb{R}^2 ] $ e l'azione che trasforma $ r \in \mathbb{R} $ nella traslazione orizzontale di lunghezza $ r $. Le orbite sono le rette parallele alla traslazione e gli stabilizzatori sono tutti banali.
 	\item $ [G,\; X = G ] $ e l'azione sia la mappa che manda un elemento $ g $ nel coniugio per questo $ \varphi_g(x) = gxg^{-1} $. L'orbita di un elemento contiene tutti i coniugati di questo ed è detta \emph{classe di coniugio} di $ x $ $ (\mathcal{C}_x) $. Lo stabilizzatore di $ x $ contiene tutti e soli gli elementi tali che $ xg = gx $, ovvero il sottogruppo di tutti gli elementi che commutano con $ x $, è detto \emph{centralizzatore} di $ x $ ($ Z_G(x) $).
-	\item $ [G,\; X = \{ H \mid H < G \} ] $ e l'azione di coniugio. Le orbite non sono particolarmente interessanti, mentre lo stabilizzatore di un sottogruppo è detto \emph{Normalizzatore} di $ H $, $ N(H) $ ed è il più grande sottogruppo di $ G $ in cui $ H $ è normale.
+	\item $ [G,\; X = \{ H \mid H < G \} ] $ e l'azione di coniugio. Lo stabilizzatore di un sottogruppo è detto \emph{Normalizzatore} di $ H $, $ N(H) $, ed è il più grande sottogruppo di $ G $ in cui $ H $ è normale.
 \end{enumerate}
 \begin{remark}
 	$ H \lhd\, G \;\Leftrightarrow\; N(H) = G $.
 \end{remark}
-\begin{remark}[euristica]
+\begin{remark}
 	Le azioni più comuni sono quelle naturali: il coniugio, la moltiplicazione a sinistra e, talvolta, la moltiplicazione a destra per l'inverso.
 \end{remark}
 \end{multicols}
@@ -112,14 +112,14 @@ z &\mapsto \mathcal{R}(O, \arg z)
 
 \begin{theorem}[Formula delle Classi]
 	In ogni gruppo finito
-	\[ |G| = |Z(G)| + \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} \]
+	\[ |G| = |Z(G)| + \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|}. \]
 \end{theorem}
 \begin{proof}
-	Osserviamo cosa succede lasciando agire $ G $ su se stesso per coniugio (l'esempio 3 di sopra): riprendiamo la partizione di $ X $ in orbite, separando quelle banali dalle altre otteniamo
+	Facciamo agire $ G $ su se stesso per coniugio (l'esempio 3 di sopra): abbiamo già osservato che $ X $ viene partizionato in orbite, alcune delle quali saranno banali:
 	
-	\[ |X| = \sum_{\substack{x \in R \\ \Orb{x} = \{x\} }} 1 + \sum_{\substack{x \in R \\ \Orb{x} \neq \{x\} }} \frac{|G|}{|\Stab{x}|} \]
+	\[ |X| = \sum_{\substack{x \in R \\ \Orb{x} = \{x\} }} 1 + \sum_{\substack{x \in R \\ \Orb{x} \neq \{x\} }} \frac{|G|}{|\Stab{x}|}. \]
 	
-	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x \; \forall g \in G $, ovvero nel caso in cui $ x $ commuta con tutti gli elementi di $ G $: vale a dire, quando vive nel centro $ Z(G) $.
+	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x \; \forall g \in G $, ovvero nel caso in cui $ x $ commuta con tutti gli elementi di $ G $: vale a dire, quando vive nel centro $ Z(G) $.  Per concludere è sufficiente ricordare la definizione di centralizzatore.
 \end{proof}
 
 \begin{definition}[$ p $-gruppo]
@@ -159,11 +159,14 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{proof}
 \begin{proof}[Dimostrazione Magica]
 	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ p-1 $ l'ultimo dev'essere il suo unico inverso.
-	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple. Ogni elemento ha un'orbita banale o lunga $ p $, visto che il rispettivo stabilizzatore ha ordine divisore di $ p $. Inoltre, gli elementi con orbita banale sono quelli con $ x_1 = \dots = x_p = g $ e $ g^p = 1 $, dunque proprio quelli che stiamo cercando: diciamo di averne $ n $. Consideriamo ora il numero di elementi con orbita \emph{non} banale:
-	visto che le orbite hanno cardinalità $ p $ e partizionano questo insieme
+	Facciamo agire $ \Z_p $ su $ X $, in modo che cicli le $ p $-uple. Ogni elemento ha un'orbita banale o lunga $ p $. Gli elementi con orbita banale sono quelli con $ x_1 = \dots = x_p = g $ e $ g^p = 1 $, dunque proprio quelli che stiamo cercando: diciamo di averne $ n $. Consideriamo ora il numero di elementi con orbita \emph{non} banale:
+	visto che le orbite hanno cardinalità $ p $ e partizionano l'insieme delle $ p $-uple rimanenti
 	\[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \]
-	e poiché $ e^p = e $ ci sono almeno $ p - 1 $ elementi di ordine $ p $.
+	e, assodato che $ e^p = e $, ci devono essere almeno $ p - 1 $ elementi di ordine $ p $.
 \end{proof}
+
+
+\subsubsection{Fatti che non stavano da nessuna parte}
 
 \begin{definition}[Sottogruppo generato]
 	Sia $ S \subset G $ un \emph{sottoinsieme} di $ G $. Chiamiamo $ \langle S \rangle $ il più piccolo sottogruppo contenente $ S $, sottogruppo generato da $ S $. \[ \langle S \rangle = \bigcap_{\substack{H \leq G \\ S \subseteq H }} H  \]
@@ -213,7 +216,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \begin{theorem}[Caratterizzazione di $ D_n $]
 	Si ha \[ D_n = \langle \rho, \sigma \mid \rho ^n = e, \sigma^2 = e, \sigma \rho \sigma = \rho^{-1} \rangle \]
 \end{theorem}
-\textsf{Questo enunciato non si capisce, non si è mai parlato prima di presentazione di gruppi. Rileggendo la dimostrazione aumenta questo assurdo senso di incompletezza: dove stiamo andando? cosa vogliamo dimostrare? Non lo so.}
+\textsf{Questo enunciato non si capisce, non si è mai parlato prima di presentazione di gruppi. Rileggendo la dimostrazione aumenta questo assurdo senso di incompletezza: dove stiamo andando? cosa vogliamo dimostrare? qual è il significato profondo della vita, l'universo e tutto quanto? Non lo so.}
 \begin{proof}
 	Tutti gli elementi sopra definiti possiamo ridurli a un elemento della forma $ \rho^k $ o $ \sigma \rho^k $ per un qualche $ 0 \leq k < n $. Questo perché i generatori si presentano in questa forma e ogni operazione permessa (composizione e inversione) tra due generatori produce un risultato che può immediatamente essere ridotto alla forma cercata attraverso le cancellazioni consentite. Inoltre possiamo immergere questo gruppo in un sottogruppo di $ \mathbf{O}_2(\mathbb{R}) $ di ordine $ 2n $ attraverso l'omomorfismo suriettivo \begin{align*}
 	\Phi \colon \gen{\rho, \sigma} &\to \mathbf{O}_2(\mathbb{R}) \\
@@ -358,8 +361,6 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \begin{prop}[di spezzamento]
 	La classe di coniugio di $ \sigma $ in $ \S_n $ si spezza in $ \mathcal{A}_n $ se e solo se $ \sigma $ è composto da cicli di lunghezze dispari e distinte.
 \end{prop}
-
-
 
 
 \begin{remark}
