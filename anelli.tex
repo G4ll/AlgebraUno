@@ -2,13 +2,13 @@
 \section{Anelli}
 \subsection{Prime definizioni}
 \begin{multicols}{2}
-Per \textquotedblleft Anello" si intende un anello commutativo con identità.
+Lavoreremo sempre in anelli commutativi con unità.
 
 \begin{definition}[Divisori di 0]
 	Un elemento di un anello $ x \in A $ si dice \emph{divisore di zero} quando
-	\[ \exists y \in A \quad\text{    tale che    }\quad yx = 0 \]
-	Un anello $ A $ si dice \emph{dominio d'integrità} quando l'unico divisore di zero è lo 0 stesso
-	\[ \mathcal{D}:= \{\text{divisori di zero}\} = \{0\} \]
+	\[ \exists y \in A \quad\text{    tale che    }\quad yx = 0. \]
+	Un anello $ A $ si dice \emph{dominio d'integrità} quando non ci sono divisori di zero non-nulli:
+	\[ \mathcal{D}:= \{\text{divisori di zero}\} = \{0\}. \]
 \end{definition}
 \begin{definition}[Nilpotenza]
 	Un elemento di un anello $ x \in A $ si dice \emph{nilpotente} quando
@@ -102,7 +102,6 @@ ma $ \deg{a_k g} < \deg{g} $, quindi dobbiamo avere necessariamente che $ a_k g 
 	(è quasi completamente ovvia guardando la contronominale)
 \end{remark}
 
-
 \begin{remark}
 	Un campo $ \mathbb{K} $ ha solo ideali banali.
 \end{remark}
@@ -115,6 +114,8 @@ ma $ \deg{a_k g} < \deg{g} $, quindi dobbiamo avere necessariamente che $ a_k g 
 		\item $ f(1_A)=f(1_B) $
 	\end{enumerate}
 \end{definition}
+
+\textsf{Gli ideali di un anello rivestono il ruolo che ricoprivano i sottogruppi normali per i gruppi: sono l'oggetto per cui si può quozientare senza perdere la struttura algebrica, in questo caso quella di anello. Riusciamo dunque ad estendere i teoremi di omomorfismo, nonché i loro corollari, alla teoria degli anelli: nella seguente dimosrazione riusciamo ad appoggiarci alla versione per gruppi "dimenticandoci" la struttura moltiplicativa.}
 
 \begin{theorem}[di omomorfismo]\label{omoanelli}
 	Dato un omomorfismo di anelli $ f $ e un ideale $ I \subseteq \ker f $, esiste ed è unico l'omomorfismo $ \bar{f} $ che fa commutare il seguente diagramma
@@ -164,6 +165,18 @@ ma $ \deg{a_k g} < \deg{g} $, quindi dobbiamo avere necessariamente che $ a_k g 
 	La controimmagine di un ideale del quoziente, per il lemma precedente (\ref{immideali}), è ancora un ideale.
 	Inoltre, essendo un ideale, contiene lo $ 0 $, dunque la sua controimmagine contiene $ \ker f = I $. Osserviamo ora che, essendo la proiezione una mappa suriettiva, l'immagine di ogni ideale è ancora un ideale! Pertanto è sufficiente mostrare che ideali diversi, contenenti $ I $, vengono mandati dalla proiezione in ideali diversi: difatti i rispettivi gruppi additivi vengono mandati, per l'analogo teorema sui gruppi, in gruppi distinti.
 \end{proof}
+
+\subsubsection{Operazioni tra Ideali}
+Dati due ideali $ I $ e $ J $ possiamo definirne la \emph{somma}
+\[ I+J = \{i + j \mid i \in I,\, j\in J \}. \]
+Il \emph{prodotto} è un poco più delicato da definire: prendere semplicemente i prodotti di coppie di elementi non basta a garantirci di ottenere un ideale, lo definiamo dunque come il più piccolo ideale che li contiene tutti
+\[ IJ = \left\{ \sum r_ki_kj_k \mid i_k \in I, \, j_k \in J \right\}. \]
+Il \emph{radicale} di un ideale è l'insieme
+\[ \sqrt{I} = \{ a \in A \mid \exists n \text{ t.c. } a^n \in I \},\]
+questa volta è tutto il contrario: non sembra, ma questo insieme è già un ideale.
+L'ultima operazione cade sotto lo svenutrato nome di \emph{quoziente}
+\[ (I \colon J) = \{ a \in A \mid aJ \subseteq I \}. \]
+
 \begin{remark}
 	Vale sempre che
 	\[ IJ \subseteq I \cap J \]
@@ -188,20 +201,20 @@ ma $ \deg{a_k g} < \deg{g} $, quindi dobbiamo avere necessariamente che $ a_k g 
 	La mappa
 	\fun{f}{A}{\faktor{A}{I} \times \faktor{A}{J}}{a}{(a + I, a + J)}
 	è un omomorfismo di nucleo
-	\[ \ker f = I \cap J \]
-	Inoltre $ f $ è suriettivo se e solo se $ I + J = A $: se $ f $ è suriettivo, prendiamo un elemento $ a $ nella controimmagine di $ (1 + I, J) $, ossia un elemento tale che 
+	\[ \ker f = I \cap J. \]
+	Mostriamo ora che $ f $ è suriettivo se e solo se $ I + J = A $: se $ f $ è suriettivo, prendiamo un elemento $ a $ nella controimmagine di $ (1 + I, J) $, ossia un elemento tale che 
 	$ a-1 \in I $ e $ a \in J $.
-	Pertanto 
-	\[ a-1 = i \quad\Rightarrow\quad 1 = a + i \in I + J \]
-	Se invece $ 1 \in I + J $, allora possiamo trovare due elementi tale che \[ 1 = i + j \]
+	Questo buffo elemento ci permette di costruire l'unità:
+	\[ 1 = a + (1-a) \in I + J. \]
+	Se invece $ 1 \in I + J $, allora esistono due elementi $ i, j $ tali che \[ 1 = i + j \]
 	e scelta una qualunque coppia $ (x + I, y + J) $, abbiamo che
 	\[ y + j(x-y) = xj + yi = x + i(y-x) \]
 	Dunque, se $ I + J = A $, abbiamo $ \ker f = I \cap J = IJ $ per l'osservazione di sopra.
 \end{proof}
 
 \begin{definition}[ideale primo]
-	Un ideale $ I \subseteq A $ si dice \emph{primo} quando
-	\[ \forall x, y \in A \qquad xy \in I \;\Rightarrow\; x \in I \text{ o } y \in I \]
+	Un ideale $ I \subseteq A $ si dice \emph{primo} quando soddisfa
+	\[ \forall x, y \in A \qquad xy \in I \;\Rightarrow\; x \in I \text{ o } y \in I. \]
 \end{definition}
 
 \begin{definition}[ideale massimale]
@@ -252,15 +265,15 @@ I \text{ primo} \arrow{r}  &  \faktor{A}{I} \text{ dominio} \arrow{l}
 \end{proof}
 	
 
-\subsubsection{Prodotto diretto tra anelli} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale \[ (1, 0)(0, 1) = (0, 0) \] il prodotto non è un dominio. I nilpotenti e gli invertibili nel prodotto sono prodotto dei rispettivi sottoinsiemi:
-\[ \mathcal{N}_{A \times B} = \mathcal{N}_A \times \mathcal{N}_B \qquad (A\times B)^\times = A^\times \times B^\times \]
+\subsubsection{Prodotto diretto tra anelli} Il prodotto cartesiano tra due anelli $ A \times B $, con le operazioni ovvie, è ancora un anello. Inoltre, se ne nessuno dei due è banale, il prodotto non è un dominio \[ (1, 0)(0, 1) = (0, 0). \] I nilpotenti e gli invertibili nel prodotto sono prodotto dei rispettivi sottoinsiemi:
+\[ \mathcal{N}_{A \times B} = \mathcal{N}_A \times \mathcal{N}_B, \qquad (A\times B)^\times = A^\times \times B^\times. \]
 
 \begin{prop}[Fatto Piacevole]
 Gli ideali del prodotto sono tutti e soli i prodotti di ideali dei fattori.
 \end{prop}
 \begin{proof}
-	Prendiamo $ I \subseteq A \times B $ e consideriamo le proiezioni $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideale di $ A $ e $ \pi_B(I) $ è un ideale di $ B $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $, perché abbiamo già l'inclusione opposta, che è un fatto puramente insiemistico. Se $ (a, y), (x, b) \in I $, deve starci anche $ (a, b) $: ma $ (1, 0)(a, y) = (a, 0) \in I $, analogamente $ (0, b) \in I $, dunque
-	\[ (a, b) = (a, 0) + (0, b) \in I \]
+	Prendiamo $ I $ ideale di $ A \times B $ e consideriamo le proiezioni sulle componenti $ \pi_A $ e $ \pi_B $. Queste sono omomorfismi suriettivi, quindi $ \pi_A(I) $ è un ideale di $ A $ e $ \pi_B(I) $ è un ideale di $ B $. Basta ora far vedere che $ \pi_A(I) \times \pi_B(I) \subseteq I $ (l'inclusione opposta è un fatto puramente insiemistico): vogliamo dunque mostrare che presi due elementi qualunque $ (a, y), (x, b) \in I $, anche $ (a, b) $ appartiene all'ideale: $$  (1, 0)(a, y) = (a, 0) \in I  $$ perché l'ideale assorbe per moltiplicazione, analogamente $ (0, b) \in I $, pertanto
+	\[ (a, b) = (a, 0) + (0, b) \in I. \]
 \end{proof}
  
 
@@ -286,9 +299,7 @@ Poiché possiamo spezzare la mappa $ f $ passando per il quoziente
 A \arrow{r}{f} \arrow[swap]{d}{\pi} & B \\
 \faktor{A}{\ker f} \arrow[swap]{ru}{\varphi}
 \end{tikzcd} \]
-e il comportamento degli ideali attraverso la proiezione $ \pi $ è completamente determinato dal Teorema di Corrispondenza (\ref{corr}), possiamo limitarci a studiare cosa succede attraverso l'omomorfismo $ \varphi $, che essendo iniettivo possiamo scambiare con l'omomorfismo di inclusione.
-
-Prendiamo quindi $ A \subseteq B $, abbiamo
+e il comportamento degli ideali attraverso la proiezione $ \pi $ è completamente determinato dal Teorema di Corrispondenza (\ref{corr}), possiamo limitarci a studiare cosa succede attraverso l'omomorfismo $ \varphi $, che, essendo iniettivo, possiamo confondere con l'omomorfismo di inclusione. Prendiamo quindi $ A \subseteq B $, abbiamo
 \begin{enumerate}
 	\item $ J^c = J \cap A $
 	\item $ I^e = (I) $
@@ -307,8 +318,6 @@ Prendiamo quindi $ A \subseteq B $, abbiamo
 	e i sottoanelli di domini sono a loro volta domini.
 \end{proof}
 
-Teoremi analoghi con ideali massimali, o estensioni, non funzionano.
-
 \subsubsection{Fatti sul radicale}
 \begin{definition} Dato un ideale $ I \subseteq A $, chiamo radicale l'insieme
 	$$  \sqrt{I}:= \{ x \in A \mid x^n \in I \}  $$
@@ -326,12 +335,12 @@ Inoltre, ovviamente, contiene l'ideale di partenza: $ I \subseteq \sqrt{I} $.
 
 
 \begin{remark}
-	$ \sqrt{IJ} = \sqrt{I \cap J} = \sqrt{I} \cap \sqrt{J}  $. Infatti grazie alla seguente implicazione
-	\[ I \subseteq J \quad\Rightarrow\quad \sqrt{I} \subseteq \sqrt{J} \]
-	possiamo scrivere la catena di inclusioni
-	\[ \sqrt{IJ} \subseteq \sqrt{I \cap J} \subseteq \sqrt{I} \cap \sqrt{J} \subseteq \sqrt{IJ} \]
-	dove le prime due inclusioni sono l'inclusione dell'ideale di partenza, mentre l'ultima si ottiene da
-	\[ a^n \in I, b^m \in J \quad\Rightarrow\quad (ab)^{m + n} \in I \cap J )\]
+	$ \sqrt{IJ} = \sqrt{I \cap J} = \sqrt{I} \cap \sqrt{J}  $. Infatti grazie alla banale implicazione
+	\[ I \subseteq J \quad\Rightarrow\quad \sqrt{I} \subseteq \sqrt{J}, \]
+	otteniamo le prime due inclusioni della seguente catena
+	\[ \sqrt{IJ} \subseteq \sqrt{I \cap J} \subseteq \sqrt{I} \cap \sqrt{J} \subseteq \sqrt{IJ}, \]
+	mentre otteniamo l'ultima osservando che
+	\[ a^n \in I,\, b^m \in J \quad\Rightarrow\quad (ab)^{m + n} \in I \cap J .\]
 	
 	Da questo segue anche che $ \sqrt{I} = A $ se e solo se $ I = A $.
 \end{remark}
@@ -574,7 +583,7 @@ Riassumiamo in uno schemino tutte le relazioni legate alla divisibilità:
 \end{proof}
 
 \begin{remark}
-	Ripercorrendo la catena di implicazioni sopra, ci si accorge che abbiamo mostrato anche l'equivalenza tra le definizioni di irriducibile e primo  nei \textsc{pid}.
+	Ripercorrendo la catena di implicazioni sopra, ci si accorge che abbiamo mostrato anche l'equivalenza tra le definizioni di elemento irriducibile e primo  nei \textsc{pid}.
 \end{remark}
 
 \subsubsection{Dominio a Fattorizzazione Unica}
