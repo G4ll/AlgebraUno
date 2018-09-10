@@ -15,32 +15,32 @@
 \end{enumerate} 
 
 \begin{definition}[automorfismi interni]
-	Chiamiamo $$  \Int{G} = \{ \varphi_g \mid g \in G \}  $$ l'insieme di tutti gli automorfismi interni, i.e. degli automorfismi di coniugio: \[ \varphi_g(x) = gxg^{-1} \quad\forall x \in G \]
+	Chiamiamo $$  \Int{G} = \{ \varphi_g \mid g \in G \}  $$ il sottogruppo degli automorfismi interni, ovvero degli automorfismi di $ G $ che sono dati dal coniugio per un elemento del gruppo stesso: \[ \varphi_g(x) = gxg^{-1} \quad\forall x \in G.\]
 \end{definition}
 
-è immediato osservare che $ \Int{G} \lhd \Aut{G} $.
+\`{E} immediato osservare che $ \Int{G} \lhd \Aut{G} $.
 
 \begin{prop}[degli Automorfismi Interni]
 	\[ \Int{G} \cong \faktor{G}{Z(G)} \]
 \end{prop}
 \begin{proof}
-	La funzione \fun{\Phi}{G}{\Int{G}}{g}{\varphi_g} è un omomorfismo con kernel $ Z(G) $.
+	La funzione \fun{\Phi}{G}{\Int{G}}{g}{\varphi_g} è un omomorfismo con nucleo $ Z(G) $.
 \end{proof}
 
 \begin{remark}
 	Un sottogruppo è normale se e solo se viene rispettato da tutti gli automorfismi interni:
-	\[ H \lhd\, G \LR \varphi_g\left(H\right) = H \quad \forall \varphi_g \in \Int{G} \]
+	\[ H \lhd\, G \LR \varphi_g\left(H\right) = H \quad \forall \varphi_g \in \Int{G}. \]
 \end{remark}
 
 \begin{definition}[Sottogruppo caratteristico]
-	Un sottogruppo $ H < G $ si dice \emph{caratteristico} se è fissato da tutto $ \Aut{G} $, i.e. $$ \varphi\left(H\right) = H \quad \forall \varphi \in \Aut{G} $$
+	Un sottogruppo $ H < G $ si dice \emph{caratteristico} se è rispettato da tutto $ \Aut{G} $, i.e. $$ \varphi\left(H\right) = H \quad \forall \varphi \in \Aut{G} $$
 \end{definition}
 \begin{remark}
 	Un sottogruppo caratteristico è anche normale, ma non è sempre vero il viceversa: $ \langle (0, 1) \rangle \lhd\, \mathbb{Z}_2 \times \mathbb{Z}_2 $.
 \end{remark}
 
 \begin{definition}[Azione]
-	Si dice azione di un gruppo $ G $ su un insieme $ X $ un omomorfismo $ \varphi $ tale che \begin{align*}
+	Si dice azione di un gruppo $ G $ su un insieme $ X $ un omomorfismo \begin{align*}
 	\varphi \colon G &\to \mathcal{S}\left(X\right) \\
 	g &\mapsto \varphi_g(x) = g \cdot x.
 	\end{align*}
@@ -52,13 +52,13 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{align*}
 
 \begin{remark}
-	Un'azione induce naturalmente una relazione di equivalenza su $ X $: $ x \sim y \Leftrightarrow \exists g \in G $ tale che $ g \cdot x = y $. Viene quindi spontaneo prendere in considerazione gli elementi della partizione così ottenuta. 
+	Un'azione induce naturalmente una relazione di equivalenza su $ X $: $ x \sim y \Leftrightarrow \exists g \in G $ tale che $ g \cdot x = y $. Viene quindi spontaneo prendere in considerazione la partizione di $ X $ così ottenuta.
 \end{remark}
 \begin{definition}[Orbita]
 	Si dice \emph{orbita} di un elemento $ x \in X $ l'insieme di tutti gli elementi che posso essere raggiunti da $ x $ tramite l'azione: \[ \Orb{x} = \{ g \cdot x \mid \forall g \in G \}. \]
 \end{definition}
 \begin{remark}
-	Detto $ R $ un insieme di rappresentanti delle varie orbite, visto che queste formano una partizione: \[ X = \bigcup_{x \in R} \Orb{x} \quad\Rightarrow\quad |X| = \sum_{x \in R} |\Orb{x}| \]
+	Detto $ R $ un insieme di rappresentanti delle varie orbite, visto che queste formano una partizione: \[ X = \bigsqcup_{x \in R} \Orb{x} \quad\Rightarrow\quad |X| = \sum_{x \in R} |\Orb{x}|. \]
 \end{remark}
 
 \begin{definition}[Stabilizzatore]
@@ -100,7 +100,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\item $ [G,\; X = \{ H \mid H < G \} ] $ e l'azione di coniugio. Le orbite non sono particolarmente interessanti, mentre lo stabilizzatore di un sottogruppo è detto \emph{Normalizzatore} di $ H $, $ N(H) $ ed è il più grande sottogruppo di $ G $ in cui $ H $ è normale.
 \end{enumerate}
 \begin{remark}
-	$ H \lhd\, G \;\Leftrightarrow\; N(H) = G $
+	$ H \lhd\, G \;\Leftrightarrow\; N(H) = G $.
 \end{remark}
 \begin{remark}[euristica]
 	Le azioni più comuni sono quelle naturali: il coniugio, la moltiplicazione a sinistra e, talvolta, la moltiplicazione a destra per l'inverso.
@@ -115,11 +115,11 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\[ |G| = |Z(G)| + \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} \]
 \end{theorem}
 \begin{proof}
-	Osserviamo cosa succede nel caso dell'azione di coniugo di $ G $ in sè (l'esempio 3 di sopra): riprendiamo la partizione di $ X $ in orbite, ma separando quelle banali da quelle non
+	Osserviamo cosa succede lasciando agire $ G $ su se stesso per coniugio (l'esempio 3 di sopra): riprendiamo la partizione di $ X $ in orbite, separando quelle banali dalle altre otteniamo
 	
 	\[ |X| = \sum_{\substack{x \in R \\ \Orb{x} = \{x\} }} 1 + \sum_{\substack{x \in R \\ \Orb{x} \neq \{x\} }} \frac{|G|}{|\Stab{x}|} \]
 	
-	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x $, $ \forall g \in G $, ovvero solo nel caso in cui $ x $ commuta con tutti gli elementi di $ G $ o, meglio, quando vive nel centro $ Z(G) $.
+	L'orbita di $ x $ è banale se e solo se $ gxg^{-1} = x \; \forall g \in G $, ovvero nel caso in cui $ x $ commuta con tutti gli elementi di $ G $: vale a dire, quando vive nel centro $ Z(G) $.
 \end{proof}
 
 \begin{definition}[$ p $-gruppo]
@@ -129,42 +129,40 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \textbf{Proprietà.}
 \begin{enumerate}
 	\item \textbf{Un $ p $-gruppo $ G $ ha centro non banale.} Tutti i centralizzatori degli elementi di $ R' $ hanno dimensione $ p^k $ per un intero $ 0 \leq k < n $, dunque
-	\[ p \mid \frac{|G|}{|Z_G(x)|} \forall x \in R' \]
-	pertanto, per la formula delle classi,
-	\[ p \mid |G| - \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} = |Z(G)| \]
-	che quindi, contenendo $ e $, deve avere almeno $ p $ elementi.
+	\[ p \mid \frac{|G|}{|Z_G(x)|} \quad\forall x \in R'. \]
+	Scrivendo la formula delle classi, scopriamo che il centro ha cardinalità divisibile per $ p $:
+	\[ p \mid |G| - \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} = |Z(G)|. \]
+	Contenendo già $ e $, il centro deve avere almeno altri $ p-1 $ elementi.
 	
-	\item \textbf{I gruppi di ordine $ p^2 $ sono abeliani.} Il centro di $ G $ avrà, per quanto appena dimostrato, ordine $ p $ o $ p^2 $. Nel secondo caso abbiamo finito. Nel primo \[  \left|\faktor{G}{Z(G)}\right| = p \] dunque il quoziente è ciclico. Possiamo appellarci al seguente lemma:
+	\item \textbf{I gruppi di ordine $ p^2 $ sono abeliani.} Il centro di $ G $ avrà, per quanto appena dimostrato, ordine $ p $ o $ p^2 $. Nel secondo caso abbiamo finito. Nel primo \[  \left|\faktor{G}{Z(G)}\right| = p, \] dunque il quoziente è ciclico e possiamo appellarci al seguente lemma:
 	\begin{prop}
 		Se il quoziente tra un gruppo e il suo centro è ciclico, allora il gruppo è abeliano.
 	\end{prop}
-	Presi due elementi qualunque $ x, y \in G $ possiamo esprimerli come $ x = g^h a $ e $ y = g^k b $, dove $ g $ è il generatore del quoziente e $ a, b \in Z(G) $. Allora, sfruttando la commutatività degli elementi del centro \[ xy = (g^h a) (g^k b) = g^{h+k} ab = g^{k+h} ba = (g^k b) (g^h a) = yx \]
-	ricaviamo la commutativa per tutti gli elementi del gruppo.
+	Presi due elementi qualunque $ x, y \in G $ possiamo esprimerli come $ x = g^h a $ e $ y = g^k b $, dove $ g $ è il generatore del quoziente e $ a, b \in Z(G) $. Allora, sfruttando la commutatività degli elementi del centro, ricaviamo la commutativa per tutti gli elementi del gruppo: \[ xy = (g^h a) (g^k b) = g^{h+k} ab = g^{k+h} ba = (g^k b) (g^h a) = yx. \]
+	
 	
 	\item Una possibile dimostrazione del Teorema di Cauchy:
 \end{enumerate}
-
+\columnbreak
 \begin{theorem}[di Cauchy] \label{cauchy}
 	Per ogni fattore primo $ p $ di $ |G| $ esiste un elemento $ g $ di $ G $ di ordine $ p $.
 \end{theorem}
 \begin{proof}[Dimostrazione Classica]
-	Sia $ |G|= pn $, procediamo per induzione su $ n $. \\
-	
-	Se $ n = 1 $, $ G $ è ciclico, quindi ha un generatore di ordine $ p $. \\
-	
-	Supponiamo ora che tutti i gruppi di ordine $ kp  \quad\forall k < m$ abbiamo un elemento di ordine $ p $. Se $ |G|=pm $ ci sono due casi:
-	\begin{enumerate}
-		\item Esiste un sottogruppo proprio $ H $ di ordine multiplo di $ p $, da cui ricadiamo nell'ipotesi induttiva.
-		\item Nessun sottogruppo di $ G $ ha ordine divisibile per $ p $, allora
-		\[ p \mid \frac{|G|}{|Z_G(x)|} \forall x \in R' \] perché i $ Z_G(x) < G $. Per la formula delle classi
+	Sia $ |G|= pn $, procediamo per induzione su $ n $.
+	Se $ n = 1 $, $ G $ è ciclico, quindi ha un generatore di ordine $ p $.
+	Supponiamo ora, come ipotesi induttiva, che tutti i gruppi più piccoli di qualche valore fissato (di ordine $ kp $ con $ k < m $) abbiamo un elemento di ordine $ p $. Prendiamo ora un gruppo con cardinalità proprio $ |G|=pm $. \`{E} chiaro che se $ G $ avesse un sottogruppo proprio di ordine multiplo di $ p $, lì vi troveremmo per ipotesi induttiva l'elemento cercato. Supponiamo quindi che nessun sottogruppo di $ G $ abbia ordine divisibile per $ p $, in particolare nemmeno i centralizzatori (che ricordiamo essere sottogruppi) hanno ordine divisibile per $ p $, da cui la seguente relazione di divisbilità:
+		\[ p \mid \frac{|G|}{|Z_G(x)|} \forall x \in R' .\]
+	Grazie alla formula delle classi scopriamo che
 		\[ p \mid |G| - \sum_{\substack{x \in R'}} \frac{|G|}{|Z_G(x)|} = |Z(G)| \]
-		ma abbiamo supposto che i sottogruppi propri non abbiamo ordine multiplo di $ p $, dunque il centro deve coincidere con l'intero gruppo, che risulta pertanto commutativo.
-	\end{enumerate}
+	ma avevamo supposto che i sottogruppi propri non avessero ordine multiplo di $ p $, dunque il centro deve coincidere con l'intero gruppo, che risulta pertanto commutativo.
+
 \end{proof}
 \begin{proof}[Dimostrazione Magica]
 	Sia $$ X = \{(x_1, \dots, x_p) \in G^p \mid x_1\cdots x_n = 1 \} $$ questo insieme ha esattamente $ |G|^{p-1} $ elementi, infatti scelti i primi $ p-1 $ l'ultimo dev'essere il suo unico inverso.
-	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple, e osserviamo che ogni stabilizzatore può essere banale, nel caso di $ p $ elementi ripetuti, o tutto il gruppo. Ci interessa contare il numero di stabilizzatori banali!
-	Detto $ n $ il numero di $ g $ tali che $ g^p = 1 $ \[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \] e poiché $ e^p = e $ ci sono almeno $ p - 1 $ elementi di ordine $ p $.
+	Facciamo agire $ \Z_p $ su $ X $, in modo da ciclare le $ p $-uple. Ogni elemento ha un'orbita banale o lunga $ p $, visto che il rispettivo stabilizzatore ha ordine divisore di $ p $. Inoltre, gli elementi con orbita banale sono quelli con $ x_1 = \dots = x_p = g $ e $ g^p = 1 $, dunque proprio quelli che stiamo cercando: diciamo di averne $ n $. Consideriamo ora il numero di elementi con orbita \emph{non} banale:
+	visto che le orbite hanno cardinalità $ p $ e partizionano questo insieme
+	\[ p \mid |G|^{p-1} - n \quad\Rightarrow\quad p \mid n \]
+	e poiché $ e^p = e $ ci sono almeno $ p - 1 $ elementi di ordine $ p $.
 \end{proof}
 
 \begin{definition}[Sottogruppo generato]
@@ -174,9 +172,9 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\[ \langle S \rangle = \{ s_1 \cdots s_k \mid k \in \mathbb{N}, \; s_i \in S \cup S^{-1} \} \]
 \end{prop}
 \begin{proof}
-	\`{E} sufficiente osservare che tutti gli elementi di $ S $ devono comparire in tutti i gruppi che contengono $ S $ e che l'insieme proposto è un sottoinsieme chiuso per le operazioni di gruppo, pertanto è un sottogruppo.
+	\`{E} sufficiente osservare che tutti gli elementi di $ S $ devono comparire in tutti i gruppi che contengono $ S $ e che l'insieme proposto è un sottoinsieme chiuso per le operazioni di gruppo, dunque un sottogruppo.
 \end{proof}
-
+\columnbreak
 \textbf{Proprietà.}
 \begin{enumerate}
 	\item $ \langle S \rangle $ è abeliano se e solo se tutti gli elementi di $ S $ commutano fra loro.
@@ -215,9 +213,10 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \begin{theorem}[Caratterizzazione di $ D_n $]
 	Si ha \[ D_n = \langle \rho, \sigma \mid \rho ^n = e, \sigma^2 = e, \sigma \rho \sigma = \rho^{-1} \rangle \]
 \end{theorem}
+\textsf{Questo enunciato non si capisce, non si è mai parlato prima di presentazione di gruppi. Rileggendo la dimostrazione aumenta questo assurdo senso di incompletezza: dove stiamo andando? cosa vogliamo dimostrare? Non lo so.}
 \begin{proof}
-	Tutti gli elementi sopra definiti possiamo ridurli a un elemento della forma $ \rho^k $ o $ \sigma \rho^k $ per un qualche $ 0 \leq k < n $. Questo perché così sono fatti i generatori e ogni operazione permessa (composizione e inversione) tra due generatori può immediatamente essere ridotta a questa forma attraverso le cancellazioni imposte. Inoltre possiamo immergere $ D_n $ in un sottogruppo di $ \mathbf{O}_2(\mathbb{R}) $ di ordine $ 2n $ attraverso un omomorfismo suriettivo: \begin{align*}
-	\Phi \colon D_n &\to \mathbf{O}_2(\mathbb{R}) \\
+	Tutti gli elementi sopra definiti possiamo ridurli a un elemento della forma $ \rho^k $ o $ \sigma \rho^k $ per un qualche $ 0 \leq k < n $. Questo perché i generatori si presentano in questa forma e ogni operazione permessa (composizione e inversione) tra due generatori produce un risultato che può immediatamente essere ridotto alla forma cercata attraverso le cancellazioni consentite. Inoltre possiamo immergere questo gruppo in un sottogruppo di $ \mathbf{O}_2(\mathbb{R}) $ di ordine $ 2n $ attraverso l'omomorfismo suriettivo \begin{align*}
+	\Phi \colon \gen{\rho, \sigma} &\to \mathbf{O}_2(\mathbb{R}) \\
 	\sigma &\mapsto \left(\begin{matrix}
 	-1 & 0 \\
 	0 & 1
@@ -225,16 +224,16 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\rho &\mapsto \left(\begin{matrix}
 	\cos\frac{2\pi}{n} & \sin\frac{2\pi}{n} \\
 	-\sin\frac{2\pi}{n} & \cos\frac{2\pi}{n}
-	\end{matrix}\right) 
+	\end{matrix}\right).
 	\end{align*}
-	Pertanto ognuno dei rappresentati sopra individua un'effettiva trasformazione distinta.
+	Ne concludiamo che ognuno dei rappresentati sopra trovati individua un'effettiva trasformazione distinta, da cui l'uguaglianza con $ D_2 $.
 \end{proof}
 
 \begin{remark}
 	Conosciamo già un gruppo diedrale: $ D_3 \cong \mathcal{S}_3 $.
 \end{remark}
 \begin{remark}
-	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $. $$ \langle \rho \rangle = C_n \lhd\, D_n $$
+	Il sottogruppo $ C_n $ delle rotazioni, generato da $ \rho $, è ovviamente ciclico e, avendo indice 2, è anche normale in $ D_n $: $$ \langle \rho \rangle = C_n \lhd\, D_n. $$
 \end{remark}
 
 \begin{prop}[Ordine degli elementi di $ D_n $]
@@ -246,7 +245,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{prop}
 \begin{proof}
 	La seconda parte è immediata conseguenza della ciclicità del sottogruppo delle rotazioni.
-	L'ordine delle riflessioni possiamo calcolarlo esplicitamente notando che $ \left(\sigma\rho^k\right)\left(\sigma\rho^k\right) = \left(\sigma\rho^k\sigma\right)\rho^k = \rho^{-k}\rho^{k} = e $ grazie alla terza proprietà imposta nella caratterizzazione.
+	L'ordine delle riflessioni possiamo calcolarlo esplicitamente notando che $$  \left(\sigma\rho^k\right)\left(\sigma\rho^k\right) = \left(\sigma\rho^k\sigma\right)\rho^k = \rho^{-k}\rho^{k} = e,  $$ dove abbiamo usato la terza proprietà imposta nella caratterizzazione.
 \end{proof}
 \columnbreak
 \begin{prop}[Sottogruppi di $ D_n $]
@@ -268,8 +267,8 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	H \arrow[dashed]{r}{} \arrow[swap, hook]{u}{} & \mathbb{Z}_2	\end{tikzcd}
 	\]
 	Visto che $ \ker f = C_n \lhd D_n $, il sottogruppo $ H $ viene scomposto in nucleo e laterale
-	\[ H = f^{-1}(0) \sqcup f^{-1}(1) = (H \cap C_n) \sqcup \tau (H\cap C_n) \]
-	Infine, dato che il nucleo è contenuto nel sottogruppo ciclico $ (H \cap C_n) < C_n $, possiamo pensarlo come il sottogruppo generato da una potenza della rotazione elementare \[ H \cap C_n = \langle \rho^d \colon d \mid n \rangle \] Il suo unico laterale sarà allora composto dagli $ d $ elementi della forma  \begin{align*}\tau(H\cap C_n) &=  \{\tau\rho^d, \tau\rho^{2d}, \dots, \tau\rho^{n-d} \} \\ &= \{\sigma\rho^{d+i}, \sigma\rho^{2d+i}, \dots, \sigma\rho^{n-d +i} \}\end{align*}  che è facile convincersi dipendere solamente dalla classe di $ i \mod d $.
+	\[ H = f^{-1}(0) \sqcup f^{-1}(1) = (H \cap C_n) \sqcup \tau (H\cap C_n). \]
+	Infine, dato che il nucleo è contenuto nel sottogruppo ciclico $ (H \cap C_n) < C_n $, possiamo pensarlo come il sottogruppo generato da una potenza della rotazione elementare \[ H \cap C_n = \langle \rho^d \colon d \mid n \rangle. \] Il suo unico laterale sarà allora composto dagli $ d $ elementi della forma  \begin{align*}\tau(H\cap C_n) &=  \{\tau\rho^d, \tau\rho^{2d}, \dots, \tau\rho^{n-d} \} \\ &= \{\sigma\rho^{d+i}, \sigma\rho^{2d+i}, \dots, \sigma\rho^{n-d +i}, \}\end{align*}  che dipende solamente dalla classe di $ i \mod d $.
 \end{proof}
 
 \textbf{Esercizi importanti.}
@@ -293,7 +292,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 \end{definition}
 
 \begin{theorem}[Cayley]\label{Cayley}
-	Possiamo immergere ogni gruppo $ G $ finito in un gruppo di permutazioni.
+	Possiamo immergere ogni gruppo finito $ G $ in un gruppo di permutazioni.
 \end{theorem}
 \begin{proof}
 	L'azione di moltiplicazione a sinistra è fedele
@@ -319,8 +318,8 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	Due permutazioni $ \sigma, \tau \in \mathcal{S}_n $ sono coniugate se e solo se hanno lo stesso tipo di decomposizione in cicli disgiunti.
 \end{prop}
 \begin{proof}
-	E' più che sufficiente osservare che dato un ciclo $$  \sigma = (a_1 \; \cdots \; a_k)  $$ e una permutazione tale che $ \tau : a_i \mapsto b_i $ si ha
-	\[\tau\sigma\tau^{-1} = (\tau(a_1) \; \cdots \; \tau(a_k)) = (b_1 \; \cdots \; b_k) \]
+	E' più che sufficiente osservare che dato un ciclo $$  \sigma = (a_1 \; \cdots \; a_k)  $$ e una permutazione tale che $ \tau : a_i \mapsto b_i $, si ha
+	\[\tau\sigma\tau^{-1} = (\tau(a_1) \; \cdots \; \tau(a_k)) = (b_1 \; \cdots \; b_k). \]
 \end{proof}
 \begin{remark}
 	$ \mathcal{S}_n $ è generato dalle sue trasposizioni.
@@ -336,7 +335,7 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	\fun{\text{sgn}}{\mathcal{S}_n}{\mathbb{Z}^\times = \{\pm 1\}}{\sigma}{\prod_{1 \leq i < j \leq n}\frac{\sigma(i)-\sigma(j)}{i-j}}
 	questo è un omomorfismo di gruppi. Infatti:
 	\begin{enumerate}
-		\item è ben definito, ovvero $ |\text{sgn}(\sigma)| = 1 $: tutte le differenze che compaiono a denominatore compaiono anche a numeratore, poiché $ \sigma $ è una permutazione, magari con ordine o segno, differente.
+		\item è ben definito, ovvero $ |\text{sgn}(\sigma)| = 1 $: tutte le differenze che compaiono a denominatore compaiono anche a numeratore, poiché $ \sigma $ è una permutazione, magari con ordine o segno differente.
 		\item Si comporta bene con la composizione
 		\begin{align*}
 			\text{sgn}(\sigma \circ \tau) &= \prod_{i < j}\frac{\sigma(\tau(i))-\sigma(\tau(j))}{i-j} \\
@@ -373,20 +372,19 @@ z &\mapsto \mathcal{R}(O, \arg z)
 	Il gruppo alterno $ \mathcal{A}_n $ è semplice per $ n \geq 5 $.
 \end{theorem}
 \begin{proof}
-	Iniziamo a dimostrare che $ \mathcal{A}_5 $ è semplice. Le classi di coniugio di questo gruppo hanno dimensione \[1,\, 12,\, 12,\, 15,\, 20\] Un sottogruppo normale dovrebbe essere unione di un certo numero di queste orbite, ma sommando le loro cardinalità non ottengo mai divisori di 60. Allo stesso modo, $ A_6 $ è semplice: le sue classi coniugio hanno dimensione
-	\[ 1,\, 40,\, 40,\, 45,\, 72,\, 72,\, 90 \]
-	Dimostriamo ora la tesi per $ n \geq 7 $. Supponiamo che esista un sottogruppo normale
+	Iniziamo a dimostrare che $ \mathcal{A}_5 $ è semplice. Le classi di coniugio di questo gruppo hanno dimensione \[1,\, 12,\, 12,\, 15,\, 20.\] Un sottogruppo normale dovrebbe essere unione di un certo numero di queste orbite, ma sommando le loro cardinalità non ottengo mai divisori di 60. Allo stesso modo, $ A_6 $ è semplice: le sue classi coniugio hanno dimensione
+	\[ 1,\, 40,\, 40,\, 45,\, 72,\, 72,\, 90. \]
+	Siamo ora pronti per affrontare $ n \geq 7 $. Supponiamo che esista un sottogruppo normale
 	\[ \{e\} \neq N \lhd A_n \]
-	e mostriamo che contiene un 3-ciclo. Essendo non banale, possiamo prenderne una permutazione non identica $ \sigma $ che possiamo supporre, senza perdita di generalità, non fissare l'1:
-	$$  \sigma(1) \neq 1  $$ 
-	e $ \tau = (i\; j\; k) $ una permutazione di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno $ n \geq 4 $. Inoltre
-	\[ \tau\sigma\tau^{-1}(1) = \tau(\sigma(1)) \neq \sigma(1) \]
-	dunque $ \tau\sigma\tau^{-1} \neq \sigma $ e siamo sicuri che la permutazione
+	e mostriamo che contiene un 3-ciclo. Essendo non banale, ci troviamo una permutazione non identica $ \sigma $ che possiamo supporre, senza perdita di generalità, non fissare l'1 (tale che $  \sigma(1) \neq 1  $).
+	Prendiamo anche una permutazione $ \tau = (i\; j\; k) $ di tre indici diversi da 1 tali che $ \sigma(1) \in \{i,\, j,\, k\} $. Nell'operare questa scelta, abbiamo bisogno che $ n \geq 4 $. Inoltre
+	\[ \tau\sigma\tau^{-1}(1) = \tau(\sigma(1)) \neq \sigma(1), \]
+	dunque $ \tau\sigma\tau^{-1} \neq \sigma $, così siamo sicuri che la permutazione
 	\[ \phi = \tau\sigma\tau^{-1}\sigma^{-1} \]
-	non è l'identità. Inoltre quest'ultima è sia il prodotto tra un coniugato di un elemento nel nostro sottogruppo normale per il suo inverso 
-	\[ \phi = (\tau\sigma\tau^{-1})\sigma^{-1} \in N  \]
-	che prodotto di un 3-ciclo e di un suo coniugato
-	\[ \phi = \tau(\sigma\tau^{-1}\sigma^{-1}) \]
+	non sia l'identità. Quest'ultima $ \phi $ è sia il prodotto tra un coniugato di un elemento nel nostro sottogruppo normale per il suo inverso 
+	\[ \phi = (\tau\sigma\tau^{-1})\sigma^{-1} \in N,  \]
+	che il prodotto tra un 3-ciclo e un suo coniugato
+	\[ \phi = \tau(\sigma\tau^{-1}\sigma^{-1}), \]
 	quindi permuta al più $ 6 $ numeri. Aggiungiamo, se necessario, numeri a caso, fino ad averne esattamente 6 e chiamiamo $ H $ il sottogruppo di $ A_n $, isomorfo ad $ A_6 $, che li permuta. Abbiamo mostrato che
 	\[ \phi \in N \cap H \]
 	dunque l'intersezione è non banale, nonché un sottogruppo normale di $ H $! Deve pertanto coincidere con tutto il gruppo. Allora
@@ -467,18 +465,18 @@ z &\mapsto \mathcal{R}(O, \arg z)
 allora $$  G \cong H \times K  $$
 \end{theorem}
 \begin{proof}
-	Mostriamo innanzitutto che $ hkh^{-1}k^{-1} $ appartiene ad entrambi i sottogruppi, infatti:
-	\[ H  \ni h(kh^{-1}k^{-1}) = h(kh^{-1}k^{-1}) = (hkh^{-1})k^{-1} \in K \]
-	dunque, per la seconda ipotesi, $$ hkh^{-1}k^{-1} = e $$ quindi gli elementi di un sottogruppo commutano con quelli dell'altro $ hk = kh $.\\
+	Mostriamo innanzitutto che $ hkh^{-1}k^{-1} $ appartiene ad entrambi i sottogruppi:
+	\[ H  \ni h(kh^{-1}k^{-1}) = h(kh^{-1}k^{-1}) = (hkh^{-1})k^{-1} \in K. \]
+	Avendo i due sottogruppi intersezione banale, un elemento che appartiene ad entrambi è necessariamente l'elemento neutro $$ hkh^{-1}k^{-1} = e, $$ quindi tutti gli elementi di un sottogruppo commutano con quelli dell'altro. \\
 	
-	Consideriamo ora l'isomorfismo \fun{\Phi}{H\times K}{G}{(h,g)}{hg}
+	Consideriamo ora l'isomorfismo che prende elementi che vivono nei due diversi sottogruppi, li immerge nel gruppo $ G $ in cui sono nati e, lì, ne prende il prodotto
+	 \fun{\Phi}{H\times K}{G}{(h,g)}{hg}
 	e verifichiamo che
 	\begin{enumerate}
-		\item è ben definito.
-		\item è un omomorfismo: infatti \[ \Phi(hh', kk') = hh'kk' = hkh'k' = \Phi(h, k)\Phi(h',k') \]
-		\item è suriettivo; ed è, sostanzialmente, l'ipotesi 2.
+		\item è un omomorfismo: \[ \Phi(hh', kk') = hh'kk' = hkh'k' = \Phi(h, k)\Phi(h',k'); \]
+		\item è suriettivo, grazie all'ipotesi 2;
 		\item è iniettivo per l'ipotesi 3; infatti \[ \ker\Phi = \{ (h, k) \mid hk = e \} = \{ (e, e) \} \]
-		perché se $ h $ e $ k $ sono inversi, vivono nello stesso gruppo, dunque nell'intersezione, che non ci lascia molta libertà di scelta.
+		perché se $ h $ e $ k $ sono inversi l'uno dell'altro, vivono nello stesso sottogruppo, dunque nell'intersezione, che è banale.
 	\end{enumerate}
 \end{proof}
 
@@ -558,20 +556,22 @@ Q_8
 	Se $ |G| $ ha solo elementi di ordine due ed è finito, allora $ G \cong \left(\mathbb{Z}_2\right)^n $.
 \end{theorem}
 \begin{proof}
-	Osserviamo che $$  a^2b^2 = e = (ab)^2 = abab  $$ e, moltiplicando per $ a $ a sinistra e per $ b $ a destra, otteniamo $$  ab = ba \text{ per ogni } a, b \in G  $$ Pertanto $ G $ è abeliano. Possiamo ora procedere per induzione sulla dimensione di $ G $. Se $ |G| = 2 $ il risultato è chiaro. Supponiamo ora che sia vero per tutti i gruppi di ordine $ < 2^n $ e supponiamo $ 2^ n \leq |G| < 2^{n+1} $. Quando prendiamo un insieme minimale di $ h < n $ generatori $ \langle g_1, \dots g_h \rangle $ di un sottogruppo di $ H < G $, questo sarà isomorfo a $ \left(\mathbb{Z}_2\right)^h $ per ipotesi induttiva. Prendiamo un elemento $ g \notin H$, abbiamo che $ H $ e $ \langle g \rangle \cong \mathbb{Z}_2 $ sono sottoinsiemi normali e con intersezione banale, pertanto il sottoinsieme \[ \langle g, g_1, \dots g_h \rangle \cong H \times\langle g \rangle \cong \left(\mathbb{Z}_2\right)^h \times \mathbb{Z}_2 \cong \left(\mathbb{Z}_2\right)^{h+1} \]
+	Osserviamo che $$  a^2b^2 = e = (ab)^2 = abab  $$ e, moltiplicando per $ a $ a sinistra e per $ b $ a destra, otteniamo $$  ab = ba \text{ per ogni } a, b \in G  $$ Pertanto $ G $ è abeliano. Possiamo ora procedere per induzione sulla dimensione di $ G $. Se $ |G| = 2 $ il risultato è chiaro. Supponiamo ora che sia vero per tutti i gruppi di ordine $ < 2^n $ e supponiamo $ 2^ n \leq |G| < 2^{n+1} $. Quando prendiamo un insieme minimale di $ h < n $ generatori $ \langle g_1, \dots g_h \rangle $ di un sottogruppo $ H < G $, questo sarà isomorfo a $ \left(\mathbb{Z}_2\right)^h $ per ipotesi induttiva. Prendiamo un elemento $ g \notin H$, abbiamo che $ H $ e $ \langle g \rangle \cong \mathbb{Z}_2 $ sono entrambi sottoinsiemi normali la cui intersezione è banale, pertanto il sottoinsieme \[ \langle g, g_1, \dots g_h \rangle \cong H \times\langle g \rangle \cong \left(\mathbb{Z}_2\right)^h \times \mathbb{Z}_2 \cong \left(\mathbb{Z}_2\right)^{h+1} \]
 	per il teorema di struttura \ref{struttura}.
 	Così facendo possiamo continuare ad aggiungere elementi fino alla saturazione.
 \end{proof}
 Se $ G $ non ha elementi di ordine $ 8 $ e non hanno tutti ordine $ 2 $, allora esiste un $ g \in G $ di ordine 4 e sia $ C_4 = \langle g \rangle $. Sia $ h \notin C_4 $ e consideriamo l'azione di coniugio di $ h $ su $ C_4 $
 \fun{\varphi_h}{C_4}{C_4}{x}{hxh^{-1}}
-ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché $ \Aut{\mathbb{Z}_4} \cong \mathbb{Z}_2 $, abbiamo solo due possibilità: $$  \varphi_g =  id^{\pm 1}  $$
+(ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $). Poiché $ \Aut{\mathbb{Z}_4} \cong \mathbb{Z}_2 $, abbiamo solo due possibilità: $$  \varphi_g =  \pm 1.  $$
+
+Considerando i possibili ordini moltiplicativi di $ h $ ci riduciamo a controllare quattro casi:
 
 \begin{itemize}
-	\item $ \left[\varphi_h =  id, \, \text{ord}(h) =2\right] $. Dunque gli elementi di $ C_4 $ commutano con $ h $, l'intersezione tra $ C_4 $ e $ \langle h \rangle $ è banale e il loro prodotto genera $ G $ per ragioni di cardinalità, pertanto \[ G \cong  \langle h \rangle\times C_4  \cong  \mathbb{Z}_2\times\mathbb{Z}_4 \]
-	\item $ \left[\varphi_h =  id, \, \text{ord}(h) =4\right] $. In questo caso è facile trovare tutti gli elementi e mostrare che il gruppo dev'essere abeliano.
-	\item $ \left[\varphi_h =  id^{-1}, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^{-1} $, quindi per la nostra caratterizzazione dei gruppi diedrali \[ G \cong D_4 \]
-	\item $ \left[\varphi_h =  id^{-1}, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
-	\[ e = ghgh = ghgh^{-1}hh = hh \neq e \]
+	\item $ \left[\varphi_h =  1, \, \text{ord}(h) =2\right] $. Gli elementi di $ C_4 $ commutano con $ h $, l'intersezione tra $ C_4 $ e $ \langle h \rangle $ è banale e il loro prodotto genera $ G $ per ragioni di cardinalità, pertanto \[ G \cong  \langle h \rangle\times C_4  \cong  \mathbb{Z}_2\times\mathbb{Z}_4. \]
+	\item $ \left[\varphi_h =  1, \, \text{ord}(h) =4\right] $. In questo caso è facile trovare tutti gli elementi e mostrare che il gruppo dev'essere abeliano.
+	\item $ \left[\varphi_h =  -1, \, \text{ord}(h) =2\right] $. Abbiamo che $ hgh = g^{-1} $, per la caratterizzazione dei gruppi diedrali \[ G \cong D_4. \]
+	\item $ \left[\varphi_h =  -1, \, \text{ord}(h) =4\right] $. Anche ord$ (gh) = 4 $. Infatti
+	\[ e = ghgh = ghgh^{-1}hh = hh \neq e. \]
 	Dunque abbiamo trovato l'ordine di tutti gli elementi, possiamo costruire un isomorfismo esplicito con $ Q_8 $.
 \end{itemize}
 \begin{definition}[Quaternioni]
@@ -614,7 +614,7 @@ ben definita perché $ C_4 $, avendo indice $ 2 $, è normale in $ G $. Poiché 
 allora $$  G \cong H \rtimes_\varphi K  $$ dove $ \varphi $ manda $ k $ nella corrispondente azione di coniugio \fun{\varphi}{K}{\Aut{H}}{k}{\varphi_k : h \mapsto hkh^{-1}}
 \end{theorem}
 \begin{proof}
-	Consideriamo la mappa \fun{\Phi}{H \rtimes_\varphi K}{G}{(h, k)}{hk}
+	Consideriamo la stessa mappa che già avevamo preso in considerazione parlando di prodotti diretti \fun{\Phi}{H \rtimes_\varphi K}{G}{(h, k)}{hk}
 	questo
 	\begin{itemize}
 		\item è un omomorfismo, perché \begin{align*}
@@ -638,16 +638,16 @@ dunque $ \Phi $ è un isomorfismo come desiderato.
 \columnbreak
 \subsubsection{Classificazione dei gruppi di ordine pq}
 
-Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. Allora necessariamente
-\[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p} \]
+Se $ p = q $, allora $ |G| = p^2 $, quindi $ G $ è abeliano. In questo caso già sappiamo che
+\[ G \cong \mathbb{Z}_{p^2}  \qquad \text{oppure} \qquad G \cong \mathbb{Z}_{p}\times\mathbb{Z}_{p}. \]
 Se $ p < q $, allora ho due elementi $ x, y $ di ordine, rispettivamente, $ p $ e $ q $, che generano relativi gruppi ciclici. Il più grande dei quali sarà normale perché ha indice $ p $ (vedi \ref{ppp}):
 $$  \mathbb{Z}_p < G \quad\text{e}\quad \Z_q \lhd G $$
 Osserviamo inoltre che i due sottogruppi hanno intersezione banale e pertanto $ \Z_p\Z_q = G $ per ragioni di cardinalità. Quindi
 \[ G \cong \Z_q \rtimes_{\varphi} \Z_p \]
-dove
+dove $ \varphi $ è un qualche omorfismo della forma
 \fun{\varphi}{\Z_p}{\Aut{\Z_q}  \cong \mathbb{Z}_q^\times \cong \mathbf{GL}_1(\mathbb{F}_q)}{1}{\varphi_1: x \mapsto kx}
 
-\textbf{Achtung!} Siamo passati in notazione additiva, perché i gruppi in questione sono abeliani e cilici. A questo punto è molto comodo pensare a $ \Z_q $ come spazio vettoriale unidimensionale e al suo gruppo di automorfismi come l'insieme delle "matrici" invertibili che vi agisce sopra, ovvero l'insieme degli elementi invertibili di $ \mathbb{F}_p $. Abbiamo definito l'omomorfismo solo per il generatore di $ \Z_p $, perché possiamo ottenere gli altri da
+Siamo passati in notazione additiva, perché i gruppi in questione sono abeliani e cilici. A questo punto è molto comodo pensare a $ \Z_q $ come spazio vettoriale di dimensione 1 e al suo gruppo di automorfismi come al gruppo delle "matrici" invertibili che vi agisce sopra (che corrisponde al gruppo degli invertibili di $ \mathbb{F}_p $). Abbiamo definito l'omomorfismo solo per il generatore di $ \Z_p $, perché possiamo ottenere gli altri da
 \[ y \mapsto \varphi_y : x \mapsto k^yx \]
 ed è molto semplice convincersene: stiamo componendo applicazioni lineari, dunque moltiplicando fra loro le corrispondenti matrici.
 Non tutte le scelte di $ k \in \Z_q $ sono accettabili però, per esempio se 
@@ -657,7 +657,7 @@ l'unico omomorfismo $ \varphi $ possibile è quello banale che ci induce
 
 Se invece 
 $ p \mid q -1 $
-possiamo scegliere $ k $ come un qualunque generatore del solo sottogruppo di ordine $ p $ di $ \Z_q^\times \cong \Z_{q-1} $. Fissiamo un generatore $ g $, allora tutte le possibili azioni saranno della forma 
+possiamo scegliere $ k $ come un qualunque generatore del solo sottogruppo di ordine $ p $ di $ \Z_q^\times \cong \Z_{q-1} $. Fissiamo un generatore $ g $, allora tutte le azioni contemplate saranno della forma 
 \fun{\psi^m}{\Z_p}{\Aut{\Z_q}}{1}{\psi^m_{1}: x \mapsto g^mx}
 al variare di $ m $ in $ \{1, \dots, p-1\} $.
 Osserviamo dunque che
@@ -675,7 +675,7 @@ e verificare che è un isomorfismo:
 	\item è iniettivo: se $ \Phi(h, k) = (e, e) $, allora $ h = e $ e, poiché $ k^m $ è un automorfismo di $ \Z_p $, $ k = e $.
 \end{itemize}
 pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abeliano. 
-\[ \boxed{G \cong \Z_q \rtimes Z_p} \]
+\[ \boxed{G \cong \Z_q \rtimes \Z_p} \]
 
 
 
@@ -684,10 +684,10 @@ pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abe
 \subsection{Teorema di Sylow}
 \begin{multicols}{2}
 	\begin{definition}
-		Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo. Ovvero $ H < G $, dove $ |G| = p^mn $ con $ (p, n) = 1 $ e $ |H| = p^m $.
+		Chiamiamo $ p $-sylow ogni $ p $-sottogruppo di ordine massimo: un $ H < G $, dove se $ |G| = p^mn $ con $ (p, n) = 1 $, si ha $ |H| = p^m $.
 	\end{definition}
 \begin{theorem}[di Sylow]\label{sylow}
-	Sia G un gruppo finito di ordine $ |G| = p^nm  $, dove $ p $ è primo e $ m $ è un intero a lui coprimo: $ (p, m) = 1 $. Allora sappiamo che:
+	Sia G un gruppo finito di ordine $ |G| = p^nm  $, dove $ p $ è primo e $ m $ è un intero a lui coprimo. Allora:
 	\begin{itemize}
 		\item[$ \exists $.] Per ogni $ 0 \leq \alpha \leq n $, esiste un sottogruppo $ H<G $ di ordine $|H| = p^\alpha $.
 		\item[$ \subseteq $.] Ogni $ p $-sottogruppo è incluso in un $ p $-sylow.
@@ -699,10 +699,10 @@ pertanto, in questo caso, esiste \emph{un unico} gruppo di ordine $ pq $ non abe
 		Dimostriamo i punti nello stesso ordine
 	\begin{itemize}
 
-		\item[$ \exists $.] Fissiamo $ 0 \leq \alpha \leq n $. Sia $ \mathcal{M}_\alpha $ l'insieme di tutti i sottoinsiemi di $ G $ di cardinalità $ p^\alpha $ \[ \mathcal{M}_\alpha = \{ M < G \mid |M| = p^\alpha \} \] possiamo allora calcolarci
+		\item[$ \exists $.] Fissiamo $ 0 \leq \alpha \leq n $. Sia $ \mathcal{M}_\alpha $ l'insieme di tutti i sottoinsiemi di $ G $ di cardinalità $ p^\alpha $ \[ \mathcal{M}_\alpha = \{ M < G \mid |M| = p^\alpha \}, \] possiamo allora calcolarne la cardinalità
 		\[ |\mathcal{M}_\alpha| = {p^nm \choose p^\alpha} = p^{n-\alpha}m \prod_{i = 1}^{p^\alpha - 1}\frac{p^nm-i}{p^\alpha -i} \]
-		e in particolare
-		\[  v_p\left(\left|\mathcal{M}_\alpha\right|\right) = n - \alpha \]
+		e, in particolare, osservare che
+		\[  v_p\left(\left|\mathcal{M}_\alpha\right|\right) = n - \alpha. \]
 		Consideriamo ora l'azione di $ G $ su $ \mathcal{M}_\alpha $ per moltiplicazione a sinistra
 		\fun{\Psi}{G}{\mathcal{S}(\mathcal{M}_\alpha)}{g}{\psi_g: M \mapsto gM}
 		Cerchiamo il sottoinsieme richiesto tra gli stabilizzatori di $ \Psi $. Dato il solito partizionamento in orbite
